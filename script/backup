@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+BACKUP_PATH = 'backup'
+MONGO_BIN_PATH = ''
+DATABASE_NAME = 'politikaopen_production'
+
+current_backup_dir = "backup-#{Date.today}"
+backup_path = "#{BACKUP_PATH}/#{current_backup_dir}"
+archive_path = "#{backup_path}.tar.gz"
+
+if File.exists?(archive_path)
+  puts "--> [WARNING] Deleting old backup from the same day."
+  system("rm -r #{archive_path}")
+end
+
+system("mkdir -p #{backup_path}")
+system("#{MONGO_BIN_PATH}mongodump -d #{DATABASE_NAME} -o #{backup_path}")
+system("tar cvf #{backup_path}.tar #{backup_path}")
+system("gzip #{backup_path}.tar")
+system("rm -rf #{backup_path}")

@@ -1,0 +1,23 @@
+money_property:
+  basic:
+    title: "Súhrna hodnota hotovosti, účtov, cenných papierov"
+    fields:
+      year:
+        title: Rok
+        required: true
+        order: 0
+      value:
+        title: "Súhrna hodnota hotovosti, účtov, cenných papierov"
+        required: true
+        order: 1
+        description: Súhrnnú hodnotu hotovosti, účtov a cenných papierov je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Hotovosťou sa v tomto prípade primárne myslí objem nasporených peňazí mimo účtov v bankách (nie aktuálna hotovosť v peňaženke a pod.) 
+      currency:
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+        order: 1
+      notes:
+        title: Poznámky
+        type: text_area
+        order: 2

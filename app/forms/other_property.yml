@@ -1,0 +1,52 @@
+other_property:
+  basic:
+    title: "Iný jednotlivý hnuteľný majetok nad 10 000 EUR"
+    fields:
+      description:
+        title: Popis hnuteľnosti
+        required: true
+        order: 0
+        description: Napr. jachta, motorový čln, lietadlo, motorka, umelecké dielo, zbierka známok, čajová súprava, hi-fi sústava, kôň a pod.
+      acquirement:
+        title: Spôsob nadobudnutia
+        required: true
+        order: 1
+        type: data_select
+        data_source: property.acquirement_type
+      acquirement_date:
+        title: "Mesiac, rok nadobudnutia"
+        required: true
+        order: 2
+        data_type: date
+        type: month_picker
+      sale_date:
+        title: "Mesiac, rok predaja"
+        order: 3
+        data_type: date
+        type: month_picker
+      acquirement_value:
+        title: Nadobúdacia hodnota
+        required: true
+        order: 4
+        description: Uveďte sumu, za ktorú ste hnuteľnosť nadobudli. Ak bola hnuteľnosť nadobudnutá darom alebo dedičstvom, uveďte 0. V prípade, že ste pri dedení hnuteľnosti vyplácali iné osoby, uveďte ako nadobúcaciu hodnotu túto sumu.
+      currency:
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+        required: true
+        order: 5
+      possesion_type:
+        title: Typ vlastníctva
+        required: true
+        order: 6
+        type: data_select
+        data_source: property.posession_type
+      share:
+        title: Podiel
+        required: true
+        order: 7
+        description: Uveďte aký podiel z hnuteľnosti vlastníte. Ak ste napr. výlučným vlastníkom hnuteľnosti, napíšte 1/1. Ak ste uviedli, že hnuteľnosť je v bezpodieľovom vlastníctve manželov, taktiež uveďte 1/1. Podiel na hnuteľnosti zadávajte vždy v tvare zlomku (1/1, 2/3, 7/9 a pod.)
+      notes:
+        title: Poznámky
+        type: text_area
+        order: 8

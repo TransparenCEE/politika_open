@@ -1,0 +1,80 @@
+.clearfix
+  %h2.fl Administrácia používateľov
+  .fr
+    .box
+      - form_tag admin_users_path, :method => "get" do
+        = text_field_tag :keyword, params[:keyword], :class => "large"
+        = submit_tag "Hľadať"
+        - if params[:keyword]
+          = link_to "Zrušiť", admin_users_path, :class => "small"
+  .fr
+    .box
+      Vyplnené:
+      %strong= User.count_valid
+      == - Aktívne:
+      %strong= User.count_active
+      %br
+      Zverejnené:
+      %strong= User.count_live
+      == - Spolu:
+      %strong= User.count
+
+%table.admin{:cellspacing => 0, :width => "100%"}
+  %tr
+    %th
+      = sort_link "Meno", :basic_information_last_name
+    %th E-mail
+    %th Telefónne číslo
+    %th 
+      = sort_link "Vytvorené", :created_at, :desc
+    %th
+      = sort_link "Aktualizované", :updated_at, :desc
+    %th
+      = sort_link "Stav", :is_active
+    %th
+      Vyplnené
+    %th
+    %th
+  - @users.each do |user|
+    %tr
+      %td= user.full_name
+      %td= user.email
+      %td= user.telephone_number
+      %td= l(user.created_at || 10.years.ago, :format => :short)
+      %td
+        - if user.updated_at
+          = l(user.updated_at, :format => :short)
+      - if user.is_active
+        %td.active
+          Aktívne
+      - else
+        %td.inactive
+          Neaktívne
+      - unless user.is_published
+        %td.inactive
+          Nevyplnené
+      - else
+        %td.active
+          Vyplnené
+      %td
+        - if user.is_super_admin
+          %strong Admin
+      %td
+        = link_to "Upraviť", edit_admin_user_path(user)
+        - unless user.is_active
+          = link_to "Aktivovať", activate_admin_user_path(user), :confirm => "Chcete aktivovať používateľa #{user.email}?"
+        = link_to "Vymazať", admin_user_path(user), :method => "delete", :confirm => "Určite chcete vymazať používateľa #{user.email}?"
+        %br
+        = link_to "Resetovať", reset_admin_user_path(user), :confirm => "Chystáte sa resetovať heslo používateľa #{user.email}. Určite chcete pokračovať?"
+        = link_to "Prihlásiť", login_admin_user_path(user), :confirm => "Týmto sa odhlásite a prihlásite ako #{user.email}. Chcete pokračovať?"
+        
+%br
+%div.pagination.clearfix
+  .fl
+    = link_to_unless @page == 1, "Prvá", update_params(:page => 1)
+    = link_to_unless @page == 1, "‹ Predchádzajúca", update_params(:page => @page-1)
+    = link_to_unless @page >= @pages, "Ďalšia ›", update_params(:page => @page+1)
+    = link_to_unless @page == @pages, "Posledná", update_params(:page => @pages)
+  .fr
+    == Stránka #{@page}/#{@pages}
+  

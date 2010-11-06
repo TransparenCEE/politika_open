@@ -1,0 +1,91 @@
+/* GENERAL */
+body {margin:0px; padding:0px; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#666666;}
+h1 {margin:0px 0px 20px 0px; padding:0px; font-size:22px; font-weight:bold; color:#333333;}
+a {color:#009900; text-decoration:none;}
+a:hover {color:#009900; text-decoration:underline;}
+img {border:none;}
+
+
+/* HEADER */  
+#container_header {margin:0px 0px 0px 0px; padding:0px; background: #009100; float:none; overflow:hidden;}
+#header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#ffffff; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px;}
+#header .logo {display:inline; margin:15px 0px 10px 0px; padding:5px 0px 0px 0px; height:39px; float:left; overflow:hidden;}
+#header .navigation {display:inline; margin:25px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#ffffff; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-weight:bold; font-size:12px; text-align:right;}
+#header a {color:#ffffff; text-decoration:none;}
+#header a:hover {text-decoration:underline;}
+
+
+/* MENU */
+#container_menu {background: #009100; float:none; overflow:hidden; margin:0px; padding:5px 0px 0px 0px; font-weight:bold;}
+#menu {float:none; overflow:hidden; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#ffffff; margin:0px auto; width:1000px;}
+#menu ul {list-style:none; margin:0px; padding:0px; overflow:hidden;}
+#menu li {float:left; margin:0px 3px 0px 0px;}
+#menu a.admin {display:block; padding:5px 10px 5px 10px; font-size:13px; background:#b61d22;}
+#menu a.user {display:block; padding:5px 10px 5px 10px; font-size:13px; background:#666666;}
+#menu a {display:block; color:#ffffff; text-decoration:none; padding:5px 10px 5px 10px; font-size:13px; background:#1A1F1C;}
+#menu a:hover {display:block; color:#000000; text-decoration:none; padding:5px 10px 5px 10px; font-size:13px; background:#ffffff; color:#000000;}
+
+/*---------- MENU BOTTOM ---------- */
+#container_menu_bottom {margin:0px; float:none; overflow:hidden; background:none;}
+#menu_bottom {width:980px; margin:20px auto 10px auto; padding:7px 10px 7px 10px; float:none; overflow:hidden; color:#cccccc; font-size:12px; font-weight:normal; text-transform:normal; background:none; border-top:1px solid #eeeeee;}
+#menu_bottom a {color:#cccccc; text-decoration:none;}
+#menu_bottom a:hover {color:#cccccc; text-decoration:underline;}
+
+
+/*---------- CONTAINER MAIN ---------- */
+#container_main {width:1000px; padding:0px; float:none; overflow:hidden; background:none; margin: 0 auto 30px; }
+
+/*---------- SUPPORT ---------- */ 
+#container_support {background:#009900; color:#ffffff; margin:0px 20px 0px 0px; padding:30px; font-size:24px; width:350px; float:left; overflow:hidden;}
+#container_support .email {padding:0px 0px 20px 0px; border-bottom:1px solid #ffffff;}
+#container_support .phone {padding:20px 0px 0px 0px;}
+#container_support a {color:#ffffff; text-decoration:none;}
+#container_support a:hover {color:#ffffff; text-decoration:underline;}
+
+/*---------- SUPPORT ---------- */
+#rules li {margin:0px 0px 10px 0px;}
+
+
+
+
+
+/*---------- LIST ---------- */
+#abc {float:none; overflow:hidden; margin:0px 0px 10px 0px;}
+#abc ul {list-style:none; margin:0px 0px 0px 0px; padding:0px;}
+#abc li {float:left; margin:0px 3px 0px 0px; padding:7px 0px; width:28px; background:#999; text-align:center; color:#eee;}
+#abc li:hover {float:left; margin:0px 3px 0px 0px; padding:7px 0px; width:28px; background:#666	; text-align:center; color:#fff;}
+
+#list {float:none; overflow:hidden;}
+#list table {border-collapse:collapse; width:100%; margin:0px 0px 0px 0px; color:#666; font-weight:normal;}
+#list tr {background:#fff; font-size:12px; border-bottom:1px solid #ccc;}
+#list tr.title {background:#009900; color:#fff; border-bottom:2px solid #fff; text-align:left; text-transform:uppercase; font-size:11px; font-family:Verdana, Arial, Helvetica, sans-serif;}
+#list tr.title:hover {background:#000; color:#fff; }
+#list tr.header {background:#009900; color:#fff; border-bottom:none; font-weight:bold;}
+#list tr.header a { color: #fffeff; }
+#list tr.header:hover {background:#009900; color:#fff; font-weight:bold;}
+/* #list tr.odd {background:#efefef;} */
+#list tr:hover {background:#cfcfcf; color:#fff}
+#list td {padding:7px 10px; font-size:11px;}
+#list td.right {text-align:right;}
+#list td.priezvisko {font-weight:bold; letter-spacing:1px;}
+
+/* @group Sorting */
+
+td.sort {  }
+
+td.sort.asc { background: url(../images/sort_icons.png) no-repeat left -38px; }
+
+td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
+
+
+
+/* @end */
+
+
+/*---------- PROPAGATION ---------- */ 
+#propagation_code h1 {display:block; font-family:verdana, arial, helvetica, sans-serif; font-size:10pt; font-weight:bold; color:#626262; text-transform:none; margin-top:50px;}
+#propagation_code .code {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; padding:7px 7px 7px 7px; color:black; display:block; border:1px solid gray; background:#f1f1f1; margin:0px 0px 50px 0px;}
+
+#upozornenie {display:block; padding:20px; font-size:14px; background:#C1272D; color:#ffffff; margin:0px 0px 30px 0px; text-align:center;}
+
+

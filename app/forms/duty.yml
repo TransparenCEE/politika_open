@@ -1,0 +1,162 @@
+duty:
+  basic:
+    order: 0
+    title: Údaje o majetkovom práve, záväzku, hodnote
+    fields:
+      description:
+        title: Popis majetkového práva/záväzku
+        required: true
+        order: 0
+        type: data_select
+        data_source: duties.description
+      acquirement_type:
+        title: Spôsob nadobudnutia/vzniku
+        required: true
+        order: 1
+        type: data_select
+        data_source: duties.acquirement_type
+      provider:
+        title: Poskytovateľ práva/záväzku
+        required: true
+        order: 2
+        type: data_select
+        data_source: duties.provider
+      possesion_type:
+        title: Typ vlastníctva
+        required: true
+        order: 3
+        type: data_select
+        data_source: duties.possesion_type
+      share:
+        title: Podiel
+        required: true
+        order: 4
+        description: Uveďte aký podiel z majetkového práva/záväzku vlastníte. Ak ste napr. výlučným vlastníkom majetkového práva/záväzku napíšte 1/1. Ak ste uviedli, že majetkové právo/záväzok je v bezpodieľovom vlastníctve manželov, taktiež uveďte 1/1. Podiel na majetkovom práve/záväzku zadávajte vždy v tvare zlomku (1/1, 2/3, 7/9 a pod.)
+      acquirement_date:
+        title: "Mesiac, rok nadobudnutia/vzniku"
+        required: true
+        order: 5
+        data_type: date
+        type: month_picker
+      expiration_date:
+        title: "Mesiac, rok zániku"
+        order: 6
+        data_type: date
+        type: month_picker
+        
+  value:
+    order: 1
+    title: "Hodnota majetkového práva, záväzku, hodnoty"
+    fields:
+      total:
+        title: Celková hodnota
+        required: true
+        order: 0
+        description: Uveďte celkovú hodnotu majetkového práva alebo záväzku. Napr. ste si zobrali úver a jeho celková hodnota je 100 tisíc €.
+      total_currency:
+        order: 0.5
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+      amount:
+        title: Výška práva alebo záväzku
+        required: true
+        order: 1
+        description: Uveďte výšku práva alebo záväzku za obdobie, ktoré ste zvolili. Napr. celková hodnota úveru je 100 tisíc €, ale mesačná splátka je 500 (alebo ročná splátka je 6000 €)
+      currency:
+        order: 2
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+      timeframe:
+        title: Obdobie
+        required: true
+        order: 3
+        description: Uveďte obdobie, ku ktorému uvádzate výšku práva alebo záväzku
+      notes:
+        title: Poznámky
+        order: 4
+        type: text_area
+        
+  institution:
+    order: 2
+    title: Údaje o poskytovateľovi majetkového záväzku, práva, hodnoty
+    fields:
+      title_or_name:
+        order: 0
+        title: Názov/meno
+        required: true
+        description: Uveďte názov spoločnosti alebo meno a priezvisko osoby, ktorá poskytla majetkové právo, záväzok, hodnotu
+      sector:
+        order: 1
+        title: Sektor podnikania
+        type: company_sector
+        description: Ak je poskytovateľom fyzická osoba (nepodnikateľ), zvoľte možnosť Iný
+      form:
+        order: 2
+        title: Podnikateľská forma
+        type: company_form
+      number:
+        order: 3
+        title: IČO
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      no_approvement:
+        order: 4
+        title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
+        type: check_box
+        data_type: boolean
+        description: Súhlas je potrebný iba v prípade, že poskytovateľ majetkového práva, záväzku, hodnoty je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.       
+     # title:
+     #   order: 5
+     #   title: Titul
+     # name:
+     #   order: 6
+     #   title: Meno
+     #   required_unless: institution_no_approvement
+     # surname:
+     #   order: 7
+     #   title: Priezvisko
+     #   required_unless: institution_no_approvement       
+        
+  address:
+    order: 3
+    title: Adresa osoby alebo inštitúcie
+    fields:
+     # person_address:
+     #   order: -1
+     #   title: Adresa osoby
+     # institution_address:
+     #   title: Adresa inštitúcie
+     #   order: -2
+      state:
+        order: 0
+        title: Štát
+        type: state
+        required_unless: institution_no_approvement
+      county:
+        order: 1
+        title: Kraj
+        type: county
+        required_unless: institution_no_approvement
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      district:
+        order: 2
+        title: Okres
+        type: district
+        required_unless: institution_no_approvement
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      town:
+        order: 3
+        title: Obec
+        required_unless: institution_no_approvement
+      street:
+        order: 4
+        title: Ulica
+        required_unless: institution_no_approvement
+      zip:
+        order: 5
+        title: PSČ
+        required_unless: institution_no_approvement
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>

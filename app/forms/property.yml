@@ -1,0 +1,114 @@
+property:
+  basic:
+    title: Údaje o nehnuteľnosti
+    order: 0
+    fields:
+      description:
+        order: 0
+        title: Popis nehnuteľnosti
+        required: true
+        type: data_select
+        data_source: property.description
+      acquirement:
+        order: 1
+        title: Spôsob nadobudnutia
+        required: true
+        type: data_select
+        data_source: property.acquirement_type
+      has_income:
+        order: 2
+        title: Mám z nehnuteľnosti príjem
+        type: check_box
+        data_type: boolean
+      acreage:
+        order: 3
+        required: true
+        title: Výmera (m2)
+        description: V prípade bytov, domov alebo bytov uveďte úžitkovú plochu. Ak si nepamätáte presné údaje o nehnuteľnosti, ktorú vlastníte, môžete požadované údaje ľahko získať cez internetovú stránku <a href="https://www.katasterportal.sk/kapor/" target="_blank">Katastrálneho úradu</a>.
+      parcel_number:
+        order: 4
+        required: true
+        title: Číslo parcely
+        description: Ak si nepamätáte presné údaje o nehnuteľnosti, ktorú vlastníte, môžete požadované údaje ľahko získať cez internetovú stránku <a href="https://www.katasterportal.sk/kapor/" target="_blank">Katastrálneho úradu</a>.
+      lv_number:
+        order: 5
+        required: true
+        title: Číslo LV
+        description: Ak si nepamätáte presné údaje o nehnuteľnosti, ktorú vlastníte, môžete požadované údaje ľahko získať cez internetovú stránku <a href="https://www.katasterportal.sk/kapor/" target="_blank">Katastrálneho úradu</a>.
+      acquirement_year:
+        order: 6
+        required: true
+        title: Rok nadobudnutia
+        type: data_select
+        data_source: time.year
+      acquirement_value:
+        order: 7
+        required: true
+        title: Nadobúdacia hodnota
+        description: Uveďte sumu, za ktorú ste nehnuteľnosť nadobudli. Ak bola nehnuteľnosť nadobudnutá darom alebo dedičstvom, uveďte 0. V prípade, že ste pri dedení nehnuteľnosti vyplácali iné osoby, uveďte ako nadobúcaciu hodnotu túto sumu.
+      acquirement_currency:
+        order: 8
+        required: true
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      year:
+        order: 9
+        title: Rok
+        type: data_select
+        data_source: time.year
+      market_value_estimate:
+        order: 10
+        title: Odhad trhovej hodnoty
+        description: Ak ste nehnuteľnosť nadobudli darom alebo dedičstvom a v položke Nadobúdacia hodnota ste uviedli 0, tak táto položka je povinná. Ak nepoznáte odhad trhovej hodnoty nehnuteľnosti, môžete hodnotu uviesť podľa sumy poistného (na akú sumu máte nehnuteľnosť poistenú) alebo odhadnúť pomocou cien uvedených v aktuálnych ponukách nehnuteľností, ktoré svojou polohou, veľkosťou a vybavením najviac zodpovedajú Vašej nehnuteľnosti.
+      market_value_estimate_currency:
+        order: 11
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      possesion_type:
+        order: 12
+        required: true
+        title: Typ vlastníctva
+        type: data_select
+        data_source: property.posession_type
+      share:
+        order: 13
+        required: true
+        title: Podiel
+        description: Uveďte aký podiel z nehnuteľnosti vlastníte. Ak ste napr. výlučným vlastníkom nehnuteľnosti, napíšte 1/1. Ak ste uviedli, že nehnuteľnosť je v bezpodieľovom vlastníctve manželov, taktiež uveďte 1/1. Podiel na nehnuteľnosti zadávajte vždy v tvare zlomku (1/1, 2/3, 7/9 a pod.)
+      sale_date:
+        order: 14
+        title: Dátum predaja
+        type: month_picker
+        data_type: date
+        
+  location:
+    title: Umiestnenie nehnuteľnosti
+    order: 1
+    fields:
+      state:
+        order: 0
+        title: Štát
+        type: state
+        required: true
+      county:
+        type: county
+        order: 1
+        title: Kraj
+        required: true
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      district:
+        order: 2
+        title: Okres
+        required: true
+        type: district
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      town:
+        order: 3
+        title: Obec
+        required: true
+      notes:
+        order: 4
+        title: Poznámky
+        type: text_area

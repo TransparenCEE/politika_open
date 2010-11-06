@@ -1,0 +1,106 @@
+sponsorship:
+  provider:
+    order: 0
+    title: Údaje o poskytovateľovi
+    fields:
+      name:
+        title: Názov/Meno
+        required: true
+        order: 0
+        description: Uveďte názov spoločnosti alebo meno a priezvisko osoby, ktorá poskytla sponzorstvo, dar alebo grant
+      sector:
+        title: Sektor podnikania
+        required: true
+        type: company_sector
+        order: 1
+        description: Ak je darcom fyzická osoba (nepodnikateľ, neživnostník), zvoľte možnosť Iný
+      form:
+        title: Podnikateľská forma
+        required_if: sector_commercial
+        type: company_form
+        order: 2
+      number:
+        title: IČO
+        required_if: sector_commercial
+        order: 3
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        
+  address:
+    title: Adresa
+    order: 1
+    fields:
+      not_allowed_to_publish_information:
+        title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
+        type: check_box
+        data_type: boolean
+        order: 0
+        description: Súhlas je potrebný iba v prípade, že poskytovateľom sponzorstva, daru alebo grantu je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>. 
+      state:
+        order: 1
+        title: Štát
+        type: state
+        required_unless: address_not_allowed_to_publish_information
+      county:
+        order: 2
+        title: Kraj
+        required_unless: address_not_allowed_to_publish_information
+        type: county
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      district:
+        order: 3
+        title: Okres
+        required_unless: address_not_allowed_to_publish_information
+        type: district
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      town:
+        order: 4
+        title: Obec
+        required_unless: address_not_allowed_to_publish_information
+      street:
+        order: 5
+        title: Ulica
+        required_unless: address_not_allowed_to_publish_information
+      zip:
+        order: 6
+        title: PSČ
+        required_unless: address_not_allowed_to_publish_information
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+      notes:
+        title: Poznámky
+        type: text_area
+        
+  sponsorship:
+    title: "Charakter a výška sponzorstva, daru alebo grantu"
+    order: 2
+    fields:
+      sponsorship:
+        order: 0
+        title: "Charakter a výška sponzorstva, daru alebo grantu"
+        required: true
+        description: Uveďte aký charakter /formu malo sponzorstvo, dar alebo grant. Pod darom sa rozumie aj výrazná zľava, zapožičanie nejakej výhody na istý čas, odpustenie dlhu, pokuty, prevzatie dlhu a pod. Napr. finančný dar, hmotný dar (mobil, počítač, auto a pod.), bezodplatné plnenie (napr. tlmočenie, kurz angličtiny a pod.), nefinančný dar (dovolenka), študijný grant a pod.
+      purpose:
+        order: 1
+        title: Účel podpory
+        required: true
+        description: Uveďte, za akým účelom boli sponzorstvo, dar alebo grant poskytnuté. Napr. zlepšenie komunikačných schopností v cudzom jazyku (jazykový kurz); zapojenie sa do internetových sociálnych sietí (mobil, internet); výmena šatníka (oblek); získanie budovy pre stranícku centrálu (nehnuteľnosť) a pod.
+      date:
+        order: 2
+        title: Dátum
+        type: date_select
+        data_type: date
+        required: true
+        description: Uveďte dátum, kedy ste sponzorstvo, dar alebo grant získali
+      value_currency:
+        order: 3
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+      value:
+        order: 4
+        title: "Hodnota sponzorstva, daru alebo grantu"
+        required: true
+        description: Uveďte hodnotu daru, sponzorstva alebo grantu v čase jeho nadobudnutia
+        type: bound_data_select
+        bound_to: value_currency
+        data_source: money.honorar

@@ -1,0 +1,317 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'Strany');
+        data.addRows(5);
+        data.setValue(0, 0, 'KDH');
+        data.setValue(0, 1, 5);
+        data.setValue(1, 0, 'MOST-HÍD');
+        data.setValue(1, 1, 4);
+        data.setValue(2, 0, 'SaS');
+        data.setValue(2, 1, 146);
+        data.setValue(3, 0, 'SDKÚ-DS');
+        data.setValue(3, 1, 11);
+        data.setValue(4, 0, 'SDĽ');
+        data.setValue(4, 1, 1);
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, {width:450, height: 240, backgroundColor:'#eeeeee', title: 'Počet otvorených kandidátov',
+                         
+                         });
+      }
+    </script>
+
+	<script type="text/javascript">
+	      function drawVisualization() {
+	        // Create and populate the data table.
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Task');
+	        data.addColumn('number', 'Hours per Day');
+	        data.addRows(2);
+	        data.setValue(1, 0, 'Kandidáti do NR SR');
+	        data.setValue(1, 1, 2375);
+	        data.setValue(0, 0, 'Otvorení kandidáti do NR SR');
+	        data.setValue(0, 1, 167);
+
+	        // Create and draw the visualization.
+	        new google.visualization.PieChart(document.getElementById('visualization')).
+	            draw(data, {title:"Otvorení kandidáti vo voľbách do NR SR 2010", backgroundColor:'#eeeeee'});
+	      }
+
+
+	      google.setOnLoadCallback(drawVisualization);
+	    </script>
+	
+		<script type="text/javascript">
+		      function drawVisualization() {
+		        // Create and populate the data table.
+		        var data = new google.visualization.DataTable();
+		        data.addColumn('string', 'Task');
+		        data.addColumn('number', 'Hours per Day');
+		        data.addRows(2);
+		        data.setValue(1, 0, 'Poslanci v NR SR');
+		        data.setValue(1, 1, 150);
+		        data.setValue(0, 0, 'Otvorení poslanci v NR SR');
+		        data.setValue(0, 1, 5);
+
+		        // Create and draw the visualization.
+		        new google.visualization.PieChart(document.getElementById('poslanci_nrsr')).
+		            draw(data, {title:"Otvorení poslanci v NR SR", backgroundColor:'#eeeeee'});
+		      }
+
+
+		      google.setOnLoadCallback(drawVisualization);
+		    </script>
+		
+		<style>
+		ul {list-style:none; margin:0px; padding:0px; overflow:hidden;}
+		li {}
+		#list_kandidati {float:none; overflow:hidden; display:block; margin:20px 0px 0px 0px; padding:5px 20px 15px 20px; background:#eeeeee; border:1px solid #cccccc;}
+		a {color:#999999;}
+		a:hover {color:#999999;}
+		</style>
+  </head>
+
+  <body>
+<h1>Voľby do NR SR 2010</h1>
+
+<div style="text-align:right; font-size:10px; margin:0px 0px 10px 0px;"><em>aktualizácia: 16:22 | 11.6.2010</em></div>
+
+<!-- Grafy -->
+<div style="float:none; overflow:hidden; display:block; margin:0px 0px 20px 0px;">
+<div id="chart_div" style="float:left; overflow:hidden; width:450px; height:240; border:1px solid #cccccc;"></div>
+<div id="visualization" style="width:500px; height:240px; float:right; border:1px solid #cccccc;"></div>
+</div>
+
+<div id="poslanci_nrsr" style="width:450px; height:240px; float:none; border:1px solid #cccccc; margin:20px 0px 40px 0px"></div>
+
+<p style="font-size:14px;">Politické strany, ktorých kandidáti sa nezapojili do projektu politikaopen: <strong>AZEN, EDS, KSS, ĽS-HZDS, ĽSNS, ND, Paliho Kapurkov, SNS, SMER, SMK-MKP, SRK, Únia, ZRS</strong></p>
+<div style="float:none; overflow:hidden; display:block;">
+<div id="list_kandidati">
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+	   	<li><h3>KDH</h3></li>
+		<li></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf523397751362766000007'>Lipšic Daniel</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf5066a775136267800000c'>Mihoková Lucia</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c04cf9877513670dd00000d'>Novota Michal</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf1741e775136097b000003'>Sokolová Iveta</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c04ba337751366ff500000e'>Žitňanská Jana</a></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>MOST-HÍD</h3></li>
+		<li></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf27c2c7751360e19000002'>Buzáš Peter</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf52339775136276600000a'>Dostál Ondrej</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c0769147751361311000001'>Nagy A. László</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c08c9d877513620d3000005'>Švejna Ivan</a></li>		                                                                       
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SDKÚ-DS</h3></li>
+		<li></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bfcd6e6775136294f000007'>Beblavy Miroslav</a></li> 
+	   	<li><a href='http://www.politikaopen.sk/frontend/users/4bf68044775136300600000a'>Dériková Eva</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf17437775136097b000004'>Drotován Michal</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c07617e775136126200000c'>Dubovcová Jana</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf523397751362766000013'>Fiabáne Peter</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4c054e897751367ad5000001'>Maceják Štefan</a></li>
+	   	<li><a href='http://www.politikaopen.sk/frontend/users/4bf523397751362766000008'>Mečiar Jozef</a></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000034'>Mikuš Jozef</a></li>
+	   	<li><a href='http://www.politikaopen.sk/frontend/users/4bf52339775136276600001b'>Radičová Iveta</a></li>
+	   	<li><a href='http://www.politikaopen.sk/frontend/users/4bfe6d6977513633b5000001'>Štefanec Ivan</a></li>
+	   	<li><a href='http://www.politikaopen.sk/frontend/users/4bfd321d7751362d2e00000a'>Žitňanská Lucia</a></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SDĽ</h3></li>
+		<li></li>
+		<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600002f'>Budáčová Jana</a></li>
+	</ul>
+	
+</div>
+
+<div id="list_kandidati">
+	<h3>SaS</h3>
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600005f'>Aštaryová Zuzana</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000d8'>Babjarčik Vít</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000cb'>Babuščák Ladislav</a></li>
+	            <li><a href='http://www.politikaopen.sk/frontend/users/4bf4fce97751362659000009'>Baránik Alojz</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c03736d775136514c000002'>Balogh Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000044'>Barna Alexander</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf67bd97751363006000006'>Bendík Igor</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000051'>Benka Milan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600006b'>Beťko Ľudovít</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf1875f77513609a8000002'>Bielik Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600006f'>Bielik Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf1a24577513609fa000003'>Blahová Natália</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000062'>Bľanda Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf4cf0577513625e8000002'>Bódy Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000048'>Borbély Koloman</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfa39bc77513617c8000005'>Božik Ladislav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf90a2f7751360edc000009'>Bróska Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c062ec5775136079d000004'>Bruncková Zita</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf940317751360f5f000011'>Čillík Norbert</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000fc'>Dananai Ján</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf523407751362766000115'>Dimitriadu Monika</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c04ea227751367159000002'>Domorák Miloš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000067'>Dráb Miroslav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf1d6d07751360ab7000001'>Droba Juraj</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf56e5a7751362a21000002'>Ďuricová Miriam</a></li>
+	   				</ul>
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+				
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf18acb77513609c1000001'>Farár Viktor</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf8aa2c7751360c48000002'>Fecko Martin</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600002e'>Fekete Richard</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfccb8977513628f600000d'>Foltin Roman</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600003d'>Fořt Stanislav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000ec'>Gabriš Ivan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000068'>Gajdoš Tomáš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c775136276600008e'>Galanda Milan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600003f'>Galko Ľubomír</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf523407751362766000118'>Gažúr Tomáš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfd6ede7751362dde000003'>Geletová Monika</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4c0defeb7751365376000001'>Grachová Zuzana</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600003a'>Hájková Kristína</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf50627775136267800000b'>Halaj Vladimír</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000036'>Harhovský Robert</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c775136276600008d'>Havrilla Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf9f789775136169d000003'>Hečko Vladislav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600002e'>Hladký Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf64a6c7751362eed000003'>Hodossy Kristian</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000050'>Holko Ivan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000092'>Hrčka Ján</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600004e'>Hruškár Marián</a></li>
+	  			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a775136276600003b'>Chren Martin</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000060'>Ilavský Jakub</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233d77513627660000ac'>Jesenko Erik</a></li>
+				
+	   			
+	   		</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bfd0f7c7751362cb9000005'>Jucha Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000040'>Jurčík Ľudovít</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000069'>Jurčo Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf983bb7751361067000001'>Jurinová Erika</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf98751775136106e00000c'>Jurovčík Ľubomír</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfaae767751361b4b000003'>Kalist Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf8edb47751360e75000028'>Kamenca Juraj</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000030'>Kaščáková Renata</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233d775136276600009c'>Kintler Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf3c8f777513613c9000002'>Kiššová Jana</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf4de517751362611000007'>Kolek Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfcfc4f7751362c66000008'>Kollár Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfc1b8d77513621da000007'>Kováč Igor</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000c4'>Kozický Milan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf247ba7751360d6f000009'>Krajcer Daniel</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf3a4b677513612cd000007'>Králik Štefan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000de'>Kramár Tibor</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000037'>Križan Filip</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000bb'>Križan Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000033'>Krnáč Kamil</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000056'>Ksenzsigh František</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000065'>Kudláč Róbert</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf51e3677513626dc000017'>Kvasnica Ondrej</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf4d33477513625e800000d'>Kvasnička Ján</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000ce'>Kyslan Karol</a></li>
+	   			
+	   			
+	   						</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600006d'>Laurenčík Milan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfa2574775136178e000002'>Lenhardt Juraj</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000df'>Líška Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfcfcd97751362c6600000b'>Macek Ľubomír</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000080'>Mahmoud Zaher</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000042'>Majer Ľuboš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000ff'>Majer Marian</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000d0'>Mamrilla Dušan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf523407751362766000109'>Marčan Anton</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfcbb7e77513628fa000002'>Mareček Radoslav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600004b'>Marič Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf16eed7751360969000001'>Martinček Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000f1'>Matejka Ladislav</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4c077281775136134f000008'>Matejka Ondrej</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600005e'>Matlovič Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfab81b7751361b62000001'>Matovič Igor</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf52340775136276600010a'>Medvecká Ľudmila</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600004c'>Michalík Stanislav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf52339775136276600002d'>Mihál Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfd7e357751362dfb000019'>Mikulíková Antónia</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c04ab337751366f11000011'>Miškov Juraj</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf523407751362766000113'>Mojš Roman</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000074'>Mojžiš Marcel</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233d77513627660000ae'>Molnár Štefan</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000063'>Monček Marek</a></li>
+	   			
+	   			
+	   			</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bfa05747751361711000002'>Nicholsonová Lucia</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c05117277513671fe00000e'>Novodomcová Milota</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f7751362766000105'>Pajer Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf928007751360f3e000008'>Paľovová Anna</a></li>      			
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf58ef67751362a9200000d'>Pavelka Radoslav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000fb'>Pfeiffer Bibiána</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000043'>Pihorňa Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf919e67751360ee000001a'>Piršč Milan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf6fa4d7751363345000002'>Poliačik Martin</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000e7'>Pospíšilová Iveta</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf3b874775136139e000003'>Rajtár Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c01bb7e77513641ee000002'>Ratulovský Juraj</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f7751362766000106'>Sabolová Alena</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233f77513627660000f2'>Samák Ľuboš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfd7afa7751362e1600000a'>Šándor Marek</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c02afa77751364b6c000003'>Serej Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf52340775136276600011a'>Skotnický Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfd840e7751362e43000004'>Slašťan Juraj</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c04af677751366f4a000003'>Sliviaková Katarína</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000097'>Sloboda Vladimír</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4c07edf7775136197a00000d'>Somogyi Szilárd</a></li>
+	            <li><a href='http://www.politikaopen.sk/frontend/users/4c07a73b77513616cb000002'>Šramková Lenka</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5003e7751362678000003'>Staruch Dávid</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000088'>Stehlík Jaroslav</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000059'>Struška Karol</a></li>
+	   			
+	   			
+	   			
+	   						</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf4d2e577513625e800000a'>Suja Jaroslav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf523407751362766000126'>Sulík Richard</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bfcb60c77513628e4000002'>Švaral Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf18d0977513609c1000008'>Švec Branislav</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000057'>Švihura Richard</a></li>
+				<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600004d'>Szabó Pavol</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000b1'>Szomíková Silvia</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600005b'>Tesková Jarmila</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf52340775136276600010e'>Thomka Stanislav</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000045'>Tomčo Štefan</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233e77513627660000b4'>Tóth Roman</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b775136276600006a'>Uherčík Michal</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233d77513627660000ab'>Vajdová Jarmila</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c775136276600008c'>Valentová Adriana</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf4d7217751362601000004'>Varhoľáková Katarína</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf827717751360a1b000003'>Viskupič Jozef</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233b7751362766000066'>Viskupič Marián</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf907af7751360ee0000001'>Vojtek Tomáš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000046'>Vrchota Marcel</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000098'>Wachter Peter</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf94fb37751360fa1000002'>Worobel Tomáš</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bf5233c7751362766000095'>Zemanová Anna</a></li>
+	   			<li><a href='http://www.politikaopen.sk/frontend/users/4bfcb8c777513628e4000004'>Zima Ivan</a></li> 
+	</ul>
+</div>
+
+</div>
+
+  </body>
+</html>

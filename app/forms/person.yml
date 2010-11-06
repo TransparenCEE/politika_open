@@ -1,0 +1,148 @@
+person:
+  basic:
+    order: 0
+    title: "Vzťah k osobe"
+    fields:
+      relation:
+        order: 0
+        title: Vzťah k osobe
+        required: true
+        description: Napr. ak je blízka osoba Vašou manželkou, uveďte manželka; ak je blízka osoba Vašim dieťaťom, uveďte syn, dcéra a pod.
+      no_approvement:
+        order: 1
+        title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
+        type: check_box
+        data_type: boolean
+        description: Súhlas je potrebný iba v prípade, že blízskou osobou je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>. 
+  information:
+    order: 1
+    title: Údaje o blízkej osobe
+    fields:
+      title:
+        order: 0
+        title: Titul
+        require_unless: basic_no_approvement
+      name:
+        order: 1
+        title: Meno
+        required_unless: basic_no_approvement
+      surname:
+        order: 2
+        title: Priezvisko
+        required_unless: basic_no_approvement
+  address:
+    order: 2
+    title: Adresa blízkej osoby
+    fields:
+      state:
+        order: 0
+        title: Štát
+        required_unless: basic_no_approvement
+        type: data_select
+        data_source: geography.states
+      county:
+        order: 1
+        title: Kraj
+        required_unless: basic_no_approvement
+        type: county
+      district:
+        order: 2
+        title: Okres
+        required_unless: basic_no_approvement
+        type: district
+      town:
+        order: 3
+        title: Obec
+        required_unless: basic_no_approvement
+  ownership:
+    order: 3
+    title: "Vlastníctvo, podieľníctvo, členstvo (alebo zamestnanie) osoby v inštitúciach"
+    fields:
+      not_presented:
+        order: 0
+        title: Neuvádzam
+        type: check_box
+        data_type: boolean
+      none:
+        order: 1
+        title: "Nemá vlastníctvo, podieľníctvo, členstvo (alebo zamestnanie) osoby v inštitúciach"
+        type: check_box
+        data_type: boolean
+      not_known:
+        order: 2
+        title: "Nemám vedomosť o vlastníctve, podieľníctve, členstve (alebo zamestnanie) osoby v inštitúciach"
+        type: check_box
+        data_type: boolean
+      name:
+        order: 3
+        title: Názov/meno
+      sector:
+        order: 4
+        title: Sektor podnikania
+        type: company_sector
+      form:
+        order: 5
+        title: Podnikateľská forma
+        type: company_form
+      number:
+        order: 6
+        title: IČO
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+  institution_address:
+    order: 4
+    title: Adresa inštitúcie
+    fields:
+      state:
+        order: 0
+        title: Štát
+        type: state
+      county:
+        order: 1
+        title: Kraj
+        type: county
+      district:
+        order: 2
+        title: Okres
+        type: district
+      town:
+        order: 3
+        title: Obec
+      street:
+        order: 4
+        title: Ulica
+      zip:
+        order: 5
+        title: PSČ
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+  function:
+    order: 5
+    title: Funkcia alebo postavenie blízkej osoby v inštitúcii
+    fields:
+      function:
+        order: 0
+        title: Funkcia alebo postavenie v inštitúcii
+      share:
+        order: 1
+        title: Peňažný podiel
+      currency:
+        order: 1.5
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      percent_share:
+        order: 2
+        title: Percentuálny podiel
+      date_from:
+        order: 5
+        title: Časové obdobie od
+        type: date_select
+        data_type: date
+      date_to:
+        order: 6
+        title: Časové obdobie do
+        type: date_select
+        data_type: date
+      notes:
+        order: 7
+        title: Poznámky
+        type: text_area

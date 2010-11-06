@@ -1,0 +1,73 @@
+job:
+  employer:
+    title: Údaje o zamestnávateľovi
+    order: 0
+    fields:
+      name:
+        order: 0
+        title: Názov/Meno
+        required: true
+      sector:
+        order: 1
+        title: Sektor podnikania
+        required: true
+        type: company_sector
+      form:
+        order: 2
+        title: Podnikateľská forma
+        required_if: sector_commercial
+        type: company_form
+      number:
+        order: 3
+        title: IČO
+        required_if: sector_commercial
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      position:
+        order: 4
+        title: Pracovná pozícia vo firme
+      date_from:
+        order: 5
+        title: Časové obdobie od
+        type: month_picker
+        data_type: date
+        required: true
+      date_to:
+        order: 6
+        title: Časové obdobie do
+        type: month_picker
+        data_type: date
+           
+  employer_address:
+    title: Adresa zamestnávateľa
+    order: 1
+    fields:
+      state:
+        order: 0
+        title: Štát
+        type: state
+        required: true
+      county:
+        order: 1
+        title: Kraj
+        required: true
+        type: county
+      district:
+        order: 2
+        title: Okres
+        required: true
+        type: district
+      town:
+        order: 3
+        title: Obec
+        required: true
+      street:
+        order: 4
+        title: Ulica
+      zip:
+        order: 5
+        title: PSČ
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+      notes:
+        order: 6
+        title: Poznámky
+        type: text_area

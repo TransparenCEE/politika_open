@@ -1,0 +1,25 @@
+movable_property:
+  basic:
+    title: Súhrn hnuteľného majetku
+    fields:
+      year:
+        title: Rok
+        required: true
+        order: 0
+        type: data_select
+        data_source: time.year
+      movable_property:
+        title: Súhrn hnuteľného majetku
+        required: true
+        order: 1
+        description: Súhr hnuteľného majetku je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn hnuteľného majetku pozostáva zo súčtu súhrnnej hodnoty hotovosti, účtov a cenných papierov + odhadu aktuálnej trhovej hodnoty auta/áut + odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností nad 10 tisíc €  +jednotlivého hnuteľného majetku pod 10 tisíc €. Pod slovom aktuálny sa myslí aktuálny k roku, ku ktorému je súhrn hnuteľného majetku udávaný
+      currency:
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+        required: true
+        order: 2
+      notes:
+        title: Poznámky
+        type: text_area
+        order: 3

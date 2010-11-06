@@ -1,0 +1,88 @@
+campaign:
+  basic:
+    title: Financovanie kampane
+    fields:
+      election:
+        title: Voľby
+        type: data_select
+        data_source: election.elections
+        required: true
+        order: 0
+        description: Uveďte, akých volieb sa financovanie kampane týka
+      date:
+        order: 1
+        title: "Mesiac, rok"
+        required: true
+        description: Uveďte mesiac a rok, v ktorých sa konajú/konali voľby, ku ktorým sa financovanie kampane vzťahuje
+        data_type: date
+        type: month_picker
+      physic_persons_gifts:
+        order: 2
+        title: Dary od fyzických osôb
+        description: Uveďte súhrnnú výšku darov od fyzických osôb k dole uvedenému dátumu
+      physic_persons_gifts_currency:
+        order: 3
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      law_perosons_gifts:
+        order: 4
+        title: Dary od právnických osôb
+        description: Uveďte súhrnnú výšku darov od právnických osôb k dole uvedenému dátumu
+      law_perosons_gifts_currency:
+        order: 5
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      own_money:
+        order: 6
+        title: Vlastné finančné prostriedky
+        description: Uveďte výšku vlastných finančných prostriedkov k dole uvedenému dátumu
+      own_money_currency:
+        order: 7
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      fulfillings:
+        order: 8
+        title: Bezodplatné plnenia
+        description: Uveďte súhrnnú odhadovanú hodnotu bezodplatných plnení k dole uvedenému dátumu
+      fulfillings_currency:
+        order: 9
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      fulfilling_type:
+        order: 10
+        title: Charakter / forma bezodplatného plnenia
+        description: Uveďte charakter / formu bezodplatných plnení - napr. tlač letákov, tvorba www stránky, rozhlasový spot, inzercia v tlači a pod.
+      expenses:
+        order: 11
+        title: Výška výdavkov na kampaň
+        description: Uveďte súhrnnú výšku výdavkov použitých na kampaň k dole uvedenému dátumu
+      expenses_currency:
+        order: 12
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      expenses_type:
+        order: 13
+        title: Charakter/forma výdavkov
+        type: multiple_data_select
+        data_type: array
+        data_source: expenses.type
+        description: Uveďte, na čo konkrétne boli použíté výdavky na kampaň. Môžete zaškrtnúť ľubovoľné množstvo možností.
+      website:
+        order: 14
+        title: Odkaz na webovú stránku s údajmi o konkrétnych darcoch / poskytovateľoch bezodplatného plnenia
+        description: Uveďte odkaz na internetovú stránku s údajmi o konkrétnych darcoch / poskytovateľoch bezodplatných plnení
+      actualisation:
+        order: 15
+        title: Aktuálne k dátumu
+        data_type: date
+        type: date_select
+        description: Uveďte dátum, ku ktorému uvádzate vyššie uvedené informácie
+      notes:
+        title: Poznámky
+        order: 16
+        type: text_area

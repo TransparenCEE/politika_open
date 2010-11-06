@@ -1,0 +1,95 @@
+benefit:
+  provider:
+    title: Údaje o poskytovateľovi
+    order: 0
+    fields:
+      name:
+        order: 0
+        title: Názov/Meno
+        required: true
+      sector:
+        order: 1
+        title: Sektor podnikania
+        required: true
+        type: company_sector
+      form:
+        order: 2
+        title: Podnikateľská forma
+        required_if: sector_commercial
+        type: company_form
+      number:
+        order: 3
+        title: IČO
+        required_if: sector_commercial
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        
+  address:
+    order: 1
+    title: Adresa poskytovateľa
+    fields:
+      state:
+        order: 0
+        title: Štát
+        required: true
+        type: state
+      county:
+        order: 1
+        type: county
+        title: Kraj
+        required: true
+      district:
+        order: 2
+        title: Okres
+        required: true
+        type: district
+      town:
+        order: 3
+        title: Obec
+        required: true
+      street:
+        order: 4
+        title: Ulica
+        required: true
+      zip:
+        order: 5
+        title: PSČ
+        required: true
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+        
+  benefit:
+    order: 2
+    title: Charakter výhody
+    fields:
+      description:
+        order: 0
+        title: Popis výhody
+        required: true
+        description: Uveďte akú výhodu z funkcie, zamestnania alebo aktivity požívate/ste požívali. Napr. služobné auto, mobilný telefón, počítač, lukratívna dovolenka a pod. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
+      value:
+        order: 1
+        title: Vyjadrenie hodnoty výhody
+        required: true
+        description: Uveďte hodnotu výhody v čase nadobudnutia. Napr. obstarávacia cena zájadu, hodnota mobilného telefónu a pod. Ak sa hodnota výhody zvykovo udáva k určitému časovému obdobiu (napr. mesačný paušál pri mobilnom telefóne), uveďte hodnotu za príslúšny časový úsek (napr. mesiac, rok a pod.) a v poznámke vysvetlite, k akému časovému úseku je hodnota výhody udávaná.
+      value_currency:
+        order: 1.5
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+      date_from:
+        order: 2
+        title: Časové obdobie od
+        type: date_select
+        data_type: date
+        required: true
+        description: Uvádzajte časové obdobie, počas ktorého výhodu využívate/ste využívali. Napr. od 1.1.2004 do 31.10.2005
+      date_to:
+        order: 3
+        title: Časové obdobie do
+        type: date_select
+        data_type: date
+        description: Uvádzajte časové obdobie, počas ktorého výhodu využívate/ste využívali. Napr. od 1.1.2004 do 31.10.2005
+      notes:
+        order: 4
+        title: Poznámka
+        type: text_area

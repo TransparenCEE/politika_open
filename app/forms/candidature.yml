@@ -1,0 +1,41 @@
+candidature:
+  basic:
+    title: Kandidatúra
+    fields:
+      election:
+        title: Voľby
+        type: data_select
+        data_source: election.elections
+        required: true
+        order: 0
+        description: Uveďte, v akých voľbách kandidujete
+      date:
+        order: 1
+        title: "Mesiac, rok"
+        required: true
+        description: Uveďte mesiac a rok, v ktorom sa konajú/konali voľby
+        data_type: date
+        type: month_picker
+      function:
+        order: 2
+        title: "Funkcia, na ktorú kandiduje"
+        type: data_select
+        data_source: functions.candidate
+        required: true
+      candidated_for:
+        order: 3
+        title: "Kandiduje za stranu, hnutie, koalíciu"
+        required: true
+        type: text_field
+        type: data_select
+        data_source: parties.parties
+        allow_custom: true
+        description: Uveďte prosím skratku politickej strany, za ktorú kandidujete. V prípade koalície uvádzajte politické strany v abecednom poradí a oddeľujte ich čiarkami. <a href="http://portal.ives.sk/registre/startps.do" target="_blank">Register politických strán</a>.
+      candidated_for_town:
+        order: 4
+        title: "Kandiduje za obec, mestskú časť, vyšší územný celok"
+        description: Uveďte, za akú obec, mestskú časť, vyšší územný celok kandidujete. V prípade, že pri voľbách nezohráva úlohu, za akú obec, mestskú časť, vyšší územný celok kandidujete, uveďte adresu svojho trvalého bydliska
+      note:
+        order: 5
+        title: Poznámka
+        type: text_area

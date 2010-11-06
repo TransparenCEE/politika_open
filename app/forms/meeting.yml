@@ -1,0 +1,130 @@
+meeting:
+  basic_information:
+    order: 0
+    title: Charakter a miesto stretnutie a výška úhrady
+    fields:
+      type:
+        title: Charakter stretnutia
+        required: true
+        order: 0
+        description: Ako charakter stretnutia uveďte napr. obed, večera, posedenie pri káve, víkend na horách, športová udalosť a pod.
+      purpose:
+        title: Účel stretnutia
+        required: true
+        order: 1
+        description: Uveďte, aký bol účel Vášho stretnutia. Napr. podpísanie zmluvy, dohoda o spolupráci, podpora v kampani, koordinácia činností a pod.
+      state:
+        title: Štát
+        order: 2
+        type: state
+      town:
+        title: Mesto/obec
+        order: 3
+      date_from:
+        order: 4
+        title: Časové obdobie od
+        type: date_select
+        data_type: date
+        required: true
+      date_to:
+        order: 5
+        title: Časové obdobie do
+        type: date_select
+        data_type: date
+      payed:
+        order: 6
+        title: Hradené bolo
+        description: Uveďte, čo konkrétne Vám bolo hradené - napr. strava, drink, cesta, ubytovanie, tlmočenie, kultúrny program a pod.
+      amount:
+        order: 7
+        title: Výška úhrady
+      currency:
+        order: 7.5
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+      notes:
+        order: 8
+        title: Poznámky
+        type: text_area
+  institution:
+    order: 1
+    title: Údaje o osobe alebo inštitúcii
+    fields:
+      title_or_name:
+        order: 0
+        title: Názov/meno
+        required: true
+        description: Ak ste sa stretli s právnickou osobou, uveďte meno spoločnosti. Ak ste sa stretli s fyzickou osobou (nepodnikateľ), uveďte jej meno a priezvisko.
+      sector:
+        order: 1
+        title: Sektor podnikania
+        type: company_sector
+        description: Ak je osobou, s ktorou ste sa stretli, fyzická osoba (nepodnikateľ, neživnostník), zvoľte možnosť Iný
+      form:
+        order: 2
+        title: Podnikateľská forma
+        type: company_form
+      number:
+        order: 3
+        title: IČO
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      no_approvement:
+        order: 4
+        title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
+        type: check_box
+        data_type: boolean
+        description: Súhlas je potrebný iba v prípade, že ste sa stretli s fyzickou osobou (nepodnikateľom). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.
+      title:
+        order: 5
+        title: Titul
+      name:
+        order: 6
+        title: Meno
+        required_unless: institution_no_approvement
+        description: Uveďte meno a priezvisko osoby, s ktorou ste sa stretli.
+      surname:
+        order: 7
+        title: Priezvisko
+        required_unless: institution_no_approvement
+        description: Uveďte meno a priezvisko osoby, s ktorou ste sa stretli.
+  address:
+    order: 2
+    title: Adresa osoby alebo inštitúcie
+    fields:
+    #  person_address:
+    #    order: -1
+    #    title: Adresa osoby
+    #  institution_address:
+    #    title: Adresa inštitúcie
+    #    order: -2
+      state:
+        order: 0
+        title: Štát
+        type: state
+        required_unless: institution_no_approvement
+      county:
+        order: 1
+        title: Kraj
+        type: county
+        required_unless: institution_no_approvement
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      district:
+        order: 2
+        title: Okres
+        type: district
+        required_unless: institution_no_approvement
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      town:
+        order: 3
+        title: Obec
+        required_unless: institution_no_approvement
+      street:
+        order: 4
+        title: Ulica
+        required_unless: institution_no_approvement
+      zip:
+        order: 5
+        title: PSČ
+        required_unless: institution_no_approvement
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a> 

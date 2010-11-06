@@ -1,0 +1,12 @@
+%h2 Resetovanie hesla
+
+%p
+  == Nové heslo pre používateľa #{@user.email}:
+
+.new_password
+  = @new_password
+  
+%br
+  
+.clearfix
+  != button_link_to "‹ Späť", admin_users_path

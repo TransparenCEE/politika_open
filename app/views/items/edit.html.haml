@@ -1,0 +1,10 @@
+.clearfix
+  .fr.clearfix
+    != button_link_to "Späť", form_path(@embed.form.identifier)
+  .fl
+    %h2= @embed.settings[:title]
+
+%p!= @embed.settings[:description]
+
+= form_for @item, :builder => ListFormBuilder, :html => {:class => "inscription"}, :url => embed_item_path(@embed, @item), :method => "put" do |f|
+  = render :partial => "form"

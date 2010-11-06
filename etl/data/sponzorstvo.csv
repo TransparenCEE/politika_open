@@ -1,0 +1,38 @@
+sid,verejny_cinnitel_sid,uzivatel_sid,"ins_nazov","ins_sektor_podnikania","ins_podnikatelska_forma","ins_ico","adr_stat","adr_kraj","adr_okres","adr_obec","adr_ul_cislo","adr_psc","spo_charakter","spo_ucel_podpory","spo_datum","spo_hodnota","spo_mena","poznamky",je_fyzicka_osoba
+4,24,28,"mesto Žilina","3","","","1","Žilinský","Žilina","Žilina","Námestie obetí komunizmu 1","1001","peňažná dotácia","kultúrna aktivita","2008-2-20","1","1","Grant získal môj zamestnávateľ Artforum s.r.o. ako organizátor literárneho festivalu",0
+3,10,9,"Mrkvička Fero","","","","1","Bratislavský","Bratislava","Bratislava","Páričkova 18","82108","Budova Páričkova 18, 82108 Bratislava","Zriadenie straníckej centrály","1990-7-8","1","1","",1
+5,32,28,"mesto Žilina","3","","","1","Žilinský","Žilina","Žilina","Námestie obetí komunizmu 1","1001","peňažná dotácia","kultúrna aktivita","2008-2-20","1","1","Grant získal môj zamestnávateľ Artforum s.r.o. ako organizátor literárneho festivalu",0
+6,33,28,"mesto Žilina","3","","","1","Žilinský","Žilina","Žilina","Námestie obetí komunizmu 1","1001","peňažná dotácia","kultúrna aktivita","2008-2-20","1","1","Grant získal môj zamestnávateľ Artforum s.r.o. ako organizátor literárneho festivalu",0
+7,40,9,"Mrkvička Fero","","","","1","Bratislavský","Bratislava","Bratislava","Páričkova 18","82108","Budova Páričkova 18, 82108 Bratislava","Zriadenie straníckej centrály","1990-7-8","1","1","",1
+8,58,40,"občania","","","","1","Nulty","SR","SR","","","peňažné dary na základe overených darovacích zmlúv","kampaň pred voľbou prezidenta SR","2009-3-6","8","1","Mená fyzických osôb, ktoré finančnými darmi prispeli na kampaň pred voľbou prezidenta SR je zverejnený na: http://www.radicova.sk/kandidatura/financovanie/.",1
+9,63,40,"občania","","","","1","Nulty","SR","SR","","","peňažné dary na základe overených darovacích zmlúv","kampaň pred voľbou prezidenta SR","2009-3-6","8","1","Mená fyzických osôb, ktoré finančnými darmi prispeli na kampaň pred voľbou prezidenta SR je zverejnený na: http://www.radicova.sk/kandidatura/financovanie/.",1
+10,105,77,"BRATISLAVSKÁ VYSOKÁ ŠKOLA PRÁVA","2","18","","1","Bratislavský","Bratislava","Bratislava","","","finančný príspevok","finančný príspevok na zahraničný študijný pobyt","2008-8-21","15","3","",0
+11,422,77,"BRATISLAVSKÁ VYSOKÁ ŠKOLA PRÁVA","2","18","","1","Bratislavský","Bratislava","Bratislava","","","finančný príspevok","finančný príspevok na zahraničný študijný pobyt","2008-8-21","15","3","",0
+12,267,241,"Ing. Milan Kozický","","","","1","Nitriansky","Zlaté Moravce","Nevidzany","Horská 88","95162","peňažný dar","štúdium","2004-2-1","17","3","",1
+13,282,256,"Mládež v akcii","2","19","","1","Bratislavský","Bratislava","Bratislava","Búdková 2","81102","finančná","proejkt Heraldika","2007-2-10","17","3","mládežnícka výmena ",0
+14,368,342,"Jozef Skotnický","","","","1","Žilinský","Žilina","Žilina","","","nepeňažný dar","bezúčelový","2001-10-31","8","1","",1
+15,160,133,"Viktor a Štefánia Krištofík","","","","1","Žilinský","Žilina","Terchová ","Pod Rovňami 76","01306","dar","pozemok pod stavbu rodinného domu","1990-1-1","8","1","",1
+16,160,133,"Marta Bešková","","","","1","Žilinský","Žilina","Žilina","Vansovej 4/40","01008","pozemok","bez účelu","2009-5-15","1","1","",1
+17,320,294,"0","1","5","0","1","Banskobystrický","0","0","0","0","0","0","1990-1-1","1","1","neprijal som ",0
+18,573,133,"Viktor a Štefánia Krištofík","","","","1","Žilinský","Žilina","Terchová ","Pod Rovňami 76","01306","dar","pozemok pod stavbu rodinného domu","1990-1-1","8","1","",1
+19,573,133,"Marta Bešková","","","","1","Žilinský","Žilina","Žilina","Vansovej 4/40","01008","pozemok","bez účelu","2009-5-15","1","1","",1
+20,574,294,"0","1","5","0","1","Banskobystrický","0","0","0","0","0","0","1990-1-1","1","1","NIE",0
+21,616,241,"Peter Thuroczy","","","","1","Košický","Trebišov","Veľké Ozorovce","Cintorínska 106","07801","peňažný dar","štúdium","2004-2-1","5","2","",1
+22,624,294,"0","1","5","0","1","Banskobystrický","0","0","0","0","0","0","1990-1-1","1","1","neprijal som ",0
+23,191,164,"ESF","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Rekonštrukcia priestorov  ZSS","2007-5-1","9","1","",0
+24,191,164,"MPSVR","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Vnútorné materiálne vybavenie (polohovacie postele)","2008-10-1","8","1","",0
+25,655,164,"EFF","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Rekonštrukcia","2007-5-1","9","1","",0
+26,655,164,"MPSVR","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Vnútorné materiálne vybavenie (polohovacie postele)","2008-10-1","8","1","",0
+27,657,164,"EFF","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Rekonštrukcia","2007-5-1","9","1","",0
+28,657,164,"MPSVR","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Vnútorné materiálne vybavenie (polohovacie postele)","2008-10-1","8","1","",0
+29,663,256,"Mládež v akcii","2","19","","1","Bratislavský","Bratislava","Bratislava","Búdková 2","81102","finančná","proejkt Heraldika","2007-2-10","17","3","mládežnícka výmena ",0
+30,674,342,"Jozef Skotnický","","","","1","Žilinský","Žilina","Žilina","","","nepeňažný dar","bezúčelový","2001-10-31","8","1","",1
+31,677,241,"Ing. Milan Kozický","","","","1","Nitriansky","Zlaté Moravce","Nevidzany","Horská 88","95162","peňažný dar","štúdium","2004-2-1","17","3","",1
+35,711,164,"ESF","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Rekonštrukcia priestorov  ZSS","2007-5-1","9","1","",0
+36,711,164,"MPSVR","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Vnútorné materiálne vybavenie (polohovacie postele)","2008-10-1","8","1","",0
+37,717,164,"ESF","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Rekonštrukcia priestorov  ZSS","2007-5-1","9","1","",0
+38,717,164,"MPSVR","3","","","1","Bratislavský","Bratislava","Bratislava","","","Finančná podpora","Vnútorné materiálne vybavenie (polohovacie postele)","2008-10-1","8","1","",0
+46,784,241,"Ing. Milan Kozický","","","","1","Nitriansky","Zlaté Moravce","Nevidzany","Horská 88","95162","peňažný dar","štúdium","2004-2-1","17","3","",1
+
+
+

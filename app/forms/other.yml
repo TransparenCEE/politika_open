@@ -1,0 +1,7 @@
+other:
+  basic:
+    title: Rôzne
+    fields:
+      content:
+        title: Obsah
+        type: text_area

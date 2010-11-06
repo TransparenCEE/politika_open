@@ -1,0 +1,67 @@
+vehicle_property:
+  basic:
+    title: Auto
+    fields:
+      brand:
+        title: Značka auta
+        required: true
+        order: 0
+        description: Napr. Škoda, Opel, KIA, Toyota a pod.
+      model:
+        title: Model auta
+        required: true
+        order: 1
+        description: Napr. Fabia, Astra, Soul, Aygo
+      year:
+        title: Rok výroby
+        required: true
+        order: 2
+        type: data_select
+        data_source: time.year
+      acquirement:
+        title: Spôsob nadobudnutia
+        required: true
+        order: 3
+        type: data_select
+        data_source: property.acquirement_type
+      acquirement_date:
+        title: "Mesiac, rok nadobudnutia"
+        required: true
+        order: 4
+        type: month_picker
+        data_type: date
+      sale_date:
+        title: "Mesiac, rok predaja"
+        order: 5
+        type: month_picker
+        data_type: date
+      acquirement_value:
+        title: Nadobúdacia hodnota
+        required: true
+        order: 6
+        description: Uveďte sumu, za ktorú ste auto nadobudli. Ak bolo auto nadobudnuté darom alebo dedičstvom, uveďte 0. V prípade, že ste pri dedení auta vyplácali iné osoby, uveďte ako nadobúdaciu hodnotu túto sumu.   
+      currency:
+        title: Mena
+        type: data_select
+        data_source: money.currencies
+        required: true
+        order: 7
+      possesion_type:
+        title: Typ vlastníctva
+        required: true
+        order: 8
+        type: data_select
+        data_source: property.posession_type
+      share:
+        title: Podiel
+        required: true
+        order: 9
+        description: Uveďte aký podiel na aute máte vo svojom vlastníctve. Ak ste napr. výlučným vlastníkom auta, napíšte 1/1. Ak ste uviedli, že auto je v bezpodieľovom vlastníctve manželov, taktiež uveďte 1/1. Podiel na aute zadávajte vždy v tvare zlomku (1/1, 2/3, 7/9 a pod.)
+      mileage:
+        title: Počet najazdených kilometrov k dátumu kúpy
+        order: 10
+        description: Uvedte s toleranciou 5 000 km.
+      notes:
+        title: Poznámky
+        type: text_area
+        order: 11

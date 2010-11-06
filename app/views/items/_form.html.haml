@@ -1,0 +1,17 @@
+%ul
+  - @forms.each do |form|
+    %h3= form.title
+    - form.fields.each do |field|
+      %li.clearfix.form_row{:class => field.html_classes}
+        %label
+          = field.label
+          - if field.required?
+            *
+        != field
+        - if field.settings[:description]
+          %p.description
+            != field.settings[:description]
+    
+  %li
+    %label
+    = submit_tag "Uložiť"

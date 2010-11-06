@@ -1,0 +1,59 @@
+%h2 Zaregistrujte sa
+
+%p Z dôvodu veľkého množstvo kandidátov budeme v súvislosti s blížiacimi sa voľbami do samosprávy obcí (27.11.2010) samostatne vyhodnocovať účasť v projekte politikaopen iba pri kandidátoch, ktorí sa uchádzajú o post primátorov a poslancov krajských miest. Krátko pred konaním volieb zverejníme na tlačovej besede zoznam kandidátov, ktorí uverejnia na stránke projektu politikaopen svoj vyplnený on-line formulár a porovnáme ich s tými, ktorí sa do projektu nezapojili.    
+
+%p Projekt ostáva naďalej otvorený pre všetkých verejných funkcionárov/kandidátov, ktorí chcú zverejniť informácie o svojom majetku, záujmoch a väzbách. Naše personálne a časové možnosti spracovávať jednotlivé registrácie sú žiaľ obmedzené. Ak nekandidujete na jednu z vyššie uvedených funkcií, vopred sa prosím informujte, či máme aktuálnu kapacitu spracovať váš on-line formulár.
+
+- unless @user.errors.empty?
+  %p.error Pri ukladaní sa vyskytlo niekoľko chýb
+  %ul
+  - @user.errors.each do |field, description|
+    %li= description
+
+= form_for @user, :builder => ListFormBuilder do |f|
+  %h3 Základné informácie
+  %ul
+    = f.text_field :basic_information_first_name, :label => "Meno"
+    = f.text_field :basic_information_last_name, :label => "Priezvisko"
+    = f.text_field :basic_information_date_of_birth, :label => "Dátum narodenia"
+  %h3 Používateľské konto
+  %ul
+    = f.text_field :email, :label => "E-mail", :extra => "<p class='description'>Tento údaj slúži iba na interné účely: zrýchlenie komunikácie medzi Vami a pracovníkmi Aliancie Fair-play. Návštevníci Vášho on-line formulára tento údaj neuvidia.</p>"
+    = f.password_field :password, :label => "Heslo"
+    = f.password_field :password_confirmation, :label => "Potvrdenie hesla"
+    = f.text_field :telephone_number, :label => "Telefónne číslo", :extra => "<p class='description'>Tento údaj slúži iba na interné účely: zrýchlenie komunikácie medzi Vami a pracovníkmi Aliancie Fair-play. Návštevníci Vášho on-line formulára tento údaj neuvidia.</p>"
+  %h3
+    Typ používateľa
+    
+  %div.tooltip.type
+    Možnosť
+    %span{:style => "color:red; font-weight:bold;"} politik
+    zaškrtnite v prípade, že aktuálne zastávate (alebo ste v prebiehajúcom volebnom/funkčnom období zastávali) niektorú z nasledujúcich funkcií:
+    %ul
+      %li a) verejný funkcionár v zmysle čl. 2 ústavného zákona č. 357/2004 Z. z. o ochrane verejného záujmu pri výkone funkcií verejných funkcionárov v znení ústavného zákona č. 545/2005 Z. z.  
+      %li b) osoba vykonávajúca funkciu štatutárneho orgánu u zamestnávateľa uvedeného v § 1 ods. 2 zákona č. 552/2003 Z. z. o výkone práce vo verejnom záujme; 
+      %li c) poslanec Európskeho parlamentu; 
+      %li d) poslanec obecného zastupiteľstva; 
+      %li e) predseda alebo podpredseda politickej strany alebo politického hnutia. 
+    Možnosť
+    %span{:style => "color:red; font-weight:bold;"} kandidát
+    zaškrtnite v prípade, že kandidujete na niektorú z vyššie uvedených funkcií.
+    %span{:style => "color:red; font-weight:bold;"} Ak ste politik a zároveň kandidát, zvoľte obe možnosti.
+      
+  %ul
+    = f.check_box :is_politician, :label => "Som politik"
+    = f.check_box :is_candidate, :label => "Som kandidát"
+    
+  %h3 Pravidlá
+  %ul
+    %li.form_row{:class => @user.errors.include?(:is_accepting_rules) ? "errors" : ""}
+      %label
+        Súhlasím s 
+        = link_to "pravidlami projektu", page_path("rules"), :target => "_blank"
+        Politika Open.
+      = f.check_box :is_accepting_rules, :inline => true
+    
+    %li
+      %label
+      .fl
+        = submit_tag "Registrovať"

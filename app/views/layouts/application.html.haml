@@ -1,0 +1,37 @@
+!!!
+%html
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{:name => 'csrf-token', :content => form_authenticity_token}
+    %meta{:name => 'csrf-param', :content => 'authenticity_token'}
+    = render :partial => "layouts/meta"
+    = stylesheet_link_tag "screen", "application", "frontend"
+    = javascript_include_tag "jquery", "rails", "application"
+  %body
+    = render :partial => "layouts/header"
+    = render :partial => "layouts/menu"
+    
+    #flash
+      - flash.each do |name, message|
+        %p{:class => name}= message
+    
+    #container_main
+      - if content_for?(:secondary)
+        #secondary{:class => "clone_height", :"data-clone-weight-from" => "#primary"}
+          = yield :secondary
+        #primary
+          - if current_user && !current_user.is_active
+            %p.notice
+              Vaše konto nie je aktívne a nezobrazuje sa návštevnikom. 
+              = link_to "Aktivujte si konto.", user_path(current_user)
+          .content
+            = yield
+      - else
+        - if current_user && !current_user.is_active
+          %p.notice
+            Vaše konto nie je aktívne a nezobrazuje sa návštevnikom. 
+            = link_to "Aktivujte si konto.", user_path(current_user)
+        .content
+          = yield
+      
+    = render :partial => "layouts/footer"

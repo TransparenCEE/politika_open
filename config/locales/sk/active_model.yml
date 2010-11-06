@@ -1,0 +1,26 @@
+sk:
+  activemodel:
+    errors:
+      models:
+        user:
+          attributes:
+            telephone_number:
+              too_short: Telefónné číslo je príliš krátke
+            password_confirmation:
+              blank: Potvrdenie hesla nesmie byť prázdne
+            password:
+              confirmation: Heslá sa nezhodujú
+      messages:
+        blank: "{{attribute}} nesmie byť prázdne."
+        accepted: "{{attribute}} musí byť zaškrtnuté."
+        invalid: "{{attribute}} je v nesprávnom formáte."
+        
+    attributes:
+      user:
+        email: E-mail
+        password: Heslo
+        basic_information_first_name: Meno
+        basic_information_last_name: Priezvisko
+        basic_information_date_of_birth: Dátum narodenia
+        telephone_number: Telefónne číslo
+        is_accepting_rules: Súhlas s pravidlami

@@ -1,0 +1,8 @@
+%h1 Vyhľadávanie
+
+- form_for :search, :builder => ListFormBuilder, :url => frontend_searches_path do |f|
+  %ul
+    = f.text_field :name, :label => "Meno"
+    %li.clearfix
+      %label
+      = submit_tag "Hľadať"

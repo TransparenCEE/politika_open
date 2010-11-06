@@ -1,0 +1,44 @@
+sector:
+  - "podnikateľský sektor"
+  - "neziskový sektor"
+  - "verejný"
+  - iný
+  
+form:
+  "podnikateľský sektor":
+    - akciová spoločnosť
+    - družstvo
+    - európska spoločnosť
+    - európske združenie hospodárskych záujmov
+    - komoditná spoločnosť
+    - obecný podnik
+    - organizačná zložka podniku
+    - organizačná zložka zahraničnej osoby
+    - samostatne podnikajúca fyzická osoba
+    - samostatne zárobkovo činná osoba
+    - spoločnosť s ručením obmedzeným
+    - štátny podnik
+    - verejná obchodná spoločnosť
+    - iné
+  "neziskový sektor":
+    - nadácia
+    - občianske združenie
+    - iné
+      
+form_flat:
+    - akciová spoločnosť
+    - družstvo
+    - európska spoločnosť
+    - európske združenie hospodárskych záujmov
+    - komoditná spoločnosť
+    - obecný podnik
+    - organizačná zložka podniku
+    - organizačná zložka zahraničnej osoby
+    - samostatne podnikajúca fyzická osoba
+    - samostatne zárobkovo činná osoba
+    - spoločnosť s ručením obmedzeným
+    - štátny podnik
+    - verejná obchodná spoločnosť
+    - nadácia
+    - občianske združenie
+    - iné

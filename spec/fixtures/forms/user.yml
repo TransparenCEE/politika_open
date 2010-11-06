@@ -1,0 +1,21 @@
+forms:
+  basic_information:
+    title: "Basic Information"
+    fields:
+      name:
+      is_interesting:
+      first_name:
+      last_name:
+      date_of_birth:
+        type: date_select
+      city:
+        type: collection_select
+        source: yml.data.cities
+        
+  family:
+    title: "Family"
+    fields:
+      is_married:
+        name: "Is married?"
+        type: checkbox
+      

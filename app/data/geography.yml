@@ -1,0 +1,296 @@
+states:
+  - 
+  - Slovensko
+  - Afganistan
+  - Albánsko
+  - Alžírsko
+  - Andorra
+  - Angola
+  - Antigua a Barbuda
+  - Argentína
+  - Arménsko
+  - Austrália
+  - Azerbajdžan
+  - Bahamy
+  - Bahrajn
+  - Bangladéš
+  - Barbados
+  - Belgicko
+  - Belize
+  - Benin
+  - Bhután
+  - Bielorusko
+  - Bolívia
+  - Bosna Hercegovina
+  - Botswana
+  - Brazília
+  - Brunej
+  - Bulharsko
+  - Burkina Faso
+  - Burundi
+  - Cyprus
+  - Čad
+  - Česko
+  - Čierna Hora
+  - Čile
+  - Čína
+  - Dánsko
+  - Dominika
+  - Dominikánska republika
+  - Džibutsko
+  - Egypt
+  - Ekvádor
+  - Eritrea
+  - Estónsko
+  - Etiópia
+  - Fidži
+  - Filipíny
+  - Fínsko
+  - Francúzsko
+  - Gabon
+  - Gambia
+  - Ghana
+  - Grécko
+  - Grenada
+  - Gruzínsko
+  - Guatemala
+  - Guinea
+  - Guinea - Bissau
+  - Guyana
+  - Haiti
+  - Holandsko
+  - Honduras
+  - Chorvátsko
+  - India
+  - Indonézia
+  - Irak
+  - Irán
+  - Írsko
+  - Island
+  - Izrael
+  - Jamajka
+  - Japonsko
+  - Jemen
+  - Jordánsko
+  - Južná Afrika
+  - Kambodža
+  - Kamerun
+  - Kanada
+  - Kapverdy
+  - Katar
+  - Kazachstan
+  - Keňa
+  - Kirgizsko
+  - Kiribati
+  - Kolumbia
+  - Komory
+  - Kongo
+  - Kongo (bývalý Zair)
+  - Kórejská ľudovodemokratická republika (Severná Kórea)
+  - Kórejská republika (Južná Kórea)
+  - Kostarika
+  - Kuba
+  - Kuvajt
+  - Laos
+  - Lesotho
+  - Libanon
+  - Libéria
+  - Líbya
+  - Lichtenštajnsko
+  - Litva
+  - Lotyšsko
+  - Luxembursko
+  - Macedónsko
+  - Madagaskar
+  - Maďarsko
+  - Malajzia
+  - Malawi
+  - Maldivy
+  - Mali
+  - Malta
+  - Maroko
+  - Marshallove ostrovy
+  - Maurícius
+  - Mauritánia
+  - Mexiko
+  - Mikronézia
+  - Mjanmarsko
+  - Moldavsko
+  - Monako
+  - Mongolsko
+  - Mozambik
+  - Namíbia
+  - Nemecko
+  - Nepál
+  - Niger
+  - Nigéria
+  - Nikaragua
+  - Nórsko
+  - Nový Zéland
+  - Omán
+  - Pakistan
+  - Palau
+  - Palestína
+  - Panama
+  - Papua-Nová Guinea
+  - Paraguaj
+  - Peru
+  - Pobrežie Slonoviny
+  - Poľsko
+  - Portugalsko
+  - Rakúsko
+  - Rovníková Guinea
+  - Rumunsko
+  - Rusko
+  - Rwanda
+  - Salvádor
+  - Samoa
+  - San Maríno
+  - Saudská Arábia
+  - Senegal
+  - Seychely
+  - Sierra Leone
+  - Singapur
+  - Slovinsko
+  - Somálsko
+  - Spojené arabské emiráty
+  - Spojené kráľovstvo
+  - Spojené štáty
+  - Srbsko
+  - Srí Lanka
+  - Stredoafrická republika
+  - Sudán
+  - Surinam
+  - Svazijsko
+  - Svätá Lucia
+  - Svätý Krištof a Nevis
+  - Svätý Tomáš a Princov ostrov
+  - Svätý Vincent a Grenadíny
+  - Sýria
+  - Šalamúnove ostrovy
+  - Španielsko
+  - Švajčiarsko
+  - Švédsko
+  - Tadžikistan
+  - Taliansko
+  - Tanzánia
+  - Thajsko
+  - Togo
+  - Tonga
+  - Trinidad a Tobago
+  - Tunisko
+  - Turecko
+  - Turkménsko
+  - Tuvalu
+  - Uganda
+  - Ukrajina
+  - Uruguaj
+  - Uzbekistan
+  - Vanuatu
+  - Vatikán
+  - Venezuela
+  - Vietnam
+  - Východný Timor
+  - Zambia
+  - Zimbabwe
+  - Zvrchovaný rád maltézskych rytierov
+  
+counties:
+  -
+  - Banskobystrický
+  - Bratislavský
+  - Košický
+  - Nitriansky
+  - Prešovský
+  - Trenčiansky
+  - Trnavský
+  - Žilinský
+  
+districts:
+  "Banskobystrický":
+    - Banská Bystrica
+    - Banská Štiavnica
+    - Brezno
+    - Detva
+    - Krupina
+    - Lučenec
+    - Poltár
+    - Revúca
+    - Rimavská Sobota
+    - Veľký Krtíš
+    - Zvolen
+    - Žarnovica
+    - Žiar nad Hronom
+  "Bratislavský":
+    - Bratislava I
+    - Bratislava II
+    - Bratislava III
+    - Bratislava IV
+    - Bratislava V
+    - Malacky
+    - Pezinok
+    - Senec
+  "Košický":
+    - Gelnica
+    - Košice I
+    - Košice II
+    - Košice III
+    - Košice IV
+    - Košice - okolie
+    - Michalovce
+    - Rožňava
+    - Sobrance
+    - Spišská Nová Ves
+    - Trebišov
+  "Nitriansky":
+    - Komárno
+    - Levice
+    - Nitra
+    - Nové Zámky
+    - Šaľa
+    - Topoľčany
+    - Zlaté Moravce
+  "Prešovský":
+    - Bardejov
+    - Humenné
+    - Kežmarok
+    - Levoča
+    - Medzilaborce
+    - Poprad
+    - Prešov
+    - Sabinov
+    - Snina
+    - Stará Ľubovňa
+    - Stropkov
+    - Svidník
+    - Vranov nad Topľou
+  "Trenčiansky":
+    - Bánovce nad Bebravou
+    - Ilava
+    - Myjava
+    - Nové Mesto nad Váhom
+    - Partizánske
+    - Považská Bystrica
+    - Prievidza
+    - Púchov
+    - Trenčín
+  "Trnavský":
+    - Dunajská Streda
+    - Galanta
+    - Hlohovec
+    - Piešťany
+    - Senica
+    - Skalica
+    - Trnava
+  "Žilinský":
+    - Bytča
+    - Čadca
+    - Dolný Kubín
+    - Kysucké Nové Mesto
+    - Liptovský Mikuláš
+    - Martin
+    - Námestovo
+    - Ružomberok
+    - Turčianske Teplice
+    - Tvrdošín
+    - Žilina

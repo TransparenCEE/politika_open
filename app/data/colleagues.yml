@@ -1,0 +1,17 @@
+function:
+  - "sekretár/ sekretárka"
+  - "vodič/ vodička"
+  - "asistent/ asistentka"
+  - "ochranka"
+  - "iné"
+  
+form:
+  - "dobrovoľník"
+  - "zamestnanec"
+  - "iné"
+  
+type:
+  - "úplný"
+  - "polovičný"
+  - "čiastočný"
+  - "iné"

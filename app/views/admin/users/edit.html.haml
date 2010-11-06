@@ -1,0 +1,23 @@
+%h2.clearfix
+  .fl== Používateľ #{@user.email}
+  .fr.clearfix
+    = button_link_to "Späť", admin_users_path
+  .fr
+    &nbsp;&nbsp;
+  .fr.code
+    = @user._id
+  
+  
+= form_for [:admin, @user], :builder => ListFormBuilder do |f|
+  %h3 Nastavenia konta
+  %ul
+    = f.check_box :is_active, :label => "Aktívne konto"
+    = f.check_box :is_super_admin, :label => "Administrátor"
+  %h3 Informácie
+  %ul
+    = f.text_field :telephone_number, :label => "Telefónne číslo"
+    = f.check_box :is_candidate, :label => "Kandidát"
+    = f.check_box :is_politician, :label => "Aktívny politik"
+    %li.clearfix
+      %label
+      = f.submit "Uložiť"

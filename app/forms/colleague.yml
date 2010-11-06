@@ -1,0 +1,76 @@
+colleague:
+  form:
+    title: Forma spolupráce
+    order: 0
+    fields:
+      function:
+        order: 0
+        title: Funkcia spolupracovníka
+        required: true
+      #  type: data_select
+      #  data_source: colleagues.function
+        description: Napr. poslanecký asistent, obchodný partner, asistent, poradca a pod.
+      form:
+        order: 1
+        title: Forma spolupráce
+        description: Napr. zamestnanec, brigádnik, dobrovoľník.
+      #  type: data_select
+      #  data_source: colleagues.form
+      date_from:
+        order: 5
+        title: Časové obdobie od
+        type: month_picker
+        data_type: date
+      date_to:
+        order: 6
+        title: Časové obdobie do
+        type: month_picker
+        data_type: date
+  information:
+    title: Údaje o spolupracovníkovi
+    order: 1
+    fields:
+      no_approvement:
+        order: 0
+        title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
+        type: check_box
+        data_type: boolean
+        description: Súhlas je potrebný iba v prípade, že blízkym spolupracovníkom je fyzická osoba (nepodnikateľ). Stiahnuť Súhlas so spracovaním osobných údajov (pre tretie osoby). 
+      title:
+        order: 1
+        title: Titul
+      name:
+        order: 2
+        title: Meno
+        required_unless: information_no_approvement
+      surname:
+        order: 3
+        title: Priezvisko
+        required_unless: information_no_approvement
+  address:
+    title: Adresa blízkeho spolupracovníka
+    order: 2
+    fields:
+      state:
+        order: 0
+        title: Štát
+        required_unless: information_no_approvement
+        type: state
+      county:
+        type: county
+        order: 1
+        title: Kraj
+        required_unless: information_no_approvement
+      district:
+        order: 2
+        title: Okres
+        required_unless: information_no_approvement
+        type: district
+      town:
+        order: 3
+        title: Obec
+        required_unless: information_no_approvement
+      notes:
+        order: 4
+        title: Poznámky
+        type: text_area

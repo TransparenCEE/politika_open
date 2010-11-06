@@ -1,0 +1,15 @@
+#container_header
+  #header
+    .logo
+      %a{ :href => "http://www.politikaopen.sk" }
+        = image_tag "frontend/logo.png"
+    .navigation
+      - if logged_in?
+        = current_user.email
+        = link_to "Nastavenia", user_path(current_user)
+        - if session[:admin_presence]
+          = link_to "Vrátiť sa do administrácie", return_sessions_path, :class => "return"
+        - else
+          = link_to "Odhlásiť", session_path(1), :method => "delete"
+      - else
+        = link_to "Prihlásenie", new_session_path

@@ -1,0 +1,40 @@
+public_service:
+  basic_information:
+    title: "Verejná funkcia"
+    fields:
+      service:
+        order: 0
+        title: Verejná funkcia 
+        required: true
+        type: text_field
+        type: data_select
+        data_source: functions.candidate
+        allow_custom: true
+        description: "Verejný funkcionár na účel projektu politikaopen je fyzická osoba, ktorá je: A) verejným funkcionárom v zmysle čl. 2 ústavného zákona č. 357/2004 Z. z. o ochrane verejného záujmu pri výkone funkcií verejných funkcionárov v znení ústavného zákona č. 545/2005 Z. z. alebo kandidátom na túto funkciu; B) osobou vykonávajúcou funkciu štatutárneho orgánu u zamestnávateľa uvedeného v § 1 ods. 2 zákona č. 552/2003 Z. z. o výkone práce vo verejnom záujme; C) poslancom Európskeho parlamentu alebo kandidátom na túto funkciu; D) poslancom obecného zastupiteľstva alebo kandidátom na túto funkciu; E) predsedom alebo podpredsedom politickej strany alebo politického hnutia alebo kandidátom na túto funkciu."
+      from:
+        order: 1
+        title: Funkčné obdobie od
+        type: month_picker
+        data_type: date
+        required: true
+      to:
+        order: 2
+        title: Funkčné obdobie do
+        type: month_picker
+        data_type: date
+      candidate_for_party:
+        order: 3
+        title: Kandidoval za stranu (hnutie, koalíciu) / bol nominovaný za stranu (hnutie, koalíciu)
+        required: true
+        description: Ak Vás do funkcie nenominovala politická strana, napíšte nie som nominant strany. Ak ste nekandidovali za žiadnu politickú stranu, napíšte nezávislý kandidát. Uveďte prosím skratku politickej strany za ktorú ste kandidovali. V prípade koalície uvádzajte politické strany v abecednom poradí a oddeľujte ich čiarkami. <a href="http://portal.ives.sk/registre/startps.do" target="_blank">Register politických strán</a>.
+      member_of:
+        order: 4
+        title: Člen poslaneckého klubu
+        type: text_field
+        type: data_select
+        data_source: parties.parties
+        allow_custom: true
+      notes:
+        order: 5
+        title: Poznámky
+        type: text_area

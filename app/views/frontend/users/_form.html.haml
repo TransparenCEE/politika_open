@@ -1,0 +1,29 @@
+%h2= form.title
+%table
+  - form.fields(:except => [:photo]).each do |field|
+    %tr
+      - if field.settings[:type] == "check_box"
+        - if field.value
+          %td{:width => 300}
+            %em= field.title
+          %td
+            %strong
+              = image_tag 'check_12x10.png'
+      - else
+        %td{:width => 300}
+          %em= field.title
+        %td
+          %strong!= field.formatted_value
+          
+  - form.embeds(:visible).each do |embed|
+    - @user.send(embed.identifier).each do |item|
+      %table.box
+        - item.forms.each do |form|
+          %tr.section
+            %td{:colspan => 2}
+              %strong= form.title
+          - form.fields.each do |field|
+            %tr
+              %td{:width => 200}
+                %strong= field.title
+              %td= field.formatted_value

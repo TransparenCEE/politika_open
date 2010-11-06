@@ -1,0 +1,24 @@
+= link_to "Späť", frontend_users_path
+
+- if @is_preview
+  #flash
+    %p.notice
+      Vaše konto nie je aktivované a toto je iba ukážka.
+      = link_to "Späť", forms_path
+
+
+.clearfix
+  .fl.user_page_info
+    %h1= @user.name
+    = render :partial => "form", :object => @info
+
+  .fr
+    .photo
+      = uploaded_image(@user.value('basic_information', 'photo'), :width => 300)
+    %p== Posledná úprava: #{l(@user.updated_at, :format => :short)}
+    .clearfix
+      = button_link_to "Zdieľať na Facebooku", share_on_facebook(@user)
+  
+
+  
+= render :partial => "form", :collection => @forms

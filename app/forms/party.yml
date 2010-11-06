@@ -1,0 +1,33 @@
+party:
+  basic_information:
+    title: "Stranícka príslušnosť"
+    fields:
+      party:
+        title: Strana (hnutie)
+        required: true
+        type: data_select
+        data_source: parties.parties
+        order: 1
+        description: Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
+      position:
+        title: Funkcia v strane
+        type: text_field
+        type: data_select
+        data_source: parties.function
+        allow_custom: true
+        order: 2
+      from:
+        title: Funkčné obdobie od
+        data_type: date
+        type: month_picker
+        required: true
+        order: 3
+      to:
+        title: Funkčné obdobie do
+        data_type: date
+        type: month_picker
+        order: 4
+      notes:
+        title: Poznámky
+        order: 5
+        type: text_area

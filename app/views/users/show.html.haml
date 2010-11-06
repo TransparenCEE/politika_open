@@ -1,0 +1,95 @@
+%h2 Nastavenia používateľského účtu
+
+%h3
+  Stav konta:
+  - if @user.is_active
+    %em.active Aktívne
+  - else
+    %em.inactive Neaktívne
+- unless @user.is_active
+  %strong Vaše konto zatiaľ nie je aktívne. Jednotlivé formuláre je možné vypĺňať, ale na webe
+  %strong
+    %a{:href => "http://www.politikaopen.sk", :target => "_blank"} politikaopen
+  %strong sa pre návštevníkov zobrazia až po aktivovaní Vášho konta administrátorom projektu.
+  %p{:style => "font-weight:bold; color:red"} Upozornenie pre kandidátov v nastávajúcich voľbách do samosprávy obcí:
+  %p{:style => "font-weight:bold;"} Váš vyplnený on-line formulár sa bude zobrazovať na stránke projektu politikaopen až po oficiálnom zaregistrovaní kandidátnych listín jednotlivými volebnými komisiami (polovica októbra 2010). Po tomto termíne budú zverejnené vyplnené on-line formuláre kandidátov, ktorí nám doručili súhlas so spracovaním osobných údajov.
+  %h3 Ako si aktivovať konto
+  .clearfix
+    .fl
+      %p.address
+        Aliancia Fair-play
+        %br
+        Západný rad 39
+        %br
+        811 04 Bratislava
+    .fl.clearfix.confirmation
+      = button_link_to "Stiahnúť potvrdenie", print_user_path(:format => "pdf"), :target => "_blank"
+  %strong Stiahnite si potvrdenie o registrácii. Potvrdenie je potrebné vytlačiť, podpísať a poslať poštou na uvedenú adresu. Vaše konto bude aktivované až po tom, čo obdržíme vytlačené a podpísané potvrdenie o registrácii a overíme si Vašu totožnosť.
+- else
+  - if current_user.count_of_invalid_fields == 0
+    %p Vaše konto je aktívne a zobrazuje sa návštevnikom.
+  - else
+    %p Vaše konto je aktívne, ale pre zobrazovanie návštevníkom je potrebné vyplniť všetky formuláre.
+
+
+%br
+%h3 Nastavenie konta
+- unless @user.errors.empty?
+  %p.error Pri ukladaní sa vyskytlo niekoľko chýb
+  %ul
+  - @user.errors.each do |field, description|
+    %li= description
+
+= form_for @user, :builder => ListFormBuilder do |f|
+  %ul
+    = f.text_field :email, :label => "E-mail", :extra => "<p class='description'>Tento údaj slúži iba na interné účely: zrýchlenie komunikácie medzi Vami a pracovníkmi Aliancie Fair-play. Návštevníci Vášho on-line formulára tento údaj neuvidia.</p>"
+    = f.text_field :basic_information_first_name, :label => "Meno"
+    = f.text_field :basic_information_last_name, :label => "Priezvisko"
+    = f.password_field :password, :value => "", :label => "Heslo"
+    = f.password_field :password_confirmation, :value => "", :label => "Potvrdenie hesla"
+    = f.text_field :basic_information_date_of_birth, :label => "Dátum narodenia"
+    = f.text_field :telephone_number, :label => "Telefónne číslo", :extra => "<p class='description'>Tento údaj slúži iba na interné účely: zrýchlenie komunikácie medzi Vami a pracovníkmi Aliancie Fair-play. Návštevníci Vášho on-line formulára tento údaj neuvidia.</p>"
+    
+  %h3
+    Typ používateľa
+  
+  %div.tooltip.type
+    %h4 Kedy som politik, kedy kandidát a kedy kandidát aj politik
+    Možnosť
+    %span{:style => "color:red"} politik
+    zaškrtnite v prípade, že 
+    %span{:style => "color:red"} aktuálne zastávate (alebo ste v prebiehajúcom volebnom/funkčnom období zastávali)
+    niektorú z nasledujúcich funkcií:
+    %ul
+      %li a) verejný funkcionár v zmysle čl. 2 ústavného zákona č. 357/2004 Z. z. o ochrane verejného záujmu pri výkone funkcií verejných funkcionárov v znení ústavného zákona č. 545/2005 Z. z.  
+      %li b) osoba vykonávajúca funkciu štatutárneho orgánu u zamestnávateľa uvedeného v § 1 ods. 2 zákona č. 552/2003 Z. z. o výkone práce vo verejnom záujme; 
+      %li c) poslanec Európskeho parlamentu; 
+      %li d) poslanec obecného zastupiteľstva; 
+      %li e) predseda alebo podpredseda politickej strany alebo politického hnutia. 
+    Možnosť
+    %span{:style => "color:red"} kandidát
+    zaškrtnite v prípade, že kandidujete na niektorú z vyššie uvedených funkcií.
+    %span{:style => "color:red"} Ak ste politik a zároveň kandidát, zvoľte obe možnosti.
+  
+  %ul
+    = f.check_box :is_candidate, :label => "Kandidát"
+    = f.check_box :is_politician, :label => "Aktívny politik"
+    %li.clearfix
+      %label
+      = f.submit "Uložiť"
+      
+- content_for :secondary do
+  .sidebar
+    %br
+    %h3 Súhlas so spracovaním osobných údajov pre tretie osoby
+
+    %p Niektoré formuláre vyžadujú súhlas od tretích osôb. Toto potvrdenie si môžete stiahnuť a poslať poštou na adresu Aliancie Fair-play:
+
+    .clearfix
+      = button_link_to "Potvrdenie tretích osôb", "/data/suhlas_so_spracovanim_osobnych_udajov.pdf", :target => "_blank"
+
+    %br
+    %h3 Poučenie o existencii práv
+
+    .clearfix
+      = button_link_to "Otvoriť poučenie", frontend_page_path("poucenie_o_existencii_prav"), :target => "_blank"

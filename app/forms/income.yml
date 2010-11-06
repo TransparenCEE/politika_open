@@ -1,0 +1,33 @@
+income:
+  basic:
+    title: Súhrn príjmov za kalendárny rok
+    fields:
+      year:
+        title: Rok
+        required: true
+        order: 0
+        type: data_select
+        data_source: time.year
+        description: Súhrn hnuteľného majetku a Súhrn hotovosti, účtov a cenných papierov. Uveďte rok, ku ktorému uvádzate sumu. Uvádza za ostatný ukončený kalendárny rok.
+      amount_main:
+        title: Výška príjmu len z výkonu verejnej funkcie
+        required: true
+        order: 3
+        description: Kandidát, ktorý nezastáva verejnú funkciu uvedie 0. Uvádza sa hrubý príjem (vrátane odmien, paušálnych náhrad a pod.) k uvedenému roku. Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku
+      currency_main:
+        title: Mena
+        required: true
+        order: 2
+        type: data_select
+        data_source: money.currencies
+      amount_other:
+        title: Celková výška príjmu
+        required: true
+        order: 1
+        description: Ak nemáte príjem, uvediete 0. Uvádza sa hrubý príjem k uvedenému roku. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku.
+      currency_other:
+        title: Mena
+        required: true
+        order: 4
+        type: data_select
+        data_source: money.currencies

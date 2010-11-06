@@ -1,0 +1,40 @@
+#container_menu
+  #menu
+    %ul
+      %li
+        = link_to "Zoznam", frontend_users_path
+      %li
+        = link_to "Vyhľadávanie", new_frontend_search_path
+      %li
+        %a{ :href => frontend_page_path('prehlady') }
+          Prehľady
+      %li
+        %a{ :href => frontend_page_path('about') }
+          O projekte
+      %li
+        %a{ :href => frontend_page_path('contact') }
+          Kontakt
+      - unless logged_in?
+        %li
+          %a{ :href => new_user_path }
+            Registrácia
+      - if logged_in?
+        %li
+          %a.user{ :href => forms_path }
+            Formuláre
+        %li
+          %a.user{ :href => page_path("help") }
+            Pomocník
+        %li
+          %a.user{ :href => page_path("rules") }
+            Pravidlá
+        %li
+          %a.user{ :href => page_path("faq") }
+            FAQ
+        %li
+          %a.user{ :href => page_path("propagation") }
+            Propagácia
+        - if current_user.is_super_admin
+          %li
+            %a.admin{ :href => admin_users_path }
+              ADMIN

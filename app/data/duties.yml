@@ -1,0 +1,21 @@
+description:
+  - Majetkové práva
+  - Majetkové záväzky
+  
+acquirement_type:
+  - Dedičstvo
+  - Úver
+  - Dar
+  - Iné
+  
+possesion_type:
+  - Bezpodielové spoluvlastníctvo manželov
+  - Výlučné vlastníctvo
+  - Podieľové vlastníctvo
+  - Iné
+  
+provider:
+  - banka
+  - právnická osoba
+  - fyzická osoba - SZČO
+  - fyzická osoba

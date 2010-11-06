@@ -1,0 +1,43 @@
+description:
+  - "Byt"
+  - "Budova pre obchod a služby"
+  - "Bytový dom"
+  - "Garáž"
+  - "Chmeľnica"
+  - "Iné pozemky"
+  - "Iné stavby"
+  - "Lesný pozemok"
+  - "Nebytový priestor"
+  - "Orná pôda"
+  - "Ovocný sad"
+  - "Priemyselná budova a sklad"
+  - "Rodinný dom"
+  - "Rozostavané stavby"
+  - "Stavba na individuálnu rekreáciu"
+  - "Stavebný pozemok"
+  - "Trvalý trávnatý porast"
+  - "Vinica"
+  - "Vodná plocha"
+  - "Záhrada"
+  - "Zastavaná plocha a nádvorie"
+  - iné
+  
+acquirement_type:
+  - "Dedičstvo"
+  - "Kúpa"
+  - "Stavba"
+  - "Dar"
+  - iné
+  
+vehicle_acquirement_type:
+  - spôsob nadobudnutia - Auto
+  - "Dedičstvo"
+  - "Kúpa"
+  - "Dar"
+  - iné
+
+posession_type:
+  - Bezpodielové vlastníctvo manželov
+  - Výlučné vlastníctvo politika
+  - Podieľové vlastníctvo
+  - iné

@@ -1,0 +1,101 @@
+company_share:
+  basic_information:
+    order: 0
+    title: "Údaje o firme"
+    fields:
+      name:
+        order: 0
+        title: Názov/Meno
+        required: true
+      form:
+        order: 1
+        title: Podnikateľská forma
+        required: true
+        type: data_select
+        data_source: company.form_flat
+      number:
+        order: 2
+        title: IČO
+        required_if: form_commercial
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      connected_to_public_sector:
+        order: 3
+        title: Spoločnosť je majetkovo prepojená s verejným sektorom
+        type: check_box
+        data_type: boolean
+  address:
+    order: 1
+    title: Adresa firmy
+    fields:
+      state:
+        title: Štát
+        type: state
+        required: true
+        order: 0
+      county:
+        title: Kraj
+        type: county
+        required: true
+        order: 1
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      district:
+        title: Okres
+        required: true
+        order: 2
+        type: district
+        description: Položku je potrebné vyplniť iba v prípade, že ste v položke štát zvolili možnosť Slovensko.
+      town:
+        title: Obec
+        required: true
+        order: 3
+      street:
+        title: Ulica
+        order: 4
+      zip:
+        title: PSČ
+        order: 5
+        description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+  participation:
+    order: 2
+    title: Účasť vo firme
+    fields:
+      position:
+        title: Pozícia vo firme/funkcia
+        required: true
+        order: 0
+        description: SZČO uvedie výraz živnostník
+      share:
+        order: 1
+        title: Peňažný podiel vo firme
+        required: true
+        description: SZČO uvedie výraz 0
+      currency:
+        order: 2
+        title: Mena
+        required: true
+        type: data_select
+        data_source: money.currencies
+      percent:
+        order: 3
+        title: Percentuálny podiel vo firme
+        required: true
+        type: data_select
+        data_source: percentage.values
+        description: SZČO zvolí možnosť 100 %
+      date_from:
+        order: 4
+        title: Časové obdobie od
+        data_type: date
+        type: date_select
+        required: true
+        description: Nájdite na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      date_to:
+        order: 5
+        title: Časové obdobie do
+        data_type: date
+        type: date_select
+        description: Nájdite na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+      notes:
+        order: 6
+        title: Poznámky
+        type: text_area

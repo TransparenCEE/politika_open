@@ -1,0 +1,50 @@
+= render :partial => "forms/list"
+
+%h2= @form.title
+
+%p!= @form.description
+
+= form_for @user, :builder => ListFormBuilder, :html => {:class => "inscription", :multipart => @form.multipart}, :url => form_path(@form) do |f|
+  %ul
+    - @form.fields.each do |field|
+      - if @form.sections.keys.include?(field.identifier)
+        %h3= @form.sections[field.identifier]
+      %li.clearfix.form_row{:class => field.html_classes}
+        %label
+          = field.label
+          - if field.required?
+            *
+        != field.render
+        - if field.settings[:description]
+          %p.description
+            != field.settings[:description]
+            
+    - if @form.fields.count > 0
+      %li
+        %label
+        = submit_tag "Uložiť"
+      
+- @form.embeds(:visible).each do |embed|
+  %h3= embed.title
+  - @user.embed_items(embed.identifier).each do |item|
+    .wrapper
+      %table.box
+        - item.forms.each do |form|
+          %tr.section
+            %td{:colspan => 2}
+              %strong= form.title
+          - form.fields.each do |field|
+            %tr
+              %td{:width => 200}
+                %strong= field.title
+              %td= field.formatted_value
+      = link_to image_tag("edit.png", :alt => "Upraviť"), edit_embed_item_path(embed, item), :class => "edit" 
+      - if current_user.is_super_admin || session[:admin_presence]
+        = link_to "vymazať", embed_item_path(embed, item), :method => "delete", :confirm => "Určite chcete zmazať túto položku?"
+    
+    %br
+    %br
+  
+  %div.clearfix
+    != button_link_to "Pridať", new_embed_item_path(embed)
+  %br
