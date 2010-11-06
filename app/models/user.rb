@@ -16,8 +16,10 @@ class User
   field :is_active, :type => Boolean, :default => false
   field :is_politician, :type => Boolean
   field :is_candidate, :type => Boolean
-  field :party
-  before_save :save_party
+  
+  field :cached_candidature_party # this should be condidature_party
+  field :cached_candidature_election
+  before_save :save_cached_fields
   
   field :is_super_admin, :type => Boolean
   
@@ -136,7 +138,7 @@ class User
     method_name = form_name.to_s.pluralize
     items_for_form = self.send(method_name)
     last_by_date = items_for_form.sort_by do |item|
-      item.send(sort_method)
+      item.send(sort_method) || Date.today
     end.last
     
     last_by_date
@@ -150,14 +152,23 @@ class User
     current_item_for(:party, :basic_information_from)
   end
   
+  # Deprecated
+  def party
+    cached_candidature_party
+  end
+  
   protected
   
-  def save_party
-    self.party = if candidatures.length == 0
-      nil
+  def save_cached_fields
+    candidature = current_candidature
+    if candidature
+      self.cached_candidature_election = candidature.basic_election
+      self.cached_candidature_party = candidature.basic_candidated_for
     else
-      embed_items(:candidatures).first.basic_candidated_for
+      self.cached_candidature_election = nil
+      self.cached_candidature_party = nil
     end
+    
   end
   
 end

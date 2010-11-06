@@ -54,13 +54,10 @@
           - else
             %em Žiadna strana
              
-        %td= user.party
+        %td= user.cached_candidature_party
         
         %td
-          - if user.current_candidature
-            = user.current_candidature.basic_election
-          - else
-            %em Žiadna kandidatúra
+          = user.cached_candidature_election || "<em>Žiadna kandidatúra</em>"
         
         %td
           - if user.current_candidature

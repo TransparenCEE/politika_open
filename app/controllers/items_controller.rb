@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
     end
     if valid
       @item.save(:validate => false)
+      current_user.save(:validate => false)
       redirect_to form_path(@embed.settings[:form_identifier])
     else
       flash.now[:error] = "Položky označené červenou farbou sú povinné."

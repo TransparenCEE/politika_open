@@ -19,18 +19,7 @@ class Frontend::UsersController < Frontend::ApplicationController
   }
   
   def index
-    conditions = {:count_of_invalid_fields => 0, :is_active => true}
-    if params[:search]
-      keywords = params[:search].split(' ').collect{|k| /^#{k}/i }
-      conditions[:_keywords.in] = keywords
-    end
-    if letter = params[:letter]
-      letters = [letter] + (@@extra_chars[letter.downcase]||[])
-      letter_regexp = letters.join('|')
-      conditions[:basic_information_last_name] = /^(#{letter_regexp})/i
-    end
-    params[:sort] ||= :updated_at
-    params[:dir] ||= :asc
+    conditions = conditions_from_params
     @users = User.all(:conditions => conditions, :sort => [[sort_by, sort_direction]])
     criteria = @users
     @per_page = 20
@@ -51,5 +40,36 @@ class Frontend::UsersController < Frontend::ApplicationController
     end
     @forms = @user.visible_forms
     @info = @forms.shift
+  end
+  
+  protected
+  
+  def conditions_from_params
+    # Default
+    conditions = {:count_of_invalid_fields => 0, :is_active => true}
+    
+    # Search
+    if params[:search]
+      keywords = params[:search].split(' ').collect{|k| /^#{k}/i }
+      conditions[:_keywords.in] = keywords
+    end
+    
+    # Filter by letter
+    if letter = params[:letter]
+      letters = [letter] + (@@extra_chars[letter.downcase]||[])
+      letter_regexp = letters.join('|')
+      conditions[:basic_information_last_name] = /^(#{letter_regexp})/i
+    end
+    
+    # Sorting
+    params[:sort] ||= :updated_at
+    params[:dir] ||= :asc
+    
+    # Special filter
+    if params[:election_type] == 'samosprava_obci'
+      conditions[:cached_candidature_election] = "voľby do orgánov samosprávy obcí"
+    end
+    
+    conditions
   end
 end
