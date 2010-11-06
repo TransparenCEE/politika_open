@@ -57,7 +57,7 @@
         %td= user.cached_candidature_party
         
         %td
-          = user.cached_candidature_election || "<em>Žiadna kandidatúra</em>"
+          = user.cached_candidature_election || "<em>Žiadna kandidatúra</em>".html_safe
         
         %td
           - if user.current_candidature
