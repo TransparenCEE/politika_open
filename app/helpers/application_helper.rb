@@ -42,4 +42,12 @@ module ApplicationHelper
       params[:dir]
     end
   end
+  
+  def value_or_em(value, message)
+    if value.present?
+      value
+    else
+      "<em>#{message}</em>".html_safe
+    end
+  end
 end

@@ -9,16 +9,22 @@ class User
   field :etl_sid, :type => Integer
   field :etl_verejny_cinnitel_sid, :type => Integer
   
+  # Basic fields
   field :email
   field :password
   field :telephone_number
   
+  # Booleans
   field :is_active, :type => Boolean, :default => false
   field :is_politician, :type => Boolean
   field :is_candidate, :type => Boolean
   
-  field :cached_candidature_party # this should be condidature_party
+  # Cached fields
+  field :cached_candidature_party
   field :cached_candidature_election
+  field :cached_candidature_function
+  field :cached_current_party
+  field :cached_candidature_town
   before_save :save_cached_fields
   
   field :is_super_admin, :type => Boolean
@@ -164,11 +170,21 @@ class User
     if candidature
       self.cached_candidature_election = candidature.basic_election
       self.cached_candidature_party = candidature.basic_candidated_for
+      self.cached_candidature_function = candidature.basic_function
+      self.cached_candidature_town = candidature.basic_candidated_for_town
     else
       self.cached_candidature_election = nil
       self.cached_candidature_party = nil
+      self.cached_candidature_function = nil
+      self.cached_candidature_town = nil
     end
     
+    party = current_party
+    if party
+      self.cached_current_party = party.basic_information_party
+    else
+      self.cached_current_party = nil
+    end
   end
   
 end

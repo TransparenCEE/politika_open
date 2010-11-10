@@ -22,20 +22,21 @@
       %td.sort{:class => sort_direction_for_column(:basic_information_first_name)}
         = sort_link "Meno", :basic_information_first_name
       
-      %td
-        Aktuálna strana
+      %td.sort{:class => sort_direction_for_column(:cached_current_party)}
+        = sort_link "Politická strana", :cached_current_party
       
       %td.sort{:class => sort_direction_for_column(:party)}
         = sort_link "Kandiduje za", :party
       
-      %td
-        Kandiduje v
       
-      %td
-        Kandiduje na
+      %td.sort{:class => sort_direction_for_column(:cached_candidature_election)}
+        = sort_link "Kandiduje v", :cached_candidature_election
+
+      %td.sort{:class => sort_direction_for_column(:cached_candidature_function)}
+        = sort_link "Kandiduje na", :cached_candidature_function
         
-      %td
-        Mesto
+      %td.sort{:class => sort_direction_for_column(:cached_candidature_town)}
+        = sort_link "Kandiduje na", :cached_candidature_town
         
       %td.sort{:class => sort_direction_for_column(:updated_at)}
         = sort_link "Aktualizované", :updated_at, :desc
@@ -49,27 +50,19 @@
         %td= user.basic_information_first_name
         
         %td
-          - if user.current_party
-            = user.current_party.basic_information_party
-          - else
-            %em Žiadna strana
+          = value_or_em(user.cached_current_party, "Žiadna strana")
              
-        %td= user.cached_candidature_party
+        %td
+          = value_or_em(user.cached_candidature_party, "Žiadna strana")
         
         %td
-          = user.cached_candidature_election || "<em>Žiadna kandidatúra</em>".html_safe
+          = value_or_em(user.cached_candidature_election, "Žiadna kandidatúra")
         
         %td
-          - if user.current_candidature
-            = user.current_candidature.basic_function
-          - else
-            %em Žiadna kandidatúra
-            
+          = value_or_em(user.cached_candidature_function, "Žiadna kandidatúra")
+          
         %td
-          - if user.current_candidature
-            = user.current_candidature.basic_candidated_for_town
-          - else
-            %em Žiadna kandidatúra
+          = user.cached_candidature_town
         
         %td= l(user.updated_at, :format => :normal)
         %td= link_to "Otvoriť »", frontend_user_path(user)
