@@ -50,16 +50,16 @@
         %td= user.basic_information_first_name
         
         %td
-          = value_or_em(user.cached_current_party, "Žiadna strana")
+          = value_or_em(user.cached_current_party, "Nečlen")
              
         %td
-          = value_or_em(user.cached_candidature_party, "Žiadna strana")
+          = value_or_em(user.cached_candidature_party, "Nekandiduje")
         
         %td
-          = value_or_em(user.cached_candidature_election, "Žiadna kandidatúra")
+          = value_or_em(user.cached_candidature_election, "Nekandiduje")
         
         %td
-          = value_or_em(user.cached_candidature_function, "Žiadna kandidatúra")
+          = value_or_em(user.cached_candidature_function, "Nekandiduje")
           
         %td
           = user.cached_candidature_town
