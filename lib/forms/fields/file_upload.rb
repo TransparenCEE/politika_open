@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require 'RMagick'
 
 class Forms::Fields::FileUpload < Forms::Field
 
