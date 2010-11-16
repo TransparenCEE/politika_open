@@ -24,7 +24,7 @@ class FormsController < ApplicationController
     @form.update(params[:user])
     @form.process
     if @form.valid?
-      @user.save
+      @user.save(:validate => false)
       flash[:notice] = "Zmeny boli uložené."
       redirect_to form_path(@form.identifier)
     else
