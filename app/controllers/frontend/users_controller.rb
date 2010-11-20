@@ -1,3 +1,5 @@
+require 'csv'
+
 class Frontend::UsersController < Frontend::ApplicationController
   include Sorting
   
@@ -21,11 +23,25 @@ class Frontend::UsersController < Frontend::ApplicationController
   def index
     conditions = conditions_from_params
     @users = User.all(:conditions => conditions, :sort => [[sort_by, sort_direction]])
-    criteria = @users
-    @per_page = 20
-    @pages = (criteria.count.to_f / @per_page.to_f).ceil
-    @page = params[:page] ? params[:page].to_i : 1
-    criteria.paginate(:page => @page, :per_page => @per_page)
+    respond_to do |format|
+      format.html do
+        criteria = @users
+        @per_page = 20
+        @pages = (criteria.count.to_f / @per_page.to_f).ceil
+        @page = params[:page] ? params[:page].to_i : 1
+        criteria.paginate(:page => @page, :per_page => @per_page)
+      end
+      format.csv do
+        render :text => collection_as_csv(@users, [:basic_information_first_name,
+          :basic_information_last_name,
+          :cached_current_party,
+          :cached_candidature_party,
+          :cached_candidature_election,
+          :cached_candidature_function,
+          :cached_candidature_town,
+          :updated_at])
+      end
+    end
   end
   
   def show
@@ -71,5 +87,19 @@ class Frontend::UsersController < Frontend::ApplicationController
     end
     
     conditions
+  end
+  
+  def collection_as_csv(collection, fields)
+    output = ""
+    output << CSV.generate_line(fields)
+    output << "\n"
+    collection.each do |item|
+      values = fields.collect do |field|
+        item.send(field)
+      end
+      output << CSV.generate_line(values)
+      output << "\n" unless item == collection.last
+    end
+    output
   end
 end
