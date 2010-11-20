@@ -57,6 +57,7 @@ class User
   index_field :_id
   index_field :email
   index_field :telephone_number
+  index_field :cached_candidature_town
   
   def password=(new_password)
     if new_password.blank?
