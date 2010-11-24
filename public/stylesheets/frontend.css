@@ -7,29 +7,55 @@ img {border:none;}
 
 
 /* HEADER */  
-#container_header {margin:0px 0px 0px 0px; padding:0px; background: #009100; float:none; overflow:hidden;}
-#header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#ffffff; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px;}
-#header .logo {display:inline; margin:15px 0px 10px 0px; padding:5px 0px 0px 0px; height:39px; float:left; overflow:hidden;}
-#header .navigation {display:inline; margin:25px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#ffffff; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-weight:bold; font-size:12px; text-align:right;}
-#header a {color:#ffffff; text-decoration:none;}
+#container_header {margin:0px; padding:0px; background: transparent; float:none; overflow:hidden;}
+#header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#333333; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px;}
+#header .logo {display:inline; margin:20px 0px 15px 0px; padding:5px 0px 0px 0px; height:36px; float:left; overflow:hidden;}
+#header .navigation {display:inline; margin:50px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#333333; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-weight:bold; font-size:12px; text-align:right;}
+#header a {color:#333333; text-decoration:none;}
 #header a:hover {text-decoration:underline;}
 
 
 /* MENU */
-#container_menu {background: #009100; float:none; overflow:hidden; margin:0px; padding:5px 0px 0px 0px; font-weight:bold;}
-#menu {float:none; overflow:hidden; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#ffffff; margin:0px auto; width:1000px;}
+#container_menu {background:transparent; float:none; overflow:hidden; margin:0px; padding:0px;}
+#menu {width:1000px; margin:0px auto 10px auto; font-size:12px; text-transform:normal; border-radius: 0px; -moz-border-radius:0px; border:1px solid #065e06; background:url(/images/frontend/bckmenu.png) #009900;}
+#menu ul {list-style:none; float:none; overflow:hidden; margin:0px; padding:0px;}
+#menu li {float:left; overflow:hidden; border-right:1px solid #065e06;}
+#menu a {display:block;	text-decoration:none; margin:0px; padding:12px 10px; color:#e7f8e7; font-weight:bold; background: transparent; text-shadow:1px 1px 2px #065e06;}
+#menu a.home {font-size:14px; font-weight:bold; color:#e9f9e9; letter-spacing:1px; background: -webkit-gradient(linear, left top, left bottom, from(#10b810), to(#009900)); background: -moz-linear-gradient(top, #10b810, #009900); padding:11px 10px; border-top-left-radius:0px; border-bottom-left-radius:0px;}
+#menu a.user {text-decoration:none; margin:0px; padding:12px 10px; color:#ffffff; background:#999999;}
+#menu a.admin {text-decoration:none;  margin:0px; padding:12px 10px; color:#ffffff; background:#B61D22; text-transform:uppercase;}
+#menu a:hover {background:#009900;}
+#menu a.admin:hover {color:#ffffff; background:#D3666E;}
+
+
+/*---------- SEARCH  ----------*/
+#container_search {float:none; overflow:hidden; width:350px; background:#ffffff; border:0px solid #cccccc; margin:4px 0px 40px 43px; padding:2px;}
+#container_search .text_area {float:left; padding:0px; margin:7px 0px 0px 10px; height:30px; width:290px; font-size:18px; border:1px solid #ffffff; border:none; color:#333333;}
+#container_search .submit_button {height:40px; width:40px; border:none; background: #009900 url(/images/button_search.png); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
+#container_search form {padding:0px; margin:0px;}
+
+#home_banners a {color:#ffffff;}
+
+
+/* #menu {float:none; overflow:hidden; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#ffffff; margin:0px auto; width:1000px;}
 #menu ul {list-style:none; margin:0px; padding:0px; overflow:hidden;}
 #menu li {float:left; margin:0px 3px 0px 0px;}
 #menu a.admin {display:block; padding:5px 10px 5px 10px; font-size:13px; background:#b61d22;}
 #menu a.user {display:block; padding:5px 10px 5px 10px; font-size:13px; background:#666666;}
 #menu a {display:block; color:#ffffff; text-decoration:none; padding:5px 10px 5px 10px; font-size:13px; background:#1A1F1C;}
-#menu a:hover {display:block; color:#000000; text-decoration:none; padding:5px 10px 5px 10px; font-size:13px; background:#ffffff; color:#000000;}
+#menu a:hover {display:block; color:#000000; text-decoration:none; padding:5px 10px 5px 10px; font-size:13px; background:#ffffff; color:#000000;} */
 
 /*---------- MENU BOTTOM ---------- */
 #container_menu_bottom {margin:0px; float:none; overflow:hidden; background:none;}
 #menu_bottom {width:980px; margin:20px auto 10px auto; padding:7px 10px 7px 10px; float:none; overflow:hidden; color:#cccccc; font-size:12px; font-weight:normal; text-transform:normal; background:none; border-top:1px solid #eeeeee;}
 #menu_bottom a {color:#cccccc; text-decoration:none;}
 #menu_bottom a:hover {color:#cccccc; text-decoration:underline;}
+
+#footer {width:980px; margin:15px auto 10px auto; padding:8px 10px; background:transparent; color:#666666; font-size:11px; font-family:Arial; text-transform:normal; letter-spacing:1px; text-align:left; border-top:1px solid #dddddd; border-bottom:1px solid #dddddd; float:none; overflow:hidden;}
+#footer .navigation {float:left; overflow:hidden;}
+#footer .projects {float:right; overflow:hidden;}
+
+#donor {width:400px; margin:20px auto 10px auto; background:transparent; color:#cccccc; font-size:11px; font-family:Arial; text-transform:normal; text-align:center;}
 
 
 /*---------- CONTAINER MAIN ---------- */

@@ -1,19 +1,26 @@
-#container_menu_bottom
-  #menu_bottom
-    &copy;
-    %a{ :href => "http://www.fair-play.sk" }
-      Aliancia Fair-play
+#footer
+  .navigation
+    © 2010
+    %a{:href => "", :style => "color:#666666;"} Aliancia Fair-play
     |
-    %a{ :href => "" }
-      Zoznam
+    %a{:href => ""} Zoznam
     |
-    %a{ :href => "" }
-      Vyhľadávanie
+    %a{:href => ""} Vyhľadávanie
     |
-    %a{ :href => "" }
-      Registrácia
+    %a{:href => ""} Kontakt
     |
-    %a{ :href => "" }
-      Kontakt
+    %a{:href => ""} Prihlásenie
+  .projects
+    Projekty Aliancie Fair-play |
+    %a{:href => "http://www.bielavrana.sk"} Biela Vrana
+    |
+    %a{:href => "http://www.datanest.sk"} Datanest
+    |
+    %a{:href => "http://watchdog.fair-play.sk"} Watchdog
+    |
+    %a{:href => "http://kancelarie.fair-play.sk"} Poslanecké kancelárie
+#donor
+  Tento projekt je spolufinancovaný z finančného mechanizmu, nórskeho finančného mechanizmu a zo štátneho rozpočtu Slovenskej republiky.
+  %img{:src => "/images/frontend/logo_norske_fondy.png", :style => "margin:7px auto 0px auto; display:block; width:100px;"}
 
 = render :partial => "layouts/analytics"
