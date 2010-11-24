@@ -2,6 +2,9 @@
   #menu
     %ul
       %li
+        %a{ :href => page_path("home") }
+          Úvod
+      %li
         = link_to "Zoznam", frontend_users_path
       %li
         = link_to "Vyhľadávanie", new_frontend_search_path

@@ -29,5 +29,5 @@ Politikaopen::Application.routes.draw do |map|
   end
   resources :pages
 
-  root :to => "frontend/users#index"
+  map.root :controller => "pages", :action => "show", :id => "home"
 end
