@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Politikaopen::Application.configure do
   config.cache_classes = false
   config.whiny_nils = true

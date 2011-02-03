@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Etl
   class Rule
     def initialize(file)

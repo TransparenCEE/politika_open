@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Politikaopen::Application.routes.draw do |map|
   namespace :admin do
     resources :users do

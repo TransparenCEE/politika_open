@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Sorting
   def self.included(base)
     base.helper_method :sort_by

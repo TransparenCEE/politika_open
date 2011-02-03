@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Forms
   module Fields
     class BoundDataSelect < DataSelect

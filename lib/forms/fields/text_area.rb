@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Forms::Fields::TextArea < Forms::Field
   
   def render

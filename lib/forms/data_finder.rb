@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Forms::DataFinder
   
   include Singleton

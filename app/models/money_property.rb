@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class MoneyProperty
   
   include Mongoid::Document

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Sponsorship
   
   include Mongoid::Document

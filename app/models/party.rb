@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Party
   
   include Mongoid::Document

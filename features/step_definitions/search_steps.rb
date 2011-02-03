@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see the following searches:$/ do |expected_searches_table|
   expected_searches_table.diff!(tableish('table tr', 'td,th'))
 end

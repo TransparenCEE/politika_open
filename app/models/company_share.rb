@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CompanyShare
   
   include Mongoid::Document

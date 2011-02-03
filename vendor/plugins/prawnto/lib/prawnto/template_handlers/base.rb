@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Prawnto
   module TemplateHandlers
     class Base < ::ActionView::TemplateHandler

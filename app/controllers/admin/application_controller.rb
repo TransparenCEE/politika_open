@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Admin
   class ApplicationController < ::ApplicationController
     before_filter :admin_required

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ApplicationHelper
   def uploaded_image(filename, *args)
     unless filename.blank?

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Forms::Fields::DateSelect < Forms::Fields::TextField
   
   def setup

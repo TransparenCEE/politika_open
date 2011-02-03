@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VehicleProperty
   
   include Mongoid::Document

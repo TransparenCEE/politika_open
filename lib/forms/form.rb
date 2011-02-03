@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Forms::Form
   
   attr_accessor :identifier, :title, :fields, :embeds, :object, :is_being_validated, :order, :multipart, :description

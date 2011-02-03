@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'rubygems'
 require 'test/unit'
 require File.dirname(__FILE__) + '/template_handler_test_mocks'

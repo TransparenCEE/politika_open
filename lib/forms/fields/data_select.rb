@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Forms::Fields::DataSelect < Forms::Field
   
   def render

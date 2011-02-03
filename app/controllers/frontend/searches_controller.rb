@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Frontend
   class SearchesController < ApplicationController
     def new

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ServesPages
   def show
     path = path_for(params[:id])
