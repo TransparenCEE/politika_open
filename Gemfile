@@ -7,7 +7,6 @@ gem 'mongo', '1.1.2'
 gem 'bson_ext', '1.1.2'
 gem 'mongoid',  :git => 'git://github.com/vojto/mongoid.git'
 gem 'prawn'
-gem 'fastercsv'
 gem 'rmagick'
 
 group :test do
