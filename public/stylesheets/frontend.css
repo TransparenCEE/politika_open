@@ -1,5 +1,5 @@
 /* GENERAL */
-body {margin:0px; padding:0px; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#666666;}
+body {margin:0px; padding:0px; font-family: 'Open Sans', sans-serif; font-size:12px; color:#666666;}
 h1 {margin:0px 0px 20px 0px; padding:0px; font-size:22px; font-weight:bold; color:#333333;}
 a {color:#009900; text-decoration:none;}
 a:hover {color:#009900; text-decoration:underline;}
@@ -8,23 +8,23 @@ img {border:none;}
 
 /* HEADER */  
 #container_header {margin:0px; padding:0px; background: transparent; float:none; overflow:hidden;}
-#header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#333333; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px;}
+#header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#333333; font-family: 'Open Sans', sans-serif; font-size:12px;}
 #header .logo {display:inline; margin:20px 0px 15px 0px; padding:5px 0px 0px 0px; height:36px; float:left; overflow:hidden;}
-#header .navigation {display:inline; margin:50px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#333333; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-weight:bold; font-size:12px; text-align:right;}
+#header .navigation {display:inline; margin:50px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#333333; font-family: 'Open Sans', sans-serif; font-weight:bold; font-size:12px; text-align:right;}
 #header a {color:#333333; text-decoration:none;}
 #header a:hover {text-decoration:underline;}
 
 
 /* MENU */
-#container_menu {background:transparent; float:none; overflow:hidden; margin:0px; padding:0px;}
-#menu {width:1000px; margin:0px auto 10px auto; font-size:12px; text-transform:normal; border-radius: 0px; -moz-border-radius:0px; border:1px solid #065e06; background:url(/images/frontend/bckmenu.png) #009900;}
+#container_menu {font-family: 'Open Sans', sans-serif; background:transparent; float:none; overflow:hidden; margin:0px; padding:0px;}
+#menu {width:1000px; margin:0px auto 10px auto; font-size:12px; text-transform:normal; border:0px solid #065e06; background:#39B54A;}
 #menu ul {list-style:none; float:none; overflow:hidden; margin:0px; padding:0px;}
-#menu li {float:left; overflow:hidden; border-right:1px solid #065e06;}
-#menu a {display:block;	text-decoration:none; margin:0px; padding:12px 10px; color:#e7f8e7; font-weight:bold; background: transparent; text-shadow:1px 1px 2px #065e06;}
+#menu li {float:left; overflow:hidden; border-right:1px solid #ffffff;}
+#menu a {display:block;	text-decoration:none; margin:0px; padding:12px 17px; color:#ffffff; font-weight:bold; background: transparent; text-transform:uppercase; letter-spacing:1px;}
 #menu a.home {font-size:14px; font-weight:bold; color:#e9f9e9; letter-spacing:1px; background: -webkit-gradient(linear, left top, left bottom, from(#10b810), to(#009900)); background: -moz-linear-gradient(top, #10b810, #009900); padding:11px 10px; border-top-left-radius:0px; border-bottom-left-radius:0px;}
 #menu a.user {text-decoration:none; margin:0px; padding:12px 10px; color:#ffffff; background:url(/images/frontend/bckmenu_users.png) #009900;}
 #menu a.admin {text-decoration:none;  margin:0px; padding:12px 10px; color:#ffffff; background:#B61D22; text-transform:uppercase;}
-#menu a:hover {background:#009900;}
+#menu a:hover {background:#000000;}
 #menu a.admin:hover {color:#ffffff; background:#D3666E;}
 
 
@@ -35,6 +35,13 @@ img {border:none;}
 #container_search form {padding:0px; margin:0px;}
 
 #home_banners a {color:#ffffff;}
+
+/*---------- NEW SEARCH  ----------*/
+#container_search_new {float:none; overflow:hidden; width:690px; background:#ffffff; border:1px solid #666666; margin:4px auto 40px auto; padding:0px;}
+#container_search_new .text_area {float:left; padding:0px; margin:7px 0px 0px 10px; height:30px; width:300px; font-size:18px; border:1px solid #ffffff; border:none; color:#333333;}
+#container_search_new .submit_button {border:none; background:#39B54A; padding:11px 20px; margin:0px; cursor:pointer; float:right; color:#ffffff; font-size:18px;}
+#container_search_new .submit_button:hover {background:#000000;}
+#container_search_new form {padding:0px; margin:0px;}
 
 
 /* #menu {float:none; overflow:hidden; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size:12px; color:#ffffff; margin:0px auto; width:1000px;}
@@ -51,11 +58,12 @@ img {border:none;}
 #menu_bottom a {color:#cccccc; text-decoration:none;}
 #menu_bottom a:hover {color:#cccccc; text-decoration:underline;}
 
-#footer {width:980px; margin:15px auto 10px auto; padding:8px 10px; background:transparent; color:#666666; font-size:11px; font-family:Arial; text-transform:normal; letter-spacing:1px; text-align:left; border-top:1px solid #dddddd; border-bottom:1px solid #dddddd; float:none; overflow:hidden;}
+#footer {width:980px; margin:10px auto 10px auto; padding:8px 10px; background:#000000; color:#ffffff; font-size:11px; font-family:Arial; text-transform:normal; letter-spacing:1px; text-align:left; border-top:1px solid #dddddd; border-bottom:1px solid #dddddd; float:none; overflow:hidden;}
+#footer a {color:#ffffff;}
 #footer .navigation {float:left; overflow:hidden;}
 #footer .projects {float:right; overflow:hidden;}
 
-#donor {width:400px; margin:20px auto 10px auto; background:transparent; color:#cccccc; font-size:11px; font-family:Arial; text-transform:normal; text-align:center;}
+#donor {width:400px; margin:20px auto 10px auto; background:transparent; color:#999999; font-size:11px; font-family:Arial; text-transform:normal; text-align:center;}
 
 
 /*---------- CONTAINER MAIN ---------- */
@@ -71,6 +79,10 @@ img {border:none;}
 /*---------- SUPPORT ---------- */
 #rules li {margin:0px 0px 10px 0px;}
 
+
+
+#zastupenie_strany ul {list-style:none; margin:0px 0px 0px 0px; padding:0px; float:none; display:block; overflow:hidden;}
+#zastupenie_strany li {float:left; margin:0px 3px 0px 0px; padding:5px 0px 0px 0px; overflow:hidden;}
 
 
 
@@ -113,5 +125,162 @@ td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
 #propagation_code .code {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; padding:7px 7px 7px 7px; color:black; display:block; border:1px solid gray; background:#f1f1f1; margin:0px 0px 50px 0px;}
 
 #upozornenie {display:block; padding:20px; font-size:14px; background:#C1272D; color:#ffffff; margin:0px 0px 30px 0px; text-align:center;}
+
+
+/*---------- FRONTEND EVENT ---------- */
+#frontend_default {margin:0px; padding:0px; overflow:hidden; float:none; background:url(http://www.zavaga.sk/back.png) #dddddd;}
+#frontend_default h1 {font-family: 'Open Sans', sans-serif; font-size:28px; color:#000000; text-transform:uppercase; font-weight:bold; letter-spacing:1px; margin:0px; padding:0px;}
+
+#open_politicians {display:block; float:none; overflow:hidden;}
+#open_politicians .textbox {width:300px; margin:20px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
+
+#open_member {margin:100px 0px 0px 0px; display:block; height:750px; float:none; overflow:hidden; background:url(http://www.zavaga.sk/po_event_frontpage_dane.png) no-repeat; background-position: center 150px;}
+#open_member .textbox {float:left; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
+#open_member .textbox2 {float:right; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
+
+
+
+
+/*-----------------------------------------*/
+/*---------- FRONTEND NEW DESIGN ----------*/
+/*-----------------------------------------*/
+
+/* SLIDESHOW */
+#wrapper {width:1000px; margin:0px auto; float:none; overflow:hidden; margin:0px;}
+#wrapper .sliderbutton {float:left; width:14px; padding-top:110px}
+#wrapper .sliderbutton img {cursor:pointer; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50);}
+#wrapper .sliderbutton img:hover {cursor:pointer; opacity:1; -moz-opacity:1; filter:alpha(opacity=100);}
+
+#slideshow_container {float:none; overflow:hidden;}
+#slideshow_home {float:left; width:1000px; height:306px; background:transparent; margin:0px;}
+#slideshow_home ul {width:1000px; height:306px; list-style:none; overflow:hidden; margin:0px; padding:0px; background:transparent;}
+#slideshow_home li {width:1000px; height:306px; overflow:hidden; margin:0px; padding:0px; background:transparent;}
+/* #slideshow_home a {background:transparent; color:transparent;} */
+#slideshow_home a.obama {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_obama.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:24px; text-decoration:none;}
+#slideshow_home a.nrsr {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_infographic_nrsr.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
+#slideshow_home a.po {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_infographic_po.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
+/* #slides {width:700px; height:250px; list-style:none; overflow:hidden;}
+#slides li {width:700px; height:250px; overflow:hidden;} */
+
+#pagination {display:block; position:absolute; top:390px; width:48px; float:none; overflow:hidden; list-style:none; margin:0px 0px 0px 50px; padding:0px; z-index:1000;}
+#pagination li {float:left; cursor:pointer; width:10px; height:10px; border-radius:7px; -moz-border-radius:7px; padding:0px; background:#ffffff; margin:0px 6px 0px 0px;}
+#pagination li:hover {background:#7ac97f; opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=30);}
+#pagination li.current {background:#ffffff; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50);}
+
+
+
+/* INFO */
+#fe_info_container {display:block; float:none; overflow:hidden; margin:40px 0px 0px 0px; color:#333333;}
+#fe_info_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:470px;}
+#fe_info_container .info_column_last {display:block; width:240px; float:right; overflow:hidden; padding:0px 0px 0px 0px; margin:0px 0px 0px 0px; border-right:0px solid #dddddd;}
+#fe_info_container h2 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:0px 0px 10px 0px; padding:0px; display:block; color:#000000; overflow:hidden;}
+#fe_info_container h3 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:20px 0px 10px 0px; padding:20px 0px 0px 0px; display:block; color:#000000; overflow:hidden; border-top:1px solid #dddddd;}
+#fe_info_container .name_pic_box {background:#dddddd; overflow:hidden; padding:5px 5px; margin:5px 0px 0px 0px; color:#000000; font-size:10px;}
+#fe_info_container a.title_pic_box {font-size:14px; color:#000000;}
+#fe_info_container .name_pic_box {background:#dddddd; overflow:hidden; padding:5px 5px; margin:5px 0px 0px 0px; color:#000000; font-size:10px;}
+
+#fe_info_container .soc_net {display:block; margin:10px 0px 0px 0px; padding:10px 0px 0px 0px; border-top:1px solid #dddddd; float:none; overflow:hidden;}
+#fe_info_container a.facebook {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(../images/frontend/button_facebook.png); margin:0px 5px 0px 0px; opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70); -webkit-transition: background 0.8s ease; -moz-transition: background 0.8s ease; -o-transition: background 0.8s ease; transition: background 0.8s ease;}
+#fe_info_container a.facebook:hover {opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100);}
+#fe_info_container a.twitter {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(../images/frontend/button_twitter.png); opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70);}
+#fe_info_container a.twitter:hover {opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100);}
+
+#fe_info_container a.fe_event_img {display:block; border:none; padding:0px; width:190px; height:406px; background:url(../images/frontend/PO_event_postavicka.png); -webkit-transition: background 0.3s ease; -moz-transition: background 0.3s ease; -o-transition: background 0.3s ease; transition: background 0.3s ease;}
+#fe_info_container a.fe_event_img:hover {background-position:0 -406px;}
+
+
+#fe_info_name_container {background:#dddddd; margin:5px 0px 0px 0px; color:#000000; float:none; overflow:hidden;}
+#fe_info_name_container .title_container {display:block; float:none; overflow:hidden;}
+#fe_info_name_container .title {width:auto; float:left; padding:4px 6px; background:#ffffff; text-transform:uppercase; font-size:9px; letter-spacing:1px; color:#000000;}
+#fe_info_name_container .name_area {padding:10px 10px; display:block; float:none; overflow:hidden;}
+#fe_info_name_container a {color:#000000; }
+
+
+#fe_info_container a.donation {font-family: 'Open Sans', sans-serif; display:block; margin:10px 0px 0px 0px; padding:15px; float:none; overflow:hidden; color:#ffffff; font-size:18px; font-weight:normal; text-transform:uppercase; letter-spacing:2px; background:#39B54A; text-align:center;}
+#fe_info_container a.donation:hover {text-decoration:none;}
+
+
+
+/* POSLANCI NRSR */
+#poslanci_nrsr_container {display:block; float:none; overflow:hidden; margin:0px 0px 0px 0px; color:#333333;}
+#poslanci_nrsr_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:420px;}
+#poslanci_nrsr_container .info_column_last {display:block; width:240px; float:right; overflow:hidden; padding:0px 0px 0px 0px; margin:0px 0px 0px 0px; border-right:0px solid #dddddd;}
+#poslanci_nrsr_container h2 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:0px 0px 10px 0px; padding:0px; display:block; color:#000000; overflow:hidden;}
+#poslanci_nrsr_container h3 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:20px 0px 10px 0px; padding:20px 0px 0px 0px; display:block; color:#000000; overflow:hidden; border-top:1px solid #dddddd;}
+
+#poslanci_nrsr_name_container {background:#dddddd; margin:5px 0px 0px 0px; color:#000000; float:none; overflow:hidden;}
+#poslanci_nrsr_name_container ol {margin:0px 0px 0px 30px; padding:0px;}
+#poslanci_nrsr_name_container .title_container {display:block; float:none; overflow:hidden;}
+#poslanci_nrsr_name_container .title {width:auto; float:left; padding:4px 6px; background:#ffffff; text-transform:uppercase; font-size:9px; letter-spacing:1px; color:#000000;}
+#poslanci_nrsr_name_container .name_area {padding:10px 10px; display:block; float:none; overflow:hidden;}
+#poslanci_nrsr_name_container a {color:#000000; }
+
+
+/* CHARTS */
+#fe_charts_container {display:block; float:none; overflow:hidden; margin:40px 0px 0px 0px; padding:40px 0px 0px 0px; color:#000000; border-top:1px solid #dddddd;}
+#fe_charts_box_left {background:#ffffff; margin:0px 0px 0px 0px; color:#000000; float:left; overflow:hidden; padding:0px; width:50%; height:350px;}
+#fe_charts_box_right {background:#ffffff; margin:0px 0px 0px 0px; color:#000000; float:left; overflow:hidden; padding:0px; width:50%; height:350px;}
+#fe_charts_title_container {display:block; float:none; overflow:hidden;}
+#fe_charts_title_container .title {width:auto; float:left; padding:8px 10px; background:#39B54A; text-transform:uppercase; font-size:12px; letter-spacing:1px; color:#ffffff;}
+#fe_charts_area {padding:10px 10px; display:block; float:none; overflow:hidden; margin:0px;}
+
+
+/* SEARCH FRONTEND */
+#fe_search_area {display:block; float:none; overflow:hidden; margin:0px 0px 20px 0px; padding:0px 0px 20px 0px; color:#333333; background:transparent; border-bottom:1px solid #dddddd; font-size:10px;}
+#fe_search_container {float:none; overflow:hidden; width:234px; background:#ffffff; border:1px solid #dddddd; margin:0px 0px 3px 0px; padding:1px;}
+#fe_search_container .text_area {float:left; padding:0px; margin:8px 0px 0px 10px; height:20px; width:170px; font-size:14px; border:1px solid #ffffff; border:none; color:#000000;}
+#fe_search_container .submit_button {height:35px; width:35px; border:none; background: #ffffff url(/images/button_search_35x35.png); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
+#fe_search_container form {padding:0px; margin:0px; overflow:hidden;}
+
+
+
+/* NRSR VS. POLITIKAOPEN INFOGRAPHIC */
+#po_vs_nrsr_container {display:block; margin:10px 0px 0px 0px; padding:0px; width:50%; float:left; overflow:hidden;}
+
+
+
+
+
+
+/*-----------------------------------------*/
+/*------------- OBAMA PROFILE -------------*/
+/*-----------------------------------------*/
+
+#obama_notice {display:block; padding:10px 15px; margin:0px 0px 20px 0px; background:#F00; color:#ffffff; opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70); text-align:center; font-family: 'Open Sans', sans-serif; font-size:14px; font-weight:bold; text-transform:uppercase; letter-spacing:1px;}
+
+
+#obama_navigation {display:block; width:238px; float:left; margin:0px 0px 0px 0px; background:transparent;}
+#obama_navigation ul {list-style:none; float:none; overflow:hidden; margin:0px; padding:0px;}
+#obama_navigation li {overflow:hidden;}
+#obama_navigation a {display:block; background:#333333; padding:6px 9px; color:#ffffff; margin:0px; text-decoration:none; border-bottom:1px solid #cccccc; text-transform:normal; font-size:12px; letter-spacing:0px;}
+#obama_navigation a:hover {background:#cccccc; color:#333333;}
+
+
+#obama_profile {display:block; margin:0px 0px 0px 0px; padding:0px 0px 0px 10px; float:right; width:740px; border-left:1px solid #F0EFD1;}
+#obama_profile a {color:#887725;}
+#obama_profile ul {list-style:circle; margin:0px 0px 0px 15px; padding:0px;}
+#obama_profile table {width:100%; margin:0px 0px 30px 0px; padding:0px; border:0px; background:#fdfdef; color:#000000; font-family: 'Open Sans', sans-serif; border-collapse: collapse;}
+#obama_profile td {vertical-align:text-top; vertical-align:top; padding:8px 12px; border-bottom:1px solid #F0EFD1; color:#000000; font-weight:bold;}
+#obama_profile td.item {color:#333333; font-size:10px; letter-spacing:1px; text-transform:uppercase; width:300px; border-right:1px solid #F0EFD1; font-weight:normal;}
+#obama_profile tr {background:transparent; vertical-align:top; border-bottom:1px solid #ffffff;}
+#obama_profile .obama_head {font-family: 'Open Sans', sans-serif; font-size:20px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; color:#000000; background:#F0EFD1; padding:10px 15px; margin:0px 0px 0px 0px; float:none; overflow:hidden;}
+#obama_profile .sub_headline {font-family: 'Open Sans', sans-serif; font-size:10px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; color:#000000; background:#F0EFD1;}
+#obama_profile h2 {display:block; width:100%; font-family: 'Open Sans', sans-serif; font-size:14px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; color:#000000; background:#F0EFD1; padding:10px 15px; margin:30px 0px 5px 0px; float:none; overflow:hidden;}
+#obama_profile .obama_photo {display:block; height:200px; position:absolute; top:325px; margin:0px 0px 0px 510px; padding:5px; border:1px solid #F0EFD1; background:#ffffff; overflow:hidden; float:none;}
+
+#obama_profile .top_button_container {display:block; float:none; background:transparent; padding:0px; margin:-30px 0px 0px 0px; overflow:hidden;}
+#obama_profile a.top_button {display:block; width:auto; float:right; background:#F0EFD1; color:#000000; font-size:9px; text-transform:normal; letter-spacing:1px; padding:10px 8px; margin:0px; overflow:hidden; text-decoration:none;}
+#obama_profile a.top_button:hover {background:#CFBA58;}
+
+
+
+
+
+
+
+
+
+
+
 
 
