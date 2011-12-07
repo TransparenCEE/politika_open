@@ -1,0 +1,13 @@
+%h1 Prihlásenie
+
+= form_tag sessions_path, :builder => ListFormBuilder, :class => "inscription" do
+  %ul
+    %li.clearfix
+      %label E-mail
+      = text_field_tag "email"
+    %li.clearfix
+      %label Heslo
+      = password_field_tag "password"
+    %li.clearfix
+      %label
+      = submit_tag "Prihlásiť sa"

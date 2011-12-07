@@ -7,6 +7,11 @@
       %li
         = link_to "Zoznam", frontend_users_path
       %li
+        = link_to "Vyhľadávanie", new_frontend_search_path
+      %li
+        %a{ :href => frontend_page_path('prehlady') }
+          Prehľady
+      %li
         %a{ :href => frontend_page_path('about') }
           O projekte
       %li

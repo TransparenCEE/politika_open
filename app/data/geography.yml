@@ -197,6 +197,7 @@ states:
   
 counties:
   -
+  - USA
   - Banskobystrický
   - Bratislavský
   - Košický
@@ -207,6 +208,8 @@ counties:
   - Žilinský
   
 districts:
+  "USA":
+    - Washington D.C.
   "Banskobystrický":
     - Banská Bystrica
     - Banská Štiavnica
