@@ -15,7 +15,7 @@
   .fr
     .photo
       = uploaded_image(@user.value('basic_information', 'photo'), :width => 300)
-    %p== Posledná úprava: #{l(@user.updated_at, :format => :short)}
+    / %p== Posledná úprava: #{l(@user.updated_at, :format => :short)}
     .clearfix
       = button_link_to "Zdieľať na Facebooku", share_on_facebook(@user)
   

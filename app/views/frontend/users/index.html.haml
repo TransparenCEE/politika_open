@@ -38,8 +38,8 @@
       %td.sort{:class => sort_direction_for_column(:cached_candidature_town)}
         = sort_link "Mesto", :cached_candidature_town
         
-      %td.sort{:class => sort_direction_for_column(:updated_at)}
-        = sort_link "Aktualizované", :updated_at, :desc
+      /%td.sort{:class => sort_direction_for_column(:updated_at)}
+      /  = sort_link "Aktualizované", :updated_at, :desc
         
       %td
       
@@ -64,7 +64,7 @@
         %td
           = user.cached_candidature_town
         
-        %td= l(user.updated_at, :format => :normal)
+        /%td= l(user.updated_at, :format => :normal)
         %td= link_to "Otvoriť »", frontend_user_path(user)
 
   - if @pages > 0
