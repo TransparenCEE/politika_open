@@ -51,17 +51,30 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
+    daemons (1.1.4)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    eventmachine (0.12.10)
     haml (3.0.23)
     highline (1.6.2)
     i18n (0.4.2)
+    json (1.6.4)
     mail (2.2.9)
       activesupport (>= 2.3.6)
       i18n (~> 0.4.1)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailcatcher (0.2.4)
+      eventmachine
+      haml
+      i18n
+      json
+      mail
+      sinatra
+      skinny (>= 0.1.2)
+      sqlite3-ruby
+      thin
     mime-types (1.16)
     mocha (0.9.9)
       rake
@@ -114,7 +127,21 @@ GEM
       rspec-expectations (~> 2.0.1)
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
+    sinatra (1.2.7)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    skinny (0.2.0)
+      eventmachine (~> 0.12)
+      thin (~> 1.2)
+    sqlite3 (1.3.5)
+    sqlite3-ruby (1.3.3)
+      sqlite3 (>= 1.3.3)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.3)
+    tilt (1.3.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
@@ -128,6 +155,7 @@ DEPENDENCIES
   capistrano
   capistrano-ext
   haml
+  mailcatcher
   mocha
   mongo (= 1.1.2)
   mongoid!

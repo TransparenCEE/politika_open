@@ -25,6 +25,7 @@ namespace :deploy do
   
   desc "Symlink shared resources on each release"
   task :symlink_shared, :roles => :app do
+    run "ln -nfs #{shared_path}/config/initializers/notification_mailing_list.rb #{release_path}/config/initializers/notification_mailing_list.rb"
     run "ln -nfs #{shared_path}/config/initializers/mongoid_config.rb #{release_path}/config/initializers/mongoid_config.rb"
     run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
   end

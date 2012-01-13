@@ -17,3 +17,5 @@ group :test do
   gem 'rspec-rails', ">= 2.0.0.beta.1"
   gem 'mocha'
 end
+
+gem 'mailcatcher', group: :development

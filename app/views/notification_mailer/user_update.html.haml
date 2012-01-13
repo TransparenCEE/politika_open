@@ -1,0 +1,16 @@
+%h1= "Pouzivatel #{@user.email} aktualizoval svoje udaje: "
+
+- @user.forms.each do |form|
+  %h2= form.identifier
+  %ul
+    - form.fields.each do |field|
+      %li= "#{field.title}: #{field.value}"
+    - form.embeds(:visible).each do |embed|
+      - @user.embed_items(embed.identifier).each do |item|
+        - item.forms.each do |form|
+          %li
+            %h3= form.title
+            %ul
+              - form.fields.each do |field|
+                %li= "#{field.title}: #{field.value}"
+          
