@@ -1,4 +1,4 @@
-%h1= "Pouzivatel #{@user.email} aktualizoval svoje udaje: "
+%h1= "Pouzivatel #{@user.email} #{@new_user ? 'vytvoril' : 'aktualizoval'} svoje udaje: "
 
 - @user.forms.each do |form|
   %h2= form.identifier

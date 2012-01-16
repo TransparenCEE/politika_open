@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       success = false
     end
     if success
+      NotificationMailer.user_update(@user, true).deliver
       log_in!(@user)
       redirect_to user_path(@user)
     else
