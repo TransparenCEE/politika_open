@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   
   before_filter :login_required
   before_filter :prepare
-  before_filter :set_timestamp_recording, :only => [:create, :update]
+  # before_filter :set_timestamp_recording, :only => [:create, :update]
 
   def new
     @item = @model_class.new

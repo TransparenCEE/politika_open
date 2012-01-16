@@ -3,7 +3,7 @@ class FormsController < ApplicationController
   
   before_filter :login_required
   before_filter :find_forms
-  before_filter :set_timestamp_recording, :only => :update
+  # before_filter :set_timestamp_recording, :only => :update
   
   def index
     

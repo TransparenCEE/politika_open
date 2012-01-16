@@ -3,7 +3,7 @@ module Admin
   class UsersController < ApplicationController
     include Sorting
 
-    before_filter :set_timestamp_recording, :only => [:update, :activate, :reset]
+    # before_filter :set_timestamp_recording, :only => [:update, :activate, :reset]
     
     def index
       criteria = User.criteria.order_by([[sort_by, sort_direction]])
