@@ -1,0 +1,5 @@
+Mongoid.configure do |config|
+  config.master = Mongo::Connection.new("localhost").db("politikaopen_production")
+end
+
+Mongoid::Config.instance.reconnect_time = 10
