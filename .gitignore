@@ -6,3 +6,4 @@ config/initializers/mongoid_config.rb
 public/uploads/*
 tmp/*
 backup/*
+.DS_Store
