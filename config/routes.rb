@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-Politikaopen::Application.routes.draw do |map|
+Politikaopen::Application.routes.draw do
   namespace :admin do
     resources :users do
       member do
@@ -30,5 +30,5 @@ Politikaopen::Application.routes.draw do |map|
   end
   resources :pages
 
-  map.root :controller => "pages", :action => "show", :id => "home"
+  root :controller => "pages", :action => "show", :id => "home"
 end
