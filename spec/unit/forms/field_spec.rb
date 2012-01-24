@@ -82,7 +82,7 @@ describe Forms::Field do
     end
   end
   
-  describe  ".has_errors?"
+  describe  ".has_errors?" do
     context "when has errors" do
       
     end
