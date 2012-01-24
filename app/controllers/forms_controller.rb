@@ -10,12 +10,8 @@ class FormsController < ApplicationController
   end
   
   def show
-    # Forms
-    @finder = Forms::FormFinder.instance
-    
-    # User
     @user = current_user
-    @form = @user.forms.find{|f|f.identifier.to_s == params[:id].to_s}
+    @form = find_form(@user, params[:id])
     raise "Can't find form with ID #{params[:id]}" unless @form
   end
   
@@ -35,7 +31,10 @@ class FormsController < ApplicationController
     end
   end
   
-  protected
+protected
+  def find_form(user, identifier)
+    user.forms.find{|f|f.identifier.to_s == identifier.to_s}
+  end
   
   def find_forms
     @all_forms = current_user.visible_forms

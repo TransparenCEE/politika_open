@@ -1,22 +1,15 @@
 # -*- encoding : utf-8 -*-
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe FormsController do
+  let(:visible_forms) { stub('visible_forms') }
+  let(:current_user) { stub(visible_forms: visible_forms)}
+  before { controller.stub(:current_user).and_return(current_user) }
   
   describe "listing" do
-    before :all do
-      # Login some default user
-      @user = User.create(:email => "test@test.com", :password => "test", :password_confirmation => "test")
-    end
-
     it "should show all forms for user" do
       get :index
-      response.should be_success
-      assigns(:finder).should be_instance_of(Forms::FormFinder)
-      assigns(:forms).should be_instance_of(Array)
-      assigns(:forms).each do |form|
-        form.should be_instance_of Forms::Form
-      end
+      assigns(:all_forms).should == visible_forms
     end
   end
   
@@ -24,16 +17,11 @@ describe FormsController do
     it "should load some form" do
       mock_finder = mock('form_finder')
       mock_form   = mock('form')
-      mock_form.stubs(:title).returns("mock form title")
-
-      mock_finder.expects(:find_by_identifier).with("some_form").returns(mock_form)
-      
-      Forms::FormFinder.stubs(:finder_with_file).returns(mock_finder)
+      controller.stub(:find_form).and_return(mock_form)
       
       get :show, :id => "some_form"
-      
       assigns(:form).should == mock_form
-      assigns(:user).should be_instance_of(User)
+      assigns(:user).should == current_user
     end
   end
   
