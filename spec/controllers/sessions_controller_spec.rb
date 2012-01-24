@@ -11,16 +11,14 @@ describe SessionsController do
   end
 
   describe "POST create" do
+    let(:user) { stub('user') }
 
     it "should log user in" do
-      user = mock
-      User.stub(:authenticate).and_return(user)
-      User.should_receive(:authenticate).with("test@user.com", "some_password")
+      User.should_receive(:authenticate).with("test@user.com", "some_password").and_return(user)
+      controller.should_receive(:log_in!).with(user)
       
       post :create, :email => "test@user.com", :password => "some_password"
-      
-      session[:current_user].should == user.id
-      response.should redirect_to(forms_path)
+      response.should redirect_to(user_path(user))
     end
 
   end
