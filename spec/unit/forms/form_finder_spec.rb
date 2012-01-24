@@ -9,20 +9,17 @@ module Forms
     
     describe "returning instance" do
       it "should return an instance" do
-        raise Config.instance.forms_directory
         FormFinder.instance.should be_instance_of FormFinder
       end
     end
     
     describe "finding forms for class" do
-      before :each do
-        @finder = FormFinder.instance
-      end
+      let(:finder) { FormFinder.instance }
       
       it "should find forms for User" do
-        forms = @finder.forms_for(User)
+        forms = finder.forms_for(User)
         forms.should be_kind_of(Array)
-        forms.size.should == 2
+        forms.size.should == 20
       end
     end
   end
