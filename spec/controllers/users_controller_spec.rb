@@ -10,11 +10,11 @@ describe UsersController, "creating account" do
   
   it "should create new account, log it in and redirect to forms list" do
     @user = mock("user")
-    @user.stubs(:id).returns("user_id")
-    @user.expects(:save).returns(true)
-    @user.stubs(:model_name).returns("user")
+    @user.stub(:id).and_return("user_id")
+    @user.should_receive(:save).and_return(true)
+    @user.stub(:model_name).and_return("user")
     
-    User.expects(:new).returns(@user)
+    User.should_receive(:new).and_return(@user)
     
     post :create, :user => {:email => "test@test.com"}
     session[:current_user].should == "user_id"

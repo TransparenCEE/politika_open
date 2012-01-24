@@ -16,6 +16,6 @@ def create_person(first_name, last_name)
   person = User.new(:basic_information_first_name => first_name,
                       :basic_information_last_name => last_name,
                       :is_active => true)
-  person.expects(:count_invalid_fields).returns(0)
+  person.should_receive(:count_invalid_fields).and_return(0)
   person.save(false)
 end

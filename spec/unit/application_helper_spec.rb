@@ -7,12 +7,12 @@ describe ApplicationHelper do
   
   describe '#uploaded_image' do
     it 'returns path to uploaded image' do
-      self.expects(:image_tag).with('/uploads/my_image').returns('path')
+      self.should_receive(:image_tag).with('/uploads/my_image').and_return('path')
       uploaded_image('my_image').should == 'path'
     end
 
     it 'returns path to placeholder image' do
-      self.stubs(:image_tag).with('photo-placeholder.png').returns('placeholder-path')
+      self.stub(:image_tag).with('photo-placeholder.png').and_return('placeholder-path')
       uploaded_image(nil).should == 'placeholder-path'
       uploaded_image('').should == 'placeholder-path'
     end
