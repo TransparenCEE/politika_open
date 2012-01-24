@@ -114,7 +114,7 @@ class User
   
   def type_picked
     unless is_politician || is_candidate
-      errors.add_to_base "Vyberte si či ste politik, kandidát, alebo oboje."
+      errors.add(:base, "Vyberte si či ste politik, kandidát, alebo oboje.")
     end
   end
   
