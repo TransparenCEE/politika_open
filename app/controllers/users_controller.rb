@@ -42,7 +42,12 @@ class UsersController < ApplicationController
   
   def print
     respond_to do |wants|
-      wants.pdf { render :layout => false }
+      wants.pdf do
+        pdf = AffidavitPdf.new(current_user)
+        send_data pdf.render, filename: 'cestne_prehlasenie.pdf',
+                              type: 'application/pdf',
+                              disposition: 'inline'
+      end
     end
   end
   
