@@ -14,6 +14,12 @@ gem 'capistrano-ext'
 
 group :development, :test do
   gem 'rspec-rails'
+  
+  gem 'database_cleaner'
+  gem 'capybara'
+	gem 'cucumber-rails'
+  gem 'launchy'    # So you can do Then show me the page
+  gem 'mocha'
 end
 
 gem 'mailcatcher', group: :development
