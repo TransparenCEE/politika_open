@@ -1,105 +1,93 @@
 # -*- encoding : utf-8 -*-
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 require 'digest/sha1'
 
 describe User, "basic features" do
   
-  before :each do
-    User.destroy_all
+  # FIXME: use ddatabasecleaner for this
+  before { User.destroy_all }
+  
+  let(:init_sample_user) { User.new(email: "some@email.com", password: 'blah', password_confirmation: 'blah') }
+  let(:valid_user) do
+    init_sample_user.basic_information_first_name = 'first_name'
+    init_sample_user.basic_information_last_name = 'last_name'
+    init_sample_user.basic_information_date_of_birth = '1.1.2000'
+    init_sample_user.telephone_number = '123456'
+    init_sample_user.is_politician = true
+    init_sample_user
   end
   
-  def init_sample_user
-    user = User.new
-    user.email = "some@email.com"
-    user.password = "blah"
-    user.password_confirmation = "blah"
-    user
+  describe 'initialization' do
+    subject { init_sample_user }
+    
+    it { should_not be_nil }
+    its(:email) { should == "some@email.com"}
+    its(:password) { should == 'blah' }
+    its(:password_confirmation) { should = 'blah' }
+    its(:save) { should == false}
   end
   
-  it "should initialize new model" do
-    user = User.new
-  end
-  
-  it "should initialize new model and have fields working" do
-    user = User.new
-    user.email
-    user.password
-    user.email = "some@email.com"
-    user.password = "blahblah"
-    user.password_confirmation = "blahblah"
-  end
-  
-  it "should not save when not valid" do
-    user = User.new
-    user.save.should == false
-  end
-  
-  it "should not save when password don't match" do
-    user = init_sample_user
-    user.password_confirmation = "some bullshit"
-    user.should_not be_valid
-    user.save.should == false
-  end
-  
-  it "should save with everything valid" do
-    user = init_sample_user
-    user.save.should == true
-  end
-  
-  describe "password encoding" do
-    it "should encode password after saving" do
-      user = init_sample_user
-      user.password.should == "blah"
-      user.save
-      user.password.should == Digest::SHA1.hexdigest("blah")
+  describe 'validation' do
+    subject { init_sample_user }
+    
+    it "should save with everything valid" do
+      valid_user.should be_valid
     end
     
-    it "should not encode password twice when saving twice" do
-      user = init_sample_user
-      user.password.should == "blah"
-      user.save
-      user.save
-      user.password.should == Digest::SHA1.hexdigest("blah")
+    it "should not save when password don't match" do
+      valid_user.password_confirmation = "some bullshit"
+      
+      valid_user.should be_invalid
     end
+    
+    describe "password encoding" do
+      it "should encode password after saving" do
+        valid_user.save
+        valid_user.password.should == Digest::SHA1.hexdigest("blah")
+      end
+      
+      it "should not encode password twice when saving twice" do
+        valid_user.save
+        valid_user.save
+        valid_user.password.should == Digest::SHA1.hexdigest("blah")
+      end
+    end
+
   end
   
-  it "should authenticate by email and password" do
-    User.authenticate("test@test.com", "test").should == false
-    user = User.create!(:email => "test@test.com", :password => "test", :password_confirmation => "test")
-    User.authenticate("test@test.com", "test").should == user
+  describe 'authentication' do
+    it 'should not authenticate a user that is not in the db' do
+      User.authenticate("test@test.com", "test").should == false
+    end
+  
+    it "should authenticate by email and password" do
+      password = valid_user.password
+      email = valid_user.email
+      valid_user.save
+      User.authenticate(email, password).should == valid_user
+    end
   end
-end
-
-describe User, "updating" do
-  it "should set basic information" do
-    @user = User.new
-    @user.write_attributes({:basic_information => {:name => "Vojto"}})
-    @user.save(false)
-    # @user.basic_information = {:name => "Vojto"}
-    # @user.save
-    @user.basic_information.should_not be_nil
-    @user.basic_information[:name].should == "Vojto"
+ 
+  describe "updating" do
+    it "should set basic information" do
+      valid_user.write_attributes({:basic_information => {:name => "Vojto"}})
+      valid_user.save
+      
+      valid_user.basic_information[:name].should == "Vojto"
+    end
   end
-end
-
-describe User, "attributes" do
-  it "should read value" do
-    @user = User.new
-    @user.write_attributes({:basic_information_name => "Vojto"})
-    @user.save(false)
-    @user.value(:basic_information, :name).should == "Vojto"
-  end
+ 
+ describe "attributes" do
+   it "should parse boolean value" do
+    valid_user.write_attributes({:basic_information_is_interesting => "1"})
+    valid_user.save
+    valid_user.boolean_value(:basic_information, :is_interesting).should == true
     
-  it "should parse boolean value" do
-    @user = User.new
-    @user.write_attributes({:basic_information_is_interesting => "1"})
-    @user.save(false)
-    @user.boolean_value(:basic_information, :is_interesting).should == true
+    valid_user.basic_information_is_interesting = "0"
+    valid_user.boolean_value(:basic_information, :is_interesting).should == false
     
-    @user.basic_information_is_interesting = "0"
-    @user.boolean_value(:basic_information, :is_interesting).should == false
-    
-    @user.basic_information_is_interesting = ""
-    @user.boolean_value(:basic_information, :is_interesting).should == false
-  end
+    valid_user.basic_information_is_interesting = ""
+    valid_user.boolean_value(:basic_information, :is_interesting).should == false
+   end
+ end
 end
