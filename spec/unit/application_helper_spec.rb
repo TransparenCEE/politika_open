@@ -10,11 +10,11 @@ describe ApplicationHelper do
       self.should_receive(:image_tag).with('/uploads/my_image').and_return('path')
       uploaded_image('my_image').should == 'path'
     end
-
-    it 'returns path to placeholder image' do
-      self.stub(:image_tag).with('photo-placeholder.png').and_return('placeholder-path')
-      uploaded_image(nil).should == 'placeholder-path'
-      uploaded_image('').should == 'placeholder-path'
+    
+    context 'placeholder' do
+      before { self.should_receive(:image_tag).with('photo-placeholder.png').and_return('placeholder-path') }
+      it { uploaded_image(nil).should == 'placeholder-path' }
+      it { uploaded_image('').should == 'placeholder-path' }
     end
   end
 
