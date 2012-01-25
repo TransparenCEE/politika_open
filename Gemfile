@@ -9,6 +9,7 @@ gem 'mongoid'
 gem 'prawn'
 gem 'rmagick', :require => false
 gem 'kaminari'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'therubyracer'

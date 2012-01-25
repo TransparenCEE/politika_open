@@ -2,6 +2,7 @@
 require 'bundler/capistrano'
 
 load 'deploy/assets'
+set :normalize_asset_timestamps, false
 
 set :stages, %w(staging production)
 require 'capistrano/ext/multistage'
@@ -28,10 +29,10 @@ namespace :deploy do
   desc "Symlink shared resources on each release"
   task :symlink_shared, :roles => :app do
     run "ln -nfs #{shared_path}/config/initializers/notification_mailing_list.rb #{release_path}/config/initializers/notification_mailing_list.rb"
-    run "ln -nfs #{shared_path}/config/initializers/mongoid_config.rb #{release_path}/config/initializers/mongoid_config.rb"
     run "ln -nfs #{shared_path}/config/mongoid.yml #{release_path}/config/mongoid.yml"
+    run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
     run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
   end
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
+before 'deploy:assets:precompile', 'deploy:symlink_shared'
