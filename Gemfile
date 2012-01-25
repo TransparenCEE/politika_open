@@ -3,12 +3,16 @@ source 'http://gemcutter.org'
 gem 'rails', '~> 3.2.0'
 
 gem 'haml'
-gem 'mongo'#, '1.1.2'
-gem 'bson_ext'#, '1.1.2'
-gem 'mongoid'#,  :git => 'git://github.com/vojto/mongoid.git'
+gem 'mongo'
+gem 'bson_ext'
+gem 'mongoid'
 gem 'prawn'
 gem 'rmagick', :require => false
 gem 'kaminari'
+
+group :production do
+  gem 'therubyracer'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

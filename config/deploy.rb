@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'bundler/capistrano'
 
+load 'deploy/assets'
+
 set :stages, %w(staging production)
 require 'capistrano/ext/multistage'
 set :application, "politikaopen"
