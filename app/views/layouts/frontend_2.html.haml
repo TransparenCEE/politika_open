@@ -5,8 +5,8 @@
     %meta{:name => 'csrf-token', :content => form_authenticity_token}
     %meta{:name => 'csrf-param', :content => 'authenticity_token'}
     = render :partial => "layouts/meta"
-    = stylesheet_link_tag "screen", "application", "frontend"
-    = javascript_include_tag "jquery", "rails", "application"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
   %body
     = render :partial => "layouts/header"
     = render :partial => "layouts/menu"

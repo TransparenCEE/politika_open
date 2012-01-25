@@ -7,7 +7,7 @@ img {border:none;}
 
 
 /* HEADER */  
-#container_header {margin:0px; padding:0px; background: transparent; float:none; overflow:hidden;}
+#container_header {margin:0px auto; padding:0px; background: transparent; float:none; overflow:hidden; width: 1000px;}
 #header {width:1000px; margin:0px auto; padding:0px; float:none; overflow:hidden; color:#333333; font-family: 'Open Sans', sans-serif; font-size:12px;}
 #header .logo {display:inline; margin:20px 0px 15px 0px; padding:5px 0px 0px 0px; height:36px; float:left; overflow:hidden;}
 #header .navigation {display:inline; margin:50px auto 0px auto; padding:0px; float:right; overflow:hidden; color:#333333; font-family: 'Open Sans', sans-serif; font-weight:bold; font-size:12px; text-align:right;}
@@ -16,13 +16,13 @@ img {border:none;}
 
 
 /* MENU */
-#container_menu {font-family: 'Open Sans', sans-serif; background:transparent; float:none; overflow:hidden; margin:0px; padding:0px;}
+#container_menu {font-family: 'Open Sans', sans-serif; background:transparent; float:none; overflow:hidden; margin:0px auto; padding:0px; width: 1000px;}
 #menu {width:1000px; margin:0px auto 10px auto; font-size:12px; text-transform:normal; border:0px solid #065e06; background:#39B54A;}
 #menu ul {list-style:none; float:none; overflow:hidden; margin:0px; padding:0px;}
 #menu li {float:left; overflow:hidden; border-right:1px solid #ffffff;}
 #menu a {display:block;	text-decoration:none; margin:0px; padding:12px 17px; color:#ffffff; font-weight:bold; background: transparent; text-transform:uppercase; letter-spacing:1px;}
 #menu a.home {font-size:14px; font-weight:bold; color:#e9f9e9; letter-spacing:1px; background: -webkit-gradient(linear, left top, left bottom, from(#10b810), to(#009900)); background: -moz-linear-gradient(top, #10b810, #009900); padding:11px 10px; border-top-left-radius:0px; border-bottom-left-radius:0px;}
-#menu a.user {text-decoration:none; margin:0px; padding:12px 10px; color:#ffffff; background:url(/images/frontend/bckmenu_users.png) #009900;}
+#menu a.user {text-decoration:none; margin:0px; padding:12px 10px; color:#ffffff; background:url(<%= asset_path 'frontend/bckmenu_users.png' %>) #009900;}
 #menu a.admin {text-decoration:none;  margin:0px; padding:12px 10px; color:#ffffff; background:#B61D22; text-transform:uppercase;}
 #menu a:hover {background:#000000;}
 #menu a.admin:hover {color:#ffffff; background:#D3666E;}
@@ -31,7 +31,7 @@ img {border:none;}
 /*---------- SEARCH  ----------*/
 #container_search {float:none; overflow:hidden; width:350px; background:#ffffff; border:0px solid #cccccc; margin:4px 0px 40px 43px; padding:2px;}
 #container_search .text_area {float:left; padding:0px; margin:7px 0px 0px 10px; height:30px; width:290px; font-size:18px; border:1px solid #ffffff; border:none; color:#333333;}
-#container_search .submit_button {height:40px; width:40px; border:none; background: #009900 url(/images/button_search.png); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
+#container_search .submit_button {height:40px; width:40px; border:none; background: #009900 url(<%= asset_path 'button_search.png' %>); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
 #container_search form {padding:0px; margin:0px;}
 
 #home_banners a {color:#ffffff;}
@@ -111,9 +111,9 @@ img {border:none;}
 
 td.sort {  }
 
-td.sort.asc { background: url(../images/sort_icons.png) no-repeat left -38px; }
+td.sort.asc { background: url(<%= asset_path 'sort_icons.png' %>) no-repeat left -38px; }
 
-td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
+td.sort.desc { background: url(<%= asset_path 'sort_icons.png' %>) no-repeat left 12px; }
 
 
 
@@ -132,11 +132,11 @@ td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
 #frontend_default h1 {font-family: 'Open Sans', sans-serif; font-size:28px; color:#000000; text-transform:uppercase; font-weight:bold; letter-spacing:1px; margin:0px; padding:0px;}
 
 #open_politicians {display:block; float:none; overflow:hidden;}
-#open_politicians .textbox {width:300px; margin:20px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
+#open_politicians .textbox {width:300px; margin:20px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(<%= asset_path 'frontend/back_textbox.png' %>) #39B54A; color:#000000;}
 
 #open_member {margin:100px 0px 0px 0px; display:block; height:750px; float:none; overflow:hidden; background:url(http://www.zavaga.sk/po_event_frontpage_dane.png) no-repeat; background-position: center 150px;}
-#open_member .textbox {float:left; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
-#open_member .textbox2 {float:right; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(../images/frontend/back_textbox.png) #39B54A; color:#000000;}
+#open_member .textbox {float:left; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(<%= asset_path 'frontend/back_textbox.png' %>) #39B54A; color:#000000;}
+#open_member .textbox2 {float:right; width:250px; margin:0px 0px 0px 0px; padding:10px 30px 20px 30px; background:url(<%= asset_path 'frontend/back_textbox.png' %>) #39B54A; color:#000000;}
 
 
 
@@ -156,9 +156,9 @@ td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
 #slideshow_home ul {width:1000px; height:306px; list-style:none; overflow:hidden; margin:0px; padding:0px; background:transparent;}
 #slideshow_home li {width:1000px; height:306px; overflow:hidden; margin:0px; padding:0px; background:transparent;}
 /* #slideshow_home a {background:transparent; color:transparent;} */
-#slideshow_home a.obama {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_obama.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:24px; text-decoration:none;}
-#slideshow_home a.nrsr {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_infographic_nrsr.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
-#slideshow_home a.po {display:block; float:none; overflow:hidden; background:url(/images/frontend/banner_back_infographic_po.png) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
+#slideshow_home a.obama {display:block; float:none; overflow:hidden; background:url(<%= asset_path 'frontend/banner_back_obama.png' %>) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:24px; text-decoration:none;}
+#slideshow_home a.nrsr {display:block; float:none; overflow:hidden; background:url(<%= asset_path 'frontend/banner_back_infographic_nrsr.png' %>) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
+#slideshow_home a.po {display:block; float:none; overflow:hidden; background:url(<%= asset_path 'frontend/banner_back_infographic_po.png' %>) no-repeat #39B54A; height:226px; padding:40px 500px 40px 50px; color:#ffffff; font-size:18px; text-decoration:none;}
 /* #slides {width:700px; height:250px; list-style:none; overflow:hidden;}
 #slides li {width:700px; height:250px; overflow:hidden;} */
 
@@ -180,12 +180,12 @@ td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
 #fe_info_container .name_pic_box {background:#dddddd; overflow:hidden; padding:5px 5px; margin:5px 0px 0px 0px; color:#000000; font-size:10px;}
 
 #fe_info_container .soc_net {display:block; margin:10px 0px 0px 0px; padding:10px 0px 0px 0px; border-top:1px solid #dddddd; float:none; overflow:hidden;}
-#fe_info_container a.facebook {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(../images/frontend/button_facebook.png); margin:0px 5px 0px 0px; opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70); -webkit-transition: background 0.8s ease; -moz-transition: background 0.8s ease; -o-transition: background 0.8s ease; transition: background 0.8s ease;}
+#fe_info_container a.facebook {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(<%= asset_path 'frontend/button_facebook.png' %>); margin:0px 5px 0px 0px; opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70); -webkit-transition: background 0.8s ease; -moz-transition: background 0.8s ease; -o-transition: background 0.8s ease; transition: background 0.8s ease;}
 #fe_info_container a.facebook:hover {opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100);}
-#fe_info_container a.twitter {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(../images/frontend/button_twitter.png); opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70);}
+#fe_info_container a.twitter {display:block; border:none; float:left; overflow:hidden; width:50px; height:50px; background:url(<%= asset_path 'frontend/button_twitter.png' %>); opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70);}
 #fe_info_container a.twitter:hover {opacity:1.0; -moz-opacity:1.0; filter:alpha(opacity=100);}
 
-#fe_info_container a.fe_event_img {display:block; border:none; padding:0px; width:190px; height:406px; background:url(../images/frontend/PO_event_postavicka.png); -webkit-transition: background 0.3s ease; -moz-transition: background 0.3s ease; -o-transition: background 0.3s ease; transition: background 0.3s ease;}
+#fe_info_container a.fe_event_img {display:block; border:none; padding:0px; width:190px; height:406px; background:url(<%= asset_path 'frontend/PO_event_postavicka.png' %>); -webkit-transition: background 0.3s ease; -moz-transition: background 0.3s ease; -o-transition: background 0.3s ease; transition: background 0.3s ease;}
 #fe_info_container a.fe_event_img:hover {background-position:0 -406px;}
 
 
@@ -229,7 +229,7 @@ td.sort.desc { background: url(../images/sort_icons.png) no-repeat left 12px; }
 #fe_search_area {display:block; float:none; overflow:hidden; margin:0px 0px 20px 0px; padding:0px 0px 20px 0px; color:#333333; background:transparent; border-bottom:1px solid #dddddd; font-size:10px;}
 #fe_search_container {float:none; overflow:hidden; width:234px; background:#ffffff; border:1px solid #dddddd; margin:0px 0px 3px 0px; padding:1px;}
 #fe_search_container .text_area {float:left; padding:0px; margin:8px 0px 0px 10px; height:20px; width:170px; font-size:14px; border:1px solid #ffffff; border:none; color:#000000;}
-#fe_search_container .submit_button {height:35px; width:35px; border:none; background: #ffffff url(/images/button_search_35x35.png); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
+#fe_search_container .submit_button {height:35px; width:35px; border:none; background: #ffffff url(<%= asset_path 'button_search_35x35.png' %>); background-repeat:no-repeat; padding:0px; margin:0px; cursor:pointer; float:right; color:transparent;}
 #fe_search_container form {padding:0px; margin:0px; overflow:hidden;}
 
 

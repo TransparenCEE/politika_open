@@ -7,10 +7,10 @@
       %li
         = link_to "Zoznam", frontend_users_path
       %li
-        %a{ :href => frontend_page_path('about') }
+        %a{ :href => page_path('about') }
           O projekte
       %li
-        %a{ :href => frontend_page_path('contact') }
+        %a{ :href => page_path('contact') }
           Kontakt
       - unless logged_in?
         %li

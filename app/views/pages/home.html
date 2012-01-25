@@ -59,15 +59,11 @@ var slideshow=new TINY.fader.fade('slideshow',{
 	<div class="info_column">
 		<h2><a href="/frontend/users" style="color:#000000;">Otvorení politici</a></h2>
 		<div class="name_pic_box">
-			<img src="../images/frontend/radicova.png" align="left" style="margin-right:5px;" alt="Iveta Radičová">
-			<a href="http://www.politikaopen.sk/frontend/users/4bf52339775136276600001b" class="title_pic_box">Iveta Radičová</a><br />
+		  <%= image_tag 'frontend/radicova.png', align: 'left', style: 'margin-right:5px;', alt: 'Iveta Radičová' %>
+		  <%= link_to 'Iveta Radičová', frontend_user_path('4bf52339775136276600001b'), class: 'title_pic_box' %>
+			<br />
 			predsedníčka vlády SR
 		</div>
-		<!-- <div class="name_pic_box">
-			<img src="../images/frontend/sulik_60x60.png" align="left" style="margin-right:5px;" alt="Richard Sulík">
-			<a href="http://www.politikaopen.sk/frontend/users/4bf523407751362766000126" class="title_pic_box">Richard Sulík</a><br />
-			predseda NR SR
-		</div> -->
 		
 		<div id="fe_info_name_container">
 			<div class="title_container">
@@ -76,10 +72,10 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/frontend/users/4bf523397751362766000007">Daniel Lipšic</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bfd321d7751362d2e00000a">Lucia Žitňanská</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bf247ba7751360d6f000009">Daniel Krajcer</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4c04ab337751366f11000011">Juraj Miškov</a>,
+			  <%= link_to 'Daniel Lipšic', frontend_user_path('4bf523397751362766000007') %>,
+			  <%= link_to 'Lucia Žitňanská', frontend_user_path('4bfd321d7751362d2e00000a') %>,
+			  <%= link_to 'Daniel Krajcer', frontend_user_path('4bf247ba7751360d6f000009') %>,
+			  <%= link_to 'Juraj Miškov', frontend_user_path('4c04ab337751366f11000011') %>,
 			</div>
 		</div>
 		
@@ -90,15 +86,15 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/frontend/users/4bf523407751362766000126">Richard Sulík</a>,
-				<a href="http://www.politikaopen.sk/frontend/users/4c04ba337751366ff500000e">Jana Žitňanská</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bf52339775136276600000a">Ondrej Dostál</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bfcd6e6775136294f000007">Miroslav Beblavy</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bfab81b7751361b62000001">Igor Matovič</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bf5233a7751362766000034">Jozef Mikuš</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4c0769147751361311000001">László Nagy</a>,
-				<a href="http://www.politikaopen.sk/frontend/users/4bf5233a775136276600003f">Ľubomír Galko</a>
-				<a href="/pages/poslanci_nrsr">...a ďalší</a> 
+			  <%= link_to 'Richard Sulík', frontend_user_path('4bf523407751362766000126') %>,
+			  <%= link_to 'Jana Žitňanská', frontend_user_path('4c04ba337751366ff500000e') %>,
+			  <%= link_to 'Ondrej Dostál', frontend_user_path('4bf52339775136276600000a') %>,
+			  <%= link_to 'Miroslav Beblavy', frontend_user_path('4bfcd6e6775136294f000007') %>,
+			  <%= link_to 'Igor Matovič', frontend_user_path('4bfab81b7751361b62000001') %>,
+			  <%= link_to 'Jozef Mikuš', frontend_user_path('4bf5233a7751362766000034') %>,
+			  <%= link_to 'László Nagy', frontend_user_path('4c0769147751361311000001') %>,
+			  <%= link_to 'Ľubomír Galko', frontend_user_path('4bf5233a775136276600003f') %>
+			  <%= link_to '...a ďalší', page_path('poslanci_nrsr') %>
 			</div>
 		</div>
 		
@@ -109,11 +105,10 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				
-				<a href="http://www.politikaopen.sk/frontend/users/4bfa05747751361711000002">Lucia Nicholsonová</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4ce4f1e8775136196000000b">Milan Ftáčnik</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4bf52339775136276600001d">Alexander Slafkovský</a>, 
-				<a href="http://www.politikaopen.sk/frontend/users/4c02ba697751364c7c000002">Martin Alföldi</a>
+			  <%= link_to 'Lucia Nicholsonová', frontend_user_path('4bfa05747751361711000002') %>,
+			  <%= link_to 'Milan Ftáčnik', frontend_user_path('4ce4f1e8775136196000000b') %>,
+			  <%= link_to 'Alexander Slafkovský', frontend_user_path('4bf52339775136276600001d') %>,
+			  <%= link_to 'Martin Alföldi', frontend_user_path('4c02ba697751364c7c000002') %>
 			</div>
 		</div>
 		
@@ -122,8 +117,8 @@ var slideshow=new TINY.fader.fade('slideshow',{
 	<div class="info_column">
 		<h2>Obamov profil</h2>
 		<div class="name_pic_box">
-			<img src="/images/obama_60x60.png" align="left" style="margin-right:5px;" alt="Barack Obama">
-			<a href="/pages/obama_profil" class="title_pic_box">Barack Obama</a><br />
+		  <%= image_tag 'obama_60x60.png', align: 'left', style: 'margin-right:5px;', alt: 'Barack Obama' %>
+		  <%= link_to 'Barack Obama', page_path('obama_profil'), class: 'title_pic_box' %><br />
 			prezident USA
 		</div>
 		
@@ -136,7 +131,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/data/TS_6_9_11_Obama_politikaopen.pdf" target="_blank">Projekt Aliancie Fair-play PolitikaOpen zverejnil symbolický profil prezidenta USA Baracka Obamu</a>
+				<a href="/data/TS_6_9_11_Obama_politikaopen.pdf" target="_blank">Projekt Aliancie Fair-play PolitikaOpen zverejnil symbolický profil prezidenta USA Baracka Obamu</a>
 			</div>
 		</div>
 		
@@ -147,7 +142,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/data/TS_politikaopen_volby_obce2010.pdf" target="_blank">Výzvu k otvorenosti pre voličov ignorovala väčšina hlavných kandidátov na primátorov a starostov</a>
+				<a href="/data/TS_politikaopen_volby_obce2010.pdf" target="_blank">Výzvu k otvorenosti pre voličov ignorovala väčšina hlavných kandidátov na primátorov a starostov</a>
 			</div>
 		</div>
 		
@@ -158,7 +153,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/data/Volby_obce_2010_ts.rtf" target="_blank">Aliancia vyzvala kandidátov v komunálnych voľbách, aby zverejnili podrobné a kontrolovateľné informácie o svojom majetku a záujmoch </a>
+				<a href="/data/Volby_obce_2010_ts.rtf" target="_blank">Aliancia vyzvala kandidátov v komunálnych voľbách, aby zverejnili podrobné a kontrolovateľné informácie o svojom majetku a záujmoch </a>
 			</div>
 		</div>
 		
@@ -180,7 +175,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-				<a href="http://www.politikaopen.sk/data/Hon_na_politikov_ts.rtf" target="_blank">Vyhlásili sme "Hon na politikov"</a>
+				<a href="/data/Hon_na_politikov_ts.rtf" target="_blank">Vyhlásili sme "Hon na politikov"</a>
 			</div>
 		</div> -->
 		

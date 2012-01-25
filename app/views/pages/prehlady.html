@@ -1,0 +1,471 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+
+	<script type="text/javascript">
+	      function drawVisualization() {
+	        // Create and populate the data table.
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Task');
+	        data.addColumn('number', 'Hours per Day');
+	        data.addRows(2);
+	        data.setValue(1, 0, 'Kandidáti do NR SR');
+	        data.setValue(1, 1, 2375);
+	        data.setValue(0, 0, 'Otvorení kandidáti do NR SR');
+	        data.setValue(0, 1, 170);
+
+	        // Create and draw the visualization.
+	        new google.visualization.PieChart(document.getElementById('visualization')).
+	            draw(data, {title:"Otvorení kandidáti vo voľbách do NR SR 2010", backgroundColor:'#eeeeee'});
+	      }
+
+
+	      google.setOnLoadCallback(drawVisualization);
+	    </script>
+	
+		<script type="text/javascript">
+		      function drawVisualization() {
+		        // Create and populate the data table.
+		        var data = new google.visualization.DataTable();
+		        data.addColumn('string', 'Task');
+		        data.addColumn('number', 'Hours per Day');
+		        data.addRows(2);
+		        data.setValue(1, 0, 'Ostatní poslanci v NR SR');
+		        data.setValue(1, 1, 145);
+		        data.setValue(0, 0, 'Otvorení poslanci v NR SR');
+		        data.setValue(0, 1, 5);
+
+		        // Create and draw the visualization.
+		        new google.visualization.PieChart(document.getElementById('poslanci_nrsr')).
+		            draw(data, {title:"Otvorení poslanci v NR SR 2006 - 2010", backgroundColor:'#eeeeee'});
+		      }
+
+
+		      google.setOnLoadCallback(drawVisualization);
+		    </script>
+		
+			<script type="text/javascript">
+			      function drawVisualization() {
+			        // Create and populate the data table.
+			        var data = new google.visualization.DataTable();
+			        data.addColumn('string', 'Task');
+			        data.addColumn('number', 'Hours per Day');
+			        data.addRows(2);
+			        data.setValue(1, 0, 'Ostatní poslanci v NR SR');
+			        data.setValue(1, 1, 119);
+			        data.setValue(0, 0, 'Otvorení poslanci v NR SR');
+			        data.setValue(0, 1, 32);
+
+			        // Create and draw the visualization.
+			        new google.visualization.PieChart(document.getElementById('nrsr_2010_2014')).
+			            draw(data, {title:"Otvorení poslanci v NR SR 2010 - 2014", backgroundColor:'#eeeeee'});
+			      }
+
+
+			      google.setOnLoadCallback(drawVisualization);
+			    </script>
+		
+			<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		    <script type="text/javascript">
+		      google.load("visualization", "1", {packages:["corechart"]});
+		      google.setOnLoadCallback(drawChart);
+		      function drawChart() {
+		        var data = new google.visualization.DataTable();
+		        data.addColumn('string', 'Year');
+		        data.addColumn('number', 'Otvorení poslanci NR SR');
+		        data.addColumn('number', 'Otvorení kandidáti do NR SR');
+		        data.addRows(4);
+		        data.setValue(0, 0, 'KDH');
+		        data.setValue(0, 1, 1);
+		        data.setValue(0, 2, 5);
+		        data.setValue(1, 0, 'MOST-HÍD');
+		        data.setValue(1, 1, 2);
+		        data.setValue(1, 2, 4);
+		        data.setValue(2, 0, 'SaS');
+		        data.setValue(2, 1, 22);
+		        data.setValue(2, 2, 148);
+		        data.setValue(3, 0, 'SDKÚ-DS');
+		        data.setValue(3, 1, 5);
+		        data.setValue(3, 2, 12);
+
+		        var chart = new google.visualization.ColumnChart(document.getElementById('chart_vysledky'));
+		        chart.draw(data, { backgroundColor:'#eeeeee', title: 'Otvorení poslanci v NR SR vs. otvorení kandidáti do NR SR'
+		                         });
+		      }
+		    </script>
+		
+		
+		
+		<style>
+		h2 {font-size:16px; margin:40px 0px 0px 0px;}
+		h3 {font-size:16px; margin:20px 0px 20px 0px; color:#666666;}
+		ul {list-style:none; margin:0px; padding:0px; overflow:hidden;}
+		li {}
+		#list_kandidati {float:none; overflow:hidden; display:block; margin:20px 0px 0px 0px; padding:5px 20px 15px 20px; background:#eeeeee; border:1px solid #cccccc;}
+		a {color:#999999;}
+		a:hover {color:#999999;}
+		</style>
+  </head>
+
+  <body>
+<h1>Prehľady</h1>
+
+
+
+<div style="text-align:right; font-size:10px; margin:0px 0px 10px 0px;"><em>aktualizácia: 05:54 | 9.9.2010</em></div>
+
+<!-- Grafy -->
+<div style="float:none; overflow:hidden; display:block; margin:0px 0px 20px 0px;">
+<div id="chart_vysledky" style="float:left; overflow:hidden; width:490px; height:240px; border:1px solid #cccccc;"></div>
+<div id="visualization" style="width:490px; height:240px; float:right; border:1px solid #cccccc;"></div>
+</div>
+
+<div style="float:none; overflow:hidden; display:block; margin:0px 0px 20px 0px;">
+<div id="poslanci_nrsr" style="width:490px; height:240px; float:left; border:1px solid #cccccc;"></div>
+<div id="nrsr_2010_2014" style="width:490px; height:240px; float:right; border:1px solid #cccccc;"></div>
+</div>
+
+
+<div style="float:none; overflow:hidden; display:block; color:#bbbbbb">
+	<div style="float:left; width:450px; height:210px; display:block; overflow:hidden; margin:20px 0px 0px 0px; padding:0px 20px 15px 20px; background:#eeeeee; border:1px solid #cccccc;">
+		<h3>Členovia vlády</h3>
+		<ul>
+			<li><%= link_to 'Iveta Radičová', frontend_user_path('4bf52339775136276600001b') %> (predsedníčka vlády SR)</li>
+			<!--<li><%= link_to 'Jozef Mihál', frontend_user_path('4bf52339775136276600002d') %> (podpredseda vlády; minister práce, sociálnych vecí a rodiny)</li>-->
+			<li><%= link_to 'Ľubomír Galko', frontend_user_path('4bf5233a775136276600003f') %> (minister obrany)</li>
+			<li><%= link_to 'Daniel Krajcer', frontend_user_path('4bf247ba7751360d6f000009') %> (minister kultúry a cestovného ruchu)</li>
+			<li><%= link_to 'Daniel Lipšic', frontend_user_path('4bf523397751362766000007') %> (minister vnútra)</li>
+			<li><%= link_to 'Juraj Miškov', frontend_user_path('4c04ab337751366f11000011') %> (minister hospodárstva a výstavby)</li>
+			<li><%= link_to 'Lucia Žitňanská', frontend_user_path('4bfd321d7751362d2e00000a') %> (ministerka spravodlivosti)</li>
+		</ul>
+	</div>
+	<div style="float:right; width:450px; height:210px; display:block; overflow:hidden; margin:20px 0px 0px 0px; padding:0px 20px 15px 20px; background:#eeeeee; border:1px solid #cccccc;">
+		<h3>Verejní funkcionári</h3>
+		<ul>
+			<li><%= link_to 'Lucia Nicholsonová', frontend_user_path('4bfa05747751361711000002') %> (štátna tajomníčka ministerstva práce, sociálnych vecí a rodiny)</li>
+			<li><%= link_to 'Milan Ftáčnik', frontend_user_path('4ce4f1e8775136196000000b') %> (primátor Bratislavy)</li>
+			<li><%= link_to 'Alexander Slafkovský', frontend_user_path('4bf52339775136276600001d') %> (primátor Liptovského Mikuláša)</li>
+			<li><%= link_to 'Martin Alföldi', frontend_user_path('4c02ba697751364c7c000002') %> (primátor Šale)</li>
+		</ul>
+	</div>
+</div>
+
+<h2>Otvorení poslanci NR SR</h2>
+<div style="float:none; overflow:hidden; display:block;">
+<div id="list_kandidati">
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+	   	<li><h3>KDH</h3></li>
+		<li></li>
+		<!-- <li><%= link_to 'Lipšic Daniel', frontend_user_path('4bf523397751362766000007') %></li> -->
+		<li><%= link_to 'Žitňanská Jana', frontend_user_path('4c04ba337751366ff500000e') %></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>MOST-HÍD</h3></li>
+		<li></li>
+		<li><%= link_to 'Dostál Ondrej', frontend_user_path('4bf52339775136276600000a') %></li>
+		<li><%= link_to 'Nagy A. László', frontend_user_path('4c0769147751361311000001') %></li>
+		<li><%= link_to 'Švejna Ivan', frontend_user_path('4c08c9d877513620d3000005') %></li>	                                                                       
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SaS</h3></li>
+		<li></li>
+			<li><%= link_to 'Aštaryová Zuzana', frontend_user_path('4bf5233b775136276600005f') %></li>
+			<li><%= link_to 'Blahová Natália', frontend_user_path('4bf1a24577513609fa000003') %></li>
+   			<li><%= link_to 'Droba Juraj', frontend_user_path('4bf1d6d07751360ab7000001') %></li>
+			<li><%= link_to 'Fecko Martin', frontend_user_path('4bf8aa2c7751360c48000002') %></li>
+            <li><%= link_to 'Fořt Stanislav', frontend_user_path('4bf5233a775136276600003d') %></li>
+   			<!-- <li><%= link_to 'Galko Ľubomír', frontend_user_path('4bf5233a775136276600003f') %></li> -->
+   			<li><%= link_to 'Hladký Pavol', frontend_user_path('4bf5233b775136276600005a') %></li>
+		</ul>
+		<ul style="float:left; margin:0px 30px 0px 0px;">
+			<li><h3></h3></li>
+			<li>&nbsp</li>
+			<li>&nbsp</li>
+   			<li><%= link_to 'Chren Martin', frontend_user_path('4bf5233a775136276600003b') %></li>
+   			<li><%= link_to 'Jurčík Ľudovít', frontend_user_path('4bf5233a7751362766000040') %></li>
+   			<li><%= link_to 'Jurinová Erika', frontend_user_path('4bf983bb7751361067000001') %></li>
+   			<li><%= link_to 'Kalist Peter', frontend_user_path('4bfaae767751361b4b000003') %></li>
+   			<li><%= link_to 'Kiššová Jana', frontend_user_path('4bf3c8f777513613c9000002') %></li>
+   			<li><%= link_to 'Kollár Jozef', frontend_user_path('4bfcfc4f7751362c66000008') %></li>
+			
+		</ul>
+		<ul style="float:left; margin:0px 30px 0px 0px;">
+			<li><h3></h3></li>
+			<li>&nbsp</li>
+			<li>&nbsp</li>
+			<li><%= link_to 'Krnáč Kamil', frontend_user_path('4bf5233a7751362766000033') %></li>
+   			<!-- <li><%= link_to 'Krajcer Daniel', frontend_user_path('4bf247ba7751360d6f000009') %></li> -->
+			<li><%= link_to 'Laurenčík Milan', frontend_user_path('4bf5233b775136276600006d') %></li>
+			<!-- <li><%= link_to 'Majer Ľuboš', frontend_user_path('4bf5233a7751362766000042') %></li> -->
+   			<li><%= link_to 'Matovič Igor', frontend_user_path('4bfab81b7751361b62000001') %></li>
+   			<!-- <li><%= link_to 'Mihál Jozef', frontend_user_path('4bf52339775136276600002d') %></li> -->
+   			<!-- <li><%= link_to 'Miškov Juraj', frontend_user_path('4c04ab337751366f11000011') %></li> -->
+   			<!-- <li><%= link_to 'Nicholsonová Lucia', frontend_user_path('4bfa05747751361711000002') %></li> -->
+   			<li><%= link_to 'Poliačik Martin', frontend_user_path('4bf6fa4d7751363345000002') %></li>
+			<li><%= link_to 'Somogyi Szilárd', frontend_user_path('4c07edf7775136197a00000d') %></li>
+   			<li><%= link_to 'Suja Jaroslav', frontend_user_path('4bf4d2e577513625e800000a') %></li>
+		</ul>
+		<ul style="float:left; margin:0px 30px 0px 0px;">
+			<li><h3></h3></li>
+			<li>&nbsp</li>
+			<li>&nbsp</li>
+			<li><%= link_to 'Sulík Richard', frontend_user_path('4bf523407751362766000126') %></li>
+			<li><%= link_to 'Švihura Richard', frontend_user_path('4bf5233b7751362766000057') %></li>
+   			<li><%= link_to 'Tomčo Štefan', frontend_user_path('4bf5233a7751362766000045') %></li>
+   			<li><%= link_to 'Viskupič Jozef', frontend_user_path('4bf827717751360a1b000003') %></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SDKÚ-DS</h3></li>
+		<li></li>
+		<li><%= link_to 'Beblavy Miroslav', frontend_user_path('4bfcd6e6775136294f000007') %></li>
+		<li><%= link_to 'Dubovcová Jana', frontend_user_path('4c07617e775136126200000c') %></li>
+		<li><%= link_to 'Harman Ivan', frontend_user_path('4c93cac37751362b24000001') %></li>		
+		<li><%= link_to 'Mikuš Jozef', frontend_user_path('4bf5233a7751362766000034') %></li>
+	   	<!-- <li><%= link_to 'Radičová Iveta', frontend_user_path('4bf52339775136276600001b') %></li> -->
+	   	<li><%= link_to 'Štefanec Ivan', frontend_user_path('4bfe6d6977513633b5000001') %></li>
+	<li><%= link_to 'Vášáryová Magdaléna', frontend_user_path('4cee38087751367088000003') %></li>
+	   	<!-- <li><%= link_to 'Žitňanská Lucia', frontend_user_path('4bfd321d7751362d2e00000a') %></li> -->
+	</ul>
+	
+	
+</div>
+
+
+
+<h2>Otvorení kandidáti do NR SR 2010</h2>
+
+<p style="font-size:14px;">Politické strany, ktorých kandidáti sa nezapojili do projektu politikaopen: <strong>AZEN, EDS, KSS, ĽS-HZDS, ĽSNS, ND, Paliho Kapurkov, SNS, SMER, SMK-MKP, SRK, Únia, ZRS</strong></p>
+<div style="float:none; overflow:hidden; display:block;">
+<div id="list_kandidati">
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+	   	<li><h3>KDH</h3></li>
+		<li></li>
+		<li><%= link_to 'Lipšic Daniel', frontend_user_path('4bf523397751362766000007') %></li>
+		<li><%= link_to 'Mihoková Lucia', frontend_user_path('4bf5066a775136267800000c') %></li>
+		<li><%= link_to 'Novota Michal', frontend_user_path('4c04cf9877513670dd00000d') %></li>
+		<li><%= link_to 'Sokolová Iveta', frontend_user_path('4bf1741e775136097b000003') %></li>
+		<li><%= link_to 'Žitňanská Jana', frontend_user_path('4c04ba337751366ff500000e') %></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>MOST-HÍD</h3></li>
+		<li></li>
+		<li><%= link_to 'Buzáš Peter', frontend_user_path('4bf27c2c7751360e19000002') %></li>
+		<li><%= link_to 'Dostál Ondrej', frontend_user_path('4bf52339775136276600000a') %></li>
+		<li><%= link_to 'Nagy A. László', frontend_user_path('4c0769147751361311000001') %></li>
+		<li><%= link_to 'Švejna Ivan', frontend_user_path('4c08c9d877513620d3000005') %></li>		                                                                       
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SDKÚ-DS</h3></li>
+		<li></li>
+		<li><%= link_to 'Beblavý Miroslav', frontend_user_path('4bfcd6e6775136294f000007') %></li> 
+	   	<li><%= link_to 'Dériková Eva', frontend_user_path('4bf68044775136300600000a') %></li>
+		<li><%= link_to 'Drotován Michal', frontend_user_path('4bf17437775136097b000004') %></li>
+		<li><%= link_to 'Dubovcová Jana', frontend_user_path('4c07617e775136126200000c') %></li>
+		<li><%= link_to 'Fiabáne Peter', frontend_user_path('4bf523397751362766000013') %></li>
+		<li><%= link_to 'Maceják Štefan', frontend_user_path('4c054e897751367ad5000001') %></li>
+	   	<li><%= link_to 'Mečiar Jozef', frontend_user_path('4bf523397751362766000008') %></li>
+		<li><%= link_to 'Mikuš Jozef', frontend_user_path('4bf5233a7751362766000034') %></li>
+		<li><%= link_to 'Paulíková Martina', frontend_user_path('4c0e8c327751366053000005') %></li>
+	   	<li><%= link_to 'Radičová Iveta', frontend_user_path('4bf52339775136276600001b') %></li>
+	   	<li><%= link_to 'Štefanec Ivan', frontend_user_path('4bfe6d6977513633b5000001') %></li>
+	   	<li><%= link_to 'Žitňanská Lucia', frontend_user_path('4bfd321d7751362d2e00000a') %></li>
+	</ul>
+	
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+		<li><h3>SDĽ</h3></li>
+		<li></li>
+		<li><%= link_to 'Budáčová Jana', frontend_user_path('4bf5233a775136276600002f') %></li>
+	</ul>
+	
+</div>
+
+<div id="list_kandidati">
+	<h3>SaS</h3>
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+	   			<li><%= link_to 'Aštaryová Zuzana', frontend_user_path('4bf5233b775136276600005f') %></li>
+	   			<li><%= link_to 'Babjarčik Vít', frontend_user_path('4bf5233e77513627660000d8') %></li>
+				<li><%= link_to 'Babuščák Ladislav', frontend_user_path('4bf5233e77513627660000cb') %></li>
+	            <li><%= link_to 'Baránik Alojz', frontend_user_path('4bf4fce97751362659000009') %></li>
+	   			<li><%= link_to 'Balogh Peter', frontend_user_path('4c03736d775136514c000002') %></li>
+	   			<li><%= link_to 'Barna Alexander', frontend_user_path('4bf5233a7751362766000044') %></li>
+	   			<li><%= link_to 'Bendík Igor', frontend_user_path('4bf67bd97751363006000006') %></li>
+	   			<li><%= link_to 'Benka Milan', frontend_user_path('4bf5233b7751362766000051') %></li>
+	   			<li><%= link_to 'Beťko Ľudovít', frontend_user_path('4bf5233b775136276600006b') %></li>
+	   			<li><%= link_to 'Bielik Pavol', frontend_user_path('4bf1875f77513609a8000002') %></li>
+	   			<li><%= link_to 'Bielik Pavol', frontend_user_path('4bf5233b775136276600006f') %></li>
+	   			<li><%= link_to 'Blahová Natália', frontend_user_path('4bf1a24577513609fa000003') %></li>
+	   			<li><%= link_to 'Bľanda Michal', frontend_user_path('4bf5233b7751362766000062') %></li>
+	   			<li><%= link_to 'Bódy Peter', frontend_user_path('4bf4cf0577513625e8000002') %></li>
+	   			<li><%= link_to 'Borbély Koloman', frontend_user_path('4bf5233b7751362766000048') %></li>
+	   			<li><%= link_to 'Božik Ladislav', frontend_user_path('4bfa39bc77513617c8000005') %></li>
+	   			<li><%= link_to 'Bróska Michal', frontend_user_path('4bf90a2f7751360edc000009') %></li>
+	   			<li><%= link_to 'Bruncková Zita', frontend_user_path('4c062ec5775136079d000004') %></li>
+				<li><%= link_to 'Čillík Norbert', frontend_user_path('4bf940317751360f5f000011') %></li>
+	   			<li><%= link_to 'Dananai Ján', frontend_user_path('4bf5233f77513627660000fc') %></li>
+	   			<li><%= link_to 'Dimitriadu Monika', frontend_user_path('4bf523407751362766000115') %></li>
+	   			<li><%= link_to 'Domorák Miloš', frontend_user_path('4c04ea227751367159000002') %></li>
+	   			<li><%= link_to 'Dráb Miroslav', frontend_user_path('4bf5233b7751362766000067') %></li>
+	   			<li><%= link_to 'Droba Juraj', frontend_user_path('4bf1d6d07751360ab7000001') %></li>
+	   			<li><%= link_to 'Ďuricová Miriam', frontend_user_path('4bf56e5a7751362a21000002') %></li>
+	   				</ul>
+	<ul style="float:left; margin:0px 30px 0px 0px;">
+				
+				<li><%= link_to 'Farár Viktor', frontend_user_path('4bf18acb77513609c1000001') %></li>
+	   			<li><%= link_to 'Fecko Martin', frontend_user_path('4bf8aa2c7751360c48000002') %></li>
+	   			<li><%= link_to 'Fekete Richard', frontend_user_path('4bf5233a775136276600002e') %></li>
+	   			<li><%= link_to 'Foltin Roman', frontend_user_path('4bfccb8977513628f600000d') %></li>
+	   			<li><%= link_to 'Fořt Stanislav', frontend_user_path('4bf5233a775136276600003d') %></li>
+	   			<li><%= link_to 'Gabriš Ivan', frontend_user_path('4bf5233f77513627660000ec') %></li>
+	   			<li><%= link_to 'Gajdoš Tomáš', frontend_user_path('4bf5233b7751362766000068') %></li>
+	   			<li><%= link_to 'Galanda Milan', frontend_user_path('4bf5233c775136276600008e') %></li>
+	   			<li><%= link_to 'Galko Ľubomír', frontend_user_path('4bf5233a775136276600003f') %></li>
+	   			<li><%= link_to 'Gažúr Tomáš', frontend_user_path('4bf523407751362766000118') %></li>
+	   			<li><%= link_to 'Geletová Monika', frontend_user_path('4bfd6ede7751362dde000003') %></li>
+				<li><%= link_to 'Grachová Zuzana', frontend_user_path('4c0defeb7751365376000001') %></li>
+	   			<li><%= link_to 'Hájková Kristína', frontend_user_path('4bf5233a775136276600003a') %></li>
+	   			<li><%= link_to 'Halaj Vladimír', frontend_user_path('4bf50627775136267800000b') %></li>
+	   			<li><%= link_to 'Harhovský Robert', frontend_user_path('4bf5233a7751362766000036') %></li>
+	   			<li><%= link_to 'Havrilla Jozef', frontend_user_path('4bf5233c775136276600008d') %></li>
+	   			<li><%= link_to 'Hečko Vladislav', frontend_user_path('4bf9f789775136169d000003') %></li>
+	   			<li><%= link_to 'Hladký Pavol', frontend_user_path('4bf5233b775136276600005a') %></li>
+	   			<li><%= link_to 'Hodossy Kristian', frontend_user_path('4bf64a6c7751362eed000003') %></li>
+	   			<li><%= link_to 'Holko Ivan', frontend_user_path('4bf5233b7751362766000050') %></li>
+	   			<li><%= link_to 'Hrčka Ján', frontend_user_path('4bf5233c7751362766000092') %></li>
+	   			<li><%= link_to 'Hruškár Marián', frontend_user_path('4bf5233b775136276600004e') %></li>
+	  			<li><%= link_to 'Chren Martin', frontend_user_path('4bf5233a775136276600003b') %></li>
+				<li><%= link_to 'Ilavský Jakub', frontend_user_path('4bf5233b7751362766000060') %></li>
+				<li><%= link_to 'Jesenko Erik', frontend_user_path('4bf5233d77513627660000ac') %></li>
+				
+	   			
+	   		</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><%= link_to 'Jucha Jozef', frontend_user_path('4bfd0f7c7751362cb9000005') %></li>
+	   			<li><%= link_to 'Jurčík Ľudovít', frontend_user_path('4bf5233a7751362766000040') %></li>
+				<li><%= link_to 'Jurčo Peter', frontend_user_path('4bf5233b7751362766000069') %></li>
+	   			<li><%= link_to 'Jurinová Erika', frontend_user_path('4bf983bb7751361067000001') %></li>
+	   			<li><%= link_to 'Jurovčík Ľubomír', frontend_user_path('4bf98751775136106e00000c') %></li>
+	   			<li><%= link_to 'Kalist Peter', frontend_user_path('4bfaae767751361b4b000003') %></li>
+	   			<li><%= link_to 'Kamenca Juraj', frontend_user_path('4bf8edb47751360e75000028') %></li>
+	   			<li><%= link_to 'Kaščáková Renata', frontend_user_path('4bf5233a7751362766000030') %></li>
+	   			<li><%= link_to 'Kintler Michal', frontend_user_path('4bf5233d775136276600009c') %></li>
+	   			<li><%= link_to 'Kiššová Jana', frontend_user_path('4bf3c8f777513613c9000002') %></li>
+	   			<li><%= link_to 'Kolek Michal', frontend_user_path('4bf4de517751362611000007') %></li>
+	   			<li><%= link_to 'Kollár Jozef', frontend_user_path('4bfcfc4f7751362c66000008') %></li>
+	   			<li><%= link_to 'Kováč Igor', frontend_user_path('4bfc1b8d77513621da000007') %></li>
+	   			<li><%= link_to 'Kozický Milan', frontend_user_path('4bf5233e77513627660000c4') %></li>
+	   			<li><%= link_to 'Krajcer Daniel', frontend_user_path('4bf247ba7751360d6f000009') %></li>
+	   			<li><%= link_to 'Králik Štefan', frontend_user_path('4bf3a4b677513612cd000007') %></li>
+	   			<li><%= link_to 'Kramár Tibor', frontend_user_path('4bf5233e77513627660000de') %></li>
+	   			<li><%= link_to 'Križan Filip', frontend_user_path('4bf5233a7751362766000037') %></li>
+	   			<li><%= link_to 'Križan Pavol', frontend_user_path('4bf5233e77513627660000bb') %></li>
+	   			<li><%= link_to 'Krnáč Kamil', frontend_user_path('4bf5233a7751362766000033') %></li>
+	   			<li><%= link_to 'Ksenzsigh František', frontend_user_path('4bf5233b7751362766000056') %></li>
+	   			<li><%= link_to 'Kudláč Róbert', frontend_user_path('4bf5233b7751362766000065') %></li>
+	   			<li><%= link_to 'Kvasnica Ondrej', frontend_user_path('4bf51e3677513626dc000017') %></li>
+	   			<li><%= link_to 'Kvasnička Ján', frontend_user_path('4bf4d33477513625e800000d') %></li>
+				<li><%= link_to 'Kyslan Karol', frontend_user_path('4bf5233e77513627660000ce') %></li>
+	   			
+	   			
+	   						</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><%= link_to 'Laurenčík Milan', frontend_user_path('4bf5233b775136276600006d') %></li>
+	   			<li><%= link_to 'Lenhardt Juraj', frontend_user_path('4bfa2574775136178e000002') %></li>
+				<li><%= link_to 'Líška Pavol', frontend_user_path('4bf5233e77513627660000df') %></li>
+	   			<li><%= link_to 'Macek Ľubomír', frontend_user_path('4bfcfcd97751362c6600000b') %></li>
+	   			<li><%= link_to 'Mahmoud Zaher', frontend_user_path('4bf5233c7751362766000080') %></li>
+	   			<li><%= link_to 'Majer Ľuboš', frontend_user_path('4bf5233a7751362766000042') %></li>
+	   			<li><%= link_to 'Majer Marian', frontend_user_path('4bf5233f77513627660000ff') %></li>
+	   			<li><%= link_to 'Mamrilla Dušan', frontend_user_path('4bf5233e77513627660000d0') %></li>
+	   			<li><%= link_to 'Marčan Anton', frontend_user_path('4bf523407751362766000109') %></li>
+	   			<li><%= link_to 'Mareček Radoslav', frontend_user_path('4bfcbb7e77513628fa000002') %></li>
+	   			<li><%= link_to 'Marič Peter', frontend_user_path('4bf5233b775136276600004b') %></li>
+	   			<li><%= link_to 'Martinček Peter', frontend_user_path('4bf16eed7751360969000001') %></li>
+	   			<li><%= link_to 'Matejka Ladislav', frontend_user_path('4bf5233f77513627660000f1') %></li>
+				<li><%= link_to 'Matejka Ondrej', frontend_user_path('4c077281775136134f000008') %></li>
+	   			<li><%= link_to 'Matlovič Pavol', frontend_user_path('4bf5233b775136276600005e') %></li>
+	   			<li><%= link_to 'Matovič Igor', frontend_user_path('4bfab81b7751361b62000001') %></li>
+	   			<li><%= link_to 'Medvecká Ľudmila', frontend_user_path('4bf52340775136276600010a') %></li>
+	   			<li><%= link_to 'Michalík Stanislav', frontend_user_path('4bf5233b775136276600004c') %></li>
+	   			<li><%= link_to 'Mihál Jozef', frontend_user_path('4bf52339775136276600002d') %></li>
+	   			<li><%= link_to 'Mikulíková Antónia', frontend_user_path('4bfd7e357751362dfb000019') %></li>
+	   			<li><%= link_to 'Miškov Juraj', frontend_user_path('4c04ab337751366f11000011') %></li>
+	   			<li><%= link_to 'Mojš Roman', frontend_user_path('4bf523407751362766000113') %></li>
+	   			<li><%= link_to 'Mojžiš Marcel', frontend_user_path('4bf5233b7751362766000074') %></li>
+				<li><%= link_to 'Molnár Štefan', frontend_user_path('4bf5233d77513627660000ae') %></li>
+				<li><%= link_to 'Monček Marek', frontend_user_path('4bf5233b7751362766000063') %></li>
+	   			
+	   			
+	   			</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				<li><%= link_to 'Nicholsonová Lucia', frontend_user_path('4bfa05747751361711000002') %></li>
+	   			<li><%= link_to 'Novodomcová Milota', frontend_user_path('4c05117277513671fe00000e') %></li>
+				<li><%= link_to 'Pajer Jozef', frontend_user_path('4bf5233f7751362766000105') %></li>
+	   			<li><%= link_to 'Paľovová Anna', frontend_user_path('4bf928007751360f3e000008') %></li>	      		
+	   			<li><%= link_to 'Pavelka Radoslav', frontend_user_path('4bf58ef67751362a9200000d') %></li>
+	   			<li><%= link_to 'Pfeiffer Bibiána', frontend_user_path('4bf5233f77513627660000fb') %></li>
+	   			<li><%= link_to 'Pihorňa Peter', frontend_user_path('4bf5233a7751362766000043') %></li>
+	   			<li><%= link_to 'Piršč Milan', frontend_user_path('4bf919e67751360ee000001a') %></li>
+	   			<li><%= link_to 'Poliačik Martin', frontend_user_path('4bf6fa4d7751363345000002') %></li>
+	   			<li><%= link_to 'Pospíšilová Iveta', frontend_user_path('4bf5233f77513627660000e7') %></li>
+	   			<li><%= link_to 'Rajtár Jozef', frontend_user_path('4bf3b874775136139e000003') %></li>
+	   			<li><%= link_to 'Ratulovský Juraj', frontend_user_path('4c01bb7e77513641ee000002') %></li>
+	   			<li><%= link_to 'Sabolová Alena', frontend_user_path('4bf5233f7751362766000106') %></li>
+	   			<li><%= link_to 'Samák Ľuboš', frontend_user_path('4bf5233f77513627660000f2') %></li>
+	   			<li><%= link_to 'Šándor Marek', frontend_user_path('4bfd7afa7751362e1600000a') %></li>
+	   			<li><%= link_to 'Serej Pavol', frontend_user_path('4c02afa77751364b6c000003') %></li>
+	   			<li><%= link_to 'Skotnický Peter', frontend_user_path('4bf52340775136276600011a') %></li>
+	   			<li><%= link_to 'Slašťan Juraj', frontend_user_path('4bfd840e7751362e43000004') %></li>
+	   			<li><%= link_to 'Sliviaková Katarína', frontend_user_path('4c04af677751366f4a000003') %></li>
+	   			<li><%= link_to 'Sloboda Vladimír', frontend_user_path('4bf5233c7751362766000097') %></li>
+	   			<li><%= link_to 'Somogyi Szilárd', frontend_user_path('4c07edf7775136197a00000d') %></li>
+	            <li><%= link_to 'Šramková Lenka', frontend_user_path('4c07a73b77513616cb000002') %></li>
+	   			<li><%= link_to 'Staruch Dávid', frontend_user_path('4bf5003e7751362678000003') %></li>
+	   			<li><%= link_to 'Stehlík Jaroslav', frontend_user_path('4bf5233c7751362766000088') %></li>
+				<li><%= link_to 'Struška Karol', frontend_user_path('4bf5233b7751362766000059') %></li>
+				
+	   			
+	   			
+	   			
+	   						</ul>
+			<ul style="float:left; margin:0px 30px 0px 0px;">
+				
+				<li><%= link_to 'Suja Jaroslav', frontend_user_path('4bf4d2e577513625e800000a') %></li>
+	   			<li><%= link_to 'Sulík Richard', frontend_user_path('4bf523407751362766000126') %></li>
+				<li><%= link_to 'Švaral Michal', frontend_user_path('4bfcb60c77513628e4000002') %></li>
+	   			<li><%= link_to 'Švec Branislav', frontend_user_path('4bf18d0977513609c1000008') %></li>
+				<li><%= link_to 'Švihura Richard', frontend_user_path('4bf5233b7751362766000057') %></li>
+				<li><%= link_to 'Szabó Pavol', frontend_user_path('4bf5233b775136276600004d') %></li>
+	   			<li><%= link_to 'Szomíková Silvia', frontend_user_path('4bf5233e77513627660000b1') %></li>
+	   			<li><%= link_to 'Tesková Jarmila', frontend_user_path('4bf5233b775136276600005b') %></li>
+	   			<li><%= link_to 'Thomka Stanislav', frontend_user_path('4bf52340775136276600010e') %></li>
+	   			<li><%= link_to 'Tomčo Štefan', frontend_user_path('4bf5233a7751362766000045') %></li>
+	   			<li><%= link_to 'Tóth Roman', frontend_user_path('4bf5233e77513627660000b4') %></li>
+	   			<li><%= link_to 'Uherčík Michal', frontend_user_path('4bf5233b775136276600006a') %></li>
+	   			<li><%= link_to 'Vajdová Jarmila', frontend_user_path('4bf5233d77513627660000ab') %></li>
+	   			<li><%= link_to 'Valentová Adriana', frontend_user_path('4bf5233c775136276600008c') %></li>
+	   			<li><%= link_to 'Varhoľáková Katarína', frontend_user_path('4bf4d7217751362601000004') %></li>
+	   			<li><%= link_to 'Viskupič Jozef', frontend_user_path('4bf827717751360a1b000003') %></li>
+	   			<li><%= link_to 'Viskupič Marián', frontend_user_path('4bf5233b7751362766000066') %></li>
+	   			<li><%= link_to 'Vojtek Tomáš', frontend_user_path('4bf907af7751360ee0000001') %></li>
+	   			<li><%= link_to 'Vrchota Marcel', frontend_user_path('4bf5233a7751362766000046') %></li>
+	   			<li><%= link_to 'Wachter Peter', frontend_user_path('4bf5233c7751362766000098') %></li>
+	   			<li><%= link_to 'Worobel Tomáš', frontend_user_path('4bf94fb37751360fa1000002') %></li>
+	   			<li><%= link_to 'Zemanová Anna', frontend_user_path('4bf5233c7751362766000095') %></li>
+	   			<li><%= link_to 'Zima Ivan', frontend_user_path('4bfcb8c777513628e4000004') %></li> 
+	</ul>
+</div>
+
+</div>
+
+<div style="margin:20px 0px 0px 0px;">
+<a href="http://www.fair-play.sk/clanok.php?u=3&u1=6&u2=24&u3=499" target="_blank" style="color:#009900; text-decoration:none;"><strong>Tlačová správa Aliancie Fair-play k otvoreným kandidátom vo voľbách do NR SR 2010</strong></a>	
+</div>
+
+  </body>
+</html>

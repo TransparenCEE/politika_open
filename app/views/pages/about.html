@@ -8,21 +8,22 @@
 
 <p>Preto ponechávame na vašom úsudku, ako politici napĺňajú princípy projektu <strong>politikaopen</strong>. Politikov z projektu vyradíme iba v prípade, že zistíme informácie (podložené dokumentmi, ktoré umožňujú urobiť jednoznačný záver, teda nie špekuláciami, či indíciami) o zamlčaní dôležitých údajov alebo o uvedení nepravdivých údajov a politik nebude vedieť zistenia vyvrátiť, či dostatočne vysvetliť.</p>
 
-<p><a href="http://www.politikaopen.sk/frontend/pages/rules"><strong>Pravidlá projektu politikaopen</strong></a><br /><br />
-<a href="http://www.politikaopen.sk/data/formular_vzor.pdf" target="_blank"><strong>Vzorový formulár</strong></a></p>
+<p>
+  <strong><%= link_to 'Pravidlá projektu politikaopen', page_path('rules') %></strong>
+  <br /><br />
+  <a href="/data/formular_vzor.pdf" target="_blank"><strong>Vzorový formulár</strong></a>
+</p>
 
 <p style="font-size:14px; font-weight:bold;">Tlačové správy:</p>
 
 <p>
-	23.11.2010 | <a href="http://www.politikaopen.sk/data/TS_politikaopen_volby_obce2010.pdf">Výzvu k otvorenosti pre voličov ignorovala väčšina hlavných kandidátov na primátorov a starostov</a>
-	<br>3.11.2010 | <a href="http://www.politikaopen.sk/data/Volby_obce_2010_ts.rtf">Aliancia vyzvala kandidátov v komunálnych voľbách, aby zverejnili podrobné a kontrolovateľné informácie o svojom majetku a záujmoch</a>
-	<br>31.5.2010 | <a href="http://www.politikaopen.sk/data/Hon_na_politikov_ts.rtf">Vyhlásili sme „Hon na politikov"</a>
-	<br>8.6.2010 | <a href="http://www.politikaopen.sk/data/volby_nrsr_ts.rtf">161 kandidátov prijalo výzvu k nadštandardnej otvorenosti</a>
+	23.11.2010 | <a href="/data/TS_politikaopen_volby_obce2010.pdf">Výzvu k otvorenosti pre voličov ignorovala väčšina hlavných kandidátov na primátorov a starostov</a>
+	<br>3.11.2010 | <a href="/data/Volby_obce_2010_ts.rtf">Aliancia vyzvala kandidátov v komunálnych voľbách, aby zverejnili podrobné a kontrolovateľné informácie o svojom majetku a záujmoch</a>
+	<br>31.5.2010 | <a href="/data/Hon_na_politikov_ts.rtf">Vyhlásili sme „Hon na politikov"</a>
+	<br>8.6.2010 | <a href="/data/volby_nrsr_ts.rtf">161 kandidátov prijalo výzvu k nadštandardnej otvorenosti</a>
 </p>
 
 
 <div style="margin:20px 0px 0px 0px;">
-	<a href="http://www.politikaopen.sk/users/new">
-		<img src="http://www.politikaopen.sk/images/banners/banner_registracia.png" border="0" alt="Registrácia">
-	</a>
+  <%= link_to image_tag('banners/banner_registracia.png', border: '0', alt: 'Registrácia'), new_user_path %>
 </div>

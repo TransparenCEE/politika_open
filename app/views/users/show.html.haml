@@ -8,8 +8,7 @@
     %em.inactive Neaktívne
 - unless @user.is_active
   %strong Vaše konto zatiaľ nie je aktívne. Jednotlivé formuláre je možné vypĺňať, ale na webe
-  %strong
-    %a{:href => "http://www.politikaopen.sk", :target => "_blank"} politikaopen
+  %strong= link_to 'politikaopen', root_url, target: '_blank'
   %strong sa pre návštevníkov zobrazia až po aktivovaní Vášho konta administrátorom projektu.
   
   %h3 Ako si aktivovať konto
@@ -94,4 +93,4 @@
     %h3 Poučenie o existencii práv
 
     .clearfix
-      = button_link_to "Otvoriť poučenie", frontend_page_path("poucenie_o_existencii_prav"), :target => "_blank"
+      = button_link_to "Otvoriť poučenie", page_path("poucenie_o_existencii_prav"), :target => "_blank"

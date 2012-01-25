@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require_tree .
+
 $(document).ready(function(){
   $("a.make-input").click(function(){
     target = $(this).attr('data-make-input');

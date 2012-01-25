@@ -2,9 +2,9 @@
   %h1.fl Zoznam
   .fr
     %br
-    - form_for :search, :builder => ListFormBuilder, :url => frontend_searches_path do |f|
+    = form_for :search, :builder => ListFormBuilder, :url => frontend_searches_path do |f|
       = f.text_field :name, :inline => true
-      = submit_tag "Hľadať"
+      = submit_tag "Hľadať", class: 'button_search'
 
 #list
   %ul.alphabet.clearfix

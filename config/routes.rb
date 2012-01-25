@@ -12,7 +12,6 @@ Politikaopen::Application.routes.draw do
   namespace :frontend do
     resources :users
     resources :searches
-    resources :pages
   end
   resources :users do
     member do
@@ -28,7 +27,8 @@ Politikaopen::Application.routes.draw do
   resources :embeds do
     resources :items
   end
-  resources :pages
+  resources :pages, only: :show
 
-  root :controller => "pages", :action => "show", :id => "home"
+
+  root to: 'pages#home'
 end

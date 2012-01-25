@@ -1,10 +1,8 @@
 !!!
 %html
   %head
-    = stylesheet_link_tag "screen", "frontend"
+    = stylesheet_link_tag 'application'
     %title politikaopen
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
-    = javascript_include_tag 'rails'
     = javascript_include_tag 'application'
     %meta{:name => 'csrf-token', :content => form_authenticity_token}
     %meta{:name => 'csrf-param', :content => 'authenticity_token'}
@@ -26,9 +24,9 @@
           %li
             = link_to "Registrácia", new_user_path
           %li
-            = link_to "O projekte", frontend_page_path('about')
+            = link_to "O projekte", page_path('about')
           %li
-            = link_to "Kontakty", frontend_page_path('contact')
+            = link_to "Kontakty", page_path('contact')
             
     #flash
       - if flash[:notice]

@@ -24,7 +24,7 @@ module Authentication
   end
   
   def current_user
-    session[:current_user] ? User.where.id(session[:current_user]).first : nil
+    session[:current_user] ? User.first(conditions: {id: session[:current_user]}) : nil
   end
     
 end

@@ -1,17 +1,17 @@
 #footer
   .navigation
-    © 2010
+    © 2012
     %a{:href => "http://www.fair-play.sk"} Aliancia Fair-play
     |
-    %a{:href => "http://www.politikaopen.sk/frontend/users"} Zoznam
+    = link_to 'Zoznam', frontend_users_path
     |
-    %a{:href => "http://www.politikaopen.sk/frontend/searches/new"} Vyhľadávanie
+    = link_to 'Vyhľadávanie', frontend_searches_path
     |
-    %a{:href => "http://www.politikaopen.sk/frontend/pages/contact"} Kontakt
+    = link_to 'Kontakt', page_path('contact')
     |
-    %a{:href => "http://www.politikaopen.sk/sessions/new"} Prihlásenie
+    = link_to 'Prihlásenie', new_session_path
 #donor
   Tento projekt je spolufinancovaný z finančného mechanizmu, nórskeho finančného mechanizmu a zo štátneho rozpočtu Slovenskej republiky.
-  %img{:src => "/images/frontend/logo_norske_fondy.png", :style => "margin:7px auto 0px auto; display:block; width:100px;"}
+  = image_tag 'frontend/logo_norske_fondy.png', style: "margin:7px auto 0px auto; display:block; width:100px;"
 
 = render :partial => "layouts/analytics"

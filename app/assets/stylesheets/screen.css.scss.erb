@@ -7,9 +7,9 @@
 
 /* @group Buttons */
 
-a.button { background: url(../images/button_end.png) right top no-repeat; display: block; float: left; padding-right: 5px; margin-right: 5px; text-decoration: none; color: #383838; font-weight: bold; font-size: 12px; }
+a.button { background: url(<%= asset_path 'button_end.png' %>) right top no-repeat; display: block; float: left; padding-right: 5px; margin-right: 5px; text-decoration: none; color: #383838; font-weight: bold; font-size: 12px; }
 
-a.button span { display: block; padding: 8px 6px 7px 11px; background: url(../images/button.png); }
+a.button span { display: block; padding: 8px 6px 7px 11px; background: url(<%= asset_path 'button.png' %>); }
 
 a.button:hover { background-position: right -31px; color: #383838; }
 
@@ -35,9 +35,9 @@ a.button.dark:active { background-position: right -155px; }
 
 a.button.dark:active span { background-position: 0px -155px; }
 
-a.button.small { background-image: url(../images/button_small_end.png); margin-bottom: 0; margin-top: 5px; margin-left: 5px; }
+a.button.small { background-image: url(<%= asset_path 'button_small_end.png' %>); margin-bottom: 0; margin-top: 5px; margin-left: 5px; }
 
-a.button.small span { background-image: url(../images/button_small.png); color: #494949; font-size: 11px; font-weight: normal; font-style: normal; padding: 0 5px 2px 12px; }
+a.button.small span { background-image: url(<%= asset_path 'button_small.png' %>); color: #494949; font-size: 11px; font-weight: normal; font-style: normal; padding: 0 5px 2px 12px; }
 
 
 
@@ -84,12 +84,6 @@ body { background:transparent; }
 
 /* @group Typo */
 
-body { font: 11px "Lucida Grande", Arial; }
-
-a { color: #373637; text-decoration: underline; }
-
-a:hover { color: #333; text-decoration: underline; }
-
 h1 { margin-top: 10px !important; }
 
 
@@ -116,7 +110,7 @@ form ul li.form_row p.description { display: block; position: absolute; left: 46
 
 form ul li.form_row p.description a { color: #fffeff; }
 
-form ul li input[type=text], form input[type=password], form textarea { display: block; font-size: 13px; font-weight: bold; padding: 3px; width: 250px; background: #fff url(../images/input_background.png) repeat-x; float: left; }
+form ul li input[type=text], form input[type=password], form textarea { display: block; font-size: 13px; font-weight: bold; padding: 3px; width: 250px; background: #fff url(<%= asset_path 'input_background.png' %>) repeat-x; float: left; }
 
 form select { display: block; float: left; width: 300px; }
 

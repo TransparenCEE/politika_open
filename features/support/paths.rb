@@ -19,7 +19,7 @@ module NavigationHelpers
       frontend_users_path
       
     when /the About Us page/
-      frontend_page_path("about_us")
+      page_path("about_us")
       
 
     # Add more mappings here.

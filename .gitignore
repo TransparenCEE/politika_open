@@ -7,3 +7,4 @@ public/uploads/*
 tmp/*
 backup/*
 .DS_Store
+.sass-cache/
