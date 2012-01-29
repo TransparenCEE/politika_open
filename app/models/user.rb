@@ -1,8 +1,10 @@
+# -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
   include Forms::FormHelper
   
   has_many :parties
   has_many :public_services
+  has_many :company_shares
   
   attr_accessor :password_changed
   

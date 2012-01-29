@@ -30,5 +30,8 @@ module Politikaopen
     config.i18n.default_locale = :sk
     config.secret_token = "some secret phrase of at least 30 characters"
     config.filter_parameters << :password
+    
+    # Configure the default encoding used in templates for Ruby 1.9.
+    config.encoding = "utf-8"
   end
 end

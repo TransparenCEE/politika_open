@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129161151) do
+ActiveRecord::Schema.define(:version => 20120129162212) do
+
+  create_table "company_shares", :force => true do |t|
+    t.string   "basic_information_name"
+    t.string   "basic_information_form"
+    t.string   "basic_information_number"
+    t.boolean  "basic_information_connected_to_public_sector"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.string   "participation_position"
+    t.string   "participation_share"
+    t.string   "participation_currency"
+    t.string   "participation_percent"
+    t.date     "participation_date_from"
+    t.date     "participation_date_to"
+    t.text     "participation_notes"
+    t.integer  "user_id"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  add_index "company_shares", ["user_id"], :name => "index_company_shares_on_user_id"
 
   create_table "parties", :force => true do |t|
     t.string   "basic_information_party"
@@ -75,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20120129161151) do
     t.string   "basic_information_note"
     t.boolean  "political_party_is_not_in_political_party"
     t.boolean  "public_service_is_not_in_public_service"
+    t.boolean  "company_shares_not_owns_shares"
   end
 
 end

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # rescue_from Exception, :with => :general_error
   
   def general_error
-    @page = File.read("#{Rails.root}/app/pages/error.html")
+    @page = File.read("#{Rails.root}/app/views/pages/error.html")
     render :text => @page, :layout => true
   end
   

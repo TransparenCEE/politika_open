@@ -133,22 +133,23 @@ user:
         required_unless: public_service_is_not_in_public_service
         description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
         
-  # company_shares:
-  #   order: 3
-  #   title: Obchodné podiely vo firmách / SZČO
-  #   description: Informácie o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank">zahraničných obchodných registrov</a>. Uvádzajú sa aj obchodné podiely v zahraničných firmách.
-  #   fields:
-  #     not_owns_shares:
-  #       data_type: boolean
-  #       type: check_box
-  #       title: Nevlastním obchodné podiely vo firmách / nemám živnosť
-  #   embeds:
-  #     company_shares:
-  #       title: Obchodné podiely
-  #       model_name: CompanyShare
-  #       show_unless: company_shares_not_owns_shares
-  #       required_unless: company_shares_not_owns_shares
-  #       description: Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>.  
+  company_shares:
+    order: 3
+    title: 'Obchodné podiely vo firmách / SZČO'
+    description: 'Informácie o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank">zahraničných obchodných registrov</a>. Uvádzajú sa aj obchodné podiely v zahraničných firmách.'
+    fields:
+      not_owns_shares:
+        data_type: boolean
+        type: check_box
+        title: 'Nevlastním obchodné podiely vo firmách / nemám živnosť'
+    embeds:
+      company_shares:
+        title: Obchodné podiely
+        model_name: CompanyShare
+        show_unless: company_shares_not_owns_shares
+        required_unless: company_shares_not_owns_shares
+        description: 'Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>.'
+        
   # jobs:
   #   order: 4
   #   title: Zamestnanecké pozície
