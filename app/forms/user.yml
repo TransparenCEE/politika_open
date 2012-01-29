@@ -116,23 +116,23 @@ user:
         required_unless: political_party_is_not_in_political_party
         description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
   
-  # public_service:
-  #   order: 2
-  #   title: Verejná funkcia
-  #   description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
-  #   fields:
-  #     is_not_in_public_service:
-  #       title: Nezastávam verejnú funkciu
-  #       data_type: boolean
-  #       type: check_box
-  #   embeds:
-  #     public_services:
-  #       title: Verejná funkcia
-  #       model_name: PublicService
-  #       show_unless: public_service_is_not_in_public_service
-  #       required_unless: public_service_is_not_in_public_service
-  #       description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
-  #       
+  public_service:
+    order: 2
+    title: Verejná funkcia
+    description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
+    fields:
+      is_not_in_public_service:
+        title: Nezastávam verejnú funkciu
+        data_type: boolean
+        type: check_box
+    embeds:
+      public_services:
+        title: Verejná funkcia
+        model_name: PublicService
+        show_unless: public_service_is_not_in_public_service
+        required_unless: public_service_is_not_in_public_service
+        description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
+        
   # company_shares:
   #   order: 3
   #   title: Obchodné podiely vo firmách / SZČO

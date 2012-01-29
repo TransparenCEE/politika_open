@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129153454) do
+ActiveRecord::Schema.define(:version => 20120129161151) do
 
   create_table "parties", :force => true do |t|
     t.string   "basic_information_party"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(:version => 20120129153454) do
   end
 
   add_index "parties", ["user_id"], :name => "index_parties_on_user_id"
+
+  create_table "public_services", :force => true do |t|
+    t.string   "basic_information_service"
+    t.date     "basic_information_from"
+    t.date     "basic_information_to"
+    t.string   "basic_information_candidate_for_party"
+    t.string   "basic_information_member_of"
+    t.text     "basic_information_notes"
+    t.integer  "user_id",                               :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+  end
+
+  add_index "public_services", ["user_id"], :name => "index_public_services_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -60,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120129153454) do
     t.string   "basic_information_address_zipcode"
     t.string   "basic_information_note"
     t.boolean  "political_party_is_not_in_political_party"
+    t.boolean  "public_service_is_not_in_public_service"
   end
 
 end

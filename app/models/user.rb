@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include Forms::FormHelper
   
   has_many :parties
+  has_many :public_services
   
   attr_accessor :password_changed
   
