@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :parties
   has_many :public_services
   has_many :company_shares
+  has_many :jobs
   
   attr_accessor :password_changed
   

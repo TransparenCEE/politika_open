@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129162212) do
+ActiveRecord::Schema.define(:version => 20120129234218) do
 
   create_table "company_shares", :force => true do |t|
     t.string   "basic_information_name"
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(:version => 20120129162212) do
   end
 
   add_index "company_shares", ["user_id"], :name => "index_company_shares_on_user_id"
+
+  create_table "jobs", :force => true do |t|
+    t.string   "employer_name"
+    t.string   "employer_sector"
+    t.string   "employer_form"
+    t.string   "employer_number"
+    t.string   "employer_position"
+    t.date     "employer_date_from"
+    t.date     "employer_date_to"
+    t.string   "employer_address_state"
+    t.string   "employer_address_county"
+    t.string   "employer_address_district"
+    t.string   "employer_address_town"
+    t.string   "employer_address_street"
+    t.string   "employer_address_zip"
+    t.text     "employer_address_notes"
+    t.integer  "user_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
 
   create_table "parties", :force => true do |t|
     t.string   "basic_information_party"
@@ -101,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20120129162212) do
     t.boolean  "political_party_is_not_in_political_party"
     t.boolean  "public_service_is_not_in_public_service"
     t.boolean  "company_shares_not_owns_shares"
+    t.boolean  "jobs_has_no_job"
   end
 
 end

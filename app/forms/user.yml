@@ -150,21 +150,21 @@ user:
         required_unless: company_shares_not_owns_shares
         description: 'Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>.'
         
-  # jobs:
-  #   order: 4
-  #   title: Zamestnanecké pozície
-  #   fields:
-  #     has_no_job:
-  #       data_type: boolean
-  #       type: check_box
-  #       title: Nemám zamestnanie
-  #   embeds:
-  #     jobs:
-  #       title: Zamestnanecké pozície
-  #       model_name: Job
-  #       show_unless: jobs_has_no_job
-  #       required_unless: jobs_has_no_job
-  #       
+  jobs:
+    order: 4
+    title: Zamestnanecké pozície
+    fields:
+      has_no_job:
+        data_type: boolean
+        type: check_box
+        title: Nemám zamestnanie
+    embeds:
+      jobs:
+        title: Zamestnanecké pozície
+        model_name: Job
+        show_unless: jobs_has_no_job
+        required_unless: jobs_has_no_job
+        
   # activities:
   #   order: 5
   #   description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
