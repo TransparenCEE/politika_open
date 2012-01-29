@@ -15,7 +15,7 @@ class Forms::Fields::FileUpload < Forms::Field
   def value=(what)
     if what == DESTROY_KEYWORD
       super(DESTROY_KEYWORD)
-    elsif what.is_a? Tempfile
+    elsif what.is_a? ActionDispatch::Http::UploadedFile
       @file = what
       @new_filename = Digest::SHA1.hexdigest(what.original_filename)
       @new_filename += ".#{what.original_filename.split('.').last}"

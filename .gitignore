@@ -2,7 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-config/mongoid.yml
+config/database.yml
 config/newrelic.yml
 public/uploads/*
 tmp/*

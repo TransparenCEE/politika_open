@@ -3,9 +3,7 @@ source 'http://gemcutter.org'
 gem 'rails', '~> 3.2.0'
 
 gem 'haml'
-gem 'mongo'
-gem 'bson_ext'
-gem 'mongoid'
+gem 'mysql2'
 gem 'prawn'
 gem 'rmagick', :require => false
 gem 'kaminari'
