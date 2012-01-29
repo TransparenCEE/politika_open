@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include Forms::FormHelper
   
+  has_many :parties
+  
   attr_accessor :password_changed
   
   validates_confirmation_of :password, if: :validate_password?, message: "should match confirmation"

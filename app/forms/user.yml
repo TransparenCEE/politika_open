@@ -96,26 +96,26 @@ user:
         order: 19
         title: Poznámka
         type: text_area
-  # 
-  # ######################################################################
-  # # Stranícka príslušnosť
-  # political_party:
-  #   order: 1
-  #   title: Stranícka príslušnosť
-  #   description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
-  #   fields:
-  #     is_not_in_political_party:
-  #       title: Nie som členom politickej strany
-  #       data_type: boolean
-  #       type: check_box
-  #   embeds:
-  #     parties:
-  #       title: Stranícka príslušnosť
-  #       model_name: Party
-  #       show_unless: political_party_is_not_in_political_party
-  #       required_unless: political_party_is_not_in_political_party
-  #       description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
-  # 
+  
+  ######################################################################
+  # Stranícka príslušnosť
+  political_party:
+    order: 1
+    title: Stranícka príslušnosť
+    description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
+    fields:
+      is_not_in_political_party:
+        title: Nie som členom politickej strany
+        data_type: boolean
+        type: check_box
+    embeds:
+      parties:
+        title: Stranícka príslušnosť
+        model_name: Party
+        show_unless: political_party_is_not_in_political_party
+        required_unless: political_party_is_not_in_political_party
+        description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
+  
   # public_service:
   #   order: 2
   #   title: Verejná funkcia

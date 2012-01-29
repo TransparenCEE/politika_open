@@ -15,4 +15,12 @@ module Forms::FormHelper
   def value(form, field)
     self.send("#{form}_#{field}")
   end
+  
+  def embed_items(what)
+    items = self.send(what)
+    
+    items.sort_by { |item|
+      item.updated_at || 10.years.ago
+    }.reverse
+  end
 end

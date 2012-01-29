@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129132649) do
+ActiveRecord::Schema.define(:version => 20120129153454) do
+
+  create_table "parties", :force => true do |t|
+    t.string   "basic_information_party"
+    t.text     "basic_information_position"
+    t.date     "basic_information_from"
+    t.date     "basic_information_to"
+    t.text     "basic_information_notes"
+    t.integer  "user_id",                    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "parties", ["user_id"], :name => "index_parties_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -27,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20120129132649) do
     t.string   "basic_information_last_name"
     t.date     "basic_information_date_of_birth"
     t.boolean  "is_accepting_rules"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "basic_information_title"
     t.string   "basic_information_second_title"
     t.string   "basic_information_birth_last_name"
@@ -46,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20120129132649) do
     t.string   "basic_information_address_address"
     t.string   "basic_information_address_zipcode"
     t.string   "basic_information_note"
+    t.boolean  "political_party_is_not_in_political_party"
   end
 
 end
