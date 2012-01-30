@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :movable_properties
   has_many :duties
   has_many :offices
+  has_many :meetings
   
   attr_accessor :password_changed
   
@@ -64,5 +65,8 @@ class User < ActiveRecord::Base
   
   def should_require_offices
     !offices_has_no_offices && !offices_nie_je_poslanec
+  end
+  def should_show_meetings
+    !!meetings_has_no_meetings == false && !!meetings_not_presented == false
   end
 end

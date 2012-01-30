@@ -352,29 +352,29 @@ user:
         required_if: should_require_offices
         description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
         
-  # meetings:
-  #   order: 14
-  #   title: Dôležité stretnutia
-  #   description: Do tejto kategórie uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie, či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď inému predstaviteľovi vlády, strany...). Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď.
-  #   fields:
-  #     has_no_meetings:
-  #       title: Nezúčastnil som sa žiadneho stretnutia
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 0
-  #     not_presented:
-  #       title: Neuvádzam
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 1
-  #   embeds:
-  #     meetings:
-  #       title: Dôležité stretnutia
-  #       description: Do tejto kategórie uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie, či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď inému predstaviteľovi vlády, strany...). Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď.
-  #       model_name: Meeting
-  #       show_if: should_show_meetings
-  #       required_if: should_show_meetings
-  #       
+  meetings:
+    order: 14
+    title: Dôležité stretnutia
+    description: Do tejto kategórie uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie, či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď inému predstaviteľovi vlády, strany...). Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď.
+    fields:
+      has_no_meetings:
+        title: Nezúčastnil som sa žiadneho stretnutia
+        type: check_box
+        data_type: boolean
+        order: 0
+      not_presented:
+        title: Neuvádzam
+        type: check_box
+        data_type: boolean
+        order: 1
+    embeds:
+      meetings:
+        title: Dôležité stretnutia
+        description: Do tejto kategórie uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie, či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď inému predstaviteľovi vlády, strany...). Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď.
+        model_name: Meeting
+        show_if: should_show_meetings
+        required_if: should_show_meetings
+        
   # persons:
   #   order: 15
   #   title: Blízke osoby

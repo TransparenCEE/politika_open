@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130142509) do
+ActiveRecord::Schema.define(:version => 20120130143318) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -181,6 +181,38 @@ ActiveRecord::Schema.define(:version => 20120130142509) do
   end
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
+
+  create_table "meetings", :force => true do |t|
+    t.string   "basic_information_type"
+    t.string   "basic_information_purpose"
+    t.string   "basic_information_state"
+    t.string   "basic_information_town"
+    t.date     "basic_information_date_from"
+    t.date     "basic_information_date_to"
+    t.string   "basic_information_payed"
+    t.string   "basic_information_amount"
+    t.string   "basic_information_currency"
+    t.text     "basic_information_notes"
+    t.string   "institution_title_or_name"
+    t.string   "institution_sector"
+    t.string   "institution_form"
+    t.string   "institution_number"
+    t.boolean  "institution_no_approvement"
+    t.string   "institution_title"
+    t.string   "institution_name"
+    t.string   "institution_surname"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.integer  "user_id",                     :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "meetings", ["user_id"], :name => "index_meetings_on_user_id"
 
   create_table "money_properties", :force => true do |t|
     t.string   "basic_year"
@@ -378,6 +410,8 @@ ActiveRecord::Schema.define(:version => 20120130142509) do
     t.boolean  "duties_has_no_duties"
     t.boolean  "offices_has_no_offices"
     t.boolean  "offices_nie_je_poslanec"
+    t.boolean  "meetings_has_no_meetings"
+    t.boolean  "meetings_not_presented"
   end
 
   create_table "vehicle_properties", :force => true do |t|

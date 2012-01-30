@@ -92,12 +92,6 @@ meeting:
     order: 2
     title: Adresa osoby alebo inštitúcie
     fields:
-    #  person_address:
-    #    order: -1
-    #    title: Adresa osoby
-    #  institution_address:
-    #    title: Adresa inštitúcie
-    #    order: -2
       state:
         order: 0
         title: Štát
