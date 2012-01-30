@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :company_shares
   has_many :jobs
   has_many :activities
+  has_many :benefits
   
   attr_accessor :password_changed
   

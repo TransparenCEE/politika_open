@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129235012) do
+ActiveRecord::Schema.define(:version => 20120130000300) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -37,6 +37,30 @@ ActiveRecord::Schema.define(:version => 20120129235012) do
   end
 
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
+
+  create_table "benefits", :force => true do |t|
+    t.string   "provider_name"
+    t.string   "provider_sector"
+    t.string   "provider_form"
+    t.string   "provider_number"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.string   "benefit_description"
+    t.string   "benefit_value"
+    t.string   "benefit_value_currency"
+    t.date     "benefit_date_from"
+    t.date     "benefit_date_to"
+    t.text     "benefit_notes"
+    t.integer  "user_id",                :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "benefits", ["user_id"], :name => "index_benefits_on_user_id"
 
   create_table "company_shares", :force => true do |t|
     t.string   "basic_information_name"
@@ -150,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20120129235012) do
     t.boolean  "company_shares_not_owns_shares"
     t.boolean  "jobs_has_no_job"
     t.boolean  "activities_has_no_activities"
+    t.boolean  "benefits_has_no_benefits"
   end
 
 end
