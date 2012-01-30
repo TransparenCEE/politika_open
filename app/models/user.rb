@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :benefits
   has_many :sponsorships
   has_many :events
+  has_many :incomes
   
   attr_accessor :password_changed
   

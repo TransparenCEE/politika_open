@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130001811) do
+ActiveRecord::Schema.define(:version => 20120130025945) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -114,6 +114,19 @@ ActiveRecord::Schema.define(:version => 20120130001811) do
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
+
+  create_table "incomes", :force => true do |t|
+    t.string   "basic_year"
+    t.string   "basic_amount_main"
+    t.string   "basic_currency_main"
+    t.string   "basic_amount_other"
+    t.string   "basic_currency_other"
+    t.integer  "user_id",              :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "incomes", ["user_id"], :name => "index_incomes_on_user_id"
 
   create_table "jobs", :force => true do |t|
     t.string   "employer_name"

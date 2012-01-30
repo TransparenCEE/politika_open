@@ -246,16 +246,17 @@ user:
         required_unless: events_has_no_events
         description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
         
-  # incomes:
-  #   order: 9
-  #   title: Súhrn príjmov za kalendárny rok
-  #   description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.
-  #   embeds:
-  #     incomes:
-  #       required: true
-  #       title: Súhrn príjmov za kalendárny rok
-  #       model_name: Income
-  #       description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.      
+  incomes:
+    order: 9
+    title: Súhrn príjmov za kalendárny rok
+    description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.
+    embeds:
+      incomes:
+        required: true
+        title: Súhrn príjmov za kalendárny rok
+        model_name: Income
+        description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.      
+  
   # unmovable_property:
   #   order: 10
   #   title: Nehnuteľný majetok
