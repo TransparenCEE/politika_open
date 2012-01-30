@@ -218,34 +218,34 @@ user:
         required_unless: sponsorships_has_no_sponsorships
         description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
         
-  # events:
-  #   order: 8
-  #   title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
-  #   description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
-  #   fields:
-  #     has_no_events:
-  #       order: 0
-  #       data_type: boolean
-  #       type: check_box
-  #       title: "Nezúčastnil som sa žiadnej udalosti"
-  #     events_not_expensive:
-  #       order: 1
-  #       data_type: boolean
-  #       type: check_box
-  #       title: Udalosti neboli nad 165 EUR
-  #     events_expensive:
-  #       order: 2
-  #       data_type: boolean
-  #       type: check_box
-  #       title: Udalosti boli nad 165 EUR
-  #   embeds:
-  #     events:
-  #       title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
-  #       model_name: Event
-  #       show_unless: events_has_no_events
-  #       required_unless: events_has_no_events
-  #       description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
-  #       
+  events:
+    order: 8
+    title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
+    description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
+    fields:
+      has_no_events:
+        order: 0
+        data_type: boolean
+        type: check_box
+        title: "Nezúčastnil som sa žiadnej udalosti"
+      events_not_expensive:
+        order: 1
+        data_type: boolean
+        type: check_box
+        title: Udalosti neboli nad 165 EUR
+      events_expensive:
+        order: 2
+        data_type: boolean
+        type: check_box
+        title: Udalosti boli nad 165 EUR
+    embeds:
+      events:
+        title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
+        model_name: Event
+        show_unless: events_has_no_events
+        required_unless: events_has_no_events
+        description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
+        
   # incomes:
   #   order: 9
   #   title: Súhrn príjmov za kalendárny rok

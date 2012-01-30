@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130000947) do
+ActiveRecord::Schema.define(:version => 20120130001811) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -86,6 +86,34 @@ ActiveRecord::Schema.define(:version => 20120130000947) do
   end
 
   add_index "company_shares", ["user_id"], :name => "index_company_shares_on_user_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "organisator_name"
+    t.string   "organisator_sector"
+    t.string   "organisator_form"
+    t.string   "organisator_number"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.string   "event_type"
+    t.string   "event_purpose"
+    t.string   "event_state"
+    t.string   "event_town"
+    t.date     "event_date_from"
+    t.date     "event_date_to"
+    t.string   "event_payed"
+    t.string   "event_amount_currency"
+    t.string   "event_amount"
+    t.text     "event_notes"
+    t.integer  "user_id",               :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "jobs", :force => true do |t|
     t.string   "employer_name"
@@ -201,6 +229,9 @@ ActiveRecord::Schema.define(:version => 20120130000947) do
     t.boolean  "activities_has_no_activities"
     t.boolean  "benefits_has_no_benefits"
     t.boolean  "sponsorships_has_no_sponsorships"
+    t.boolean  "events_has_no_events"
+    t.boolean  "events_events_not_expensive"
+    t.boolean  "events_events_expensive"
   end
 
 end
