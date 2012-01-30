@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130025945) do
+ActiveRecord::Schema.define(:version => 20120130032031) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -163,6 +163,34 @@ ActiveRecord::Schema.define(:version => 20120130025945) do
 
   add_index "parties", ["user_id"], :name => "index_parties_on_user_id"
 
+  create_table "properties", :force => true do |t|
+    t.string   "basic_description"
+    t.string   "basic_acquirement"
+    t.boolean  "basic_has_income"
+    t.string   "basic_acreage"
+    t.string   "basic_parcel_number"
+    t.string   "basic_lv_number"
+    t.string   "basic_acquirement_year"
+    t.string   "basic_acquirement_value"
+    t.string   "basic_acquirement_currency"
+    t.string   "basic_year"
+    t.string   "basic_market_value_estimate"
+    t.string   "basic_market_value_estimate_currency"
+    t.string   "basic_possesion_type"
+    t.string   "basic_share"
+    t.date     "basic_sale_date"
+    t.string   "location_state"
+    t.string   "location_county"
+    t.string   "location_district"
+    t.string   "location_town"
+    t.text     "location_notes"
+    t.integer  "user_id",                              :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
+
+  add_index "properties", ["user_id"], :name => "index_properties_on_user_id"
+
   create_table "public_services", :force => true do |t|
     t.string   "basic_information_service"
     t.date     "basic_information_from"
@@ -245,6 +273,7 @@ ActiveRecord::Schema.define(:version => 20120130025945) do
     t.boolean  "events_has_no_events"
     t.boolean  "events_events_not_expensive"
     t.boolean  "events_events_expensive"
+    t.boolean  "unmovable_property_no_properties"
   end
 
 end

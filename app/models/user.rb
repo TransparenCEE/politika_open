@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :sponsorships
   has_many :events
   has_many :incomes
+  has_many :properties
   
   attr_accessor :password_changed
   
