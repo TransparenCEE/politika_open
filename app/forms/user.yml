@@ -453,12 +453,12 @@ user:
         model_name: Campaign
         title: Financovanie kampane
         
-  # other:
-  #   order: 19
-  #   title: Rôzne
-  #   description: Uveďte všetky ďalšie informácie, ktoré z dôvodov transparentnosti a informovania verejnosti považujete za potrebné zverejniť a nenašli ste na ne žiadny priestor v predchádzajúcich kategóriách. Uveďte čo najpodrobnejšie informácie, ktoré umožnia presne identifikovať popisovanú skutočnosť (napr. ak uvádzate tiché spoločenstvo vo firme, uveďte presné informácie o firme – najlepšie v rozsahu informácií vyžadovaných v predchádzajúcich kategóriách -  a Vašom pôsobení v nej). Nepoužívajte túto položku na vysvetlenie informácií uvedených v konkrétnych kategóriách (na tento účel slúži položka Poznámky na konci každej z jednotlivých kategórií). Napr. tiché spoločenstvo vo firme, tiché vlastníctvo nehnuteľností atď.
-  #   embeds:
-  #     others:
-  #       title: Rôzne
-  #       model_name: Other
-  #       description: Uveďte všetky ďalšie informácie, ktoré z dôvodov transparentnosti a informovania verejnosti považujete za potrebné zverejniť a nenašli ste na ne žiadny priestor v predchádzajúcich kategóriách. Uveďte čo najpodrobnejšie informácie, ktoré umožnia presne identifikovať popisovanú skutočnosť (napr. ak uvádzate tiché spoločenstvo vo firme, uveďte presné informácie o firme – najlepšie v rozsahu informácií vyžadovaných v predchádzajúcich kategóriách -  a Vašom pôsobení v nej). Nepoužívajte túto položku na vysvetlenie informácií uvedených v konkrétnych kategóriách (na tento účel slúži položka Poznámky na konci každej z jednotlivých kategórií). Napr. tiché spoločenstvo vo firme, tiché vlastníctvo nehnuteľností atď.
+  other:
+    order: 19
+    title: Rôzne
+    description: Uveďte všetky ďalšie informácie, ktoré z dôvodov transparentnosti a informovania verejnosti považujete za potrebné zverejniť a nenašli ste na ne žiadny priestor v predchádzajúcich kategóriách. Uveďte čo najpodrobnejšie informácie, ktoré umožnia presne identifikovať popisovanú skutočnosť (napr. ak uvádzate tiché spoločenstvo vo firme, uveďte presné informácie o firme – najlepšie v rozsahu informácií vyžadovaných v predchádzajúcich kategóriách -  a Vašom pôsobení v nej). Nepoužívajte túto položku na vysvetlenie informácií uvedených v konkrétnych kategóriách (na tento účel slúži položka Poznámky na konci každej z jednotlivých kategórií). Napr. tiché spoločenstvo vo firme, tiché vlastníctvo nehnuteľností atď.
+    embeds:
+      others:
+        title: Rôzne
+        model_name: Other
+        description: Uveďte všetky ďalšie informácie, ktoré z dôvodov transparentnosti a informovania verejnosti považujete za potrebné zverejniť a nenašli ste na ne žiadny priestor v predchádzajúcich kategóriách. Uveďte čo najpodrobnejšie informácie, ktoré umožnia presne identifikovať popisovanú skutočnosť (napr. ak uvádzate tiché spoločenstvo vo firme, uveďte presné informácie o firme – najlepšie v rozsahu informácií vyžadovaných v predchádzajúcich kategóriách -  a Vašom pôsobení v nej). Nepoužívajte túto položku na vysvetlenie informácií uvedených v konkrétnych kategóriách (na tento účel slúži položka Poznámky na konci každej z jednotlivých kategórií). Napr. tiché spoločenstvo vo firme, tiché vlastníctvo nehnuteľností atď.

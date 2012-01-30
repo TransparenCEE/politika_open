@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :colleagues
   has_many :candidatures
   has_many :campaign
+  has_many :others
   
   attr_accessor :password_changed
   

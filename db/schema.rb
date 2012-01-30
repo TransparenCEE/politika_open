@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130160653) do
+ActiveRecord::Schema.define(:version => 20120130162334) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -340,6 +340,15 @@ ActiveRecord::Schema.define(:version => 20120130160653) do
   end
 
   add_index "other_properties", ["user_id"], :name => "index_other_properties_on_user_id"
+
+  create_table "others", :force => true do |t|
+    t.text     "basic_content"
+    t.integer  "user_id",       :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "others", ["user_id"], :name => "index_others_on_user_id"
 
   create_table "parties", :force => true do |t|
     t.string   "basic_information_party"
