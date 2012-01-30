@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130032031) do
+ActiveRecord::Schema.define(:version => 20120130034757) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -150,6 +150,47 @@ ActiveRecord::Schema.define(:version => 20120130032031) do
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
 
+  create_table "money_properties", :force => true do |t|
+    t.string   "basic_year"
+    t.string   "basic_value"
+    t.string   "basic_currency"
+    t.text     "basic_notes"
+    t.integer  "user_id",        :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "money_properties", ["user_id"], :name => "index_money_properties_on_user_id"
+
+  create_table "movable_properties", :force => true do |t|
+    t.string   "basic_year"
+    t.string   "basic_movable_property"
+    t.string   "basic_currency"
+    t.text     "basic_notes"
+    t.integer  "user_id",                :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "movable_properties", ["user_id"], :name => "index_movable_properties_on_user_id"
+
+  create_table "other_properties", :force => true do |t|
+    t.string   "basic_description"
+    t.string   "basic_acquirement"
+    t.date     "basic_acquirement_date"
+    t.date     "basic_sale_date"
+    t.string   "basic_acquirement_value"
+    t.string   "basic_currency"
+    t.string   "basic_possesion_type"
+    t.string   "basic_share"
+    t.text     "basic_notes"
+    t.integer  "user_id",                 :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "other_properties", ["user_id"], :name => "index_other_properties_on_user_id"
+
   create_table "parties", :force => true do |t|
     t.string   "basic_information_party"
     t.text     "basic_information_position"
@@ -274,6 +315,28 @@ ActiveRecord::Schema.define(:version => 20120130032031) do
     t.boolean  "events_events_not_expensive"
     t.boolean  "events_events_expensive"
     t.boolean  "unmovable_property_no_properties"
+    t.boolean  "movable_property_has_no_vehicle_property"
+    t.boolean  "movable_property_has_no_other_property"
   end
+
+  create_table "vehicle_properties", :force => true do |t|
+    t.string   "basic_brand"
+    t.string   "basic_model"
+    t.string   "basic_year"
+    t.string   "basic_acquirement"
+    t.date     "basic_acquirement_date"
+    t.date     "basic_sale_date"
+    t.string   "basic_acquirement_value"
+    t.string   "basic_currency"
+    t.string   "basic_possesion_type"
+    t.string   "basic_share"
+    t.string   "basic_mileage"
+    t.text     "basic_notes"
+    t.integer  "user_id",                 :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "vehicle_properties", ["user_id"], :name => "index_vehicle_properties_on_user_id"
 
 end

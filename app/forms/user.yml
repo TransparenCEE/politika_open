@@ -274,44 +274,44 @@ user:
         required_unless: unmovable_property_no_properties
         description: Ak si nepamätáte presné údaje o nehnuteľnosti, ktorú vlastníte, môžete požadované údaje ľahko získať cez internetovú stránku <a href="https://www.katasterportal.sk/kapor/" target="_blank">Katastrálneho úradu</a>. Ak nepoznáte odhad trhovej hodnoty nehnuteľnosti, môžete hodnotu uviesť podľa sumy poistného (na akú sumu máte nehnuteľnosť poistenú) alebo odhadnúť pomocou cien uvedených v aktuálnych ponukách nehnuteľností, ktoré svojou polohou, veľkosťou a vybavením najviac zodpovedajú Vašej nehnuteľnosti.        
   
-  # movable_property:
-  #   title: Hnuteľný majetok
-  #   order: 11
-  #   embeds:
-  #     money_properties:
-  #       title: "Súhrnná hodnota hotovosti, účtov, cenných papierov"
-  #       model_name: MoneyProperty
-  #       order: 0
-  #       required: true
-  #     vehicle_properties:
-  #       title: Auto
-  #       model_name: VehicleProperty
-  #       show_unless: movable_property_has_no_vehicle_property
-  #       required_unless: movable_property_has_no_vehicle_property
-  #       order: 1
-  #     other_properties:
-  #       title: Iný jednotlivý hnuteľný majetok nad 10 000 EUR
-  #       model_name: OtherProperty
-  #       show_unless: movable_property_has_no_other_property
-  #       required_unless: movable_property_has_no_other_property
-  #       order: 2
-  #       description: Napr. jachta, motorový čln, lietadlo, motorka, umelecké dielo, zbierka známok, čajová súprava, hi-fi sústava, kôň a pod.
-  #     movable_properties:
-  #       title: Súhrn hnuteľného majetku
-  #       model_name: MovableProperty
-  #       order: 3
-  #       required: true
-  #       description: 'Súhrn hnuteľného majetku pozostáva zo súčtu <span style="color:red;">súhrnnej hodnoty hotovosti, účtov a cenných papierov</span> + <span style="color:blue;">odhadu aktuálnej trhovej hodnoty auta/áut</span> + <span style="color:green;">odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností nad 10 tisíc €</span> + <span style="color:purple;">jednotlivého hnuteľného majetku pod 10 tisíc €</span>.'
-  #  
-  #   fields:
-  #     has_no_vehicle_property:
-  #       title: Nevlastním auto
-  #       type: check_box
-  #       data_type: boolean
-  #     has_no_other_property:
-  #       title: Nemám jednotlivý hnuteľný majetok nad 10 000 EUR
-  #       type: check_box
-  #       data_type: boolean
+  movable_property:
+    title: Hnuteľný majetok
+    order: 11
+    embeds:
+      money_properties:
+        title: "Súhrnná hodnota hotovosti, účtov, cenných papierov"
+        model_name: MoneyProperty
+        order: 0
+        required: true
+      vehicle_properties:
+        title: Auto
+        model_name: VehicleProperty
+        show_unless: movable_property_has_no_vehicle_property
+        required_unless: movable_property_has_no_vehicle_property
+        order: 1
+      other_properties:
+        title: Iný jednotlivý hnuteľný majetok nad 10 000 EUR
+        model_name: OtherProperty
+        show_unless: movable_property_has_no_other_property
+        required_unless: movable_property_has_no_other_property
+        order: 2
+        description: Napr. jachta, motorový čln, lietadlo, motorka, umelecké dielo, zbierka známok, čajová súprava, hi-fi sústava, kôň a pod.
+      movable_properties:
+        title: Súhrn hnuteľného majetku
+        model_name: MovableProperty
+        order: 3
+        required: true
+        description: 'Súhrn hnuteľného majetku pozostáva zo súčtu <span style="color:red;">súhrnnej hodnoty hotovosti, účtov a cenných papierov</span> + <span style="color:blue;">odhadu aktuálnej trhovej hodnoty auta/áut</span> + <span style="color:green;">odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností nad 10 tisíc €</span> + <span style="color:purple;">jednotlivého hnuteľného majetku pod 10 tisíc €</span>.'
+   
+    fields:
+      has_no_vehicle_property:
+        title: Nevlastním auto
+        type: check_box
+        data_type: boolean
+      has_no_other_property:
+        title: Nemám jednotlivý hnuteľný majetok nad 10 000 EUR
+        type: check_box
+        data_type: boolean
   #       
   # duties:
   #   order: 12

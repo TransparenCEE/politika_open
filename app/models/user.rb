@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :incomes
   has_many :properties
+  has_many :money_properties
+  has_many :vehicle_properties
+  has_many :other_properties
+  has_many :movable_properties
   
   attr_accessor :password_changed
   
