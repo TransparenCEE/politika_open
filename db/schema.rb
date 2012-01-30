@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130000300) do
+ActiveRecord::Schema.define(:version => 20120130000947) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -136,6 +136,31 @@ ActiveRecord::Schema.define(:version => 20120130000300) do
 
   add_index "public_services", ["user_id"], :name => "index_public_services_on_user_id"
 
+  create_table "sponsorships", :force => true do |t|
+    t.string   "provider_name"
+    t.string   "provider_sector"
+    t.string   "provider_form"
+    t.string   "provider_number"
+    t.boolean  "address_not_allowed_to_publish_information"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.text     "address_notes"
+    t.string   "sponsorship_sponsorship"
+    t.string   "sponsorship_purpose"
+    t.date     "sponsorship_date"
+    t.string   "sponsorship_value_currency"
+    t.string   "sponsorship_value"
+    t.integer  "user_id",                                    :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
+
+  add_index "sponsorships", ["user_id"], :name => "index_sponsorships_on_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password"
@@ -175,6 +200,7 @@ ActiveRecord::Schema.define(:version => 20120130000300) do
     t.boolean  "jobs_has_no_job"
     t.boolean  "activities_has_no_activities"
     t.boolean  "benefits_has_no_benefits"
+    t.boolean  "sponsorships_has_no_sponsorships"
   end
 
 end

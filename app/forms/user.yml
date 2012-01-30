@@ -201,23 +201,23 @@ user:
         required_unless: benefits_has_no_benefits
         description: Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod. Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
         
-  # sponsorships:
-  #   order: 7
-  #   title: "Sponzorstvo, dary a granty"
-  #   description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
-  #   fields:
-  #     has_no_sponsorships:
-  #       data_type: boolean
-  #       type: check_box
-  #       title: "Neprijal som žiadne sponzorstvo, dary alebo granty"
-  #   embeds:
-  #     sponsorships:
-  #       title: "Sponzorstvo, dary a granty"
-  #       model_name: Sponsorship
-  #       show_unless: sponsorships_has_no_sponsorships
-  #       required_unless: sponsorships_has_no_sponsorships
-  #       description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
-  #       
+  sponsorships:
+    order: 7
+    title: "Sponzorstvo, dary a granty"
+    description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
+    fields:
+      has_no_sponsorships:
+        data_type: boolean
+        type: check_box
+        title: "Neprijal som žiadne sponzorstvo, dary alebo granty"
+    embeds:
+      sponsorships:
+        title: "Sponzorstvo, dary a granty"
+        model_name: Sponsorship
+        show_unless: sponsorships_has_no_sponsorships
+        required_unless: sponsorships_has_no_sponsorships
+        description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
+        
   # events:
   #   order: 8
   #   title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"

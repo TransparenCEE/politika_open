@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :jobs
   has_many :activities
   has_many :benefits
+  has_many :sponsorships
   
   attr_accessor :password_changed
   
