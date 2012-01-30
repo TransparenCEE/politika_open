@@ -421,17 +421,16 @@ user:
         required_if: should_show_colleagues
         description: Blízky spolupracovník je osoba, s ktorou má verejný funkcionár primárne pracovný vzťah alebo obchodný vzťah a u ktorej vzhľadom na tento vzťah možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napríklad poradca, konzultant, spoločník obchodnej spoločnosti, obchodný partner.
         
-  # candidatures:
-  #   # TODO: show if
-  #   show_if: is_candidate
-  #   order: 17
-  #   title: Kandidatúra
-  #   embeds:
-  #     candidatures:
-  #       required_if: is_candidate
-  #       title: Kandidatúra
-  #       model_name: Candidature
-  #       
+  candidatures:
+    show_if: is_candidate
+    order: 17
+    title: Kandidatúra
+    embeds:
+      candidatures:
+        required_if: is_candidate
+        title: Kandidatúra
+        model_name: Candidature
+        
   # campaigns:
   #   order: 18
   #   title: Financovanie kampane

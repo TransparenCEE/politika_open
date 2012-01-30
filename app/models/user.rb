@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :meetings
   has_many :persons
   has_many :colleagues
+  has_many :candidatures
   
   attr_accessor :password_changed
   
