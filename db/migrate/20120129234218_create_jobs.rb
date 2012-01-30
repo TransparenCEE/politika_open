@@ -17,7 +17,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :employer_address_zip
       t.text :employer_address_notes
       
-      t.references :user
+      t.references :user, null: false
 
       t.timestamps
     end

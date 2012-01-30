@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129234218) do
+ActiveRecord::Schema.define(:version => 20120129235012) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "institution_name"
+    t.string   "institution_sector"
+    t.string   "institution_form"
+    t.string   "institution_nubmer"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.boolean  "activity_information_is_honored"
+    t.string   "activity_information_activity"
+    t.string   "activity_information_reward_currency"
+    t.string   "activity_information_reward"
+    t.date     "activity_information_date_from"
+    t.date     "activity_information_date_to"
+    t.text     "activity_information_notes"
+    t.integer  "user_id",                              :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
+
+  add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
   create_table "company_shares", :force => true do |t|
     t.string   "basic_information_name"
@@ -31,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120129234218) do
     t.date     "participation_date_from"
     t.date     "participation_date_to"
     t.text     "participation_notes"
-    t.integer  "user_id"
+    t.integer  "user_id",                                      :null => false
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
@@ -53,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20120129234218) do
     t.string   "employer_address_street"
     t.string   "employer_address_zip"
     t.text     "employer_address_notes"
-    t.integer  "user_id"
+    t.integer  "user_id",                   :null => false
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
@@ -124,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20120129234218) do
     t.boolean  "public_service_is_not_in_public_service"
     t.boolean  "company_shares_not_owns_shares"
     t.boolean  "jobs_has_no_job"
+    t.boolean  "activities_has_no_activities"
   end
 
 end

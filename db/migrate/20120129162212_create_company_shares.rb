@@ -21,7 +21,7 @@ class CreateCompanyShares < ActiveRecord::Migration
       t.date :participation_date_to
       t.text :participation_notes
       
-      t.references :user
+      t.references :user, null: false
 
       t.timestamps
     end

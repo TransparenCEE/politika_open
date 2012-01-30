@@ -165,24 +165,24 @@ user:
         show_unless: jobs_has_no_job
         required_unless: jobs_has_no_job
         
-  # activities:
-  #   order: 5
-  #   description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
-  #   title: Honorované a nehonorované aktivity
-  #   fields:
-  #     has_no_activities:
-  #       data_type: boolean
-  #       type: check_box
-  #       title: Nevykonávam honorovanú alebo nehonorovanú aktivitu
-  #       description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
-  #   embeds:
-  #     activities:
-  #       title: Honorované a nehonorované aktivity
-  #       model_name: Activity
-  #       show_unless: activities_has_no_activities
-  #       required_unless: activities_has_no_activities
-  #       description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
-  #       
+  activities:
+    order: 5
+    description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+    title: Honorované a nehonorované aktivity
+    fields:
+      has_no_activities:
+        data_type: boolean
+        type: check_box
+        title: Nevykonávam honorovanú alebo nehonorovanú aktivitu
+        description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+    embeds:
+      activities:
+        title: Honorované a nehonorované aktivity
+        model_name: Activity
+        show_unless: activities_has_no_activities
+        required_unless: activities_has_no_activities
+        description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+        
   # benefits:
   #   order: 6
   #   title: "Výhody z funkcie, zamestnania, aktivity"
