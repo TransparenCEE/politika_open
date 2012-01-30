@@ -312,24 +312,24 @@ user:
         title: Nemám jednotlivý hnuteľný majetok nad 10 000 EUR
         type: check_box
         data_type: boolean
-  #       
-  # duties:
-  #   order: 12
-  #   title: "Majetkové práva, záväzky, hodnoty"
-  #   description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
-  #   fields:
-  #     has_no_duties:
-  #       title: "Nevlastním žiadne majetkové práva, nemám záväzky, hodnoty"
-  #       type: check_box
-  #       data_type: boolean
-  #   embeds:
-  #     duties:
-  #       title: "Majetkové práva, záväzky, hodnoty"
-  #       model_name: Duty
-  #       order: 0
-  #       required_unless: duties_has_no_duties
-  #       description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
-  #       
+        
+  duties:
+    order: 12
+    title: "Majetkové práva, záväzky, hodnoty"
+    description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
+    fields:
+      has_no_duties:
+        title: "Nevlastním žiadne majetkové práva, nemám záväzky, hodnoty"
+        type: check_box
+        data_type: boolean
+    embeds:
+      duties:
+        title: "Majetkové práva, záväzky, hodnoty"
+        model_name: Duty
+        order: 0
+        required_unless: duties_has_no_duties
+        description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
+        
   # offices:
   #   order: 13
   #   title: Poslanecká kancelária

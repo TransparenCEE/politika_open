@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :vehicle_properties
   has_many :other_properties
   has_many :movable_properties
+  has_many :duties
   
   attr_accessor :password_changed
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130034757) do
+ActiveRecord::Schema.define(:version => 20120130140729) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -86,6 +86,38 @@ ActiveRecord::Schema.define(:version => 20120130034757) do
   end
 
   add_index "company_shares", ["user_id"], :name => "index_company_shares_on_user_id"
+
+  create_table "duties", :force => true do |t|
+    t.string   "basic_description"
+    t.string   "basic_acquirement_type"
+    t.string   "basic_provider"
+    t.string   "basic_possesion_type"
+    t.string   "basic_share"
+    t.date     "basic_acquirement_date"
+    t.date     "basic_expiration_date"
+    t.string   "value_total"
+    t.string   "value_total_currency"
+    t.string   "value_amount"
+    t.string   "value_currency"
+    t.string   "value_timeframe"
+    t.text     "value_notes"
+    t.string   "institution_title_or_name"
+    t.string   "institution_sector"
+    t.string   "institution_form"
+    t.string   "institution_number"
+    t.boolean  "institution_no_approvement"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.integer  "user_id",                    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "duties", ["user_id"], :name => "index_duties_on_user_id"
 
   create_table "events", :force => true do |t|
     t.string   "organisator_name"
@@ -317,6 +349,7 @@ ActiveRecord::Schema.define(:version => 20120130034757) do
     t.boolean  "unmovable_property_no_properties"
     t.boolean  "movable_property_has_no_vehicle_property"
     t.boolean  "movable_property_has_no_other_property"
+    t.boolean  "duties_has_no_duties"
   end
 
   create_table "vehicle_properties", :force => true do |t|

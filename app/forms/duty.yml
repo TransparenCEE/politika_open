@@ -107,29 +107,12 @@ duty:
         title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
         type: check_box
         data_type: boolean
-        description: Súhlas je potrebný iba v prípade, že poskytovateľ majetkového práva, záväzku, hodnoty je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.       
-     # title:
-     #   order: 5
-     #   title: Titul
-     # name:
-     #   order: 6
-     #   title: Meno
-     #   required_unless: institution_no_approvement
-     # surname:
-     #   order: 7
-     #   title: Priezvisko
-     #   required_unless: institution_no_approvement       
+        description: Súhlas je potrebný iba v prípade, že poskytovateľ majetkového práva, záväzku, hodnoty je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.
         
   address:
     order: 3
     title: Adresa osoby alebo inštitúcie
     fields:
-     # person_address:
-     #   order: -1
-     #   title: Adresa osoby
-     # institution_address:
-     #   title: Adresa inštitúcie
-     #   order: -2
       state:
         order: 0
         title: Štát
