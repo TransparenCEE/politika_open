@@ -431,28 +431,28 @@ user:
         title: Kandidatúra
         model_name: Candidature
         
-  # campaigns:
-  #   order: 18
-  #   title: Financovanie kampane
-  #   show_if: is_candidate
-  #   fields:
-  #     has_none:
-  #       title: Nemám / nemal som kampaň
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 0
-  #     not_presented:
-  #       title: Neuvádzam
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 1
-  #   embeds:
-  #     campaign:
-  #       show_if: should_show_campaigns
-  #       required_if: should_show_campaigns
-  #       model_name: Campaign
-  #       title: Financovanie kampane
-  #       
+  campaigns:
+    order: 18
+    title: Financovanie kampane
+    show_if: is_candidate
+    fields:
+      has_none:
+        title: Nemám / nemal som kampaň
+        type: check_box
+        data_type: boolean
+        order: 0
+      not_presented:
+        title: Neuvádzam
+        type: check_box
+        data_type: boolean
+        order: 1
+    embeds:
+      campaign:
+        show_if: should_show_campaigns
+        required_if: should_show_campaigns
+        model_name: Campaign
+        title: Financovanie kampane
+        
   # other:
   #   order: 19
   #   title: Rôzne

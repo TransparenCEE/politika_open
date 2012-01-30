@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :persons
   has_many :colleagues
   has_many :candidatures
+  has_many :campaign
   
   attr_accessor :password_changed
   
@@ -77,5 +78,8 @@ class User < ActiveRecord::Base
   end
   def should_show_colleagues
     !!colleagues_has_none == false && !!colleagues_not_presented == false
+  end
+  def should_show_campaigns
+    !!campaigns_has_none == false && !!campaigns_not_presented == false
   end
 end

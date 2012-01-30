@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130150911) do
+ActiveRecord::Schema.define(:version => 20120130160653) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -61,6 +61,31 @@ ActiveRecord::Schema.define(:version => 20120130150911) do
   end
 
   add_index "benefits", ["user_id"], :name => "index_benefits_on_user_id"
+
+  create_table "campaigns", :force => true do |t|
+    t.string   "basic_election"
+    t.date     "basic_date"
+    t.string   "basic_physic_persons_gifts"
+    t.string   "basic_physic_persons_gifts_currency"
+    t.string   "basic_law_perosons_gifts"
+    t.string   "basic_law_perosons_gifts_currency"
+    t.string   "basic_own_money"
+    t.string   "basic_own_money_currency"
+    t.string   "basic_fulfillings"
+    t.string   "basic_fulfillings_currency"
+    t.string   "basic_fulfilling_type"
+    t.string   "basic_expenses"
+    t.string   "basic_expenses_currency"
+    t.text     "basic_expenses_type"
+    t.string   "basic_website"
+    t.date     "basic_actualisation"
+    t.text     "basic_notes"
+    t.integer  "user_id",                             :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "campaigns", ["user_id"], :name => "index_campaigns_on_user_id"
 
   create_table "candidatures", :force => true do |t|
     t.string   "basic_election"
@@ -488,6 +513,8 @@ ActiveRecord::Schema.define(:version => 20120130150911) do
     t.boolean  "persons_not_presented"
     t.boolean  "colleagues_has_none"
     t.boolean  "colleagues_not_presented"
+    t.boolean  "campaigns_has_none"
+    t.boolean  "campaigns_not_presented"
   end
 
   create_table "vehicle_properties", :force => true do |t|
