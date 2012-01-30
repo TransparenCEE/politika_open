@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_many :other_properties
   has_many :movable_properties
   has_many :duties
+  has_many :offices
   
   attr_accessor :password_changed
   
@@ -58,5 +59,10 @@ class User < ActiveRecord::Base
   
   def full_name
     "%s %s" % [basic_information_first_name, basic_information_last_name]
+  end
+  
+  
+  def should_require_offices
+    !offices_has_no_offices && !offices_nie_je_poslanec
   end
 end

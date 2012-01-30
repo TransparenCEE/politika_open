@@ -330,28 +330,28 @@ user:
         required_unless: duties_has_no_duties
         description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
         
-  # offices:
-  #   order: 13
-  #   title: Poslanecká kancelária
-  #   show_if: is_politician
-  #   description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
-  #   fields:
-  #     has_no_offices:
-  #       title: Neprenajímam si poslaneckú kanceláriu
-  #       type: check_box
-  #       data_type: boolean
-  #     nie_je_poslanec:
-  #       title: Nie som poslancom NR SR alebo Európskeho parlamentu
-  #       type: check_box
-  #       data_type: boolean
-  #   embeds:
-  #     offices:
-  #       title: Poslanecká kancelária
-  #       model_name: Office
-  #       show_unless: offices_has_no_offices
-  #       required_if: should_require_offices
-  #       description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
-  #       
+  offices:
+    order: 13
+    title: Poslanecká kancelária
+    show_if: is_politician
+    description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
+    fields:
+      has_no_offices:
+        title: Neprenajímam si poslaneckú kanceláriu
+        type: check_box
+        data_type: boolean
+      nie_je_poslanec:
+        title: Nie som poslancom NR SR alebo Európskeho parlamentu
+        type: check_box
+        data_type: boolean
+    embeds:
+      offices:
+        title: Poslanecká kancelária
+        model_name: Office
+        show_unless: offices_has_no_offices
+        required_if: should_require_offices
+        description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
+        
   # meetings:
   #   order: 14
   #   title: Dôležité stretnutia

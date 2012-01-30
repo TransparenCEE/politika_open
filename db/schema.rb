@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130140729) do
+ActiveRecord::Schema.define(:version => 20120130142509) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -206,6 +206,32 @@ ActiveRecord::Schema.define(:version => 20120130140729) do
 
   add_index "movable_properties", ["user_id"], :name => "index_movable_properties_on_user_id"
 
+  create_table "offices", :force => true do |t|
+    t.string   "basic_type"
+    t.string   "basic_name"
+    t.string   "basic_sector"
+    t.string   "basic_form"
+    t.string   "basic_number"
+    t.date     "basic_date_from"
+    t.date     "basic_date_to"
+    t.string   "basic_amount"
+    t.string   "basic_currency"
+    t.string   "basic_timeframe"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.string   "address_street"
+    t.string   "address_zip"
+    t.string   "address_contact"
+    t.text     "other_note"
+    t.integer  "user_id",          :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "offices", ["user_id"], :name => "index_offices_on_user_id"
+
   create_table "other_properties", :force => true do |t|
     t.string   "basic_description"
     t.string   "basic_acquirement"
@@ -350,6 +376,8 @@ ActiveRecord::Schema.define(:version => 20120130140729) do
     t.boolean  "movable_property_has_no_vehicle_property"
     t.boolean  "movable_property_has_no_other_property"
     t.boolean  "duties_has_no_duties"
+    t.boolean  "offices_has_no_offices"
+    t.boolean  "offices_nie_je_poslanec"
   end
 
   create_table "vehicle_properties", :force => true do |t|
