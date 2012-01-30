@@ -7,15 +7,11 @@ colleague:
         order: 0
         title: Funkcia spolupracovníka
         required: true
-      #  type: data_select
-      #  data_source: colleagues.function
         description: Napr. poslanecký asistent, obchodný partner, asistent, poradca a pod.
       form:
         order: 1
         title: Forma spolupráce
         description: Napr. zamestnanec, brigádnik, dobrovoľník.
-      #  type: data_select
-      #  data_source: colleagues.form
       date_from:
         order: 5
         title: Časové obdobie od

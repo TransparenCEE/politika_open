@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130144308) do
+ActiveRecord::Schema.define(:version => 20120130145716) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -61,6 +61,27 @@ ActiveRecord::Schema.define(:version => 20120130144308) do
   end
 
   add_index "benefits", ["user_id"], :name => "index_benefits_on_user_id"
+
+  create_table "colleagues", :force => true do |t|
+    t.string   "form_function"
+    t.string   "form_form"
+    t.date     "form_date_from"
+    t.date     "form_date_to"
+    t.boolean  "information_no_approvement"
+    t.string   "information_title"
+    t.string   "information_name"
+    t.string   "information_surname"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.text     "address_notes"
+    t.integer  "user_id",                    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "colleagues", ["user_id"], :name => "index_colleagues_on_user_id"
 
   create_table "company_shares", :force => true do |t|
     t.string   "basic_information_name"
@@ -451,6 +472,8 @@ ActiveRecord::Schema.define(:version => 20120130144308) do
     t.boolean  "meetings_not_presented"
     t.boolean  "persons_has_none"
     t.boolean  "persons_not_presented"
+    t.boolean  "colleagues_has_none"
+    t.boolean  "colleagues_not_presented"
   end
 
   create_table "vehicle_properties", :force => true do |t|

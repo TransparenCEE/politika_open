@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :offices
   has_many :meetings
   has_many :persons
+  has_many :colleagues
   
   attr_accessor :password_changed
   
@@ -72,5 +73,8 @@ class User < ActiveRecord::Base
   end
   def should_show_persons
     !!persons_has_none == false && !!persons_not_presented == false
+  end
+  def should_show_colleagues
+    !!colleagues_has_none == false && !!colleagues_not_presented == false
   end
 end
