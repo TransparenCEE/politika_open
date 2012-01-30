@@ -375,29 +375,29 @@ user:
         show_if: should_show_meetings
         required_if: should_show_meetings
         
-  # persons:
-  #   order: 15
-  #   title: Blízke osoby
-  #   description: Osoba, ktorú možno považovať za osobu blízku verejnému funkcionárovi, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah k verejnému funkcionárovi možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, s ktorou je verejný funkcionár v priateľskom vzťahu a pod.
-  #   fields:
-  #     has_none:
-  #       title: Nemám žiadne blízke osoby
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 0
-  #     not_presented:
-  #       title: Neuvádzam
-  #       type: check_box
-  #       data_type: boolean
-  #       order: 1
-  #   embeds:
-  #     persons:
-  #       title: Blízke osoby
-  #       model_name: Person
-  #       show_if: should_show_persons
-  #       required_if: should_show_persons
-  #       description: Osoba, ktorú možno považovať za osobu blízku verejnému funkcionárovi, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah k verejnému funkcionárovi možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, s ktorou je verejný funkcionár v priateľskom vzťahu a pod.
-  #       
+  persons:
+    order: 15
+    title: Blízke osoby
+    description: Osoba, ktorú možno považovať za osobu blízku verejnému funkcionárovi, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah k verejnému funkcionárovi možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, s ktorou je verejný funkcionár v priateľskom vzťahu a pod.
+    fields:
+      has_none:
+        title: Nemám žiadne blízke osoby
+        type: check_box
+        data_type: boolean
+        order: 0
+      not_presented:
+        title: Neuvádzam
+        type: check_box
+        data_type: boolean
+        order: 1
+    embeds:
+      persons:
+        title: Blízke osoby
+        model_name: Person
+        show_if: should_show_persons
+        required_if: should_show_persons
+        description: Osoba, ktorú možno považovať za osobu blízku verejnému funkcionárovi, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah k verejnému funkcionárovi možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, s ktorou je verejný funkcionár v priateľskom vzťahu a pod.
+        
   # colleagues:
   #   order: 16
   #   title: Blízki spolupracovníci

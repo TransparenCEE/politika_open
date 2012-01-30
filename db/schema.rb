@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130143318) do
+ActiveRecord::Schema.define(:version => 20120130144308) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -294,6 +294,43 @@ ActiveRecord::Schema.define(:version => 20120130143318) do
 
   add_index "parties", ["user_id"], :name => "index_parties_on_user_id"
 
+  create_table "people", :force => true do |t|
+    t.string   "basic_relation"
+    t.boolean  "basic_no_approvement"
+    t.string   "information_title"
+    t.string   "information_name"
+    t.string   "information_surname"
+    t.string   "address_state"
+    t.string   "address_county"
+    t.string   "address_district"
+    t.string   "address_town"
+    t.boolean  "ownership_not_presented"
+    t.boolean  "ownership_none"
+    t.boolean  "ownership_not_known"
+    t.string   "ownership_name"
+    t.string   "ownership_sector"
+    t.string   "ownership_form"
+    t.string   "ownership_number"
+    t.string   "institution_address_state"
+    t.string   "institution_address_county"
+    t.string   "institution_address_district"
+    t.string   "institution_address_town"
+    t.string   "institution_address_street"
+    t.string   "institution_address_zip"
+    t.string   "function_function"
+    t.string   "function_share"
+    t.string   "function_currency"
+    t.string   "function_percent_share"
+    t.date     "function_date_from"
+    t.date     "function_date_to"
+    t.text     "function_notes"
+    t.integer  "user_id",                      :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "people", ["user_id"], :name => "index_people_on_user_id"
+
   create_table "properties", :force => true do |t|
     t.string   "basic_description"
     t.string   "basic_acquirement"
@@ -412,6 +449,8 @@ ActiveRecord::Schema.define(:version => 20120130143318) do
     t.boolean  "offices_nie_je_poslanec"
     t.boolean  "meetings_has_no_meetings"
     t.boolean  "meetings_not_presented"
+    t.boolean  "persons_has_none"
+    t.boolean  "persons_not_presented"
   end
 
   create_table "vehicle_properties", :force => true do |t|

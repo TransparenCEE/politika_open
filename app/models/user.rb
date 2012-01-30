@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :duties
   has_many :offices
   has_many :meetings
+  has_many :persons
   
   attr_accessor :password_changed
   
@@ -68,5 +69,8 @@ class User < ActiveRecord::Base
   end
   def should_show_meetings
     !!meetings_has_no_meetings == false && !!meetings_not_presented == false
+  end
+  def should_show_persons
+    !!persons_has_none == false && !!persons_not_presented == false
   end
 end
