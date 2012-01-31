@@ -3,16 +3,16 @@
   .fr
     %br
     = form_for :search, :builder => ListFormBuilder, :url => frontend_searches_path do |f|
-      = f.text_field :name, :inline => true
+      = f.text_field :name, :inline => true, :value => params[:search]
       = submit_tag "Hľadať", class: 'button_search'
 
 #list
   %ul.alphabet.clearfix
     - ("A".."Z").each do |letter|
       %li{:class => params[:letter] == letter ? "active" : ""}
-        = link_to letter, update_params(:letter => letter)
+        = link_to letter, update_params(:letter => letter, :search => nil)
     %li{:class => params[:letter].blank? ? "active" : ""}
-      = link_to "Všetko", update_params({:letter => nil})
+      = link_to "Všetko", update_params(:letter => nil, :search => nil)
 
   %table
     %tr.header

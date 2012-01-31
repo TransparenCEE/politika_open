@@ -67,27 +67,4 @@ describe User, "basic features" do
       User.authenticate(email, password).should == valid_user
     end
   end
- 
-  describe "updating" do
-    it "should set basic information" do
-      valid_user.write_attributes({:basic_information => {:name => "Vojto"}})
-      valid_user.save
-      
-      valid_user.basic_information[:name].should == "Vojto"
-    end
-  end
- 
- describe "attributes" do
-   it "should parse boolean value" do
-    valid_user.write_attributes({:basic_information_is_interesting => "1"})
-    valid_user.save
-    valid_user.boolean_value(:basic_information, :is_interesting).should == true
-    
-    valid_user.basic_information_is_interesting = "0"
-    valid_user.boolean_value(:basic_information, :is_interesting).should == false
-    
-    valid_user.basic_information_is_interesting = ""
-    valid_user.boolean_value(:basic_information, :is_interesting).should == false
-   end
- end
 end

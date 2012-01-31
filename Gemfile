@@ -8,6 +8,7 @@ gem 'prawn'
 gem 'rmagick', :require => false
 gem 'kaminari'
 gem 'newrelic_rpm'
+gem 'thinking-sphinx'
 
 group :production do
   gem 'therubyracer'

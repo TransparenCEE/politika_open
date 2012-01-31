@@ -2,7 +2,7 @@
   %h2.fl Administrácia používateľov
   .fr
     .box
-      - form_tag admin_users_path, :method => "get" do
+      = form_tag admin_users_path, :method => "get" do
         = text_field_tag :keyword, params[:keyword], :class => "large"
         = submit_tag "Hľadať"
         - if params[:keyword]

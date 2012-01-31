@@ -28,10 +28,41 @@ class User < ActiveRecord::Base
   attr_accessor :password_changed
   
   validates_confirmation_of :password, if: :validate_password?, message: "should match confirmation"
+  validates_presence_of :email
+  validates_uniqueness_of :email
+  
+  validates_presence_of :basic_information_first_name
+  validates_presence_of :basic_information_last_name
+  validates_presence_of :basic_information_date_of_birth
+  
+  validates_format_of :email, :with => /^(.+)@(.+)\.(.+)$/
+  
+  validates_presence_of :telephone_number
+  validates_length_of :telephone_number, :minimum => 5
+  
+  validates_acceptance_of :is_accepting_rules
   
   before_save :encode_password, :if => :password_changed
   def encode_password
     write_attribute(:password, Digest::SHA1.hexdigest(self.password.to_s))
+  end
+  
+  before_save :save_cached_fields
+  def save_cached_fields
+    self.cached_current_party = cached_current_party
+    self.cached_candidature_party = candidature_party
+    self.cached_candidature_election = candidature_election
+    self.cached_candidature_function = candidature_function
+    self.cached_candidature_town = candidature_town
+  end
+  
+  before_save :count_invalid_fields
+  def count_invalid_fields
+    count = 0
+    self.visible_forms.each do |form|
+      count += form.count_of_invalid_fields
+    end
+    self.count_of_invalid_fields = count
   end
 
   def password=(new_password)
@@ -55,8 +86,7 @@ class User < ActiveRecord::Base
   end
   
   def is_published
-    true
-    # count_of_invalid_fields == 0
+    count_of_invalid_fields == 0
   end
   
   def name
@@ -83,4 +113,56 @@ class User < ActiveRecord::Base
   def should_show_campaigns
     !!campaigns_has_none == false && !!campaigns_not_presented == false
   end
+  
+  def self.count_published
+    self.count_valid
+  end
+  
+  def self.count_valid
+    self.where({:count_of_invalid_fields => 0}).count
+  end
+  
+  def self.count_active
+    self.where({:is_active => true}).count
+  end
+  
+  def self.count_live
+    self.where({:count_of_invalid_fields => 0, :is_active => true}).count
+  end
+  
+  def current_party
+    parties.order("basic_information_from DESC").first.try(:basic_information_party)
+  end
+  def candidature_party
+    candidatures.order("basic_date DESC").first.try(:basic_candidated_for)
+  end
+  def candidature_election
+    candidatures.order("basic_date DESC").first.try(:basic_election)
+  end
+  def candidature_function
+    candidatures.order("basic_date DESC").first.try(:basic_function)
+  end
+  def candidature_town
+    candidatures.order("basic_date DESC").first.try(:basic_candidated_for_town)
+  end
+  
+  define_index do
+    indexes :basic_information_first_name, sortable: true
+    indexes :basic_information_last_name, sortable: true
+    indexes :email, sortable: true
+    indexes :telephone_number, sortable: true
+    
+    indexes :cached_current_party, sortable: true
+    indexes :cached_candidature_party, sortable: true
+    indexes :cached_candidature_election, sortable: true
+    indexes :cached_candidature_function, sortable: true
+    indexes :cached_candidature_town, sortable: true
+    
+    indexes :updated_at, sortable: true
+    indexes :count_of_invalid_fields
+    indexes :is_active
+    
+    set_property delta: true
+  end
+  
 end

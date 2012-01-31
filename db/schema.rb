@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130162334) do
+ActiveRecord::Schema.define(:version => 20120131190236) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -481,8 +481,8 @@ ActiveRecord::Schema.define(:version => 20120130162334) do
     t.string   "basic_information_last_name"
     t.date     "basic_information_date_of_birth"
     t.boolean  "is_accepting_rules"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
     t.string   "basic_information_title"
     t.string   "basic_information_second_title"
     t.string   "basic_information_birth_last_name"
@@ -524,6 +524,13 @@ ActiveRecord::Schema.define(:version => 20120130162334) do
     t.boolean  "colleagues_not_presented"
     t.boolean  "campaigns_has_none"
     t.boolean  "campaigns_not_presented"
+    t.string   "cached_current_party"
+    t.string   "cached_candidature_party"
+    t.string   "cached_candidature_election"
+    t.string   "cached_candidature_function"
+    t.string   "cached_candidature_town"
+    t.integer  "count_of_invalid_fields"
+    t.boolean  "delta",                                     :default => true, :null => false
   end
 
   create_table "vehicle_properties", :force => true do |t|

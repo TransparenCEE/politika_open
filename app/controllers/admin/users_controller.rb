@@ -6,14 +6,16 @@ module Admin
     # before_filter :set_timestamp_recording, :only => [:update, :activate, :reset]
     
     def index
-      criteria = User.criteria.order_by([[sort_by, sort_direction]])
-      if params[:keyword]
-        criteria.where({:_keywords => /^#{params[:keyword]}/i})
-      end
-      @per_page = 20
-      @pages = (criteria.count.to_f / @per_page.to_f).ceil
       @page = params[:page] ? params[:page].to_i : 1
-      @users = criteria.paginate(:page => @page, :per_page => @per_page)
+      @per_page = 20
+      
+      if params[:keyword].present?
+        @users = User.search(params[:keyword], star: true, order: sort_by, sort_mode: sort_direction, page: @page, per_page: @per_page)
+      else
+        @users = User.page(@page).per(@per_page)
+      end
+      
+      @pages = (@users.count.to_f / @per_page.to_f).ceil
     end
     
     def activate

@@ -25,11 +25,19 @@ class Frontend::UsersController < Frontend::ApplicationController
     conditions = conditions_from_params
     respond_to do |format|
       format.html do
-        user_count = User.where(conditions).count
-        @per_page = 20
-        @pages = (user_count.to_f / @per_page.to_f).ceil
         @page = params[:page] ? params[:page].to_i : 1
-        @users = User.where(conditions).order_by([[sort_by, sort_direction]]).page(@page).per(@per_page)
+        @per_page = 20
+        
+        if params[:search].present?
+          @users = User.where(conditions).search(params[:search], star: true, order: sort_by, sort_mode: sort_direction, conditions: conditions, page: @page, per_page: @per_page)
+        elsif params[:letter].present?
+          @users = User.where(conditions).search(params[:search], order: sort_by, sort_mode: :desc, conditions: conditions.merge({basic_information_last_name: "#{params[:letter]}*"}), page: @page, per_page: @per_page)
+        else
+          @users = User.where(conditions).order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
+        end
+        
+        user_count = @users.count
+        @pages = (user_count.to_f / @per_page.to_f).ceil
       end
       format.csv do
         @users = User.where(conditions).order_by([[sort_by, sort_direction]])
@@ -63,24 +71,7 @@ class Frontend::UsersController < Frontend::ApplicationController
   
   def conditions_from_params
     # Default
-    conditions = {:count_of_invalid_fields => 0, :is_active => true}
-    
-    # Search
-    if params[:search]
-      keywords = params[:search].split(' ').collect{|k| /^#{k}/i }
-      conditions[:_keywords.in] = keywords
-    end
-    
-    # Filter by letter
-    if letter = params[:letter]
-      letters = [letter] + (@@extra_chars[letter.downcase]||[])
-      letter_regexp = letters.join('|')
-      conditions[:basic_information_last_name] = /^(#{letter_regexp})/i
-    end
-    
-    # Sorting
-    params[:sort] ||= :updated_at
-    params[:dir] ||= :asc
+    conditions = {count_of_invalid_fields: 0, is_active: 1}
     
     # Special filter
     if params[:election_type] == 'samosprava_obci'
