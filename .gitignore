@@ -3,6 +3,7 @@ db/*.sqlite3
 db/sphinx/*
 log/*
 tmp/**/*
+config/*sphinx.conf
 config/database.yml
 config/newrelic.yml
 public/uploads/*
