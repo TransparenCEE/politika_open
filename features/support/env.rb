@@ -56,6 +56,11 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 # FIXME: the create_person helper should actually create the forms instead of faking it.
 Forms::Form.any_instance.stubs(:count_of_invalid_fields).returns(0)
+User.stubs(:count_invalid_fields)
 
 # This silences the annoying 'rack-1.2.3/lib/rack/utils.rb:16: warning: regexp match /.../n against to UTF-8 string'. If they fix it then the next line can be removed.
 $VERBOSE = nil
+
+# sphinx in cucumber
+require 'cucumber/thinking_sphinx/external_world'
+Cucumber::ThinkingSphinx::ExternalWorld.new
