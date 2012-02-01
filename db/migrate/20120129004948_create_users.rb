@@ -15,7 +15,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :basic_information_first_name
       t.string :basic_information_last_name
       t.date :basic_information_date_of_birth
-
+      
+      t.string :etl_sid
+      
       t.timestamps
     end
   end

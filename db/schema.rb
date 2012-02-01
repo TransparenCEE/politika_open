@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "activity_information_date_to"
     t.text     "activity_information_notes"
     t.integer  "user_id",                              :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
   end
@@ -55,9 +57,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "benefit_date_from"
     t.date     "benefit_date_to"
     t.text     "benefit_notes"
-    t.integer  "user_id",                :null => false
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "benefits", ["user_id"], :name => "index_benefits_on_user_id"
@@ -81,6 +85,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "basic_actualisation"
     t.text     "basic_notes"
     t.integer  "user_id",                             :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
   end
@@ -95,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_candidated_for_town"
     t.text     "basic_note"
     t.integer  "user_id",                   :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
@@ -116,6 +124,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "address_town"
     t.text     "address_notes"
     t.integer  "user_id",                    :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
@@ -141,6 +151,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "participation_date_to"
     t.text     "participation_notes"
     t.integer  "user_id",                                      :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
@@ -173,6 +185,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "address_street"
     t.string   "address_zip"
     t.integer  "user_id",                    :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
@@ -200,9 +214,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "event_amount_currency"
     t.string   "event_amount"
     t.text     "event_notes"
-    t.integer  "user_id",               :null => false
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
@@ -213,9 +229,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_currency_main"
     t.string   "basic_amount_other"
     t.string   "basic_currency_other"
-    t.integer  "user_id",              :null => false
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "incomes", ["user_id"], :name => "index_incomes_on_user_id"
@@ -236,6 +254,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "employer_address_zip"
     t.text     "employer_address_notes"
     t.integer  "user_id",                   :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
@@ -268,6 +288,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "address_street"
     t.string   "address_zip"
     t.integer  "user_id",                     :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
@@ -279,9 +301,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_value"
     t.string   "basic_currency"
     t.text     "basic_notes"
-    t.integer  "user_id",        :null => false
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "money_properties", ["user_id"], :name => "index_money_properties_on_user_id"
@@ -291,9 +315,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_movable_property"
     t.string   "basic_currency"
     t.text     "basic_notes"
-    t.integer  "user_id",                :null => false
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "movable_properties", ["user_id"], :name => "index_movable_properties_on_user_id"
@@ -317,9 +343,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "address_zip"
     t.string   "address_contact"
     t.text     "other_note"
-    t.integer  "user_id",          :null => false
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "offices", ["user_id"], :name => "index_offices_on_user_id"
@@ -335,6 +363,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_share"
     t.text     "basic_notes"
     t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
@@ -343,9 +373,11 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
 
   create_table "others", :force => true do |t|
     t.text     "basic_content"
-    t.integer  "user_id",       :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "others", ["user_id"], :name => "index_others_on_user_id"
@@ -357,6 +389,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "basic_information_to"
     t.text     "basic_information_notes"
     t.integer  "user_id",                    :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
@@ -394,6 +428,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.date     "function_date_to"
     t.text     "function_notes"
     t.integer  "user_id",                      :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end
@@ -422,6 +458,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "location_town"
     t.text     "location_notes"
     t.integer  "user_id",                              :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
   end
@@ -436,6 +474,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_information_member_of"
     t.text     "basic_information_notes"
     t.integer  "user_id",                               :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
@@ -461,6 +501,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "sponsorship_value_currency"
     t.string   "sponsorship_value"
     t.integer  "user_id",                                    :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
@@ -477,10 +519,10 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.integer  "etl_sid"
     t.integer  "etl_verejny_cinnitel_sid"
     t.boolean  "is_super_admin"
+    t.boolean  "is_accepting_rules"
     t.string   "basic_information_first_name"
     t.string   "basic_information_last_name"
     t.date     "basic_information_date_of_birth"
-    t.boolean  "is_accepting_rules"
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
     t.string   "basic_information_title"
@@ -547,6 +589,8 @@ ActiveRecord::Schema.define(:version => 20120131190236) do
     t.string   "basic_mileage"
     t.text     "basic_notes"
     t.integer  "user_id",                 :null => false
+    t.integer  "count_of_invalid_fields"
+    t.string   "etl_sid"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

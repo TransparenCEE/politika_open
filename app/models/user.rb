@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
   has_many :campaign
   has_many :others
   
+  accepts_nested_attributes_for :parties, :public_services, :company_shares, :jobs, :activities, 
+                                :benefits, :sponsorships, :events, :incomes, :properties, :money_properties, 
+                                :vehicle_properties, :other_properties, :money_properties, :duties,
+                                :offices, :meetings, :persons, :colleagues, :candidatures, :campaign, :others
+  
   attr_accessor :password_changed
   
   validates_confirmation_of :password, if: :validate_password?, message: "should match confirmation"
@@ -130,6 +135,10 @@ class User < ActiveRecord::Base
     self.where({:count_of_invalid_fields => 0, :is_active => true}).count
   end
   
+  def count_of_invalid_forms
+    forms.select { |f| f.has_invalid_fields? }.count
+  end
+  
   def current_party
     parties.order("basic_information_from DESC").first.try(:basic_information_party)
   end
@@ -149,6 +158,7 @@ class User < ActiveRecord::Base
   define_index do
     indexes :basic_information_first_name, sortable: true
     indexes :basic_information_last_name, sortable: true
+    
     indexes :email, sortable: true
     indexes :telephone_number, sortable: true
     

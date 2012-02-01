@@ -22,6 +22,10 @@ class CreateActivities < ActiveRecord::Migration
       t.text :activity_information_notes
       
       t.references :user, null: false
+      
+      t.integer :count_of_invalid_fields
+      
+      t.string :etl_sid
 
       t.timestamps
     end

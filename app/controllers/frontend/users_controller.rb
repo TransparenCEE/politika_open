@@ -29,9 +29,9 @@ class Frontend::UsersController < Frontend::ApplicationController
         @per_page = 20
         
         if params[:search].present?
-          @users = User.where(conditions).search(params[:search], star: true, order: sort_by, sort_mode: sort_direction, conditions: conditions, page: @page, per_page: @per_page)
+          @users = User.where(conditions).search(params[:search], star: true, order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions, page: @page, per_page: @per_page)
         elsif params[:letter].present?
-          @users = User.where(conditions).search(params[:search], order: sort_by, sort_mode: :desc, conditions: conditions.merge({basic_information_last_name: "#{params[:letter]}*"}), page: @page, per_page: @per_page)
+          @users = User.where(conditions).search(params[:search], order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions.merge({basic_information_last_name: "#{params[:letter]}*"}), page: @page, per_page: @per_page)
         else
           @users = User.where(conditions).order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
         end

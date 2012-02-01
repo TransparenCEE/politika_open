@@ -91,4 +91,4 @@ test:
   port: 9319
 production:
   <<: *common
-  port: 9318
+  port: 9325

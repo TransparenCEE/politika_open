@@ -10,6 +10,9 @@ gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'thinking-sphinx'
 
+gem 'mongo'
+gem 'bson_ext'
+
 group :production do
   gem 'therubyracer'
 end

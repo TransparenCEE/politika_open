@@ -11,6 +11,40 @@ namespace :user do
     end
   end
   
+  task copy_mongo_to_mysql: :environment do
+    mongo_users = Mongo::Connection.new['politikaopen_production']['users']
+    
+    associations = User.reflect_on_all_associations.map{|a| a.name.to_s }
+
+    mongo_users.find.each do |mongo_user|
+      user = User.new
+      mongo_user.keys.each do |mongo_user_key|
+        next if mongo_user_key.match(/^_/)
+        if associations.include?(mongo_user_key)
+          mongo_user[mongo_user_key].each do |mongo_embed|
+            associated = user.send(mongo_user_key).build
+            mongo_embed.each do |mongo_embed_key, mongo_embed_value|
+              next if mongo_embed_key.match(/^_/)
+              if associated.respond_to?(mongo_embed_key)
+                associated[mongo_embed_key] = mongo_embed_value
+              else
+                puts "#{mongo_embed_key} not present on embed #{mongo_user_key} on #{user.email}"
+              end
+            end
+          end
+        else
+          if user.respond_to?(mongo_user_key)
+            user[mongo_user_key] = mongo_user[mongo_user_key]
+          else
+            puts "#{mongo_user_key} not present on #{user.email} with value #{mongo_user[mongo_user_key]}"
+          end
+        end
+      end
+      puts "--> Saving user #{user.email} ..."
+      user.save(validate: false)
+    end
+  end
+  
   task something: :environment do
     old_db_users = User.all.map{|u| u}
     

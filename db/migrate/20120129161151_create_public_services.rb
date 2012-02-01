@@ -8,6 +8,10 @@ class CreatePublicServices < ActiveRecord::Migration
       t.string :basic_information_member_of
       t.text :basic_information_notes
       t.references :user, null: false
+      
+      t.integer :count_of_invalid_fields
+      
+      t.string :etl_sid
 
       t.timestamps
     end
