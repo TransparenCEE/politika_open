@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 require 'bundler/capistrano'
 
+require 'thinking_sphinx/deploy/capistrano'
+
 load 'deploy/assets'
 set :normalize_asset_timestamps, false
 
@@ -32,7 +34,19 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
     run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
+    run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
   end
 end
 
 before 'deploy:assets:precompile', 'deploy:symlink_shared'
+
+task :before_update_code, :roles => [:app] do
+  thinking_sphinx.stop
+end
+
+task :after_update_code, :roles => [:app] do
+  thinking_sphinx.configure
+  thinking_sphinx.start
+  
+  run "cd #{release_path}; bundle exec rake ts:rebuild RAILS_ENV=production"
+end
