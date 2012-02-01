@@ -36,7 +36,7 @@ class Frontend::UsersController < Frontend::ApplicationController
           @users = User.where(conditions).order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
         end
         
-        user_count = @users.count
+        user_count = User.count
         @pages = (user_count.to_f / @per_page.to_f).ceil
       end
       format.csv do

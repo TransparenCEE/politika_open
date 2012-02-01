@@ -15,7 +15,7 @@ module Admin
         @users = User.page(@page).per(@per_page)
       end
       
-      @pages = (@users.count.to_f / @per_page.to_f).ceil
+      @pages = (User.count.to_f / @per_page.to_f).ceil
     end
     
     def activate
