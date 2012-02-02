@@ -30,9 +30,12 @@ class User < ActiveRecord::Base
                                 :vehicle_properties, :other_properties, :money_properties, :duties,
                                 :offices, :meetings, :persons, :colleagues, :candidatures, :campaign, :others
   
-  attr_accessor :password_changed
+  attr_accessor :password_confirmation, :password_changed, :is_accepting_rules
   
-  validates_confirmation_of :password, if: :validate_password?, message: "should match confirmation"
+  validates_presence_of :password, :if => :validate_password?
+  validates_presence_of :password_confirmation, :if => :validate_password?
+  validates_confirmation_of :password, :if => :validate_password?
+  
   validates_presence_of :email
   validates_uniqueness_of :email
   
