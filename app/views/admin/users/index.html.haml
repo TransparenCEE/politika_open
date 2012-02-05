@@ -68,13 +68,5 @@
         = link_to "Resetovať", reset_admin_user_path(user), :confirm => "Chystáte sa resetovať heslo používateľa #{user.email}. Určite chcete pokračovať?"
         = link_to "Prihlásiť", login_admin_user_path(user), :confirm => "Týmto sa odhlásite a prihlásite ako #{user.email}. Chcete pokračovať?"
         
-%br
-%div.pagination.clearfix
-  .fl
-    = link_to_unless @page == 1, "Prvá", update_params(:page => 1)
-    = link_to_unless @page == 1, "‹ Predchádzajúca", update_params(:page => @page-1)
-    = link_to_unless @page >= @pages, "Ďalšia ›", update_params(:page => @page+1)
-    = link_to_unless @page == @pages, "Posledná", update_params(:page => @pages)
-  .fr
-    == Stránka #{@page}/#{@pages}
+= paginate @users, window: 8
   

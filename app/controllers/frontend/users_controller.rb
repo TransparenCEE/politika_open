@@ -29,18 +29,18 @@ class Frontend::UsersController < Frontend::ApplicationController
         @per_page = 20
         
         if params[:search].present?
-          @users = User.where(conditions).search(params[:search], star: true, order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions, page: @page, per_page: @per_page)
+          @users = User.search(params[:search], star: true, order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions, page: @page, per_page: @per_page)
         elsif params[:letter].present?
-          @users = User.where(conditions).search(params[:search], order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions.merge({basic_information_last_name: "#{params[:letter]}*"}), page: @page, per_page: @per_page)
+          @users = User.search(params[:search], order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions.merge({basic_information_last_name: "#{params[:letter]}*"}), page: @page, per_page: @per_page)
         else
           @users = User.where(conditions).order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
         end
         
-        user_count = User.count
+        user_count ||= User.count
         @pages = (user_count.to_f / @per_page.to_f).ceil
       end
       format.csv do
-        @users = User.where(conditions).order_by([[sort_by, sort_direction]])
+        @users = User.where(conditions).order("#{sort_by} #{sort_direction}")
         render :text => collection_as_csv(@users, [:basic_information_first_name,
           :basic_information_last_name,
           :cached_current_party,

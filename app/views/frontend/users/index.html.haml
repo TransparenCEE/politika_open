@@ -67,20 +67,4 @@
         /%td= l(user.updated_at, :format => :normal)
         %td= link_to "Otvoriť »", frontend_user_path(user)
 
-  - if @pages > 0
-    .clearfix
-      .fl
-        %ul.pagination.clearfix
-          - unless @page == 1
-            %li= link_to "Prvá", update_params(:page => 1)
-          - unless @page == 1
-            %li= link_to "‹ Predchádzajúca", update_params(:page => @page-1)
-          - unless @page >= @pages
-            %li= link_to "Ďalšia ›", update_params(:page => @page+1)
-          - unless @page == @pages
-            %li= link_to "Posledná", update_params(:page => @pages)
-      .fr
-        %ul.pagination
-          - (1..@pages).each do |page|
-            %li{:class => @page == page ? "active" : ""}
-              = link_to page, update_params(:page => page)
+  = paginate @users, window: 8

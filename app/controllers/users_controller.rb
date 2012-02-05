@@ -12,8 +12,8 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
       @user.is_active = false
       success = @user.save
-    # rescue
-    #   success = false
+    rescue
+      success = false
     end
     if success
       NotificationMailer.user_update(@user, true).deliver
