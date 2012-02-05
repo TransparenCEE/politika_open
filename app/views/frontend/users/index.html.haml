@@ -10,9 +10,9 @@
   %ul.alphabet.clearfix
     - ("A".."Z").each do |letter|
       %li{:class => params[:letter] == letter ? "active" : ""}
-        = link_to letter, update_params(:letter => letter, :search => nil)
+        = link_to letter, update_params(:letter => letter, :search => nil, :page => nil)
     %li{:class => params[:letter].blank? ? "active" : ""}
-      = link_to "Všetko", update_params(:letter => nil, :search => nil)
+      = link_to "Všetko", update_params(:letter => nil, :search => nil, :page => nil)
 
   %table
     %tr.header
