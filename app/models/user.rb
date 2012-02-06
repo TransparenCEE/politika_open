@@ -105,6 +105,14 @@ class User < ActiveRecord::Base
     "%s %s" % [basic_information_first_name, basic_information_last_name]
   end
   
+  def reset_password!
+    new_password = SecureRandom.base64(6)
+    self.password = new_password
+    self.password_confirmation = password
+    
+    save ? new_password : nil
+  end
+  
   
   def should_require_offices
     !offices_has_no_offices && !offices_nie_je_poslanec

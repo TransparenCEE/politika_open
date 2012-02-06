@@ -20,7 +20,8 @@ Politikaopen::Application.routes.draw do
   end
   resources :sessions do
     collection do
-      get :return
+      get :return, :reset_password
+      post :reset_password
     end
   end
   resources :forms
