@@ -54,7 +54,7 @@ module Admin
     
     def reset
       @user = User.find(params[:id])
-      @new_password = rand(100000).to_s
+      @new_password = SecureRandom.base64(6)
       @user.password = @new_password
       @user.save(:validate => false)
     end
