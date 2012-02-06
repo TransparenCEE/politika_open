@@ -110,7 +110,7 @@ class User < ActiveRecord::Base
     self.password = new_password
     self.password_confirmation = password
     
-    save ? new_password : nil
+    save(validate: false) ? new_password : nil
   end
   
   
