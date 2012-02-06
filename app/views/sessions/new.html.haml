@@ -10,4 +10,6 @@
       = password_field_tag "password"
     %li.clearfix
       %label
-      = submit_tag "Prihlásiť sa"
+      = submit_tag "Prihlásiť sa", id: 'login_commit'
+      
+= link_to 'Zabudli ste heslo?', reset_password_sessions_path, rel: 'reset-password'

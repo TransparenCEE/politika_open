@@ -36,6 +36,19 @@ class SessionsController < ApplicationController
     end
   end
   
+  def reset_password
+    if request.post?
+      user = User.find_by_email(params[:email])
+      if user.present? && (new_password = user.reset_password!).present?
+        PasswordMailer.reset_password(user.email, new_password).deliver
+        flash[:notice] = 'Na váš email bolo odoslané nové heslo.'
+      else
+        flash[:error] = 'Zadali ste neexistujúcu email adresu!'
+      end
+      redirect_to root_url
+    end
+  end
+  
   protected
   
   def check_login

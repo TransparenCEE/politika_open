@@ -15,7 +15,7 @@ def create_person(first_name, last_name)
                 basic_information_date_of_birth: '1.1.2000',
                 telephone_number: '123456',
                 is_politician: true,
-                email: "#{first_name}.#{last_name}@email.com", 
+                email: "#{first_name}.#{last_name}@example.com", 
                 password: 'blah', 
                 password_confirmation: 'blah',
                 count_of_invalid_fields: 0
