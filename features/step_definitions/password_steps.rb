@@ -11,7 +11,7 @@ Then /^the password should be reset and I should get an email with the new one$/
 end
 
 Then /^I should be able to login with the new password$/ do
-  new_password = ActionMailer::Base.deliveries.first.body.match(/:\s+(.*)</)[1]
+  new_password = ActionMailer::Base.deliveries.first.body.match(/Heslo:\s+(.*)</)[1]
   visit new_session_path
   fill_in('email', with: 'Arthur.Dent@example.com')
   fill_in('password', with: new_password)

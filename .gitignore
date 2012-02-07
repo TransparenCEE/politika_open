@@ -6,6 +6,7 @@ tmp/**/*
 config/*sphinx.conf
 config/database.yml
 config/newrelic.yml
+config/environments/production.rb
 public/uploads/*
 tmp/*
 backup/*
