@@ -41,9 +41,9 @@ class SessionsController < ApplicationController
       user = User.find_by_email(params[:email])
       if user.present? && (new_password = user.reset_password!).present?
         PasswordMailer.reset_password(user.email, new_password).deliver
-        flash[:notice] = 'Na váš email bolo odoslané nové heslo.'
+        flash[:notice] = 'Na Vašu emailovú adresu bolo odoslané nové heslo.'
       else
-        flash[:error] = 'Zadali ste neexistujúcu email adresu!'
+        flash[:error] = 'Takúto e-mailovú adresu v projekte politikaopen neevidujeme.'
       end
       redirect_to root_url
     end

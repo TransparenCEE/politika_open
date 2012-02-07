@@ -57,4 +57,9 @@ $(document).ready(function(){
       $(i).height(target_height);
     };
   });
+  
+  $('.toggler').click(function() {
+    $('.hidden').toggle();
+    return false;
+  });
 });
