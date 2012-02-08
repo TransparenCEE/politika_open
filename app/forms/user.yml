@@ -108,6 +108,7 @@ user:
         title: Nie som členom politickej strany
         data_type: boolean
         type: check_box
+        show_unless: parties
     embeds:
       parties:
         title: Stranícka príslušnosť
@@ -125,6 +126,7 @@ user:
         title: Nezastávam verejnú funkciu
         data_type: boolean
         type: check_box
+        show_unless: public_services
     embeds:
       public_services:
         title: Verejná funkcia
@@ -142,6 +144,7 @@ user:
         data_type: boolean
         type: check_box
         title: 'Nevlastním obchodné podiely vo firmách / nemám živnosť'
+        show_unless: company_shares
     embeds:
       company_shares:
         title: Obchodné podiely
@@ -158,6 +161,7 @@ user:
         data_type: boolean
         type: check_box
         title: Nemám zamestnanie
+        show_unless: jobs
     embeds:
       jobs:
         title: Zamestnanecké pozície
@@ -175,6 +179,7 @@ user:
         type: check_box
         title: Nevykonávam honorovanú alebo nehonorovanú aktivitu
         description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+        show_unless: activities
     embeds:
       activities:
         title: Honorované a nehonorované aktivity
@@ -193,6 +198,7 @@ user:
         type: check_box
         title: "Nemám žiadne výhody z funkcie, zamestnania, aktivity"
         description: Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod. Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
+        show_unless: benefits
     embeds:
       benefits:
         title: "Výhody z funkcie, zamestnania, aktivity"
@@ -210,6 +216,7 @@ user:
         data_type: boolean
         type: check_box
         title: "Neprijal som žiadne sponzorstvo, dary alebo granty"
+        show_unless: sponsorships
     embeds:
       sponsorships:
         title: "Sponzorstvo, dary a granty"
@@ -266,6 +273,7 @@ user:
         data_type: boolean
         type: check_box
         order: 0
+        show_unless: properties
     embeds:
       properties: 
         title: Nehnuteľný majetok
@@ -308,10 +316,12 @@ user:
         title: Nevlastním auto
         type: check_box
         data_type: boolean
+        show_unless: vehicle_properties
       has_no_other_property:
         title: Nemám jednotlivý hnuteľný majetok nad 10 000 EUR
         type: check_box
         data_type: boolean
+        show_unless: other_properties
         
   duties:
     order: 12
@@ -340,6 +350,7 @@ user:
         title: Neprenajímam si poslaneckú kanceláriu
         type: check_box
         data_type: boolean
+        show_unless: offices
       nie_je_poslanec:
         title: Nie som poslancom NR SR alebo Európskeho parlamentu
         type: check_box
@@ -362,11 +373,13 @@ user:
         type: check_box
         data_type: boolean
         order: 0
+        show_unless: meetings
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
+        show_unless: meetings
     embeds:
       meetings:
         title: Dôležité stretnutia
@@ -385,11 +398,13 @@ user:
         type: check_box
         data_type: boolean
         order: 0
+        show_unless: persons
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
+        show_unless: persons
     embeds:
       persons:
         title: Blízke osoby
@@ -408,11 +423,13 @@ user:
         type: check_box
         data_type: boolean
         order: 0
+        show_unless: colleagues
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
+        show_unless: colleagues
     embeds:
       colleagues:
         title: Blízki spolupracovníci
@@ -441,11 +458,13 @@ user:
         type: check_box
         data_type: boolean
         order: 0
+        show_unless: campaign
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
+        show_unless: campaign
     embeds:
       campaign:
         show_if: should_show_campaigns

@@ -6,7 +6,7 @@
 
 = form_for @user, :builder => ListFormBuilder, :html => {:class => "inscription", :multipart => @form.multipart}, :url => form_path(@form) do |f|
   %ul
-    - @form.fields.each do |field|
+    - @form.visible_fields.each do |field|
       - if @form.sections.keys.include?(field.identifier)
         %h3= @form.sections[field.identifier]
       %li.clearfix.form_row{:class => field.html_classes}
@@ -19,7 +19,7 @@
           %p.description
             != field.settings[:description]
             
-    - if @form.fields.count > 0
+    - if @form.visible_fields.count > 0
       %li
         %label
         = submit_tag "Uložiť"

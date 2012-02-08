@@ -149,6 +149,16 @@ class Forms::Form
     end
   end
   
+  def visible_fields
+    @fields.select do |field|
+      if field.settings[:show_unless]
+        @object.send(field.settings[:show_unless]).blank?
+      else
+        true
+      end
+    end
+  end
+  
   def sections
     @sections || Hash.new
   end
