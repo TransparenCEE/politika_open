@@ -63,16 +63,19 @@ person:
         title: Neuvádzam
         type: check_box
         data_type: boolean
+        radio_button_checkbox: no_presented_group
       none:
         order: 1
         title: "Nemá vlastníctvo, podieľníctvo, členstvo (alebo zamestnanie) osoby v inštitúciach"
         type: check_box
         data_type: boolean
+        radio_button_checkbox: no_presented_group
       not_known:
         order: 2
         title: "Nemám vedomosť o vlastníctve, podieľníctve, členstve (alebo zamestnanie) osoby v inštitúciach"
         type: check_box
         data_type: boolean
+        radio_button_checkbox: no_presented_group
       name:
         order: 3
         title: Názov/meno

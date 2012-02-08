@@ -62,4 +62,13 @@ $(document).ready(function(){
     $('.hidden').toggle();
     return false;
   });
+  
+  $('.radio_button_checkbox').click(function() {
+    var checked = $(this);
+    $('.radio_button_checkbox').each(function() {
+      if ($(this).hasClass(checked.attr('class')) && (checked.attr('id') != $(this).attr('id'))) {
+        $(this).attr('checked', false);
+      }
+    });
+  });
 });

@@ -2,8 +2,10 @@
 class Forms::Fields::CheckBox < Forms::Field
   
   def render
+    radio_button_checkbox = "radio_button_checkbox #{settings[:radio_button_checkbox]}" if settings[:radio_button_checkbox].present?
+    
     result = hidden_field_tag(input_tag_name, "0")
-    result += check_box_tag(input_tag_name, "1", value)
+    result += check_box_tag(input_tag_name, "1", value, class: radio_button_checkbox )
     result
   end
   

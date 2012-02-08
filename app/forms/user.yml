@@ -351,10 +351,12 @@ user:
         type: check_box
         data_type: boolean
         show_unless: offices
+        radio_button_checkbox: no_offices_group
       nie_je_poslanec:
         title: Nie som poslancom NR SR alebo Európskeho parlamentu
         type: check_box
         data_type: boolean
+        radio_button_checkbox: no_offices_group
     embeds:
       offices:
         title: Poslanecká kancelária
@@ -374,12 +376,14 @@ user:
         data_type: boolean
         order: 0
         show_unless: meetings
+        radio_button_checkbox: no_meetings_group
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
         show_unless: meetings
+        radio_button_checkbox: no_meetings_group
     embeds:
       meetings:
         title: Dôležité stretnutia
@@ -399,12 +403,14 @@ user:
         data_type: boolean
         order: 0
         show_unless: persons
+        radio_button_checkbox: no_persons_group
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
         show_unless: persons
+        radio_button_checkbox: no_persons_group
     embeds:
       persons:
         title: Blízke osoby
@@ -424,12 +430,14 @@ user:
         data_type: boolean
         order: 0
         show_unless: colleagues
+        radio_button_checkbox: no_colleagues_group
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
         show_unless: colleagues
+        radio_button_checkbox: no_colleagues_group
     embeds:
       colleagues:
         title: Blízki spolupracovníci
@@ -459,12 +467,14 @@ user:
         data_type: boolean
         order: 0
         show_unless: campaign
+        radio_button_checkbox: no_campaign_group
       not_presented:
         title: Neuvádzam
         type: check_box
         data_type: boolean
         order: 1
         show_unless: campaign
+        radio_button_checkbox: no_campaign_group
     embeds:
       campaign:
         show_if: should_show_campaigns
