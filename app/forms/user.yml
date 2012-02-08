@@ -235,22 +235,30 @@ user:
         data_type: boolean
         type: check_box
         title: "Nezúčastnil som sa žiadnej udalosti"
+        radio_button_checkbox: events_group
+        required_unless: events_events_expensive_or_events_events_not_expensive
+        show_unless: events
       events_not_expensive:
         order: 1
         data_type: boolean
         type: check_box
         title: Udalosti neboli nad 165 EUR
+        radio_button_checkbox: events_group
+        required_unless: events_events_expensive_or_events_has_no_events
+        show_unless: events
       events_expensive:
         order: 2
         data_type: boolean
         type: check_box
         title: Udalosti boli nad 165 EUR
+        radio_button_checkbox: events_group
+        required_unless: events_events_not_expensive_or_events_has_no_events
     embeds:
       events:
         title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
         model_name: Event
-        show_unless: events_has_no_events
-        required_unless: events_has_no_events
+        show_if: events_events_expensive
+        required_if: events_events_expensive
         description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
         
   incomes:

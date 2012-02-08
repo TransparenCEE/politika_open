@@ -130,6 +130,16 @@ class User < ActiveRecord::Base
     !!campaigns_has_none == false && !!campaigns_not_presented == false
   end
   
+  def events_events_expensive_or_events_events_not_expensive
+    events_events_expensive? == true || events_events_not_expensive? == true
+  end  
+  def events_events_expensive_or_events_has_no_events
+    events_events_expensive? == true || events_has_no_events? == true
+  end  
+  def events_events_not_expensive_or_events_has_no_events
+    events_events_not_expensive? == true || events_has_no_events? == true
+  end
+  
   def self.count_published
     self.count_valid
   end
