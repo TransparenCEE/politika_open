@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default :from => "admin@politikaopen.sk"
+  default from: "politikaopen_admin@fair-play.sk"
   
   def user_update(user, new_user = false)
     @user, @new_user = user, new_user
