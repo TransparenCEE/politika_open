@@ -10,9 +10,9 @@ module Admin
       @per_page = 20
       
       if params[:keyword].present?
-        @users = User.search(params[:keyword], star: true, order: sort_by, sort_mode: sort_direction, page: @page, per_page: @per_page)
+        @users = User.search(params[:keyword], star: true, order: sort_by, sort_mode: sort_direction.to_sym, page: @page, per_page: @per_page)
       else
-        @users = User.page(@page).per(@per_page)
+        @users = User.order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
       end
       
       @pages = (User.count.to_f / @per_page.to_f).ceil
