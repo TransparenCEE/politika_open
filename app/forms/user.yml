@@ -237,6 +237,7 @@ user:
         title: "Nezúčastnil som sa žiadnej udalosti"
         radio_button_checkbox: events_group
         required_unless: events_events_expensive_or_events_events_not_expensive
+        show_unless: events
       events_not_expensive:
         order: 1
         data_type: boolean
@@ -244,6 +245,7 @@ user:
         title: Udalosti neboli nad 165 EUR
         radio_button_checkbox: events_group
         required_unless: events_events_expensive_or_events_has_no_events
+        show_unless: events
       events_expensive:
         order: 2
         data_type: boolean
@@ -251,6 +253,7 @@ user:
         title: Udalosti boli nad 165 EUR
         radio_button_checkbox: events_group
         required_unless: events_events_not_expensive_or_events_has_no_events
+        show_unless: events
     embeds:
       events:
         title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
