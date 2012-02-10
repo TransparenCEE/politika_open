@@ -7,15 +7,28 @@ $(document).ready(function(){
   $("a.make-input").click(function(){
     target = $(this).attr('data-make-input');
     target = $("#"+target);
-    $(this).remove();
     if(target.length > 0)
     {
-      input = $("<input />");
-      input.attr('type', 'text');
-      input.attr('name', target.attr('name'));
-      input.attr('id', target.attr('id'));
-      input.val(target.val());
-      target.replaceWith(input);
+      if(target.is('input')) {
+        input = $("<select />");
+        input.attr('name', target.attr('name'));
+        input.attr('id', target.attr('id'));
+        input.options = [];
+        $.each($.parseJSON($(this).attr('data-make-collection')), function(index, value) {
+          if(value == null)
+            value = '';
+          input.append($("<option></option>").attr("value",value).text(value));
+        });
+        input.val(target.val());
+        target.replaceWith(input);
+      } else {
+        input = $("<input />");
+        input.attr('type', 'text');
+        input.attr('name', target.attr('name'));
+        input.attr('id', target.attr('id'));
+        input.val(target.val());
+        target.replaceWith(input);
+      }
     };
     
   });
