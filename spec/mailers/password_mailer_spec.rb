@@ -9,7 +9,7 @@ describe PasswordMailer do
     it "renders the headers" do
       mail.subject.should eq("Reset hesla")
       mail.to.should eq([address])
-      mail.from.should eq(["admin@politikaopen.sk"])
+      mail.from.should eq(["politikaopen_admin@fair-play.sk"])
     end
 
     it "renders the body" do

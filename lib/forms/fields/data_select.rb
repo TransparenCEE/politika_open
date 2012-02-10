@@ -25,7 +25,7 @@ class Forms::Fields::DataSelect < Forms::Field
     end
     
     if ["true", "1"].include?(settings[:allow_custom].to_s)
-      result += %{ <br /><br /><a href="#" class="make-input" data-make-input="#{sanitize_to_id(input_tag_name)}" data-make-collection='#{data.to_json}'>všetky/iné</a><br /><br />}
+      result += %{ <br /><br /><a href="#" class="make-input" data-make-input="#{sanitize_to_id(input_tag_name)}" data-make-collection='#{data.to_json}'>zoznam/iné</a><br /><br />}
     end
     
     result
