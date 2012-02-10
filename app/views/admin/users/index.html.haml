@@ -40,10 +40,10 @@
       %td= user.full_name
       %td= user.email
       %td= user.telephone_number
-      %td= l(user.created_at || 10.years.ago, :format => :short)
+      %td= l(user.created_at || 10.years.ago, :format => :normal)
       %td
         - if user.updated_at
-          = l(user.updated_at, :format => :short)
+          = l(user.updated_at, :format => :normal)
       - if user.is_active
         %td.active
           Aktívne
