@@ -13,19 +13,19 @@ class Forms::Fields::DataSelect < Forms::Field
     end
     
     if !value.blank? && !data.collect{|d|d.to_s}.include?(value)
-      data << value if data.is_a?(Array)
-    end
-    
-    if settings[:grouped]
-      options = grouped_options_for_select(data, value, settings[:prompt]).html_safe
+      result += text_field_tag(input_tag_name, value, settings[:html_options]||{})
     else
-      options = options_for_select(data, value)
+      if settings[:grouped]
+        options = grouped_options_for_select(data, value, settings[:prompt]).html_safe
+      else
+        options = options_for_select(data, value)
+      end
+      
+      result += select_tag(input_tag_name, options, settings[:html_options]||{})
     end
-    
-    result += select_tag(input_tag_name, options, settings[:html_options]||{})
     
     if ["true", "1"].include?(settings[:allow_custom].to_s)
-      result += ' <br /><br /><a href="#" class="make-input" data-make-input="%s">iné</a><br /><br />' % [sanitize_to_id(input_tag_name)]
+      result += %{ <br /><br /><a href="#" class="make-input" data-make-input="#{sanitize_to_id(input_tag_name)}" data-make-collection='#{data.to_json}'>všetky/iné</a><br /><br />}
     end
     
     result
