@@ -338,12 +338,14 @@ user:
         title: "Nevlastním žiadne majetkové práva, nemám záväzky, hodnoty"
         type: check_box
         data_type: boolean
+        show_unless: duties
     embeds:
       duties:
         title: "Majetkové práva, záväzky, hodnoty"
         model_name: Duty
         order: 0
         required_unless: duties_has_no_duties
+        show_unless: duties_has_no_duties
         description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
         
   offices:
