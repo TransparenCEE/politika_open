@@ -17,8 +17,7 @@ module ApplicationHelper
   end
   
   def share_on_facebook(user)
-    "http://www.facebook.com/sharer.php?u=%s&t=%s na Politika Open" % \
-      [frontend_user_url(user), user.full_name]
+    "http://www.facebook.com/sharer.php?u=#{frontend_user_url(user)}&title=#{URI.encode(user.full_name + ' na Politika Open')}"
   end
   
   def update_params(with)
