@@ -31,3 +31,7 @@ income:
         order: 4
         type: data_select
         data_source: money.currencies
+      note:
+        order: 5
+        title: Poznámka
+        type: text_area
