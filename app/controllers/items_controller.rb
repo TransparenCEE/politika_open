@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
       @item.save
       redirect_to form_path(@embed.settings[:form_identifier])
     else
-      flash.now[:error] = "Položky označené červenou farbou sú povinné."
+      flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."
       render :action => "new"
     end
   end
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
       current_user.save(:validate => false)
       redirect_to form_path(@embed.settings[:form_identifier])
     else
-      flash.now[:error] = "Položky označené červenou farbou sú povinné."
+      flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."
       render :action => "edit"
     end
   end
