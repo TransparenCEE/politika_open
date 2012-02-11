@@ -6,6 +6,8 @@ money_property:
         title: Rok
         required: true
         order: 0
+        type: data_select
+        data_source: time.year
       value:
         title: "Súhrna hodnota hotovosti, účtov, cenných papierov"
         required: true
