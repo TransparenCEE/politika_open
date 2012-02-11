@@ -19,6 +19,7 @@ sk:
             short: "%d %b"
             long: "%d. %B %Y"
             month_and_year: "%m/%Y"
+            year: "%Y"
         day_names: [Nedeľa, Pondelok, Utorok, Streda, Štvrtok, Piatok, Sobota]
         abbr_day_names: [Ne, Po, Ut, St, Št, Pi, So]
         month_names: [~, Január, Február, Marec, Apríl, Máj, Jún, Júl, August, September, Október, November, December]
