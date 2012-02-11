@@ -16,7 +16,7 @@
           %strong!= field.formatted_value
           
   - form.embeds(:visible).each do |embed|
-    - @user.send(embed.identifier).each do |item|
+    - @user.embed_items(embed.identifier, embed.settings[:sort_attribute]).each do |item|
       %table.box
         - item.forms.each do |form|
           %tr.section

@@ -272,6 +272,7 @@ user:
         title: Súhrn príjmov za kalendárny rok
         model_name: Income
         description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.      
+        sort_attribute: basic_year
   
   unmovable_property:
     order: 10

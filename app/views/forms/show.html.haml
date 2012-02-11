@@ -26,7 +26,7 @@
       
 - @form.embeds(:visible).each do |embed|
   %h3= embed.title
-  - @user.embed_items(embed.identifier).each do |item|
+  - @user.embed_items(embed.identifier, embed.settings[:sort_attribute]).each do |item|
     .wrapper
       %table.box
         - item.forms.each do |form|
