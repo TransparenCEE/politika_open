@@ -16,11 +16,15 @@ module Forms::FormHelper
     self.send("#{form}_#{field}")
   end
   
-  def embed_items(what)
+  def embed_items(what, sort_attribute = nil)
     items = self.send(what)
     
     items.sort_by { |item|
-      item.updated_at || 10.years.ago
+      if sort_attribute.present?
+        item.send(sort_attribute)
+      else
+        item.updated_at || 10.years.ago
+      end
     }.reverse
   end
 end
