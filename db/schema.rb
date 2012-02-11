@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211184447) do
+ActiveRecord::Schema.define(:version => 20120211195745) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -574,6 +574,7 @@ ActiveRecord::Schema.define(:version => 20120211184447) do
     t.string   "cached_candidature_town"
     t.integer  "count_of_invalid_fields"
     t.boolean  "delta",                                     :default => true, :null => false
+    t.date     "cached_candidature_date"
   end
 
   create_table "vehicle_properties", :force => true do |t|

@@ -62,6 +62,7 @@ class User < ActiveRecord::Base
     self.cached_candidature_election = candidature_election
     self.cached_candidature_function = candidature_function
     self.cached_candidature_town = candidature_town
+    self.cached_candidature_date = candidature_date
   end
   
   before_save :count_invalid_fields
@@ -174,6 +175,9 @@ class User < ActiveRecord::Base
   end
   def candidature_town
     candidatures.order("basic_date DESC").first.try(:basic_candidated_for_town)
+  end
+  def candidature_date
+    candidatures.order("basic_date DESC").first.try(:basic_date)
   end
   
   define_index do

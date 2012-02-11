@@ -25,8 +25,8 @@
       %td.sort{:class => sort_direction_for_column(:cached_current_party)}
         = sort_link "Politická strana", :cached_current_party
       
-      %td.sort{:class => sort_direction_for_column(:party)}
-        = sort_link "Kandiduje za", :party
+      %td.sort{:class => sort_direction_for_column(:cached_candidature_party)}
+        = sort_link "Kandiduje za", :cached_candidature_party
       
       
       %td.sort{:class => sort_direction_for_column(:cached_candidature_election)}
@@ -53,8 +53,11 @@
           = value_or_em(user.cached_current_party, "Nečlen")
              
         %td
-          = value_or_em(user.cached_candidature_party, "Nekandiduje")
-        
+          - if user.cached_candidature_party.present?
+            = "#{user.cached_candidature_party} (#{l(user.cached_candidature_date || 10.years.ago, :format => :year)})"
+          - else
+            %em Nekandiduje
+                    
         %td
           = value_or_em(user.cached_candidature_election, "Nekandiduje")
         
