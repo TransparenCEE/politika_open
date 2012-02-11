@@ -179,6 +179,8 @@ class User < ActiveRecord::Base
   define_index do
     indexes :basic_information_first_name, sortable: true
     indexes :basic_information_last_name, sortable: true
+    indexes :basic_information_address_city
+    indexes :basic_information_address_zipcode
     
     indexes :email, sortable: true
     indexes :telephone_number, sortable: true
