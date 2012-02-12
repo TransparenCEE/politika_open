@@ -28,5 +28,12 @@ class ApplicationController < ActionController::Base
   def saved_referer
     session[:return_path]
   end
+ 
+  def disable_timestamp_recording
+    User.record_timestamps = false if admin_presence?
+  end
+  def enable_timestamp_recording
+    User.record_timestamps = false if admin_presence?
+  end
   
 end

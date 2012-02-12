@@ -3,7 +3,8 @@ class FormsController < ApplicationController
   
   before_filter :login_required
   before_filter :find_forms
-  # before_filter :set_timestamp_recording, :only => :update
+  before_filter :disable_timestamp_recording, :only => :update
+  after_filter :enable_timestamp_recording, :only => :update
   
   def index
     
@@ -38,10 +39,6 @@ protected
   
   def find_forms
     @all_forms = current_user.visible_forms
-  end
-  
-  def set_timestamp_recording
-    User.record_timestamps = false if admin_presence?
   end
   
 end

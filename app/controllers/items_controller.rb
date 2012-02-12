@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   
   before_filter :login_required
   before_filter :prepare
-  # before_filter :set_timestamp_recording, :only => [:create, :update]
+  before_filter :disable_timestamp_recording, :only => [:create, :update]
+  before_filter :enable_timestamp_recording, :only => [:create, :update]
 
   def new
     @item = @model_class.new
@@ -68,10 +69,6 @@ class ItemsController < ApplicationController
     @finder = Forms::FormFinder.instance
     @embed = @finder.embed_for_with_identifier(User, params[:embed_id])
     @model_class = @embed.settings[:model_name].constantize
-  end
-  
-  def set_timestamp_recording
-    User.record_timestamps = false if admin_presence?
   end
   
 end

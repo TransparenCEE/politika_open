@@ -11,5 +11,12 @@ module Admin
         return redirect_to forms_path
       end
     end
+    
+    def disable_timestamp_recording
+      User.record_timestamps = false
+    end
+    def enable_timestamp_recording
+      User.record_timestamps = false
+    end
   end
 end

@@ -3,7 +3,8 @@ module Admin
   class UsersController < ApplicationController
     include Sorting
 
-    # before_filter :set_timestamp_recording, :only => [:update, :activate, :reset]
+    before_filter :disable_timestamp_recording, :only => [:update, :activate, :reset]
+    after_filter :enable_timestamp_recording, :only => [:update, :activate, :reset]
     
     def index
       @page = params[:page] ? params[:page].to_i : 1
@@ -63,13 +64,6 @@ module Admin
       log_in!(@user)
       flash[:notice] = "Boli ste odhlásený a prihlásený ako #{@user.email}."
       redirect_to forms_path
-    end
-    
-    protected
-   
-    def set_timestamp_recording
-      User.record_timestamps = false
-    end
-    
+    end    
   end
 end
