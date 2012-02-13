@@ -21,7 +21,7 @@ module Forms::FormHelper
     
     items.sort_by { |item|
       if sort_attribute.present?
-        item.send(sort_attribute)
+        item.send(sort_attribute) || 10.years.ago
       else
         item.updated_at || 10.years.ago
       end

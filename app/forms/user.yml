@@ -116,6 +116,7 @@ user:
         show_unless: political_party_is_not_in_political_party
         required_unless: political_party_is_not_in_political_party
         description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
+        sort_attribute: basic_information_from
   
   public_service:
     order: 2
@@ -134,6 +135,7 @@ user:
         show_unless: public_service_is_not_in_public_service
         required_unless: public_service_is_not_in_public_service
         description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
+        sort_attribute: basic_information_from
         
   company_shares:
     order: 3
@@ -152,6 +154,7 @@ user:
         show_unless: company_shares_not_owns_shares
         required_unless: company_shares_not_owns_shares
         description: 'Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>.'
+        sort_attribute: participation_date_from
         
   jobs:
     order: 4
@@ -168,6 +171,7 @@ user:
         model_name: Job
         show_unless: jobs_has_no_job
         required_unless: jobs_has_no_job
+        sort_attribute: employer_date_from
         
   activities:
     order: 5
@@ -187,6 +191,7 @@ user:
         show_unless: activities_has_no_activities
         required_unless: activities_has_no_activities
         description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+        sort_attribute: activity_information_date_from
         
   benefits:
     order: 6
@@ -206,6 +211,7 @@ user:
         show_unless: benefits_has_no_benefits
         required_unless: benefits_has_no_benefits
         description: Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod. Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
+        sort_attribute: benefit_date_from
         
   sponsorships:
     order: 7
@@ -224,6 +230,7 @@ user:
         show_unless: sponsorships_has_no_sponsorships
         required_unless: sponsorships_has_no_sponsorships
         description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
+        sort_attribute: sponsorship_date
         
   events:
     order: 8
@@ -261,6 +268,7 @@ user:
         show_if: events_events_expensive
         required_if: events_events_expensive
         description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
+        sort_attribute: event_date_from
         
   incomes:
     order: 9
@@ -291,6 +299,7 @@ user:
         show_unless: unmovable_property_no_properties
         required_unless: unmovable_property_no_properties
         description: Ak si nepamätáte presné údaje o nehnuteľnosti, ktorú vlastníte, môžete požadované údaje ľahko získať cez internetovú stránku <a href="https://www.katasterportal.sk/kapor/" target="_blank">Katastrálneho úradu</a>. Ak nepoznáte odhad trhovej hodnoty nehnuteľnosti, môžete hodnotu uviesť podľa sumy poistného (na akú sumu máte nehnuteľnosť poistenú) alebo odhadnúť pomocou cien uvedených v aktuálnych ponukách nehnuteľností, ktoré svojou polohou, veľkosťou a vybavením najviac zodpovedajú Vašej nehnuteľnosti.        
+        sort_attribute: basic_acquirement_year
   
   movable_property:
     title: Hnuteľný majetok
@@ -301,12 +310,14 @@ user:
         model_name: MoneyProperty
         order: 0
         required: true
+        sort_attribute: basic_year
       vehicle_properties:
         title: Auto
         model_name: VehicleProperty
         show_unless: movable_property_has_no_vehicle_property
         required_unless: movable_property_has_no_vehicle_property
         order: 1
+        sort_attribute: basic_year
       other_properties:
         title: Iný jednotlivý hnuteľný majetok nad 10 000 EUR
         model_name: OtherProperty
@@ -314,13 +325,15 @@ user:
         required_unless: movable_property_has_no_other_property
         order: 2
         description: Napr. jachta, motorový čln, lietadlo, motorka, umelecké dielo, zbierka známok, čajová súprava, hi-fi sústava, kôň a pod.
+        sort_attribute: basic_acquirement_date
       movable_properties:
         title: Súhrn hnuteľného majetku
         model_name: MovableProperty
         order: 3
         required: true
         description: 'Súhrn hnuteľného majetku pozostáva zo súčtu <span style="color:red;">súhrnnej hodnoty hotovosti, účtov a cenných papierov</span> + <span style="color:blue;">odhadu aktuálnej trhovej hodnoty auta/áut</span> + <span style="color:green;">odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností nad 10 tisíc €</span> + <span style="color:purple;">jednotlivého hnuteľného majetku pod 10 tisíc €</span>.'
-   
+        sort_attribute: basic_year
+    
     fields:
       has_no_vehicle_property:
         title: Nevlastním auto
@@ -351,6 +364,7 @@ user:
         required_unless: duties_has_no_duties
         show_unless: duties_has_no_duties
         description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
+        sort_attribute: basic_acquirement_date
         
   offices:
     order: 13
@@ -376,6 +390,7 @@ user:
         show_unless: offices_has_no_offices
         required_if: should_require_offices
         description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
+        sort_attribute: basic_date_from
         
   meetings:
     order: 14
@@ -403,6 +418,7 @@ user:
         model_name: Meeting
         show_if: should_show_meetings
         required_if: should_show_meetings
+        sort_attribute: basic_information_date_from
         
   persons:
     order: 15
@@ -457,6 +473,7 @@ user:
         show_if: should_show_colleagues
         required_if: should_show_colleagues
         description: Blízky spolupracovník je osoba, s ktorou má verejný funkcionár primárne pracovný vzťah alebo obchodný vzťah a u ktorej vzhľadom na tento vzťah možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napríklad poradca, konzultant, spoločník obchodnej spoločnosti, obchodný partner.
+        sort_attribute: form_date_from
         
   candidatures:
     show_if: is_candidate
@@ -467,6 +484,7 @@ user:
         required_if: is_candidate
         title: Kandidatúra
         model_name: Candidature
+        sort_attribute: basic_date
         
   campaigns:
     order: 18
@@ -493,6 +511,7 @@ user:
         required_if: should_show_campaigns
         model_name: Campaign
         title: Financovanie kampane
+        sort_attribute: basic_date
         
   other:
     order: 19
