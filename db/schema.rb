@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120213040215) do
+ActiveRecord::Schema.define(:version => 20120213222935) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -172,7 +172,7 @@ ActiveRecord::Schema.define(:version => 20120213040215) do
     t.string   "value_amount"
     t.string   "value_currency"
     t.string   "value_timeframe"
-    t.text     "value_notes"
+    t.text     "address_notes"
     t.string   "institution_title_or_name"
     t.string   "institution_sector"
     t.string   "institution_form"
@@ -273,7 +273,7 @@ ActiveRecord::Schema.define(:version => 20120213040215) do
     t.string   "basic_information_payed"
     t.string   "basic_information_amount"
     t.string   "basic_information_currency"
-    t.text     "basic_information_notes"
+    t.text     "address_notes"
     t.string   "institution_title_or_name"
     t.string   "institution_sector"
     t.string   "institution_form"

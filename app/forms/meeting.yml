@@ -43,10 +43,7 @@ meeting:
         title: Mena
         type: data_select
         data_source: money.currencies
-      notes:
-        order: 8
-        title: Poznámky
-        type: text_area
+
   institution:
     order: 1
     title: Údaje o osobe alebo inštitúcii
@@ -122,3 +119,7 @@ meeting:
         title: PSČ
         required_unless: institution_no_approvement
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a> 
+      notes:
+        order: 6
+        title: Poznámky
+        type: text_area

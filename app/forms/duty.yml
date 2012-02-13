@@ -75,10 +75,6 @@ duty:
         required: true
         order: 3
         description: Uveďte obdobie, ku ktorému uvádzate výšku práva alebo záväzku
-      notes:
-        title: Poznámky
-        order: 4
-        type: text_area
         
   institution:
     order: 2
@@ -143,3 +139,7 @@ duty:
         title: PSČ
         required_unless: institution_no_approvement
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
+      notes:
+        title: Poznámky
+        order: 6
+        type: text_area
