@@ -1,5 +1,7 @@
 %meta{:name => "description", :content => "Politikaopen je priestorom, ktorý odkrýva všetky dôležité aspekty života a činnosti politika pred verejnosťou. Jeho účelom je odhaliť všetko podstatné do takej hĺbky, aby ste ako občania mohli účinne politika kontrolovať, a aby ste sa mohli na základe presných, pravdivých a vyčerpávajúcich informácií sami rozhodnúť, či si politik zaslúži Vašu dôveru."}
 %meta{:name => "keywords", :content => "politikaopen, politika, slovensko"}
 %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext", :rel => "stylesheet", :type => "text/css"}
+- if @user.present?
+  %meta{property: 'og:title', content: "#{@user.full_name} na Politika Open"}
 %title
   politikaopen
