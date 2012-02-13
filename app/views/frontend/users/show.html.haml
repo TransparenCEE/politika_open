@@ -10,12 +10,15 @@
 .clearfix
   .fl.user_page_info
     %h1= @user.name
+    %table
+      %tr
+        %td{width: 200} Posledná úprava
+        %td= l(@user.updated_at, :format => :normal)
     = render :partial => "form", :object => @info
 
   .fr
     .photo
       = uploaded_image(@user.value('basic_information', 'photo'), :width => 300)
-    / %p== Posledná úprava: #{l(@user.updated_at, :format => :short)}
     .clearfix
       = button_link_to "Zdieľať na Facebooku", share_on_facebook(@user)
       #fb-root
