@@ -35,9 +35,17 @@
               %strong= form.title
           - form.fields.each do |field|
             %tr
-              %td{:width => 200}
-                %strong= field.title
-              %td= field.formatted_value
+              - if field.settings[:type] == "check_box"
+                - if field.value
+                  %td{:width => 200}
+                    %strong= field.title
+                  %td
+                    %strong= image_tag 'check_12x10.png'
+              - else
+                %td{:width => 200}
+                  %strong= field.title
+                %td= field.formatted_value
+                
       = link_to image_tag("edit.png", :alt => "Upraviť"), edit_embed_item_path(embed, item), :class => "edit" 
       - if current_user.is_super_admin || session[:admin_presence]
         = link_to "vymazať", embed_item_path(embed, item), :method => "delete", :confirm => "Určite chcete zmazať túto položku?"

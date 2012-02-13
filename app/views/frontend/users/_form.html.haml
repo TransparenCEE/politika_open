@@ -23,7 +23,14 @@
             %td{:colspan => 2}
               %strong= form.title
           - form.fields.each do |field|
-            %tr
-              %td{:width => 200}
-                %strong= field.title
-              %td= field.formatted_value
+            %tr 
+              - if field.settings[:type] == "check_box"
+                - if field.value
+                  %td{:width => 200}
+                    %strong= field.title
+                  %td
+                    %strong= image_tag 'check_12x10.png'
+              - else
+                %td{:width => 200}
+                  %strong= field.title
+                %td= field.formatted_value
