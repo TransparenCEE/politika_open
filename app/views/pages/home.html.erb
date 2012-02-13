@@ -64,6 +64,17 @@ var slideshow=new TINY.fader.fade('slideshow',{
 		</div>
 		
 		<div id="fe_info_name_container">
+      <div class="title_container">
+        <div class="title">NAJ Profily</div>
+      </div>
+      <div class="name_area">
+        <% Visit.top_users.each do |user| %>
+          <%= link_to user.full_name, frontend_user_path(user), class: 'title_pic_box' %>,
+        <% end %>
+      </div>
+    </div>
+		
+		<div id="fe_info_name_container">
 			<div class="title_container">
 				<div class="title">
 					Ministri
