@@ -65,9 +65,6 @@ sponsorship:
         title: PSČ
         required_unless: address_not_allowed_to_publish_information
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
-      notes:
-        title: Poznámky
-        type: text_area
         
   sponsorship:
     title: "Charakter a výška sponzorstva, daru alebo grantu"
@@ -104,3 +101,6 @@ sponsorship:
         type: bound_data_select
         bound_to: value_currency
         data_source: money.honorar
+      notes:
+        title: Poznámky
+        type: text_area
