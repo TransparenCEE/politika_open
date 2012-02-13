@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211195745) do
+ActiveRecord::Schema.define(:version => 20120213025056) do
 
   create_table "activities", :force => true do |t|
     t.string   "institution_name"
@@ -598,5 +598,15 @@ ActiveRecord::Schema.define(:version => 20120211195745) do
   end
 
   add_index "vehicle_properties", ["user_id"], :name => "index_vehicle_properties_on_user_id"
+
+  create_table "visits", :force => true do |t|
+    t.string   "session_id"
+    t.integer  "user_id"
+    t.date     "access_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "visits", ["session_id", "user_id", "access_date"], :name => "index_visits_on_session_id_and_user_id_and_access_date"
 
 end

@@ -65,6 +65,9 @@ class Frontend::UsersController < Frontend::ApplicationController
     end
     @forms = @user.visible_forms
     @info = @forms.shift
+    
+    cookies.permanent[:visit_token] = cookies[:visit_token].present? ? cookies[:visit_token] : SecureRandom.urlsafe_base64
+    @user.log_visit(cookies[:visit_token])
   end
   
   protected

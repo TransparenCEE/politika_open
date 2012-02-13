@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :campaign
   has_many :others
   
+  has_many :visits
+  
   accepts_nested_attributes_for :parties, :public_services, :company_shares, :jobs, :activities, 
                                 :benefits, :sponsorships, :events, :incomes, :properties, :money_properties, 
                                 :vehicle_properties, :other_properties, :money_properties, :duties,
@@ -200,6 +202,11 @@ class User < ActiveRecord::Base
     indexes :is_active
     
     set_property delta: true
+  end
+  
+  def log_visit(session_id)
+    visit = Visit.find_or_initialize_by_session_id_and_user_id_and_access_date(session_id, self.id, Date.today)
+    visit.save if visit.new_record?
   end
   
 end
