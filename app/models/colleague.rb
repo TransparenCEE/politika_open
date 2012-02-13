@@ -2,5 +2,5 @@
 class Colleague < ActiveRecord::Base
   include Forms::FormHelper
   
-  belongs_to :user
+  belongs_to :user, touch: true
 end
