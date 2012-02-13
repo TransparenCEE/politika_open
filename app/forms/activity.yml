@@ -72,13 +72,13 @@ activity:
         required: true
         description: Uveďte názov vykonávanej aktivity - napr. členstvo v dozornej rade, publikovanie článkov, lektorovanie a pod.
       reward_currency:
-        order: 2
+        order: 1
         title: Mena
         type: data_select
         data_source: money.currencies
         required_if: activity_information_is_honored
       reward:
-        order: 1
+        order: 2
         title: Výška honoráru
         required_if: activity_information_is_honored
         description: Ak ste zaškrtli možnosť Honorovaná aktivita, položka Výška honoráru je povinná.
