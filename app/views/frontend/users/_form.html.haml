@@ -1,6 +1,6 @@
 %h2= form.title
 %table
-  - form.fields(:except => [:photo]).each do |field|
+  - form.visible_fields.each do |field|
     %tr
       - if field.settings[:type] == "check_box"
         - if field.value

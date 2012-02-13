@@ -65,7 +65,9 @@ class Forms::Form
   def embeds(what = :all)
     if what == :visible
       @embeds.find_all do |embed|
-        if embed.settings[:show_if]
+        if @object.send(embed.identifier).present?
+          true
+        elsif embed.settings[:show_if]
           show = @object.send(embed.settings[:show_if])
           show ? true : false
         elsif embed.settings[:show_unless]
@@ -85,7 +87,7 @@ class Forms::Form
   end
   
   def visible_for?(object)
-    if @show_if && !!object.send(@show_if) == false
+    if @embeds.blank? && @show_if && !!object.send(@show_if) == false
       false
     else
       true
@@ -108,7 +110,7 @@ class Forms::Form
       count +=1 if field.required?
     end
     embeds.each do |embed|
-      count += 1 if embed.required?
+      count += 1 if @object.send(embed.identifier).present? || embed.required?
     end
     count
   end
@@ -151,7 +153,9 @@ class Forms::Form
   
   def visible_fields
     @fields.select do |field|
-      if field.settings[:show_unless]
+      if field.identifier.to_sym == :photo
+        false
+      elsif field.settings[:show_unless]
         @object.send(field.settings[:show_unless]).blank?
       else
         true
