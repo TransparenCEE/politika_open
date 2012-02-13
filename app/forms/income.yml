@@ -33,5 +33,5 @@ income:
         data_source: money.currencies
       note:
         order: 5
-        title: Poznámka
+        title: Poznámky
         type: text_area
