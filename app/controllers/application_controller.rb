@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
     User.record_timestamps = false if admin_presence?
   end
   def enable_timestamp_recording
-    User.record_timestamps = false if admin_presence?
+    User.record_timestamps = true if admin_presence?
   end
   
 end

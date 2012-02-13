@@ -16,7 +16,7 @@ module Admin
       User.record_timestamps = false
     end
     def enable_timestamp_recording
-      User.record_timestamps = false
+      User.record_timestamps = true
     end
   end
 end
