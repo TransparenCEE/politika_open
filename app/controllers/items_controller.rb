@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
   
   before_filter :login_required
   before_filter :prepare
-  before_filter :disable_timestamp_recording, :only => [:create, :update]
-  before_filter :enable_timestamp_recording, :only => [:create, :update]
 
   def new
     @item = @model_class.new
@@ -26,6 +24,7 @@ class ItemsController < ApplicationController
     
     if valid
       @item.save
+      current_user.touch unless admin_presence?
       redirect_to form_path(@embed.settings[:form_identifier])
     else
       flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."
@@ -49,7 +48,7 @@ class ItemsController < ApplicationController
     end
     if valid
       @item.save(:validate => false)
-      current_user.save(:validate => false)
+      current_user.touch unless admin_presence?
       redirect_to form_path(@embed.settings[:form_identifier])
     else
       flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."

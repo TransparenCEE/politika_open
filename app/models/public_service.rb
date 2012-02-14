@@ -2,5 +2,5 @@
 class PublicService < ActiveRecord::Base
   include Forms::FormHelper
   
-  belongs_to :user, touch: true
+  belongs_to :user
 end

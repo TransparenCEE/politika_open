@@ -2,7 +2,7 @@
 class Office < ActiveRecord::Base
   include Forms::FormHelper
   
-  belongs_to :user, touch: true
+  belongs_to :user
   
   def sector_commercial
     !(["verejný", "iný"].include?(basic_sector))

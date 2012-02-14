@@ -4,5 +4,5 @@ class Campaign < ActiveRecord::Base
   
   serialize :basic_expenses_type, Array
   
-  belongs_to :user, touch: true
+  belongs_to :user
 end
