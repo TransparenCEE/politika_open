@@ -17,6 +17,7 @@ colleague:
         title: Časové obdobie od
         type: month_picker
         data_type: date
+        required: true
       date_to:
         order: 6
         title: Časové obdobie do
