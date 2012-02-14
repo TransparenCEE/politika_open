@@ -57,13 +57,13 @@
           = value_or_em(user.cached_current_party, "Nečlen")
              
         %td
-          - if user.cached_candidature_party.present?
-            = "#{user.cached_candidature_party} (#{l(user.cached_candidature_date || 10.years.ago, :format => :year)})"
-          - else
-            %em Nekandiduje
+          = value_or_em(user.cached_candidature_party, "Nekandiduje")
                     
         %td
-          = value_or_em(user.cached_candidature_election, "Nekandiduje")
+          - if user.cached_candidature_party.present?
+            = "#{user.cached_candidature_election} (#{l(user.cached_candidature_date || 10.years.ago, :format => :year)})"
+          - else
+            %em Nekandiduje
         
         %td
           = value_or_em(user.cached_candidature_function, "Nekandiduje")
