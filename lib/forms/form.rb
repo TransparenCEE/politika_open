@@ -110,7 +110,7 @@ class Forms::Form
       count +=1 if field.required?
     end
     embeds.each do |embed|
-      count += 1 if @object.send(embed.identifier).present? || embed.required?
+      count += 1 if embeds(:visible).include?(embed) || @object.send(embed.identifier).present? || embed.required?
     end
     count
   end
