@@ -63,13 +63,24 @@ var slideshow=new TINY.fader.fade('slideshow',{
 			predsedníčka vlády SR
 		</div>
 		
-		<div id="fe_info_name_container">
+		<!-- <div id="fe_info_name_container">
       <div class="title_container">
-        <div class="title">NAJ Profily</div>
+        <div class="title">Najnavštevovanejšie Profily</div>
       </div>
       <div class="name_area">
         <% Visit.top_users.each do |user| %>
           <%= link_to user.full_name, frontend_user_path(user), class: 'title_pic_box' %>,
+        <% end %>
+      </div>
+    </div> -->
+    
+    <div id="najprofily_container">
+      <div class="najprofily_title_container">
+        <div class="najprofily_title">Najnavštevovanejšie Profily</div>
+      </div>
+      <div class="najprofily_name_area">
+        <% Visit.top_users.each do |user| %>
+          <%= link_to user.full_name, frontend_user_path(user), %>,
         <% end %>
       </div>
     </div>
@@ -199,12 +210,13 @@ var slideshow=new TINY.fader.fade('slideshow',{
 					<input class="submit_button" name="commit" type="submit" value="" />
 				</form>
 			</div>
-			Zadajte meno, priezvisko alebo mesto.
+			Zadajte meno, priezvisko, mesto alebo PSČ.
 		</div>
 
-		<h2>Podporte nás</h2>
-		Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
-		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a>
+		<h2 style="color:#cc0000;">Dôležitý oznam</h2>
+		<span style="color:#cc0000;">Ospravedlňujeme sa za technický výpadok politikaopen.sk v prvej polovici februára (3.2 – 19.2). Niektoré formuláre v súčasnosti prechádzajú verifikáciou účastníkov. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov. Začiatkom marca zverejníme zoznam účastníkov, ktorí dáta ešte nepotvrdili.</span>
+		<!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
+		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
 		<div class="soc_net">
 			<a href="http://www.facebook.com/alianciafairplay" class="facebook" target="_blank"></a>
 			<a href="http://www.twitter.com/alianciaFP" class="twitter" target="_blank"></a>
