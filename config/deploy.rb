@@ -51,3 +51,6 @@ task :after_update_code, :roles => [:app] do
   
   run "cd #{release_path}; bundle exec rake ts:rebuild RAILS_ENV=production"
 end
+
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"

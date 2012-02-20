@@ -9,6 +9,7 @@ gem 'rmagick', :require => false
 gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'thinking-sphinx'
+gem 'whenever', :require => false
 
 gem 'mongo'
 gem 'bson_ext'
