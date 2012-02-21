@@ -213,10 +213,12 @@ var slideshow=new TINY.fader.fade('slideshow',{
 			Zadajte meno, priezvisko, mesto alebo PSČ.
 		</div>
 
-		<h2 style="color:#cc0000;">Dôležitý oznam</h2>
-		<span style="color:#cc0000;">Ospravedlňujeme sa za technický výpadok politikaopen.sk v prvej polovici februára (3.2 – 19.2). Niektoré formuláre v súčasnosti prechádzajú verifikáciou účastníkov. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov. Začiatkom marca zverejníme zoznam účastníkov, ktorí dáta ešte nepotvrdili.</span>
-		<!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
-		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
+		<div id="notice">
+		  <h2>Dôležitý oznam</h2>
+  		Ospravedlňujeme sa za technický výpadok politikaopen.sk v prvej polovici februára (3.2 – 19.2). <%= link_to 'Niektoré formuláre', page_path('info_tab') %> v súčasnosti prechádzajú verifikáciou účastníkov. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov. Začiatkom marca zverejníme zoznam účastníkov, ktorí dáta ešte nepotvrdili.
+  		<!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
+  		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
+		</div>
 		<div class="soc_net">
 			<a href="http://www.facebook.com/alianciafairplay" class="facebook" target="_blank"></a>
 			<a href="http://www.twitter.com/alianciaFP" class="twitter" target="_blank"></a>
