@@ -58,18 +58,18 @@ var slideshow=new TINY.fader.fade('slideshow',{
 		<h2><a href="/frontend/users" style="color:#000000;">Otvorení politici</a></h2>
 		<div class="name_pic_box">
 		  <%= image_tag 'frontend/radicova.png', align: 'left', style: 'margin-right:5px;', alt: 'Iveta Radičová' %>
-		  <%= link_to 'Iveta Radičová', frontend_user_path('4bf52339775136276600001b'), class: 'title_pic_box' %>
+		  <%= link_to 'Iveta Radičová', frontend_user_path('54'), class: 'title_pic_box' %>
 			<br />
 			predsedníčka vlády SR
 		</div>
 		
-		<div id="fe_info_name_container">
+		<div id="najprofily_container">
       <div class="title_container">
-        <div class="title">NAJ Profily</div>
+        <div class="title">Najnavštevovanejšie Profily</div>
       </div>
       <div class="name_area">
         <% Visit.top_users.each do |user| %>
-          <%= link_to user.full_name, frontend_user_path(user), class: 'title_pic_box' %>,
+          <%= link_to user.full_name, frontend_user_path(user), %>,
         <% end %>
       </div>
     </div>
@@ -81,10 +81,10 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-			  <%= link_to 'Daniel Lipšic', frontend_user_path('4bf523397751362766000007') %>,
-			  <%= link_to 'Lucia Žitňanská', frontend_user_path('4bfd321d7751362d2e00000a') %>,
-			  <%= link_to 'Daniel Krajcer', frontend_user_path('4bf247ba7751360d6f000009') %>,
-			  <%= link_to 'Juraj Miškov', frontend_user_path('4c04ab337751366f11000011') %>,
+			  <%= link_to 'Daniel Lipšic', frontend_user_path('728') %>,
+			  <%= link_to 'Lucia Žitňanská', frontend_user_path('284') %>,
+			  <%= link_to 'Daniel Krajcer', frontend_user_path('748') %>,
+			  <%= link_to 'Juraj Miškov', frontend_user_path('292') %>,
 			</div>
 		</div>
 		
@@ -95,14 +95,14 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-			  <%= link_to 'Richard Sulík', frontend_user_path('4bf523407751362766000126') %>,
-			  <%= link_to 'Jana Žitňanská', frontend_user_path('4c04ba337751366ff500000e') %>,
-			  <%= link_to 'Ondrej Dostál', frontend_user_path('4bf52339775136276600000a') %>,
-			  <%= link_to 'Miroslav Beblavy', frontend_user_path('4bfcd6e6775136294f000007') %>,
-			  <%= link_to 'Igor Matovič', frontend_user_path('4bfab81b7751361b62000001') %>,
-			  <%= link_to 'Jozef Mikuš', frontend_user_path('4bf5233a7751362766000034') %>,
-			  <%= link_to 'László Nagy', frontend_user_path('4c0769147751361311000001') %>,
-			  <%= link_to 'Ľubomír Galko', frontend_user_path('4bf5233a775136276600003f') %>
+			  <%= link_to 'Richard Sulík', frontend_user_path('255') %>,
+			  <%= link_to 'Jana Žitňanská', frontend_user_path('293') %>,
+			  <%= link_to 'Ondrej Dostál', frontend_user_path('34') %>,
+			  <%= link_to 'Miroslav Beblavy', frontend_user_path('281') %>,
+			  <%= link_to 'Igor Matovič', frontend_user_path('769') %>,
+			  <%= link_to 'Jozef Mikuš', frontend_user_path('64') %>,
+			  <%= link_to 'László Nagy', frontend_user_path('298') %>,
+			  <%= link_to 'Ľubomír Galko', frontend_user_path('717') %>
 			  <%= link_to '...a ďalší', page_path('poslanci_nrsr') %>
 			</div>
 		</div>
@@ -114,10 +114,10 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				</div>
 			</div>
 			<div class="name_area">
-			  <%= link_to 'Lucia Nicholsonová', frontend_user_path('4bfa05747751361711000002') %>,
-			  <%= link_to 'Milan Ftáčnik', frontend_user_path('4ce4f1e8775136196000000b') %>,
-			  <%= link_to 'Alexander Slafkovský', frontend_user_path('4bf52339775136276600001d') %>,
-			  <%= link_to 'Martin Alföldi', frontend_user_path('4c02ba697751364c7c000002') %>
+			  <%= link_to 'Lucia Nicholsonová', frontend_user_path('707') %>,
+			  <%= link_to 'Milan Ftáčnik', frontend_user_path('511') %>,
+			  <%= link_to 'Alexander Slafkovský', frontend_user_path('56') %>,
+			  <%= link_to 'Martin Alföldi', frontend_user_path('291') %>
 			</div>
 		</div>
 		
@@ -155,7 +155,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 			</div>
 		</div>
 		
-		<!-- <div id="fe_info_name_container">
+		<div id="fe_info_name_container">
 			<div class="title_container">
 				<div class="title">
 					3.11.2010
@@ -166,7 +166,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 			</div>
 		</div>
 		
-		<div id="fe_info_name_container">
+		<!-- <div id="fe_info_name_container">
 			<div class="title_container">
 				<div class="title">
 					8.6.2010
@@ -191,20 +191,23 @@ var slideshow=new TINY.fader.fade('slideshow',{
 	</div>
 	
 	<div class="info_column_last">
-	
+	<h2>Vyhľadávanie</h2>
 		<div id="fe_search_area">
 			<div id="fe_search_container">
 				<form accept-charset="UTF-8" action="/frontend/users" method="get">
 					<input class="text_area" id="search" name="search" size="30" type="text" placeholder="Nájdite politika..." />
-					<input class="submit_button" name="commit" type="submit" value="" />
+					<input class="submit_button" name="commit" type="submit" value="Hľadať" />
 				</form>
 			</div>
-			Zadajte meno, priezvisko alebo mesto.
+			Zadajte meno, priezvisko, mesto alebo PSČ.
 		</div>
 
-		<h2>Podporte nás</h2>
-		Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
-		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a>
+		<div id="notice">
+		  <h2>Dôležitý oznam</h2>
+  		Ospravedlňujeme sa za technický výpadok politikaopen.sk v prvej polovici februára (3.2 – 19.2). <%= link_to 'Niektoré formuláre', page_path('info_tab') %> v súčasnosti prechádzajú verifikáciou účastníkov. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov. Začiatkom marca zverejníme zoznam účastníkov, ktorí dáta ešte nepotvrdili.
+  		<!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
+  		<a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
+		</div>
 		<div class="soc_net">
 			<a href="http://www.facebook.com/alianciafairplay" class="facebook" target="_blank"></a>
 			<a href="http://www.twitter.com/alianciaFP" class="twitter" target="_blank"></a>
@@ -219,8 +222,8 @@ var slideshow=new TINY.fader.fade('slideshow',{
 				<div class="name_area">
 					<a href="http://www.datanest.sk" target="_blank">Datanest</a><br />
 					<a href="http://www.bielavrana.sk" target="_blank">Biela vrana</a><br />
-					<a href="http://watchdog.fair-play.sk/" target="_blank">Watchdog</a><br />
-					<a href="http://kancelarie.fair-play.sk/" target="_blank">Poslanecké kancelárie</a><br />
+					<a href="http://www.znasichdani.sk/" target="_blank">ZNasichDani.sk</a><br />
+					<a href="http://www.otvorenezmluvy.sk/" target="_blank">Otvorené zmluvy</a><br />
 				</div>
 			
 		</div>

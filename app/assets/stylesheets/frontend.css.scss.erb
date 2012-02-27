@@ -4,6 +4,8 @@ h1 {margin:0px 0px 20px 0px; padding:0px; font-size:22px; font-weight:bold; colo
 a {color:#009900; text-decoration:none;}
 a:hover {color:#009900; text-decoration:underline;}
 img {border:none;}
+a .info_tab {color:#666666; text-decoration:none;}
+a .info_tab:hover {color:#666666; text-decoration:underline;}
 
 
 /* HEADER */  
@@ -63,8 +65,10 @@ img {border:none;}
 #footer .navigation {float:left; overflow:hidden;}
 #footer .projects {float:right; overflow:hidden;}
 
-#donor {width:400px; margin:20px auto 10px auto; background:transparent; color:#999999; font-size:11px; font-family:Arial; text-transform:normal; text-align:center;}
-
+#donor {width:980px; margin:20px auto 10px auto; background:transparent; color:#777777; font-size:11px; font-family:Arial; text-transform:normal; text-align:center;}
+#donor .kanada {display:block; float:none; overflow:hidden; width:437px; height:30px; margin:0px auto 20px auto; padding:0px; background:url(<%= asset_path 'frontend/logo_canada_437x30.png' %>);}
+#donor .kanada:hover {background-position:0 -30px;}
+#donor .norske_fondy {display:block; float:none; overflow:hidden; width:400px; margin:0px auto 30px auto;}
 
 /*---------- CONTAINER MAIN ---------- */
 #container_main {width:1000px; padding:0px; float:none; overflow:hidden; background:none; margin: 0 auto 30px; }
@@ -127,6 +131,8 @@ td.sort.desc { background: url(<%= asset_path 'sort_icons.png' %>) no-repeat lef
 #upozornenie {display:block; padding:20px; font-size:14px; background:#C1272D; color:#ffffff; margin:0px 0px 30px 0px; text-align:center;}
 
 
+
+
 /*---------- FRONTEND EVENT ---------- */
 #frontend_default {margin:0px; padding:0px; overflow:hidden; float:none; background:url(http://www.zavaga.sk/back.png) #dddddd;}
 #frontend_default h1 {font-family: 'Open Sans', sans-serif; font-size:28px; color:#000000; text-transform:uppercase; font-weight:bold; letter-spacing:1px; margin:0px; padding:0px;}
@@ -171,7 +177,7 @@ td.sort.desc { background: url(<%= asset_path 'sort_icons.png' %>) no-repeat lef
 
 /* INFO */
 #fe_info_container {display:block; float:none; overflow:hidden; margin:40px 0px 0px 0px; color:#333333;}
-#fe_info_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:500px;}
+#fe_info_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:550px;}
 #fe_info_container .info_column_last {display:block; width:240px; float:right; overflow:hidden; padding:0px 0px 0px 0px; margin:0px 0px 0px 0px; border-right:0px solid #dddddd;}
 #fe_info_container h2 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:0px 0px 10px 0px; padding:0px; display:block; color:#000000; overflow:hidden;}
 #fe_info_container h3 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:20px 0px 10px 0px; padding:20px 0px 0px 0px; display:block; color:#000000; overflow:hidden; border-top:1px solid #dddddd;}
@@ -200,10 +206,26 @@ td.sort.desc { background: url(<%= asset_path 'sort_icons.png' %>) no-repeat lef
 #fe_info_container a.donation:hover {text-decoration:none;}
 
 
+#najprofily_container {background:#666666; margin:5px 0px 0px 0px; color:#000000; float:none; overflow:hidden;}
+#najprofily_container .title_container {display:block; float:none; overflow:hidden;}
+#najprofily_container .title {width:auto; float:left; padding:4px 6px; background:#ffffff; text-transform:uppercase; font-size:9px; letter-spacing:1px; color:#000000;}
+#najprofily_container .name_area {padding:10px 10px; display:block; float:none; overflow:hidden; color:#ffffff;}
+#najprofily_container a {color:#ffffff;}
+
+
+
+#notice {display:block; float:none; overflow:hidden; color:#cc0000;}
+#notice h2 {color:#cc0000;}
+#notice a {color:#333333; text-decoration:none;}
+#notice a:hover {color:#333333; text-decoration:underline;}
+
+
+#red_notice {color:#cc0000;}
+#red_notice a {color:#cc0000; text-decoration:underline;}
 
 /* POSLANCI NRSR */
 #poslanci_nrsr_container {display:block; float:none; overflow:hidden; margin:0px 0px 0px 0px; color:#333333;}
-#poslanci_nrsr_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:420px;}
+#poslanci_nrsr_container .info_column {display:block; width:210px; float:left; overflow:hidden; padding:0px 20px 0px 0px; margin:0px 20px 0px 0px; border-right:1px solid #dddddd; height:350px;}
 #poslanci_nrsr_container .info_column_last {display:block; width:240px; float:right; overflow:hidden; padding:0px 0px 0px 0px; margin:0px 0px 0px 0px; border-right:0px solid #dddddd;}
 #poslanci_nrsr_container h2 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:0px 0px 10px 0px; padding:0px; display:block; color:#000000; overflow:hidden;}
 #poslanci_nrsr_container h3 {font-size:20px; font-weight:normal; text-transform:uppercase; margin:20px 0px 10px 0px; padding:20px 0px 0px 0px; display:block; color:#000000; overflow:hidden; border-top:1px solid #dddddd;}
