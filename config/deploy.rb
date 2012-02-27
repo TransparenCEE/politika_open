@@ -27,30 +27,33 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-  
+
   desc "Symlink shared resources on each release"
   task :symlink_shared, :roles => :app do
     run "ln -nfs #{shared_path}/config/initializers/notification_mailing_list.rb #{release_path}/config/initializers/notification_mailing_list.rb"
     run "ln -nfs #{shared_path}/config/environments/production.rb #{release_path}/config/environments/production.rb"
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
+    run "ln -nfs #{shared_path}/config/sphinx.yml #{release_path}/config/sphinx.yml"
     run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
     run "ln -nfs #{shared_path}/db/sphinx #{release_path}/db/sphinx"
+  end
+
+  task :stop_sphinx, :roles => [:app] do
+    thinking_sphinx.stop
+  end
+
+  task :start_sphinx, :roles => [:app] do
+    thinking_sphinx.configure
+    thinking_sphinx.start
+
+    run "cd #{release_path}; bundle exec rake ts:rebuild RAILS_ENV=production"
   end
 end
 
 before 'deploy:assets:precompile', 'deploy:symlink_shared'
-
-task :before_update_code, :roles => [:app] do
-  thinking_sphinx.stop
-end
-
-task :after_update_code, :roles => [:app] do
-  thinking_sphinx.configure
-  thinking_sphinx.start
-  
-  run "cd #{release_path}; bundle exec rake ts:rebuild RAILS_ENV=production"
-end
+before 'deploy:update_code', 'deploy:stop_sphinx'
+before 'deploy:update_code', 'deploy:start_sphinx'
 
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"

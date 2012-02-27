@@ -4,6 +4,7 @@ db/sphinx/*
 log/*
 tmp/**/*
 config/*sphinx.conf
+config/sphinx.yml
 config/database.yml
 config/newrelic.yml
 config/environments/production.rb
