@@ -53,7 +53,7 @@ end
 
 before 'deploy:assets:precompile', 'deploy:symlink_shared'
 before 'deploy:update_code', 'deploy:stop_sphinx'
-before 'deploy:update_code', 'deploy:start_sphinx'
+after 'deploy:update_code', 'deploy:start_sphinx'
 
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
