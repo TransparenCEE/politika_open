@@ -160,7 +160,7 @@ class User < ActiveRecord::Base
   end
   
   def count_of_invalid_forms
-    forms.select { |f| f.has_invalid_fields? }.count
+    visible_forms.select { |f| f.has_invalid_fields? }.count
   end
   
   def current_party
