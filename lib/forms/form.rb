@@ -1,15 +1,15 @@
 # -*- encoding : utf-8 -*-
 class Forms::Form
-  
+
   attr_accessor :identifier, :title, :fields, :embeds, :object, :is_being_validated, :order, :multipart, :description
-  
+
   def initialize(identifier, a_model = nil)
     @identifier = identifier
     @fields = []
     @embeds = []
     @object = a_model
   end
-  
+
   def attributes_from_hash(hash)
     hash ||= Hash.new
     hash.each do |item, value|
@@ -37,15 +37,15 @@ class Forms::Form
     end
     self.fields = self.fields.sort_by { |field| field.settings[:order] || 999}
   end
-  
+
   def identifier
     @identifier.to_sym
   end
-  
+
   def to_param
     identifier.to_s
   end
-  
+
   def valid?
     self.is_being_validated = true
     valid = true
@@ -55,13 +55,13 @@ class Forms::Form
     end
     valid
   end
-  
+
   def process
     fields.each do |field|
       field.process if field.valid?
     end
   end
-  
+
   def embeds(what = :all)
     if what == :visible
       @embeds.find_all do |embed|
@@ -81,11 +81,11 @@ class Forms::Form
       @embeds
     end
   end
-  
+
   def order
     @order || 0
   end
-  
+
   def visible_for?(object)
     if @show_if && !!object.send(@show_if) == false && embeds(:visible).map{|e| object.embed_items(e.identifier)}.flatten.blank?
       false
@@ -93,17 +93,17 @@ class Forms::Form
       true
     end
   end
-  
+
   def update(data)
     fields.each do |field|
       field.value=(data[field.identifier_with_form.to_s])
     end
   end
-  
+
   def count_of_fields
     fields.count
   end
-  
+
   def count_of_required_fields
     count = 0
     fields.each do |field|
@@ -114,7 +114,7 @@ class Forms::Form
     end
     count
   end
-  
+
   def count_of_invalid_fields
     count = 0
     fields.each do |field|
@@ -125,21 +125,21 @@ class Forms::Form
     end
     count
   end
-  
+
   def count_of_valid_fields
     valid_fields = count_of_required_fields-count_of_invalid_fields
     valid_fields = 0 if valid_fields < 0
     valid_fields
   end
-  
+
   def has_invalid_fields?
     !(count_of_invalid_fields == 0)
   end
-  
+
   def filled_fields
     fields.find_all{|field|field.is_filled?}
   end
-  
+
   def fields(*args)
     options = args.extract_options!
     if options[:except]
@@ -150,7 +150,7 @@ class Forms::Form
       @fields
     end
   end
-  
+
   def visible_fields(no_photo = false)
     @fields.select do |field|
       if no_photo && field.identifier.to_sym == :photo
@@ -162,7 +162,7 @@ class Forms::Form
       end
     end
   end
-  
+
   def sections
     @sections || Hash.new
   end

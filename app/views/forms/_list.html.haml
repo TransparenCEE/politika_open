@@ -2,11 +2,11 @@
   - unless current_user.is_published
     %p.sidebar.warning
       %strong Váš profil nie je vyplnený.
-      == #{current_user.count_of_invalid_forms} z vašich formulárov je nevyplnených. Vaše konto sa bude zobrazovať po aktivácii a vyplnení všetkých formulárov. 
-      
+      = "#{current_user.count_of_invalid_forms} z vašich formulárov je nevyplnených. Vaše konto sa bude zobrazovať po aktivácii a vyplnení všetkých formulárov."
+
   .clearfix.sidebar
     = button_link_to "Ukážka mojej stránky", frontend_user_path(current_user)
-    
+
   %ul.forms
     - c = 0
     - @all_forms.each do |form|
@@ -14,5 +14,4 @@
       %li{:class => form.has_invalid_fields? ? "warning" : nil}
         = link_to "#{c}. #{form.title}", form_path(form)
         %em.form_status= "(%s/%s)" % [form.count_of_valid_fields, form.count_of_required_fields]
-        
-  
+
