@@ -87,7 +87,7 @@ class Forms::Form
   end
 
   def visible_for?(object)
-    if @show_if && !!object.send(@show_if) == false && embeds(:visible).map{|e| object.embed_items(e.identifier)}.flatten.blank?
+    if @show_if && !!object.send(@show_if) == false
       false
     else
       true
