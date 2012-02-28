@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     end
 
     if valid
+      NotificationMailer.user_update(current_user).deliver
       @item.save
       current_user.save(validate: false)
       redirect_to form_path(@embed.settings[:form_identifier])
@@ -49,6 +50,7 @@ class ItemsController < ApplicationController
       valid = false unless form.valid?
     end
     if valid
+      NotificationMailer.user_update(current_user).deliver
       @item.save(:validate => false)
       current_user.save(validate: false)
       redirect_to form_path(@embed.settings[:form_identifier])
