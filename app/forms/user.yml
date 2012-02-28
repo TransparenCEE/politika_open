@@ -387,7 +387,7 @@ user:
       offices:
         title: Poslanecká kancelária
         model_name: Office
-        show_unless: offices_has_no_offices
+        show_if: should_require_offices
         required_if: should_require_offices
         description: Pod prenájmom poslaneckej kancelárie sa rozumie prenájom samotnej poslaneckej kancelárie + výdavky na prevádzku poslaneckej kancelárie (napr. prenájom počítačov, zariadenia kancelárie, internetu a pod.)
         sort_attribute: basic_date_from
