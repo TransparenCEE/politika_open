@@ -1,15 +1,15 @@
 source 'http://gemcutter.org'
 
-gem 'rails', '~> 3.2.1'
+gem 'rails', '~> 3.2.2'
 
 gem 'haml'
 gem 'mysql2'
 gem 'prawn'
-gem 'rmagick', :require => false
+gem 'rmagick', require: false
 gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'thinking-sphinx'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 
 gem 'mongo'
 gem 'bson_ext'
@@ -33,10 +33,10 @@ gem 'capistrano-ext'
 
 group :development, :test do
   gem 'rspec-rails'
-  
+
   gem 'database_cleaner'
   gem 'capybara'
-	gem 'cucumber-rails'
+	gem 'cucumber-rails', require: false
   gem 'launchy'    # So you can do Then show me the page
   gem 'mocha'
 end
