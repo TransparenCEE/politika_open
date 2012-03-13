@@ -18,12 +18,12 @@
         - if field.settings[:description]
           %p.description
             != field.settings[:description]
-            
+
     - if @form.visible_fields.count > 0
       %li
         %label
         = submit_tag "Uložiť"
-      
+
 - @form.embeds(:visible).each do |embed|
   %h3= embed.title
   - @user.embed_items(embed.identifier, embed.settings[:sort_attribute]).each do |item|
@@ -35,24 +35,21 @@
               %strong= form.title
           - form.fields.each do |field|
             %tr
-              - if field.settings[:type] == "check_box"
-                - if field.value
-                  %td{:width => 200}
-                    %strong= field.title
-                  %td
-                    %strong= image_tag 'check_12x10.png'
-              - else
-                %td{:width => 200}
-                  %strong= field.title
-                %td= field.formatted_value
-                
-      = link_to image_tag("edit.png", :alt => "Upraviť"), edit_embed_item_path(embed, item), :class => "edit" 
+              %td{:width => 200}
+                %strong= field.title
+              %td
+                - if field.settings[:type] == "check_box"
+                  %strong= image_tag field.value ? 'check_12x10.png' : 'cross_12x10.png'
+                - else
+                  = field.formatted_value
+
+      = link_to image_tag("edit.png", :alt => "Upraviť"), edit_embed_item_path(embed, item), :class => "edit"
       - if current_user.is_super_admin || session[:admin_presence]
         = link_to "vymazať", embed_item_path(embed, item), :method => "delete", :confirm => "Určite chcete zmazať túto položku?"
-    
+
     %br
     %br
-  
+
   %div.clearfix
     != button_link_to "Pridať", new_embed_item_path(embed)
   %br

@@ -14,7 +14,7 @@
           %em= field.title
         %td
           %strong!= field.formatted_value
-          
+
   - form.embeds(:visible).each do |embed|
     - @user.embed_items(embed.identifier, embed.settings[:sort_attribute]).each do |item|
       %table.box
@@ -23,14 +23,11 @@
             %td{:colspan => 2}
               %strong= form.title
           - form.fields.each do |field|
-            %tr 
-              - if field.settings[:type] == "check_box"
-                - if field.value
-                  %td{:width => 200}
-                    %strong= field.title
-                  %td
-                    %strong= image_tag 'check_12x10.png'
-              - else
-                %td{:width => 200}
-                  %strong= field.title
-                %td= field.formatted_value
+            %tr
+              %td{:width => 200}
+                %strong= field.title
+              %td
+                - if field.settings[:type] == "check_box"
+                  %strong= image_tag field.value ? 'check_12x10.png' : 'cross_12x10.png'
+                - else
+                  = field.formatted_value
