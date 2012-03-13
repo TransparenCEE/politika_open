@@ -24,7 +24,7 @@ sponsorship:
         required_if: sector_commercial
         order: 3
         description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
-        
+
   address:
     title: Adresa
     order: 1
@@ -34,7 +34,7 @@ sponsorship:
         type: check_box
         data_type: boolean
         order: 0
-        description: Súhlas je potrebný iba v prípade, že poskytovateľom sponzorstva, daru alebo grantu je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>. 
+        description: Súhlas je potrebný iba v prípade, že poskytovateľom sponzorstva, daru alebo grantu je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.
       state:
         order: 1
         title: Štát
@@ -65,7 +65,7 @@ sponsorship:
         title: PSČ
         required_unless: address_not_allowed_to_publish_information
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
-        
+
   sponsorship:
     title: "Charakter a výška sponzorstva, daru alebo grantu"
     order: 2
@@ -83,7 +83,7 @@ sponsorship:
       date:
         order: 2
         title: Dátum
-        type: date_select
+        type: day_picker
         data_type: date
         required: true
         description: Uveďte dátum, kedy ste sponzorstvo, dar alebo grant získali

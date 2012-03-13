@@ -86,14 +86,14 @@ company_share:
         order: 4
         title: Časové obdobie od
         data_type: date
-        type: date_select
+        type: day_picker
         required: true
         description: Nájdite na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
       date_to:
         order: 5
         title: Časové obdobie do
         data_type: date
-        type: date_select
+        type: day_picker
         description: Nájdite na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
       notes:
         order: 6

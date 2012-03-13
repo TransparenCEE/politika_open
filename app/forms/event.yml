@@ -7,7 +7,7 @@ event:
         title: Názov/Meno
         required: true
         order: 0
-        description: Uveďte názov /meno pozývateľa, organizátora pracovnej cesty, podujatia atď. Ak bolo viacero pozývateľov na rôznych úrovniach, môžete ich vymenovať v položke Poznámky. 
+        description: Uveďte názov /meno pozývateľa, organizátora pracovnej cesty, podujatia atď. Ak bolo viacero pozývateľov na rôznych úrovniach, môžete ich vymenovať v položke Poznámky.
       sector:
         order: 1
         title: Sektor podnikania
@@ -23,7 +23,7 @@ event:
         order: 3
         description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
         required_if: sector_commercial
-  
+
   address:
     order: 1
     title: Adresa inštitúcie/organizátora/pozývateľa
@@ -58,7 +58,7 @@ event:
         required: true
         order: 5
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
-        
+
   event:
     order: 2
     title: Charakter a výška úhrady
@@ -69,7 +69,7 @@ event:
         type: data_select
         data_source: characterevent.event
         required: true
-        allow_custom: true 
+        allow_custom: true
         order: 0
       purpose:
         title: Účel udalosti
@@ -87,13 +87,13 @@ event:
         order: 3
       date_from:
         title: Časové obdobie od
-        type: date_select
+        type: day_picker
         data_type: date
         required: true
         order: 4
       date_to:
         title: Časové obdobie do
-        type: date_select
+        type: day_picker
         data_type: date
         order: 5
       payed:

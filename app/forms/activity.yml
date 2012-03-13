@@ -56,7 +56,7 @@ activity:
         title: PSČ
         required: true
         description: Nájdite PSČ na stránke <a href="http://psc.posta.sk" target="_blank">Slovenskej pošty</a>
-        
+
   activity_information:
     order: 3
     title: Informácie o aktivite
@@ -88,14 +88,14 @@ activity:
       date_from:
         order: 3
         title: Časové obdobie od
-        type: date_select
+        type: day_picker
         data_type: date
         required: true
         description: Uveďte obdobie, počas ktorého ste honorovanú/nehonorovanú aktivitu vykonávali. Ak chcete spresniť, ako často ste počas zadaného obdobia aktivity vykonávali (napr. raz týždenne, mesačne a pod.) použite položku Poznámky.
       date_to:
         order: 4
         title: Časové obdobie do
-        type: date_select
+        type: day_picker
         data_type: date
       notes:
         order: 5
