@@ -29,7 +29,7 @@ class Frontend::UsersController < Frontend::ApplicationController
         @per_page = 20
 
         if params[:search].present?
-          search_params = params[:search].gsub(/(\d+)\s(\d+)/) { |match| ($1+$2) }
+          search_params = params[:search].gsub(/(\d{3})\s(\d{2})/) { |match| ($1+$2) }
           @users = User.search(search_params, star: true, order: sort_by, sort_mode: sort_direction.to_sym, conditions: conditions, page: @page, per_page: @per_page)
         elsif params[:letter].present?
           @users = User.where(conditions).where("basic_information_last_name LIKE ?", "#{params[:letter]}%").order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)

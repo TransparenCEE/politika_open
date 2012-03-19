@@ -11,7 +11,7 @@ module Admin
       @per_page = 20
 
       if params[:keyword].present?
-        search_params = params[:keyword].gsub(/(\d+)\s(\d+)/) { |match| ($1+$2) }
+        search_params = params[:keyword].gsub(/(\d{3})\s(\d{2})/) { |match| ($1+$2) }
         @users = User.search(search_params, star: true, order: sort_by, sort_mode: sort_direction.to_sym, page: @page, per_page: @per_page)
       else
         @users = User.order("#{sort_by} #{sort_direction}").page(@page).per(@per_page)
