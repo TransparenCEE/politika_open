@@ -7,7 +7,7 @@
 
 
 .box
-  Aktívných používateľov:
+  Počet používateľov:
   %strong= User.count_live
   
 .clearfix
@@ -83,3 +83,8 @@
         %td= link_to "Otvoriť »", frontend_user_path(user)
 
   = paginate @users, window: 8
+
+%p
+  = link_to 'Zoznam účastníkov, ktorí vystúpili z projektu politikaopen', page_path('vystupili')
+  %br
+    = link_to 'Zoznam účastníkov, ktorí z projektu vystúpili a požiadali o odstránenie svojho formulára', page_path('odstranene_formulare')
