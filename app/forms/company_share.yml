@@ -21,7 +21,7 @@ company_share:
       connected_to_public_sector:
         order: 3
         title: Spoločnosť je majetkovo prepojená s verejným sektorom
-        type: check_box
+        type: boolean_picker
         data_type: boolean
   address:
     order: 1

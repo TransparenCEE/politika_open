@@ -18,7 +18,7 @@ property:
       has_income:
         order: 2
         title: Mám z nehnuteľnosti príjem
-        type: check_box
+        type: boolean_picker
         data_type: boolean
       acreage:
         order: 3
@@ -82,7 +82,7 @@ property:
         title: Dátum predaja
         type: month_picker
         data_type: date
-        
+
   location:
     title: Umiestnenie nehnuteľnosti
     order: 1
