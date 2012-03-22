@@ -3,6 +3,16 @@
 //= require_self
 //= require_tree .
 
+$(window).load(function(){
+  $(".clone_height").each(function(){
+    var clone_target = $(this);
+    var clone_source = $(clone_target.attr("data-clone-weight-from")).first();
+    if(clone_source.outerHeight() > clone_target.outerHeight()) {
+      clone_target.height(clone_source.outerHeight());
+    }
+  });
+});
+
 $(document).ready(function(){
   $("a.make-input").click(function(){
     target = $(this).attr('data-make-input');
@@ -59,16 +69,6 @@ $(document).ready(function(){
     if(bound_to.val() != "") {
       bound_to.trigger("change");
     }
-  });
-  
-  $(".clone_height").each(function(c, i){
-    var self_height = $(i).outerHeight();
-    var target = $(i).attr("data-clone-weight-from");
-    var target_height = $(target).outerHeight();
-    if(target_height > self_height)
-    {
-      $(i).height(target_height);
-    };
   });
   
   $('.toggler').click(function() {
