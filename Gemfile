@@ -36,9 +36,12 @@ group :development, :test do
 
   gem 'database_cleaner'
   gem 'capybara'
-	gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', require: false
   gem 'launchy'    # So you can do Then show me the page
   gem 'mocha'
 end
 
-gem 'mailcatcher', group: :development
+group :development do
+  gem 'mailcatcher'
+  gem 'rails-erd'
+end
