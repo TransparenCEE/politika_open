@@ -76,6 +76,7 @@ campaign:
         order: 14
         title: Odkaz na webovú stránku s údajmi o konkrétnych darcoch / poskytovateľoch bezodplatného plnenia
         description: Uveďte odkaz na internetovú stránku s údajmi o konkrétnych darcoch / poskytovateľoch bezodplatných plnení
+        format: website
       actualisation:
         order: 15
         title: Aktuálne k dátumu
