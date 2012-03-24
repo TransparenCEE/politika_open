@@ -13,7 +13,7 @@ person:
         title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
         type: check_box
         data_type: boolean
-        description: Súhlas je potrebný iba v prípade, že blízskou osobou je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>. 
+        description: Súhlas je potrebný iba v prípade, že blízskou osobou je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov (pre tretie osoby)</a>.
   information:
     order: 1
     title: Údaje o blízkej osobe
@@ -138,12 +138,12 @@ person:
       date_from:
         order: 5
         title: Časové obdobie od
-        type: date_select
+        type: day_picker
         data_type: date
       date_to:
         order: 6
         title: Časové obdobie do
-        type: date_select
+        type: day_picker
         data_type: date
       notes:
         order: 7

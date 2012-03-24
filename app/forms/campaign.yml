@@ -81,7 +81,7 @@ campaign:
         order: 15
         title: Aktuálne k dátumu
         data_type: date
-        type: date_select
+        type: day_picker
         description: Uveďte dátum, ku ktorému uvádzate vyššie uvedené informácie
       notes:
         title: Poznámky

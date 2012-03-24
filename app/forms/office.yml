@@ -35,13 +35,13 @@ office:
       date_from:
         order: 3
         title: Časové obdobie od
-        type: date_select
+        type: day_picker
         data_type: date
         required: true
       date_to:
         order: 4
         title: Časové obdobie do
-        type: date_select
+        type: day_picker
         data_type: date
       amount:
         order: 5
@@ -61,7 +61,7 @@ office:
         required: true
         data_source: time.timeframe
         description: Uveďte obdobie, ku ktorému uvádzate sumu za prenájom
-      
+
   address:
     order: 1
     title: Adresa kancelárie
@@ -98,7 +98,7 @@ office:
         title: Kontaktný údaj
         type: text_area
         description: Môžete uviesť ľubovoľné kontaktné údaje - kontaktnú osobu, telefónne číslo, e-mail, "úradné hodiny", a pod.
-        
+
   other:
     order: 2
     title: Iné
