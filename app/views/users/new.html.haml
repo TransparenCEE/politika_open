@@ -2,9 +2,9 @@
 
 - unless @user.errors.empty?
   %p.error Pri ukladaní sa vyskytlo niekoľko chýb
-  %ul
-  - @user.errors.each do |field, description|
-    %li= "#{User.human_attribute_name(field)} #{description}"
+  %ul.errors
+    - @user.errors.each do |field, description|
+      %li= "#{User.human_attribute_name(field)} #{description}"
 
 = form_for @user, :builder => ListFormBuilder do |f|
   %h3 Základné informácie

@@ -30,8 +30,12 @@ sk:
       user:
         email: E-mail
         password: Heslo
+        password_confirmation: Potvrdenie hesla
         basic_information_first_name: Meno
         basic_information_last_name: Priezvisko
         basic_information_date_of_birth: Dátum narodenia
         telephone_number: Telefónne číslo
         is_accepting_rules: Súhlas s pravidlami
+    errors:
+      user:
+        telephone_number_short: je príliš krátke

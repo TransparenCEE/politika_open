@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /^(.+)@(.+)\.(.+)$/
 
   validates_presence_of :telephone_number
-  validates_length_of :telephone_number, :minimum => 5
+  validates_length_of :telephone_number, minimum: 5, message: I18n.t('activerecord.errors.user.telephone_number_short')
 
   validates_acceptance_of :is_accepting_rules
 
