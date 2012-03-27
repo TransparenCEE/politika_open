@@ -34,7 +34,7 @@ candidature:
       candidated_for_town:
         order: 4
         title: "Kandiduje za obec, mestskú časť, vyšší územný celok"
-        description: Uveďte, za akú obec, mestskú časť, vyšší územný celok kandidujete. V prípade, že pri voľbách nezohráva úlohu, za akú obec, mestskú časť, vyšší územný celok kandidujete, uveďte adresu svojho trvalého bydliska
+        description: Uveďte, za akú obec, mestskú časť, vyšší územný celok kandidujete. V prípade, že pri voľbách nezohráva úlohu, za akú obec, mestskú časť, vyšší územný celok kandidujete, uveďte miesto svojho trvalého bydliska
       note:
         order: 5
         title: Poznámka

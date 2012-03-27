@@ -32,7 +32,7 @@ colleague:
         title: Nemám súhlas tretej osoby na zverejnenie osobných údajov
         type: check_box
         data_type: boolean
-        description: Súhlas je potrebný iba v prípade, že blízkym spolupracovníkom je fyzická osoba (nepodnikateľ). Stiahnuť Súhlas so spracovaním osobných údajov (pre tretie osoby). 
+        description: Súhlas je potrebný iba v prípade, že blízkym spolupracovníkom je fyzická osoba (nepodnikateľ). Stiahnuť <a href="http://www.politikaopen.sk/data/suhlas_so_spracovanim_osobnych_udajov.pdf" target="_blank">Súhlas so spracovaním osobných údajov</a> (pre tretie osoby). 
       title:
         order: 1
         title: Titul

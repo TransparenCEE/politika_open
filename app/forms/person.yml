@@ -56,7 +56,7 @@ person:
         required_unless: basic_no_approvement
   ownership:
     order: 3
-    title: "Vlastníctvo, podieľníctvo, členstvo (alebo zamestnanie) osoby v inštitúciach"
+    title: "Vlastníctvo, podielnictvo, členstvo (alebo zamestnanie) osoby v inštitúciách"
     fields:
       not_presented:
         order: 0
@@ -66,13 +66,13 @@ person:
         radio_button_checkbox: no_presented_group
       none:
         order: 1
-        title: "Nemá vlastníctvo, podieľníctvo, členstvo (alebo zamestnanie) osoby v inštitúciach"
+        title: "Nemá vlastníctvo, podielnictvo, členstvo (alebo zamestnanie) osoby v inštitúciách"
         type: check_box
         data_type: boolean
         radio_button_checkbox: no_presented_group
       not_known:
         order: 2
-        title: "Nemám vedomosť o vlastníctve, podieľníctve, členstve (alebo zamestnanie) osoby v inštitúciach"
+        title: "Nemám vedomosť o vlastníctve, podielnictve, členstve (alebo zamestnanie) osoby v inštitúciách"
         type: check_box
         data_type: boolean
         radio_button_checkbox: no_presented_group
@@ -90,7 +90,7 @@ person:
       number:
         order: 6
         title: IČO
-        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a>
   institution_address:
     order: 4
     title: Adresa inštitúcie
@@ -127,6 +127,7 @@ person:
       share:
         order: 1
         title: Peňažný podiel
+        description: SZČO uvedie výraz nula
       currency:
         order: 1.5
         title: Mena
@@ -135,6 +136,7 @@ person:
       percent_share:
         order: 2
         title: Percentuálny podiel
+        description: SZČO zvolí možnosť 100 %
       date_from:
         order: 5
         title: Časové obdobie od
