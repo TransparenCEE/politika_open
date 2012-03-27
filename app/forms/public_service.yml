@@ -10,7 +10,7 @@ public_service:
         type: data_select
         data_source: functions.candidate
         allow_custom: true
-        description: "Verejný funkcionár na účel projektu politikaopen je fyzická osoba, ktorá je: A) verejným funkcionárom v zmysle čl. 2 ústavného zákona č. 357/2004 Z. z. o ochrane verejného záujmu pri výkone funkcií verejných funkcionárov v znení ústavného zákona č. 545/2005 Z. z. alebo kandidátom na túto funkciu; B) osobou vykonávajúcou funkciu štatutárneho orgánu u zamestnávateľa uvedeného v § 1 ods. 2 zákona č. 552/2003 Z. z. o výkone práce vo verejnom záujme; C) poslancom Európskeho parlamentu alebo kandidátom na túto funkciu; D) poslancom obecného zastupiteľstva alebo kandidátom na túto funkciu; E) predsedom alebo podpredsedom politickej strany alebo politického hnutia alebo kandidátom na túto funkciu; F) prokurátor; G) sudca."
+        description: "Verejný funkcionár na účel projektu politikaopen je fyzická osoba, ktorá je: A) verejným funkcionárom v zmysle čl. 2 ústavného zákona č. 357/2004 Z. z. o ochrane verejného záujmu pri výkone funkcií verejných funkcionárov v znení ústavného zákona č. 545/2005 Z. z. alebo kandidátom na túto funkciu; B) osobou vykonávajúcou funkciu štatutárneho orgánu u zamestnávateľa uvedeného v § 1 ods. 2 zákona č. 552/2003 Z. z. o výkone práce vo verejnom záujme; C) poslancom Európskeho parlamentu alebo kandidátom na túto funkciu; D) poslancom obecného zastupiteľstva alebo kandidátom na túto funkciu; E) predsedom alebo podpredsedom politickej strany alebo politického hnutia alebo kandidátom na túto funkciu; F) prokurátorom; G) sudcom."
       from:
         order: 1
         title: Funkčné obdobie od
