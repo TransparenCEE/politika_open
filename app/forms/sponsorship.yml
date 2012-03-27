@@ -23,7 +23,7 @@ sponsorship:
         title: IČO
         required_if: sector_commercial
         order: 3
-        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a>
 
   address:
     title: Adresa

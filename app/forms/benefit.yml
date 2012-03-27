@@ -21,7 +21,7 @@ benefit:
         order: 3
         title: IČO
         required_if: sector_commercial
-        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a>
 
   address:
     order: 1
@@ -64,7 +64,7 @@ benefit:
         order: 0
         title: Popis výhody
         required: true
-        description: Uveďte akú výhodu z funkcie, zamestnania alebo aktivity požívate/ste požívali. Napr. služobné auto, mobilný telefón, počítač, lukratívna dovolenka a pod. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
+        description: Uveďte akú výhodu z funkcie, zamestnania alebo aktivity požívate/ste požívali. Napr. služobné auto, mobilný telefón, počítač, lukratívna dovolenka a pod. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobitne predplatený paušál.
       value:
         order: 1
         title: Vyjadrenie hodnoty výhody

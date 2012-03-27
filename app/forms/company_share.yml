@@ -17,7 +17,7 @@ company_share:
         order: 2
         title: IČO
         required_if: form_commercial
-        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registera SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registera SR</a>
+        description: Nájdite IČO na stránke <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a> alebo <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a>
       connected_to_public_sector:
         order: 3
         title: Spoločnosť je majetkovo prepojená s verejným sektorom
@@ -66,7 +66,7 @@ company_share:
         description: SZČO uvedie výraz živnostník
       share:
         order: 1
-        title: Peňažný podiel vo firme
+        title: Peňažný podiel
         required: true
         description: SZČO uvedie výraz 0
       currency:
@@ -77,7 +77,7 @@ company_share:
         data_source: money.currencies
       percent:
         order: 3
-        title: Percentuálny podiel vo firme
+        title: Percentuálny
         required: true
         type: data_select
         data_source: percentage.values

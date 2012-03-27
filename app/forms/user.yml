@@ -175,7 +175,7 @@ user:
 
   activities:
     order: 5
-    description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorázové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.
+    description: Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. <p>Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorazové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.</p>
     title: Honorované a nehonorované aktivity
     fields:
       has_no_activities:
@@ -196,7 +196,7 @@ user:
   benefits:
     order: 6
     title: "Výhody z funkcie, zamestnania, aktivity"
-    description: Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod. Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobine predplatený paušál.
+    description: Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. <p>Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod.</p> Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobitne predplatený paušál.
     fields:
       has_no_benefits:
         data_type: boolean
@@ -216,7 +216,7 @@ user:
   sponsorships:
     order: 7
     title: "Sponzorstvo, dary a granty"
-    description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napríklad rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubilejí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známi a činní). Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď) – čiže dary do sumy 15 €. Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
+    description: Pod darmi a grantmi rozumieme také, ktoré ste dostali v súvislosti s výkonom funkcie. Zaujímajú nás aj dary, ktoré ste dostali ako politicky a verejne činná osoba, a ktoré ste dostali od osôb, od ktorých sa dary bežne neočakávajú (teda nie napr. rodinní príslušníci, dobrí priatelia, dlhodobí obchodní partneri pri príležitosti sviatkov, jubileí atď.). Zaujíma nás aj to, ak niekto ponúkne dar Vašim rodinným príslušníkom (cez Vašu osobu, vďaka Vašej osobe – verejnej funkcii, faktu, že ste verejne známy a činný). <p>Do tejto položky prosím uvádzajte aj nepeňažné dary (napríklad akúkoľvek službu, či výhodu, či materiálny bonus) – napríklad ak za Vás niekto prevezme dlh, splatí úroky, poskytne vám zľavu, na ktorú nemajú nárok bežní zákazníci, umožní vám hranie golfu v klube atď. Môžete vynechať bežné drobnosti, ktoré si človek môže pravidelne dopriať (napr. fľašu vína pri príležitosti nového roka, diár, pozvanie na kávu atď.) – čiže dary do sumy 15 €.</p> Dary, ktoré ste dostali v súvislosti s Vašou kandidatúrou sa uvádzajú iba vo formulári Kandidatúra (ten sa zobrazuje iba vypĺňajúcim, ktorí sú (aj) kandidátmi).
     fields:
       has_no_sponsorships:
         data_type: boolean
@@ -235,7 +235,7 @@ user:
   events:
     order: 8
     title: "Pracovné cesty, podujatia, konferencie, kurzy, vzdelávanie"
-    description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov. Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
+    description: Kandidát, ktorý nezastáva verejnú funkciu, vypĺňa tento formulár iba v prípade, že pracovné cesty, podujatia, konferencie, kurzy, vzdelávania súviseli s kandidatúrou alebo so straníckou príslušnosťou. V opačnom prípade zvolí možnosť Nezúčastnil som sa žiadnej udalosti. <p>Pod pracovnými cestami sa pre účel projektu politikaopen rozumejú najmä tie cesty alebo účasť na podujatiach, ktoré Vám nevyplývajú priamo z verejnej funkcie (oficiálne štátne návštevy, účasť na zasadnutiach rôznych orgánov v mene Vašej inštitúcie) a nie sú hradené z verejných zdrojov Slovenskej republiky. Táto kategória mapuje primárne rôzne pozvania, ktoré sú hradené tretími stranami a nie sú priamo súčasťou Vašich vopred daných povinností spojených automaticky s funkciou. Slúži ako prevencia možného konfliktu záujmov a zvyšuje množstvo informácií pre občanov, ako aj možnosti reálne kontrolovať, či takéto pozvania nemôžu sposôbiť u Vás prípadný konflikt záujmov.</p> Pre zvýšenie transparentnosti a možností verejnej kontroly Vás chceme povzbudiť aj k tomu, aby ste uvádzali aj cesty spojené s funkciou a hradené z verejných zdrojov SR tak, aby občania mohli zhodnotiť potrebnosť takej cesty a efektívnosť výkonu Vašej funkcie.
     fields:
       has_no_events:
         order: 0
@@ -273,7 +273,7 @@ user:
   incomes:
     order: 9
     title: Súhrn príjmov za kalendárny rok
-    description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania.
+    description: Položku je potrebné vyplniť aj v tom prípade, že ste nemali žiadny príjem. Pod príjmom sa rozumie príjem zo zamestnania (vrátane odmien, paušálnych náhrad a pod.), príjem z podnikateľskej činnosti, zo živnosti, príjem z predaja hnuteľných vecí, príjem z prenájmu a pod (§ 6-8 zákona č. 595/2003 Z.z. o dani z príjmov). Príjem je potrebné uvádzať k ostatnému ukončenému kalendárnemu roku. Súhrn príjmov je možné uvádzať podľa vášho daňového priznania. <p>Keď pridávate záznam pre ďalší rok, neprepisujte aktuálny záznam, ale pridajte nový! Cieľom je, aby návštevník videl aj históriu záznamov.</p>
     embeds:
       incomes:
         required: true
@@ -285,6 +285,7 @@ user:
   unmovable_property:
     order: 10
     title: Nehnuteľný majetok
+    description: '<p>Je potrebné uvádzať aj majetok, ktorý de iure nevlastníte (nie je evidovaný na Vaše meno), ale s ktorým niekto nakladá vo svojom mene na Váš účet (oficiálny vlastník koná na základe Vašich pokynov).</p><p>Je potrebné uviesť majetok:</p> <ol><li>ktorý za svoje vlastníctvo považujete,</li> <li>ktorý ste nadobudli akýmkoľvek spôsobom i neoficiálne ako svoje vlastníctvo – teda o ktorého osude a využití rozhodujete,</li> <li>ku ktorému existujú interné dohody potvrdzujúce Vaše vlastníctvo alebo nárok naň,</li> <li>ku ktorému sa viaže dohoda, že neskôr (prípadne po splnení určitých podmienok) prejde do Vášho vlastníctva bez toho, aby bola zaplatená plná trhová cena,</li> <li>na zadováženie ktorého boli použité Vaše prostriedky, prípadne prostriedky obchodných spoločností s Vašou majetkovou účasťou a ktorý slúži aj na Vaše súkromné účely – napr. stavby pre súkromné účely bývania, rekreácie, motorové vozidlá aj pre súkromné využitie a podobne.</li></ol> <p>V položke <em>Poznámky</em> je potom potrebné uviesť text: <em>S majetkom nakladá tretia osoba na môj účet</em>.</p>'
     fields:
       no_properties:
         title: Nevlastním žiadny nehnuteľný majetok
@@ -303,10 +304,12 @@ user:
 
   movable_property:
     title: Hnuteľný majetok
+    description: '<p>Je potrebné uvádzať aj majetok, ktorý de iure nevlastníte (nie je evidovaný na Vaše meno), ale s ktorým niekto nakladá vo svojom mene na Váš účet (oficiálny vlastník koná na základe Vašich pokynov).</p><p>Je potrebné uviesť majetok:</p> <ol><li>ktorý za svoje vlastníctvo považujete,</li> <li>ktorý ste nadobudli akýmkoľvek spôsobom i neoficiálne ako svoje vlastníctvo – teda o ktorého osude a využití rozhodujete,</li> <li>ku ktorému existujú interné dohody potvrdzujúce Vaše vlastníctvo alebo nárok naň,</li> <li>ku ktorému sa viaže dohoda, že neskôr (prípadne po splnení určitých podmienok) prejde do Vášho vlastníctva bez toho, aby bola zaplatená plná trhová cena,</li> <li>na zadováženie ktorého boli použité Vaše prostriedky, prípadne prostriedky obchodných spoločností s Vašou majetkovou účasťou a ktorý slúži aj na Vaše súkromné účely – napr. stavby pre súkromné účely bývania, rekreácie, motorové vozidlá aj pre súkromné využitie a podobne.</li></ol> <p>V položke <em>Poznámky</em> je potom potrebné uviesť text: <em>S majetkom nakladá tretia osoba na môj účet</em>.</p>'
     order: 11
     embeds:
       money_properties:
         title: "Súhrnná hodnota hotovosti, účtov, cenných papierov"
+        description: 'Keď pridávate záznam pre ďalší rok, neprepisujte aktuálny záznam, ale pridajte nový! Cieľom je, aby návštevník videl aj históriu záznamov.'
         model_name: MoneyProperty
         order: 0
         required: true
@@ -331,7 +334,7 @@ user:
         model_name: MovableProperty
         order: 3
         required: true
-        description: 'Súhrn hnuteľného majetku pozostáva zo súčtu <span style="color:red;">súhrnnej hodnoty hotovosti, účtov a cenných papierov</span> + <span style="color:blue;">odhadu aktuálnej trhovej hodnoty auta/áut</span> + <span style="color:green;">odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností nad 10 tisíc €</span> + <span style="color:purple;">jednotlivého hnuteľného majetku pod 10 tisíc €</span>.'
+        description: 'Súhrn hnuteľného majetku pozostáva zo súčtu <span style="color:red;">súhrnnej hodnoty hotovosti, účtov a cenných papierov</span> + <span style="color:blue;">odhadu aktuálnej trhovej hodnoty auta/áut</span> + <span style="color:green;">odhadu aktuálnej trhovej hodnoty hnuteľnosti/hnuteľností pod 10 tisíc €</span> + <span style="color:purple;">jednotlivého hnuteľného majetku pod 10 tisíc €</span>. <p>Keď pridávate záznam pre ďalší rok, neprepisujte aktuálny záznam, ale pridajte nový! Cieľom je, aby návštevník videl aj históriu záznamov.</p>'
         sort_attribute: basic_year
 
     fields:
@@ -349,7 +352,7 @@ user:
   duties:
     order: 12
     title: "Majetkové práva, záväzky, hodnoty"
-    description: Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod.
+    description: 'Majetkové práva, záväzky a hodnoty sú napr. hypotéky, úvery (záväzky), autorské práva, patentové práva, obchodné práva (práva) a pod. Majetkovým právom je napr. aj príjem z prenájmu, príjem z dividend a pod. <p>Je potrebné uvádzať aj majetok, ktorý de iure nevlastníte (nie je evidovaný na Vaše meno), ale s ktorým niekto nakladá vo svojom mene na Váš účet (oficiálny vlastník koná na základe Vašich pokynov).</p><p>Je potrebné uviesť majetok:</p> <ol><li>ktorý za svoje vlastníctvo považujete,</li> <li>ktorý ste nadobudli akýmkoľvek spôsobom i neoficiálne ako svoje vlastníctvo – teda o ktorého osude a využití rozhodujete,</li> <li>ku ktorému existujú interné dohody potvrdzujúce Vaše vlastníctvo alebo nárok naň,</li> <li>ku ktorému sa viaže dohoda, že neskôr (prípadne po splnení určitých podmienok) prejde do Vášho vlastníctva bez toho, aby bola zaplatená plná trhová cena,</li> <li>na zadováženie ktorého boli použité Vaše prostriedky, prípadne prostriedky obchodných spoločností s Vašou majetkovou účasťou a ktorý slúži aj na Vaše súkromné účely – napr. stavby pre súkromné účely bývania, rekreácie, motorové vozidlá aj pre súkromné využitie a podobne.</li></ol> <p>V položke <em>Poznámky</em> je potom potrebné uviesť text: <em>S majetkom nakladá tretia osoba na môj účet</em>.</p>'
     fields:
       has_no_duties:
         title: "Nevlastním žiadne majetkové práva, nemám záväzky, hodnoty"
@@ -395,7 +398,7 @@ user:
   meetings:
     order: 14
     title: Dôležité stretnutia
-    description: Do tejto kategórie uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie, či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď inému predstaviteľovi vlády, strany...). Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď.
+    description: 'Uveďte všetky dôležité pracovné stretnutia z titulu Vašej funkcie či politickej pozície, ktoré ovplyvnili vaše aktivity / rozhodnutia, prípadne vyvolali u Vás reakciu / ďalšiu aktivitu (napríklad ak Vás niekto požiadal o sprostredkovanie návrhov, informácií atď. inému predstaviteľovi vlády, strany...). <p>Napríklad rokovanie so sponzormi, darcami strany, osobami, ktoré chcú presadiť zmeny legislatívy, vyvolať vašu legislatívnu iniciatívu, stretnutia s osobami, ktoré chcú získať informácie bežne neprístupné podnikateľom, osobami, ktoré chcú nadviazať spoluprácu atď. Napr. obed, večera, posedenie pri káve, víkend na horách, športová udalosť a pod.</p>'
     fields:
       has_no_meetings:
         title: Nezúčastnil som sa žiadneho stretnutia
@@ -423,7 +426,7 @@ user:
   persons:
     order: 15
     title: Blízke osoby
-    description: Osoba, ktorú možno považovať za osobu blízku verejnému funkcionárovi, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah k verejnému funkcionárovi možno predpokladať jej priamy alebo nepriamy vplyv na konanie a rozhodovanie verejného funkcionára. Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, s ktorou je verejný funkcionár v priateľskom vzťahu a pod.
+    description: 'Osoba, ktorú možno považovať za blízku, je príbuzný v priamom rade, súrodenec, manžel(ka), druh (družka) a osoba, u ktorej vzhľadom na jej príbuzenský alebo osobný vzťah možno predpokladať jej priamy alebo nepriamy vplyv na Vaše konanie a rozhodovanie. <p>Napr. sesternica/bratranec, švagor/švagriná, svokra/svokor, osoba, priateľ, kamarát.</p>'
     fields:
       has_none:
         title: Nemám žiadne blízke osoby

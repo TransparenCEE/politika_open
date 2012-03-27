@@ -8,7 +8,6 @@ income:
         order: 0
         type: data_select
         data_source: time.year
-        description: Súhrn hnuteľného majetku a Súhrn hotovosti, účtov a cenných papierov. Uveďte rok, ku ktorému uvádzate sumu. Uvádza za ostatný ukončený kalendárny rok.
       amount_main:
         title: Výška príjmu len z výkonu verejnej funkcie
         required: true
