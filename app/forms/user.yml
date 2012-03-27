@@ -28,7 +28,7 @@ user:
         order: 4
         title: Rodné priezvisko
         required: true
-        description: "Uveďte aj v prípade, že je Vaše rodné priezvisko rovnaké, ako Vaše aktuálne priezvisko"
+        description: "Uveďte aj v prípade, že je Vaše rodné priezvisko rovnaké ako Vaše aktuálne priezvisko"
       date_of_birth:
         order: 5
         title: Dátum narodenia
@@ -102,7 +102,7 @@ user:
   political_party:
     order: 1
     title: Stranícka príslušnosť
-    description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky (1993).
+    description: Vyplňte prosím aktuálnu stranícku príslušnosť spolu s funkciou, ktorú zastávate. Ak ste boli v minulosti členom iných politických strán (prípadne ste zastávali inú funkciu v aktuálnej politickej strane) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba členstvo od vzniku Slovenskej republiky.
     fields:
       is_not_in_political_party:
         title: Nie som členom politickej strany
@@ -121,7 +121,7 @@ user:
   public_service:
     order: 2
     title: Verejná funkcia
-    description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky (1993).
+    description: Vyplňte prosím aktuálnu verejnú funkciu, ktorú zastávate. Ak ste v minulosti zastávali iné verejné funkcie (prípadne ste zastávali rovnakú verejnú funkciu v inom časovom období) a považujete tieto informácie za potrebné zverejniť, opätovne zvoľte možnosť Pridať. Uvádza sa iba verejná funkcia od vzniku Slovenskej republiky.
     fields:
       is_not_in_public_service:
         title: Nezastávam verejnú funkciu
@@ -140,7 +140,7 @@ user:
   company_shares:
     order: 3
     title: 'Obchodné podiely vo firmách / SZČO'
-    description: 'Informácie o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank">zahraničných obchodných registrov</a>. Uvádzajú sa aj obchodné podiely v zahraničných firmách.'
+    description: 'Informácie o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank">zahraničných obchodných registrov</a>. Uvádzajú sa aj obchodné podiely v zahraničných firmách. <p>Je potrebné uvádzať aj majetok, ktorý de iure nevlastníte (nie je evidovaný na Vaše meno), ale s ktorým niekto nakladá vo svojom mene na Váš účet (oficiálny vlastník koná na základe Vašich pokynov).</p><p>Je potrebné uviesť majetok:</p> <ol><li>ktorý za svoje vlastníctvo považujete,</li> <li>ktorý ste nadobudli akýmkoľvek spôsobom i neoficiálne ako svoje vlastníctvo – teda o ktorého osude a využití rozhodujete,</li> <li>ku ktorému existujú interné dohody potvrdzujúce Vaše vlastníctvo alebo nárok naň,</li> <li>ku ktorému sa viaže dohoda, že neskôr (prípadne po splnení určitých podmienok) prejde do Vášho vlastníctva bez toho, aby bola zaplatená plná trhová cena,</li> <li>na zadováženie ktorého boli použité Vaše prostriedky, prípadne prostriedky obchodných spoločností s Vašou majetkovou účasťou a ktorý slúži aj na Vaše súkromné účely – napr. stavby pre súkromné účely bývania, rekreácie, motorové vozidlá aj pre súkromné využitie a podobne.</li></ol> <p>V položke <em>Poznámky</em> je potom potrebné uviesť text: <em>S majetkom nakladá tretia osoba na môj účet</em>.</p>'
     fields:
       not_owns_shares:
         data_type: boolean
@@ -153,7 +153,7 @@ user:
         model_name: CompanyShare
         show_unless: company_shares_not_owns_shares
         required_unless: company_shares_not_owns_shares
-        description: 'Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>.'
+        description: 'Uvádzajte prosím aj obchodné podiely v zahraničných firmách. Viac informácií o Vašej firme/živnosti môžete rýchlo získať na internetových stránkach <a href="http://www.orsr.sk/" target="_blank">Obchodného registra SR</a>, <a href="http://www.zrsr.sk/" target="_blank">Živnostenského registra SR</a> alebo <a href="http://www.rba.co.uk/sources/registers.htm" target="_blank"> zahraničných obchodných registrov</a>. '
         sort_attribute: participation_date_from
 
   jobs:
