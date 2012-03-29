@@ -182,7 +182,6 @@ user:
         data_type: boolean
         type: check_box
         title: Nevykonávam honorovanú alebo nehonorovanú aktivitu
-        description: 'Honorované a nehonorované aktivity sú aktivity, ktoré súvisia prevažne s vašim profesijným/kariérnym zameraním, ale nie sú zahrnuté priamo vo výkone verejnej funkcie alebo zamestnania. <p>Napr. členstvo v komisiách; dozorných radách; redakčných radách; jednorazové pracovné a iné zmluvy (výkon pozície konzultanta, odborníka v službách člena vlády atď.); posyktovanie poradenstva; publikovanie článkov, kníh; lektorovanie; vykonávanie školení atď.</p>'
         show_unless: activities
     embeds:
       activities:
@@ -202,7 +201,6 @@ user:
         data_type: boolean
         type: check_box
         title: "Nemám žiadne výhody z funkcie, zamestnania, aktivity"
-        description: 'Výhody z funkcie, zamestnania, aktivity sú všetky materiálne a nemateriálne výhody spojené s výkonom funkcie, zamestnania, honorovanej a nehonorovanej aktivity, ktoré verejnému funkcionárovi nevyplývajú priamo z legislatívnych predpisov, a zároveň ich nemusí požívať len pre pracovné potreby. <p>Napríklad pridelenie služobného auta, mobilného telefónu, počítača, lukratívnej dovolenky od zamestnávateľa a pod.</p> Ak má živnostník zakúpené auto na živnosť, zapíše ho taktiež ako výhodu z funkcie, zamestnania, aktivity. Každú výhodu z funkcie je potrebné uviesť osobitne. Ak je napr. výhodou z funkcie (atď.) mobilný telefón spolu s predplateným paušálom, osobitne je potrebné uviesť mobilný telefón a osobitne predplatený paušál.'
         show_unless: benefits
     embeds:
       benefits:
