@@ -62,38 +62,21 @@ var slideshow=new TINY.fader.fade('slideshow',{
 
     <div id="fe_info_name_container">
       <div class="title_container">
-        <div class="title">Najnavštevovanejšie Profily</div>
-      </div>
-      <div class="name_area">
-        <% Visit.top_users.each do |user| %>
-          <%= link_to user.full_name, frontend_user_path(user) %>,
-        <% end %>
-      </div>
-    </div>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
         <div class="title">
           <%= link_to 'Poslanci NR SR', page_path('poslanci_nrsr') %>
         </div>
       </div>
       <div class="name_area"> 
-        <strong>KDH:</strong> <%= link_to 'Lipšic Daniel', frontend_user_path('728')%>,
+        <strong>NOVA:</strong>
+        <%= link_to 'Lipšic Daniel', frontend_user_path('728')%>,
         <%= link_to 'Žitňanská Jana', frontend_user_path('293')%>. 
-        <p><strong>MOST-HÍD:</strong> <%= link_to 'Bugár Béla', frontend_user_path('781')%>.</p>
-        <p><strong>SDKÚ-DS:</strong> <%= link_to 'Beblavý Miroslav', frontend_user_path('281')%>,
-        <%= link_to 'Mikuš Jozef', frontend_user_path('64')%>,
-        <%= link_to 'Štefanec Ivan', frontend_user_path('288')%>,
-        <%= link_to 'Vášáryová Magdaléna', frontend_user_path('547')%>,
-        <%= link_to 'Žitňanská Lucia', frontend_user_path('284')%>.</p>
-        <p><strong>SaS:</strong> <%= link_to 'Droba Juraj', frontend_user_path('761')%>,
+        <p><strong>MOST-HÍD:</strong>
+        <%= link_to 'Bugár Béla', frontend_user_path('781')%>.</p>
+        <p><strong>SDKÚ-DS:</strong> <%= link_to 'Mikuš Jozef', frontend_user_path('64')%>,
+        <%= link_to 'Štefanec Ivan', frontend_user_path('288')%>.</p>
+        <p><strong>SaS:</strong> 
         <%= link_to 'Galko Ľubomír', frontend_user_path('717')%>,
-        <%= link_to 'Hladký Pavol', frontend_user_path('85')%>,
-        <%= link_to 'Chren Martin', frontend_user_path('740')%>,
-        <%= link_to 'Kollár Jozef', frontend_user_path('770')%>,
-        <%= link_to 'Krajcer Daniel', frontend_user_path('748')%>,
         <%= link_to 'Mihál Jozef', frontend_user_path('719')%>,
-        <%= link_to 'Miškov Juraj', frontend_user_path('292')%>,
         <%= link_to 'Nicholsonová Lucia', frontend_user_path('707')%>,
         <%= link_to 'Poliačik Martin', frontend_user_path('697')%>,
         <%= link_to 'Osuský Peter', frontend_user_path('680')%>,
@@ -101,7 +84,16 @@ var slideshow=new TINY.fader.fade('slideshow',{
         <strong>OĽaNO:</strong> <%= link_to 'Fecko Martin', frontend_user_path('767')%>,
         <%= link_to 'Jurinová Erika', frontend_user_path('768')%>,
         <%= link_to 'Matovič Igor', frontend_user_path('769')%>,
-        <%= link_to 'Viskupič Jozef', frontend_user_path('766')%>
+        <%= link_to 'Viskupič Jozef', frontend_user_path('766')%>.
+        <p><strong>NESTRANÍCI:</strong> <%= link_to 'Beblavý Miroslav', frontend_user_path('281')%>,
+        <%= link_to 'Droba Juraj', frontend_user_path('761')%>,
+        <%= link_to 'Chren Martin', frontend_user_path('740')%>,
+        <%= link_to 'Kollár Jozef', frontend_user_path('770')%>,
+        <%= link_to 'Krajcer Daniel', frontend_user_path('748')%>,
+        <%= link_to 'Miškov Juraj', frontend_user_path('292')%>,
+        <%= link_to 'Vášáryová Magdaléna', frontend_user_path('547')%>,
+        <%= link_to 'Žitňanská Lucia', frontend_user_path('284')%>.
+        </p>
       </div>
     </div>
 
@@ -214,7 +206,7 @@ var slideshow=new TINY.fader.fade('slideshow',{
 
     <div id="notice">
       <h2>Dôležitý oznam</h2>
-      Ospravedlňujeme sa za technický výpadok politikaopen.sk v prvej polovici februára (3.2 – 19.2). <%= link_to 'Niektoré formuláre', page_path('info_tab') %> v súčasnosti prechádzajú verifikáciou účastníkov. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov. Začiatkom marca zverejníme zoznam účastníkov, ktorí dáta ešte nepotvrdili.
+      V dôsledku technického výpadku politikaopen.sk v prvej polovici februára 2012 sa časti on-line formulárov nemusia <%= link_to 'niektorým účastníkom', page_path('info_tab') %> zobrazovať správne. Upozornili sme ich na problémové časti a požiadali o <%= link_to 'verifikáciu ich formulára', page_path('info_tab') %>. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov.
       <!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
       <a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
     </div>
