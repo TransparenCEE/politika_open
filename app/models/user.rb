@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
 
   before_save :save_cached_fields
   def save_cached_fields
-    self.cached_current_party = cached_current_party
+    self.cached_current_party = current_party
     self.cached_candidature_party = candidature_party
     self.cached_candidature_election = candidature_election
     self.cached_candidature_function = candidature_function
