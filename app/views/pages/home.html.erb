@@ -1,399 +1,332 @@
-<!-- TinyFader - JavaScript Slideshow -->
-<div id="wrapper">
-  <div id="banner_diskusia">
-    7.3.2012 sa v divadle Meteorit uskutočnila verejná diskusia s politikmi. <%= link_to 'Pozrite si video záznamy a politikmi vyplnené formuláre o konflikte záujmov.', page_path('diskusie_2012') %>
-  </div>
-  <div id="slideshow_container">
-    <div id="slideshow_home">
-      <ul id="slides">
-        <li>
-          <a href="/pages/obama_profil" class="obama">
-            <span style="font-size:30px; font-weight:normal; color:#ffffff; text-transform:uppercase; margin:0px 0px 10px 0px; display:block; letter-spacing:1px;">Barack Obama</span>
-            Do projektu politikaopen sa ako čestný hosť symbolicky zapojil aj prezident USA Barack Obama. Pozrite si jeho majetkové priznanie.
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nrsr">
-            <span style="font-size:30px; font-weight:normal; color:#ffffff; text-transform:uppercase; margin:0px 0px 10px 0px; display:block; letter-spacing:1px;">Čo je politikaopen</span>
-            Politikaopen je projektom Aliancie Fair-play, v ktorom politici dobrovoľne zverejňujú podrobné údaje o svojom vlastníctve a väzbách a poskytujú tak občanom konkrétne a overiteľné informácie o ich majetkových pomeroch a oblastiach, kde môže dochádzať ku konfliktu záujmov.
-          </a>
-        </li>
-        <li>
-          <a href="/pages/nrsr_vs_politikaopen_infografika" class="po">
-            <span style="font-size:30px; font-weight:normal; color:#ffffff; text-transform:uppercase; margin:0px 0px 10px 0px; display:block; letter-spacing:1px;">Majetkové priznanie politika podľa projektu Aliancie Fair-play - Politikaopen</span>
-          </a>
-        </li>
-      </ul>
+<style>
+  #homepage-wrap {
+    font-family:'Open Sans', sans-serif;
+    display:block;
+    float:none;
+    overflow:hidden;
+    width:1000px;
+    margin:0px auto;
+    color:#2b2b2b;
+  }
+  #registration {
+    display:block;
+    float:none;
+    overflow:hidden;
+    background:#5ce1f7 url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/postavicky_registrovat.png) no-repeat bottom right;
+    height:500px;
+  }
+  #registration .text-area-wrap {
+    display:block;
+    float:none;
+    overflow:hidden;
+    margin:65px 0 0 80px;
+    padding:0px;
+  }
+  #registration h1 {
+    font-size:36px;
+    font-weight:bold;
+    text-transform:uppercase;
+    line-height:44px;
+    display:block;
+    margin:0;
+    padding:0;
+  }
+  #registration h2 {
+    font-size:20px;
+    font-weight:bold;
+    line-height:25px;
+    display:block;
+    margin:15px 0 0 0;
+    padding:0;
+    width:330px;
+  }
+  #registration a.registration-button {
+    font-size:28px;
+    font-weight:400;
+    letter-spacing:1px;
+    /* line-height:36px; */
+    display:inline-block;
+    float:none;
+    overflow:hidden;
+    background:#e74c3c;
+    color:#ffffff;
+    text-decoration:none;
+    padding:12px 23px;
+    margin:40px 0 0 0;
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease;
+    /* -webkit-transition-delay: 0.1s; */
+  }
+  #registration a.registration-button:hover {
+    background:#d33f37;
+  }
+  #open-politicians {
+    display:block;
+    float:none;
+    overflow:hidden;
+    background:#ffcc4d;
+    margin:20px 0 0 0;
+    padding:65px 80px 40px 80px;
+  }
+  #open-politicians h1 {
+    font-size:30px;
+    font-weight:bold;
+    text-transform:uppercase;
+    line-height:36px;
+    display:block;
+    margin:0;
+    padding:0;
+  }
+  #container-candidates {
+    display:block;
+    float:none;
+    overflow:hidden;
+    margin:30px 0;
+  }
+  #container-candidates a {
+    display:block;
+    float:left;
+    overflow:hidden;
+    width:210px;
+    height:40px;
+    font-size:16px;
+    font-weight:700;
+    padding:185px 0 40px 0;
+    text-align:center;
+    color:#2b2b2b;
+    text-decoration:none;
+  }
+  #container-candidates a.kandidat {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/kandidat.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-candidates a.kandidat:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/kandidat.png) no-repeat center 0px;
+  }
+  #container-candidates .description {
+    display:block;
+    font-size:12px;
+    font-weight:400;
+  }
+  #container-politicians {
+    display:block;
+    float:none;
+    overflow:hidden;
+    margin:30px 0;
+  }
+  #container-politicians a {
+    display:block;
+    float:left;
+    overflow:hidden;
+    width:168px;
+    height:40px;
+    font-size:14px;
+    font-weight:700;
+    padding:150px 0 15px 0;
+    text-align:center;
+    color:#2b2b2b;
+    text-decoration:none;
+  }
+  #container-politicians a.politik {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/politik.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.politik:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/politik.png) no-repeat center 0px;
+  }
+  #container-politicians .description {
+    display:block;
+    font-size:10px;
+    font-weight:400;
+  }
+  #container-politicians a.politicka {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/politicka.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.politicka:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/politicka.png) no-repeat center 0px;
+  }
+  #container-politicians a.poslanec-nrsr {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslanec_nrsr.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.poslanec-nrsr:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslanec_nrsr.png) no-repeat center 0px;
+  }
+  #container-politicians a.poslankyna-nrsr {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslankyna_nrsr.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.poslankyna-nrsr:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslankyna_nrsr.png) no-repeat center 0px;
+  }
+  #container-politicians a.poslanec-eu {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslanec_eu.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.poslanec-eu:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslanec_eu.png) no-repeat center 0px;
+  }
+  #container-politicians a.poslankyna-eu {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslankyna_eu.png) no-repeat center 15px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  #container-politicians a.poslankyna-eu:hover {
+    background:url(http://storage.fair-play.sk/politikaopen/2014_obecne_volby/poslankyna_eu.png) no-repeat center 0px;
+  }
+</style>
+<div id="homepage-wrap">
+  <div id="registration">
+    <div class="text-area-wrap">
+      <h1>Kandidujete<br>na primátora,<br>starostu alebo<br>poslanca obce?</h1>
+      <h2>Hrajte s občanmi otvorenú hru <br>a zverejnite informácie o svojom majetku, záväzkoch a väzbách.</h2>
+      <a class="registration-button" href="/users/new">Registrovať</a>
     </div>
   </div>
-  <ul id="pagination">
-    <li onclick="slideshow.pos(0)"></li>
-    <li onclick="slideshow.pos(1)"></li>
-    <li onclick="slideshow.pos(2)"></li>
-  </ul>
-</div>
-
-<script type="text/javascript">
-var slideshow=new TINY.fader.fade('slideshow',{
-  id:'slides',
-  auto:5,
-  resume:true,
-  navid:'pagination',
-  activeclass:'current',
-  visible:true,
-  position:0,
-});
-</script>
-
-<div id="fe_info_container">
-
-  <div class="info_column">
-    <h2><a href="/pages/nrsr_vs_politikaopen_infografika" style="color:#000000;">Politikaopen<br /> vs. NR SR</a></h2>
-    <!-- <div style="border-bottom:1px solid #dddddd; margin:0px 0px 15px 0px; padding:0px 0px 20px 0px;">Politikaopen je projektom <a href="http://www.fair-play.sk" target="_blank" style="">Aliancie Fair-play</a>, v ktorom politici dobrovoľne zverejňujú podrobné údaje o svojom vlastníctve a väzbách a poskytujú tak občanom konkrétne a overiteľné informácie o ich majetkových pomeroch a oblastiach, kde môže dochádzať ku konfliktu záujmov.</div> -->
-
-      <a href="/pages/nrsr_vs_politikaopen_infografika" class="fe_event_img"></a>
-
-
-
-  </div>
-
-  <div class="info_column">
-    <h2><a href="/frontend/users" style="color:#000000;">Otvorení politici</a></h2>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          <%= link_to 'Poslanci NR SR', page_path('poslanci_nrsr') %>
-        </div>
-      </div>
-      <div class="name_area"> 
-        <strong>NOVA:</strong>
-        <%= link_to 'Lipšic Daniel', frontend_user_path('728')%>,
-        <%= link_to 'Žitňanská Jana', frontend_user_path('293')%>. 
-        <p><strong>MOST-HÍD:</strong>
-        <%= link_to 'Bugár Béla', frontend_user_path('781')%>.</p>
-        <p><strong>SDKÚ-DS:</strong> <%= link_to 'Mikuš Jozef', frontend_user_path('64')%>,
-        <%= link_to 'Štefanec Ivan', frontend_user_path('288')%>.</p>
-        <p><strong>SaS:</strong> 
-        <%= link_to 'Galko Ľubomír', frontend_user_path('717')%>,
-        <%= link_to 'Mihál Jozef', frontend_user_path('719')%>,
-        <%= link_to 'Nicholsonová Lucia', frontend_user_path('707')%>,
-        <%= link_to 'Poliačik Martin', frontend_user_path('697')%>,
-        <%= link_to 'Osuský Peter', frontend_user_path('680')%>,
-        <%= link_to 'Sulík Richard', frontend_user_path('255')%>.</p>
-        <strong>OĽaNO:</strong> <%= link_to 'Fecko Martin', frontend_user_path('767')%>,
-        <%= link_to 'Jurinová Erika', frontend_user_path('768')%>,
-        <%= link_to 'Matovič Igor', frontend_user_path('769')%>,
-        <%= link_to 'Viskupič Jozef', frontend_user_path('766')%>.
-        <p><strong>NESTRANÍCI:</strong> <%= link_to 'Beblavý Miroslav', frontend_user_path('281')%>,
-        <%= link_to 'Droba Juraj', frontend_user_path('761')%>,
-        <%= link_to 'Chren Martin', frontend_user_path('740')%>,
-        <%= link_to 'Kollár Jozef', frontend_user_path('770')%>,
-        <%= link_to 'Krajcer Daniel', frontend_user_path('748')%>,
-        <%= link_to 'Miškov Juraj', frontend_user_path('292')%>,
-        <%= link_to 'Vášáryová Magdaléna', frontend_user_path('547')%>,
-        <%= link_to 'Žitňanská Lucia', frontend_user_path('284')%>.
-        </p>
-      </div>
+  <div id="open-politicians">
+    <h1>Kandidáti na primátorov krajských miest 2014</h1>
+    <div id="container-candidates">
+      <a href="http://www.politikaopen.sk/frontend/users/511" class="kandidat">
+        Milan Ftáčnik
+        <span class="description">Kandiduje v Bratislave<br>(Primátor Bratislavy)</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/831" class="kandidat">
+        Milan Kňažko
+        <span class="description">Kandiduje v Bratislave</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/96" class="kandidat">
+        Pavol Bielik
+        <span class="description">Kandiduje v Banskej Bystrici</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/844" class="kandidat">
+        Viliam Mokráň
+        <span class="description">Kandiduje v Nitre</span>
+      </a>
     </div>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          Verejní funkcionári
-        </div>
-      </div>
-      <div class="name_area">
-        <%= link_to 'Dubovcová Jana', frontend_user_path('297') %>,
-        <%= link_to 'Milan Ftáčnik', frontend_user_path('511') %>,
-        <%= link_to 'Alexander Slafkovský', frontend_user_path('56') %>,
-        <%= link_to 'Martin Alföldi', frontend_user_path('291') %>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="info_column">
-    <h2>Blog</h2>
-    <div id="headline_container">
-      <div class="title_container">
-        <div class="title">
-          9.3.2012
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="http://fairplay.blog.sme.sk/c/292707/Stale-vahate-Fair-play-prinasa-poslednu-pomoc-pred-volbami.html" target="_blank">Stále váhate? Fair-play prináša poslednú pomoc pred voľbami</a>
-      </div>
-    </div>
-    
-    <h3>Obamov profil</h3>
-    <div class="name_pic_box">
-      <%= image_tag 'obama_60x60.png', align: 'left', style: 'margin-right:5px;', alt: 'Barack Obama' %>
-      <%= link_to 'Barack Obama', page_path('obama_profil'), class: 'title_pic_box' %><br />
-      prezident USA
-    </div>
-
-    <h3>Tlačové správy</h3>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          6.9.2011
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="/data/TS_6_9_11_Obama_politikaopen.pdf" target="_blank">Projekt Aliancie Fair-play PolitikaOpen zverejnil symbolický profil prezidenta USA Baracka Obamu</a>
-      </div>
-    </div>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          23.11.2010
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="/data/TS_politikaopen_volby_obce2010.pdf" target="_blank">Výzvu k otvorenosti pre voličov ignorovala väčšina hlavných kandidátov na primátorov a starostov</a>
-      </div>
-    </div>
-
-    <!--<div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          3.11.2010
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="/data/Volby_obce_2010_ts.rtf" target="_blank">Aliancia vyzvala kandidátov v komunálnych voľbách, aby zverejnili podrobné a kontrolovateľné informácie o svojom majetku a záujmoch </a>
-      </div>
-    </div> -->
-
-    <!-- <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          8.6.2010
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="http://www.fair-play.sk/clanok.php?u=3&u1=6&u2=24&u3=499" target="_blank">161 kandidátov prijalo výzvu k nadštandardnej otvorenosti</a>
-      </div>
-    </div>
-
-    <div id="fe_info_name_container">
-      <div class="title_container">
-        <div class="title">
-          31.5.2010
-        </div>
-      </div>
-      <div class="name_area">
-        <a href="/data/Hon_na_politikov_ts.rtf" target="_blank">Vyhlásili sme "Hon na politikov"</a>
-      </div>
-    </div> -->
-
-  </div>
-
-  <div class="info_column_last">
-  <h2>Vyhľadávanie</h2>
-    <div id="fe_search_area">
-      <div id="fe_search_container">
-        <form accept-charset="UTF-8" action="/frontend/users" method="get">
-          <input class="text_area" id="search" name="search" size="30" type="text" placeholder="Nájdite politika..." />
-          <input class="submit_button" name="commit" type="submit" value="Hľadať" />
-        </form>
-      </div>
-      Zadajte meno, priezvisko, mesto alebo PSČ.
-    </div>
-
-    <div id="notice">
-      <h2>Dôležitý oznam</h2>
-      V dôsledku technického výpadku politikaopen.sk v prvej polovici februára 2012 sa časti on-line formulárov nemusia <%= link_to 'niektorým účastníkom', page_path('info_tab') %> zobrazovať správne. Upozornili sme ich na problémové časti a požiadali o <%= link_to 'verifikáciu ich formulára', page_path('info_tab') %>. Ak by ste chceli so zverejnenými informáciami ďalej pracovať, overte si ich prosím u samotných politikov / kandidátov.
-      <!-- Podporte finančne činnosť Aliancie Fair-play, aby mohla naďalej pozerať politikom na prsty.
-      <a href="http://www.fair-play.sk/donation/card_form.php" target="_blank" class="donation">Podporiť</a> -->
-    </div>
-    <div class="soc_net">
-      <a href="http://www.facebook.com/alianciafairplay" class="facebook" target="_blank"></a>
-      <a href="http://www.twitter.com/alianciaFP" class="twitter" target="_blank"></a>
-    </div>
-      <div style="display:block; margin:10px 0px 0px 0px; padding:10px 0px 0px 0px; border-top:1px solid #dddddd;"></div>
-      <div id="fe_info_name_container">
-        <div class="title_container">
-          <div class="title">
-            Ďalšie projekty
-          </div>
-        </div>
-        <div class="name_area">
-          <a href="http://www.datanest.sk" target="_blank">Datanest</a><br />
-          <a href="http://www.bielavrana.sk" target="_blank">Biela vrana</a><br />
-          <a href="http://www.znasichdani.sk/" target="_blank">ZNasichDani.sk</a><br />
-          <a href="http://www.otvorenezmluvy.sk/" target="_blank">Otvorené zmluvy</a><br />
-        </div>
-
+    <h1>Otvorení politici</h1>
+    <div id="container-politicians">
+      <a href="http://www.politikaopen.sk/frontend/users/824" class="politik">
+        Andrej Kiska
+        <span class="description">Prezident Slovenskej republiky</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/297" class="politicka">
+        Jana Dubovcová
+        <span class="description">Ombudsmanka</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/255" class="poslanec-eu">
+        Richard Sulík
+        <span class="description">Poslanec Európskeho<br> parlamentu</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/288" class="poslanec-eu">
+        Ivan Štefanec
+        <span class="description">Poslanec Európskeho<br> parlamentu</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/293" class="poslankyna-eu">
+        Jana Žitňanská
+        <span class="description">Poslankyňa Európskeho parlamentu</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/281" class="poslanec-nrsr">
+        Miroslav Beblavý
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/781" class="poslanec-nrsr">
+        Béla Bugár
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/767" class="poslanec-nrsr">
+        Martin Fecko
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/717" class="poslanec-nrsr">
+        Ľubomír Galko
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/830" class="poslanec-nrsr">
+        Pavol Hrušovský
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/768" class="poslankyna-nrsr">
+        Erika Jurinová
+        <span class="description">Poslankyňa NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/770" class="poslanec-nrsr">
+        Jozef Kollár
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/748" class="poslanec-nrsr">
+        Daniel Krajcer
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/728" class="poslanec-nrsr">
+        Daniel Lipšic
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/769" class="poslanec-nrsr">
+        Igor Matovič
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/719" class="poslanec-nrsr">
+        Jozef Mihál
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/64" class="poslanec-nrsr">
+        Jozef Mikuš
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/292" class="poslanec-nrsr">
+        Juraj Miškov
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/707" class="poslankyna-nrsr">
+        Lucia Nicholsonová
+        <span class="description">Poslankyňa NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/680" class="poslanec-nrsr">
+        Peter Osuský
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/697" class="poslanec-nrsr">
+        Martin Poliačik
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/304" class="poslanec-nrsr">
+        Ivan Švejna
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/547" class="poslankyna-nrsr">
+        Magdaléna Vášáryová
+        <span class="description">Poslankyňa NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/766" class="poslanec-nrsr">
+        Jozef Viskupič
+        <span class="description">Poslanec NR SR</span>
+      </a>
+      <a href="http://www.politikaopen.sk/frontend/users/284" class="poslankyna-nrsr">
+        Lucia Žitňanská
+        <span class="description">Poslankyňa NR SR</span>
+      </a>
     </div>
   </div>
-</div>
-<div id="fe_charts_container">
-  <div id="fe_charts_box_left">
-    <div id="fe_charts_title_container">
-      <div class="title">
-        Otvorení poslanci v NR SR
-      </div>
-    </div>
-    <div class="charts_area">
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-          <script type="text/javascript">
-            google.load("visualization", "1", {packages:["corechart"]});
-            google.setOnLoadCallback(drawChart);
-            function drawChart() {
-              var data = new google.visualization.DataTable();
-              data.addColumn('string', 'Year');
-              data.addColumn('number', 'Otvorení poslanci NR SR');
-              data.addRows(5);
-              data.setValue(0, 0, 'KDH');
-              data.setValue(0, 1, 2);
-              data.setValue(1, 0, 'MOST-HÍD');
-              data.setValue(1, 1, 1);
-              data.setValue(2, 0, 'OĽaNO');
-              data.setValue(2, 1, 4);
-              data.setValue(3, 0, 'SaS');
-              data.setValue(3, 1, 11);
-              data.setValue(4, 0, 'SDKÚ-DS');
-              data.setValue(4, 1, 5);
-
-              var chart = new google.visualization.ColumnChart(document.getElementById('kandidati_vs_politici'));
-              chart.draw(data, {
-            width: 500,
-            height: 300,
-            colors:['#39B54A','#333333'],
-            fontSize:11,
-            backgroundColor:'transparent',
-            gridlineColor:'#dddddd',
-            vAxis: {baselineColor:'#333333', textStyle:{color:'#000000',},},
-            chartArea: {top:60, left:50,},
-            legendTextStyle: {color:'#000000',},
-              });
-            }
-          </script>
-          <div id="kandidati_vs_politici"></div>
-
-    </div>
-  </div>
-
-  <div id="fe_charts_box_right">
-    <div id="fe_charts_title_container">
-      <div class="title">
-        Otvorení poslanci v NR SR 2012 - 2016
-      </div>
-    </div>
-    <div id="fe_charts_area">
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-          google.load("visualization", "1", {packages:["corechart"]});
-          google.setOnLoadCallback(drawChart);
-          function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Task');
-            data.addColumn('number', 'Hours per Day');
-            data.addRows(2);
-            data.setValue(0, 0, 'Ostatní poslanci v NR SR');
-            data.setValue(0, 1, 126);
-            data.setValue(1, 0, 'Otvorení poslanci v NR SR');
-            data.setValue(1, 1, 24);
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_poslanci_nrsr_2010_2016'));
-            chart.draw(data, {
-          width: 450,
-          height: 300,
-          backgroundColor:'transparent',
-          colors:['#333333','#39B54A'],
-          chartArea:{left:120, top:30,},
-          legendTextStyle: {color:'#000000',},
-          pieResidueSliceColor:'#009900',
-          chartArea: {top:50, left:150,},
-          is3D:true,
-        });
-          }
-      </script>
-      <div id="chart_poslanci_nrsr_2010_2016"></div>
-    </div>
-  </div>
-
-  <div id="fe_charts_box_left">
-    <div id="fe_charts_title_container">
-      <div class="title">
-        Otvorení poslanci v NR SR 2010 - 2012
-      </div>
-    </div>
-    <div id="fe_charts_area">
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-          google.load("visualization", "1", {packages:["corechart"]});
-          google.setOnLoadCallback(drawChart);
-          function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Task');
-            data.addColumn('number', 'Hours per Day');
-            data.addRows(2);
-            data.setValue(0, 0, 'Ostatní poslanci v NR SR');
-            data.setValue(0, 1, 119);
-            data.setValue(1, 0, 'Otvorení poslanci v NR SR');
-            data.setValue(1, 1, 32);
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_poslanci_nrsr_2010_2012'));
-            chart.draw(data, {
-          width: 450,
-          height: 300,
-          backgroundColor:'transparent',
-          colors:['#333333','#39B54A'],
-          chartArea:{left:120, top:30,},
-          legendTextStyle: {color:'#000000',},
-          pieResidueSliceColor:'#009900',
-          chartArea: {top:50, left:150,},
-          is3D:true,
-        });
-          }
-      </script>
-      <div id="chart_poslanci_nrsr_2010_2012"></div>
-    </div>
-  </div>
-
-
-  <div id="fe_charts_box_right">
-    <div id="fe_charts_title_container">
-      <div class="title">
-        Otvorení poslanci v NR SR 2006 - 2010
-      </div>
-    </div>
-    <div id="fe_charts_area">
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-          google.load("visualization", "1", {packages:["corechart"]});
-          google.setOnLoadCallback(drawChart);
-          function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Task');
-            data.addColumn('number', 'Hours per Day');
-            data.addRows(2);
-            data.setValue(0, 0, 'Ostatní poslanci v NR SR');
-            data.setValue(0, 1, 145);
-            data.setValue(1, 0, 'Otvorení poslanci v NR SR');
-            data.setValue(1, 1, 5);
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_poslanci_nrsr_2006_2010'));
-            chart.draw(data, {
-          width: 450,
-          height: 300,
-          backgroundColor:'transparent',
-          colors:['#333333','#39B54A'],
-          chartArea:{left:120, top:30,},
-          legendTextStyle: {color:'#000000',},
-          pieResidueSliceColor:'#009900',
-          chartArea: {top:50, left:150,},
-          is3D:true,
-        });
-          }
-      </script>
-      <div id="chart_poslanci_nrsr_2006_2010"></div>
-    </div>
-  </div>
-
 </div>
