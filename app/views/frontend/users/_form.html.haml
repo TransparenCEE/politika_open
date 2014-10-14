@@ -13,7 +13,7 @@
         %td{:width => 300}
           %em= field.title
         %td
-          %strong= field.formatted_value
+          %strong= field.formatted_value if field.value
 
   - form.embeds(:visible).each do |embed|
     - @user.embed_items(embed.identifier, embed.settings[:sort_attribute]).each do |item|

@@ -14,3 +14,4 @@ backup/*
 .DS_Store
 .sass-cache/
 data/dump/*
+.idea/*
