@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     if valid
       NotificationMailer.user_update(current_user).deliver
       @item.save
-      current_user.save(validate: false)
+      current_user.touch
       redirect_to form_path(@embed.settings[:form_identifier])
     else
       flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     if valid
       NotificationMailer.user_update(current_user).deliver
       @item.save(:validate => false)
-      current_user.save(validate: false)
+      current_user.touch
       redirect_to form_path(@embed.settings[:form_identifier])
     else
       flash.now[:error] = "Prosím vyplnte správne všetky povinné položky formulára."
