@@ -209,4 +209,11 @@ class User < ActiveRecord::Base
     visit.save if visit.new_record?
   end
 
+  def save_without_touch
+    ActiveRecord::Base.record_timestamps = false
+    result = save
+    ActiveRecord::Base.record_timestamps = true
+    result
+  end
+
 end
