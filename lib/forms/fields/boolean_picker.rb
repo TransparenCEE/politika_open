@@ -20,7 +20,7 @@ module Forms
       end
 
       def form_value
-        value.nil? ? nil : (value == true ? '1' : '0')
+        value.nil? ? nil : ( (value == '1' || value == true) ? '1' : '0')
       end
 
       def formatted_value
