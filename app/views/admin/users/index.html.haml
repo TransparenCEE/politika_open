@@ -66,7 +66,7 @@
         = link_to "Vymazať", admin_user_path(user), :method => "delete", :confirm => "Určite chcete vymazať používateľa #{user.email}?"
         %br
         = link_to "Resetovať", reset_admin_user_path(user), :confirm => "Chystáte sa resetovať heslo používateľa #{user.email}. Určite chcete pokračovať?"
-        = link_to "Prihlásiť", login_admin_user_path(user), :confirm => "Týmto sa odhlásite a prihlásite ako #{user.email}. Chcete pokračovať?"
+        = link_to "Prihlásiť", login_admin_user_path(user, page: params[:page]), :confirm => "Týmto sa odhlásite a prihlásite ako #{user.email}. Chcete pokračovať?"
         
 = paginate @users, window: 8
   
