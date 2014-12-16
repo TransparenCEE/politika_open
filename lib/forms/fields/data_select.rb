@@ -12,7 +12,7 @@ class Forms::Fields::DataSelect < Forms::Field
       raise "Please set data with data or data_source keyword."
     end
     
-    if !value.blank? && !data.collect{|d|d.to_s}.include?(value)
+    if !value.blank? && !data.collect{|d|d.to_s}.include?(value) && !settings[:grouped]
       result += text_field_tag(input_tag_name, value, settings[:html_options]||{})
     else
       if settings[:grouped]
@@ -21,7 +21,7 @@ class Forms::Fields::DataSelect < Forms::Field
         options = options_for_select(data, value)
       end
       
-      result += select_tag(input_tag_name, options, settings[:html_options]||{})
+      result += select_tag(input_tag_name, options, (settings[:html_options]||{}).merge({data: {:'selected-value' => value}}))
     end
     
     if ["true", "1"].include?(settings[:allow_custom].to_s)
