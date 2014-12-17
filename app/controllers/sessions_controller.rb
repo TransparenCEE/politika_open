@@ -28,9 +28,10 @@ class SessionsController < ApplicationController
       managed = current_user
       manager = User.find(session[:admin_presence])
       session.delete(:admin_presence)
-      page = session[:admin_users_page]
+      page = session.delete(:admin_users_page)
+      keyword = session.delete(:admin_users_keyword)
       log_in!(manager)
-      redirect_to admin_users_path(page: page)
+      redirect_to admin_users_path(page: page, keyword: keyword)
     else
       flash[:error] = "Something evil just happened. ~)o"
       redirect_to root_path

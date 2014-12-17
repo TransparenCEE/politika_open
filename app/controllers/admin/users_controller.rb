@@ -63,6 +63,7 @@ module Admin
       @user = User.find(params[:id])
       session[:admin_presence] = current_user._id
       session[:admin_users_page] = params[:page]
+      session[:admin_users_keyword] = params[:keyword]
       log_in!(@user)
       flash[:notice] = "Boli ste odhlásený a prihlásený ako #{@user.email}."
       redirect_to forms_path
