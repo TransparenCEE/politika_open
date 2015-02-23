@@ -23,7 +23,11 @@ class FormsController < ApplicationController
     @form.process
     if @form.valid?
       NotificationMailer.user_update(@user).deliver
-      @user.touch unless session[:admin_presence]
+      if session[:admin_presence]
+        @user.save_without_touch
+      else
+        @user.save(validate: false)
+      end
       flash[:notice] = "Zmeny boli uložené."
       redirect_to form_path(@form.identifier)
     else
